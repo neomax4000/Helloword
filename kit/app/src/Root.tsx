@@ -14,6 +14,7 @@ import {Vac, VC_TOTAL} from './vac';
 import {Compara, CP_TOTAL} from './compara';
 import {Vac2, V2_TOTAL} from './vac2';
 import {Acticob, AC_TOTAL} from './acticob';
+import {Activar, AV_TOTAL} from './activar';
 import {Protege, PR_TOTAL} from './protege';
 import {Actdual, AD_TOTAL} from './actdual';
 import bancaData from '../public/banca/words.json';
@@ -194,6 +195,15 @@ const ActdualMain: React.FC = () => {
   }, [handle]);
   return <Actdual />;
 };
+const ActivarMain: React.FC = () => {
+  const [handle] = useState(() => delayRender('fuentes'));
+  useEffect(() => {
+    Promise.all(['300', '400', '600', '700'].map((w) => (document as any).fonts.load(`${w} 40px Poppins`)))
+      .catch(() => null)
+      .then(() => continueRender(handle));
+  }, [handle]);
+  return <Activar />;
+};
 const cv = (cover: CoverProps, C: React.FC) => () => <WithCover cover={cover}><C /></WithCover>;
 const COVERS: Record<string, CoverProps> = {
   Sp500: {tag: 'DATO ACTINVER', light: 'El índice', bold: 'S&P 500', sub: '¿Qué es y por qué importa?', icon: 'chart'},
@@ -208,6 +218,7 @@ const COVERS: Record<string, CoverProps> = {
   Acticob: {tag: 'SERIE DEL DÓLAR · 1', light: 'Fondo', bold: 'ACTICOB', sub: 'Para tus gastos y metas en dólares', icon: 'coins'},
   Protege: {tag: 'SERIE DEL DÓLAR · 2', light: 'Fondo', bold: 'PROTEGE', sub: 'Deuda del gobierno de EE.UU.', icon: 'shield'},
   Actdual: {tag: 'SERIE DEL DÓLAR · 3', light: 'Fondo', bold: 'ACTDUAL', sub: '¿Pesos o dólares? ¿Y si no eliges?', icon: 'coins'},
+  Activar: {tag: 'RENTA VARIABLE LOCAL · 1', light: 'Fondo', bold: 'ACTIVAR', sub: 'La bolsa mexicana en un solo fondo', icon: 'chart'},
   Narrador: {tag: 'MI HISTORIA', light: 'Mi', bold: 'Carrera', sub: 'Cómo llegué hasta aquí', icon: 'path', logo: false},
 };
 const FondosC = cv(COVERS.Fondos, FondosMain);
@@ -219,6 +230,7 @@ const Vac2C = cv(COVERS.Vac2, Vac2Main);
 const ActicobC = cv(COVERS.Acticob, ActicobMain);
 const ProtegeC = cv(COVERS.Protege, ProtegeMain);
 const ActdualC = cv(COVERS.Actdual, ActdualMain);
+const ActivarC = cv(COVERS.Activar, ActivarMain);
 const Sp500C = cv(COVERS.Sp500, Sp500Main), BancaC = cv(COVERS.Banca, BancaMain), InteresC = cv(COVERS.Interes, InteresMain), NarradorC = cv(COVERS.Narrador, NarradorMain);
 
 export const Root: React.FC = () => (
@@ -247,6 +259,8 @@ export const Root: React.FC = () => (
     <Composition id="ProtegeC" component={ProtegeC} durationInFrames={sec(PR_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Actdual" component={ActdualMain} durationInFrames={sec(AD_TOTAL)} fps={FPS} width={W} height={H} />
     <Composition id="ActdualC" component={ActdualC} durationInFrames={sec(AD_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="Activar" component={ActivarMain} durationInFrames={sec(AV_TOTAL)} fps={FPS} width={W} height={H} />
+    <Composition id="ActivarC" component={ActivarC} durationInFrames={sec(AV_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Sp500C" component={Sp500C} durationInFrames={sec(SP_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="BancaC" component={BancaC} durationInFrames={sec(bancaData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="InteresC" component={InteresC} durationInFrames={sec(interesData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
