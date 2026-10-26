@@ -1,0 +1,149 @@
+{
+ "voice": "ef_dora",
+ "speed": 0.93,
+ "total": 74.369,
+ "scenes": [
+  {
+   "id": "intro",
+   "sentences": [
+    {
+     "text": "¡Felicidades! Ya tienes tu cuenta Actinver activada.",
+     "start": 0.9,
+     "end": 3.972
+    },
+    {
+     "text": "Lo siguiente es dejar tu cuenta lista para recibir recursos y poner a trabajar tu dinero.",
+     "start": 4.292,
+     "end": 9.775
+    }
+   ],
+   "start": 0.0,
+   "end": 9.975
+  },
+  {
+   "id": "paso1",
+   "sentences": [
+    {
+     "text": "Primer paso: activemos tu banca electrónica en tu celular.",
+     "start": 10.325,
+     "end": 13.951
+    },
+    {
+     "text": "Para eso, descarga la app de Actinver.",
+     "start": 14.271,
+     "end": 16.639
+    }
+   ],
+   "start": 9.975,
+   "end": 16.839
+  },
+  {
+   "id": "permisos",
+   "sentences": [
+    {
+     "text": "Al abrir la app, te pedirá algunos permisos.",
+     "start": 17.189,
+     "end": 19.899
+    },
+    {
+     "text": "El de geolocalización es indispensable para seguir adelante, por disposición oficial.",
+     "start": 20.219,
+     "end": 25.275
+    }
+   ],
+   "start": 16.839,
+   "end": 25.475
+  },
+  {
+   "id": "paso2",
+   "sentences": [
+    {
+     "text": "Segundo paso: ingresa tu número de cliente.",
+     "start": 25.825,
+     "end": 28.598
+    },
+    {
+     "text": "Lo encuentras en la copia del contrato que tu asesor te entregó, en la primera página.",
+     "start": 28.918,
+     "end": 33.931
+    }
+   ],
+   "start": 25.475,
+   "end": 34.131
+  },
+  {
+   "id": "sms",
+   "sentences": [
+    {
+     "text": "Te llegará un código por SMS, que tendrás que ingresar en la app para avanzar.",
+     "start": 34.481,
+     "end": 39.196
+    }
+   ],
+   "start": 34.131,
+   "end": 39.396
+  },
+  {
+   "id": "paso3",
+   "sentences": [
+    {
+     "text": "Tercer paso: crea una contraseña de entre 8 y 20 caracteres.",
+     "start": 39.746,
+     "end": 43.949
+    },
+    {
+     "text": "Debe llevar al menos una letra mayúscula, una minúscula, un número y un carácter especial.",
+     "start": 44.269,
+     "end": 49.687
+    },
+    {
+     "text": "Puede ser un punto, un guion o un guion bajo, entre otros.",
+     "start": 50.007,
+     "end": 53.229
+    },
+    {
+     "text": "De preferencia, guion o punto.",
+     "start": 53.549,
+     "end": 55.575
+    }
+   ],
+   "start": 39.396,
+   "end": 55.775
+  },
+  {
+   "id": "confirmar",
+   "sentences": [
+    {
+     "text": "Escríbela dos veces para confirmarla.",
+     "start": 56.125,
+     "end": 58.579
+    },
+    {
+     "text": "Acepta las condiciones de servicio, y listo: tu app está instalada.",
+     "start": 58.899,
+     "end": 62.973
+    }
+   ],
+   "start": 55.775,
+   "end": 63.173
+  },
+  {
+   "id": "biometricos",
+   "sentences": [
+    {
+     "text": "La próxima vez que inicies, podrás elegir si prefieres entrar con biométricos y si quieres que la app recuerde tu usuario.",
+     "start": 63.523,
+     "end": 70.819
+    }
+   ],
+   "start": 63.173,
+   "end": 71.369
+  },
+  {
+   "id": "outro",
+   "sentences": [],
+   "start": 71.369,
+   "end": 74.369
+  }
+ ]
+}

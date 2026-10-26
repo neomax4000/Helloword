@@ -1,0 +1,9 @@
+[
+ {"w":0,"k":"crowd","bg":0},{"w":9,"k":"ask","bg":0},{"w":17,"k":"why","bg":0},
+ {"w":28,"k":"paysmore","bg":1},{"w":39,"k":"nonono","bg":1},{"w":47,"k":"notexist","bg":1},
+ {"w":59,"k":"youcreate","bg":2},{"w":64,"k":"pagare","bg":2},{"w":74,"k":"reinvest","bg":2},
+ {"w":86,"k":"compound","bg":3},{"w":98,"k":"withdraw","bg":3},{"w":111,"k":"decide","bg":3},
+ {"w":126,"k":"fund","bg":4},{"w":134,"k":"confusion","bg":4},{"w":139,"k":"noterm","bg":4},
+ {"w":149,"k":"monthly","bg":5},{"w":167,"k":"simple","bg":5},{"w":171,"k":"versus","bg":5},
+ {"w":181,"k":"final","bg":6}
+]

@@ -1,0 +1,8 @@
+[
+ {"w":0,"k":"hook","bg":0},{"w":9,"k":"phoneerr","bg":0},
+ {"w":17,"k":"lock","bg":1},{"w":29,"k":"nip","bg":1},{"w":39,"k":"transfer","bg":1},
+ {"w":50,"k":"call","bg":2},{"w":55,"k":"option","bg":2},
+ {"w":61,"k":"conmutador","bg":3},{"w":77,"k":"sms","bg":3},
+ {"w":89,"k":"connect","bg":4},{"w":99,"k":"help","bg":4},
+ {"w":106,"k":"listo","bg":5}
+]
