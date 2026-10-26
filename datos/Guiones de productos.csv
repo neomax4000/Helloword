@@ -1,0 +1,36 @@
+﻿Producto,Categoría,Horizonte,Liquidez,Calificación,Prioridad,Estado,Ficha,Datos al,Cumplimiento
+ACTIREN,Deuda en pesos,Corto,Compra y venta todos los días hábiles · liquidación mismo día,AAA/2 HR,Alta,Guion listo,https://actinver.com/actiren,"March 31, 2026",Pendiente
+ACTIGOB,Deuda en pesos,Corto,Compra y venta todos los días hábiles · liquidación mismo día,AAA/2 HR,Alta,Producido,https://actinver.com/actigob,"March 31, 2026",Pendiente
+ACTIMED,Deuda en pesos,Mediano,Compra y venta todos los días hábiles · liquidación 24 h,AAA/3 HR,Alta,Guion listo,https://actinver.com/actimed,"March 31, 2026",Pendiente
+ALTERN,Deuda en pesos,Largo,Compra y venta todos los días hábiles · liquidación 24 h,AAA/2 HR,Media,Guion listo,https://actinver.com/altern,"March 31, 2026",Pendiente
+PROTEGE,Deuda especializada,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/protege,"March 31, 2026",Pendiente
+ACTDUAL,Deuda especializada,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/actdual,"March 31, 2026",Pendiente
+MAXIMO,Deuda especializada,Mediano,"Compra y venta TRIMESTRAL (penúltimo día hábil de feb, may, ago y nov) · liquidación 24 h",AA/2 HR (la ficha dice «AA2/HR»),Baja,Guion listo,https://actinver.com/maximo,"March 31, 2026",Pendiente
+ACTIG+,Deuda especializada,Mediano,Compra y venta ANUAL · liquidación 48 h,AA/3 HR,Alta,Guion listo,https://actinver.com/actig-,"March 31, 2026",Pendiente
+ACTIG+2,Deuda especializada,Mediano,Compra y venta ANUAL · liquidación 48 h,AAA/1 HR,Media,Guion listo,https://actinver.com/actig-2,"March 31, 2026",Pendiente
+ACTICOB,Deuda en dólares,Corto,Compra y venta cualquier día hábil · liquidación 48 h,AAA/3 HR,Alta,Guion listo,https://actinver.com/acticob,"March 31, 2026",Pendiente
+ESCALA,Deuda en dólares,Largo,Compra y venta todos los días hábiles · liquidación 48 h,AAA/3 HR,Media,Guion listo,https://actinver.com/escala,"March 31, 2026",Pendiente
+ACTIPLU,Deuda en dólares,Mediano,Compra y venta todos los días hábiles · liquidación 48 h,AAA/4 HR,Baja,Guion listo,https://actinver.com/actiplu,"March 31, 2026",Pendiente
+ACTIEUR,Deuda en otras divisas,Corto,Compra y venta todos los días hábiles · liquidación 48 h,N/A,Baja,Guion listo,https://actinver.com/actieur,"March 31, 2026",Pendiente
+ACTVIDA,Multiactivos,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/actvida,"March 31, 2026",Pendiente
+IMPULSA,Multiactivos,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/impulsa,"March 31, 2026",Pendiente
+DINAMO,Multiactivos,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/dinamo,"March 31, 2026",Pendiente
+ACT2030,Ciclos de vida,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/act2030,"March 31, 2026",Pendiente
+ACT2035,Ciclos de vida,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/act2035,"March 31, 2026",Pendiente
+ACT2040,Ciclos de vida,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Alta,Guion listo,https://actinver.com/act2040,"March 31, 2026",Pendiente
+ACT4560,Ciclos de vida,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/act4560,"March 31, 2026",Pendiente
+ACTIVAR,Renta variable local,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/activar,"March 31, 2026",Pendiente
+MAYA,Renta variable local,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/maya,"March 31, 2026",Pendiente
+ACTICRE,Renta variable local,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Baja,Guion listo,https://actinver.com/acticre,"March 31, 2026",Pendiente
+ACTIED,Renta variable local,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/actied,"March 31, 2026",Pendiente
+ACTI500,Renta variable global,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Alta,Producido,https://actinver.com/acti500,"March 31, 2026",Pendiente
+ACTIRVT,Renta variable global,Largo,Compras en días que fija el Consejo · ventas anuales al concluir el periodo de protección · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/actirvt,"March 31, 2026",Pendiente
+JPMRVUS,Renta variable global,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/jpmrvus,"March 31, 2026",Pendiente
+ESFERA,Renta variable global,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Baja,Guion listo,https://actinver.com/esfera,"March 31, 2026",Pendiente
+OPORT1,Renta variable global,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Baja,Guion listo,https://actinver.com/oport1,"March 31, 2026",Pendiente
+ACTIAI,Renta variable global,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Alta,Guion listo,https://actinver.com/actiai,"March 31, 2026",Pendiente
+ROBOTIK,Renta variable global,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/robotik,"March 31, 2026",Pendiente
+SALUD,Renta variable global,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Media,Guion listo,https://actinver.com/salud,"March 31, 2026",Pendiente
+TEMATIK,Renta variable global,Largo,Compra y venta todos los días hábiles · liquidación 24 h,N/A,Baja,Guion listo,https://actinver.com/tematik,"March 31, 2026",Pendiente
+Pagaré Platinum,Banco · inversión a plazo,Plazo fijo,"Al vencimiento (Platinum: 28, 91, 180 o 364 días; Flexible: 21 a 179 días)",Protección IPAB,Alta,Guion listo,https://actinver.com/pagare,"October 20, 2026",Pendiente
+CD Platinum,Banco · inversión a plazo,Plazo fijo,Al vencimiento (plazos de 6 a 12 meses),Protección IPAB,Alta,Guion listo,https://actinver.com/cd-platinum,"October 20, 2026",Pendiente
