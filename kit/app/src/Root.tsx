@@ -17,6 +17,7 @@ import {Acticob, AC_TOTAL} from './acticob';
 import {Activar, AV_TOTAL} from './activar';
 import {Maya, MY_TOTAL} from './maya';
 import {Acticre, AR_TOTAL} from './acticre';
+import {Actied, AE_TOTAL} from './actied';
 import {Protege, PR_TOTAL} from './protege';
 import {Actdual, AD_TOTAL} from './actdual';
 import bancaData from '../public/banca/words.json';
@@ -224,6 +225,15 @@ const ActicreMain: React.FC = () => {
   }, [handle]);
   return <Acticre />;
 };
+const ActiedMain: React.FC = () => {
+  const [handle] = useState(() => delayRender('fuentes'));
+  useEffect(() => {
+    Promise.all(['300', '400', '500', '600', '700'].map((w) => (document as any).fonts.load(`${w} 40px Poppins`)))
+      .catch(() => null)
+      .then(() => continueRender(handle));
+  }, [handle]);
+  return <Actied />;
+};
 const cv = (cover: CoverProps, C: React.FC) => () => <WithCover cover={cover}><C /></WithCover>;
 const COVERS: Record<string, CoverProps> = {
   Sp500: {tag: 'DATO ACTINVER', light: 'El índice', bold: 'S&P 500', sub: '¿Qué es y por qué importa?', icon: 'chart'},
@@ -241,6 +251,7 @@ const COVERS: Record<string, CoverProps> = {
   Activar: {tag: 'RENTA VARIABLE LOCAL · 1', light: 'Fondo', bold: 'ACTIVAR', sub: 'La bolsa mexicana en un solo fondo', icon: 'chart'},
   Maya: {tag: 'RENTA VARIABLE LOCAL · 2', light: '¿Seguir al índice', bold: 'o superarlo?', sub: 'ACTIVAR y MAYA, frente a frente', icon: 'chart'},
   Acticre: {tag: 'RENTA VARIABLE LOCAL · 3', light: 'Fondo', bold: 'ACTICRE', sub: '¿Habías escuchado de la inversión en valor?', icon: 'chart'},
+  Actied: {tag: 'RENTA VARIABLE LOCAL · 4', light: 'Fondo', bold: 'ACTIED', sub: '¿Crees que el nearshoring va a cambiar a México?', icon: 'path'},
   Narrador: {tag: 'MI HISTORIA', light: 'Mi', bold: 'Carrera', sub: 'Cómo llegué hasta aquí', icon: 'path', logo: false},
 };
 const FondosC = cv(COVERS.Fondos, FondosMain);
@@ -255,6 +266,7 @@ const ActdualC = cv(COVERS.Actdual, ActdualMain);
 const ActivarC = cv(COVERS.Activar, ActivarMain);
 const MayaC = cv(COVERS.Maya, MayaMain);
 const ActicreC = cv(COVERS.Acticre, ActicreMain);
+const ActiedC = cv(COVERS.Actied, ActiedMain);
 const Sp500C = cv(COVERS.Sp500, Sp500Main), BancaC = cv(COVERS.Banca, BancaMain), InteresC = cv(COVERS.Interes, InteresMain), NarradorC = cv(COVERS.Narrador, NarradorMain);
 
 export const Root: React.FC = () => (
@@ -289,6 +301,8 @@ export const Root: React.FC = () => (
     <Composition id="MayaC" component={MayaC} durationInFrames={sec(MY_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Acticre" component={ActicreMain} durationInFrames={sec(AR_TOTAL)} fps={FPS} width={W} height={H} />
     <Composition id="ActicreC" component={ActicreC} durationInFrames={sec(AR_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="Actied" component={ActiedMain} durationInFrames={sec(AE_TOTAL)} fps={FPS} width={W} height={H} />
+    <Composition id="ActiedC" component={ActiedC} durationInFrames={sec(AE_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Sp500C" component={Sp500C} durationInFrames={sec(SP_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="BancaC" component={BancaC} durationInFrames={sec(bancaData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="InteresC" component={InteresC} durationInFrames={sec(interesData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
