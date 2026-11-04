@@ -1,0 +1,9 @@
+[
+ {"w":0,"k":"mattress","bg":0},{"w":13,"k":"nochange","bg":0},
+ {"w":26,"k":"inflation","bg":1},{"w":40,"k":"basket","bg":1},{"w":51,"k":"shrink","bg":1},
+ {"w":63,"k":"inst","bg":2},{"w":82,"k":"meta","bg":2},
+ {"w":94,"k":"follow","bg":3},{"w":107,"k":"accum","bg":3},{"w":119,"k":"idle","bg":3},
+ {"w":129,"k":"jobs","bg":4},{"w":140,"k":"options","bg":4},
+ {"w":147,"k":"cash","bg":5},{"w":163,"k":"notice","bg":5},
+ {"w":172,"k":"howmuch","bg":6},{"w":179,"k":"final","bg":6}
+]

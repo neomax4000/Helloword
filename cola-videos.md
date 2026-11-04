@@ -35,7 +35,7 @@ Cada corrida toma el PRIMER pendiente `[ ]` de su lista, lo produce, lo marca `[
 
 ## EDUCATIVO (tipo 2, sin marca, cierre «si te sirvió, dale like y sígueme»)
 Cada tema: gancho en pregunta fuerte, sin cifras de rendimiento ni promesas, fuentes institucionales (Banxico, CONDUSEF, CNBV, IPAB) cuando haya datos.
-- [ ] ¿Por qué tu dinero en el colchón pierde valor? (inflación)
+- [x] ¿Por qué tu dinero en el colchón pierde valor? (inflación) (2026-11-04)
 - [ ] ¿Qué es el IPAB y de verdad protege tu dinero?
 - [ ] ¿Qué es el Buró de Crédito y por qué no es una lista negra?
 - [ ] ¿Qué es la tasa de interés y por qué mueve todo?
