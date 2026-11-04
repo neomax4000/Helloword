@@ -18,6 +18,7 @@ import {Activar, AV_TOTAL} from './activar';
 import {Maya, MY_TOTAL} from './maya';
 import {Acticre, AR_TOTAL} from './acticre';
 import {Actied, AE_TOTAL} from './actied';
+import {Actiren, AR2_TOTAL} from './actiren';
 import {Pasact, PA_TOTAL} from './pasact';
 import {VacAd, VA_TOTAL} from './vacad';
 import {Protege, PR_TOTAL} from './protege';
@@ -236,6 +237,15 @@ const ActiedMain: React.FC = () => {
   }, [handle]);
   return <Actied />;
 };
+const ActirenMain: React.FC = () => {
+  const [handle] = useState(() => delayRender('fuentes'));
+  useEffect(() => {
+    Promise.all(['300', '400', '500', '600', '700'].map((w) => (document as any).fonts.load(`${w} 40px Poppins`)))
+      .catch(() => null)
+      .then(() => continueRender(handle));
+  }, [handle]);
+  return <Actiren />;
+};
 const PasactMain: React.FC = () => {
   const [handle] = useState(() => delayRender('fuentes'));
   useEffect(() => {
@@ -272,6 +282,7 @@ const COVERS: Record<string, CoverProps> = {
   Maya: {tag: 'RENTA VARIABLE LOCAL · 2', light: '¿Seguir al índice', bold: 'o superarlo?', sub: 'ACTIVAR y MAYA, frente a frente', icon: 'chart'},
   Acticre: {tag: 'RENTA VARIABLE LOCAL · 3', light: 'Fondo', bold: 'ACTICRE', sub: '¿Habías escuchado de la inversión en valor?', icon: 'chart'},
   Actied: {tag: 'RENTA VARIABLE LOCAL · 4', light: 'Fondo', bold: 'ACTIED', sub: '¿Crees que el nearshoring va a cambiar a México?', icon: 'path'},
+  Actiren: {tag: 'SERIE DEUDA EN PESOS · 1', light: 'Fondo', bold: 'ACTIREN', sub: '¿Dinero que vas a necesitar pronto?', icon: 'coins'},
   Pasact: {tag: 'FINANZAS FÁCILES', light: 'Fondo pasivo', bold: 'vs fondo activo', sub: 'Piloto automático o piloto manual', icon: 'chart'},
   VacAd: {tag: 'ACTINVER · ZURICH', light: 'Vida Ahorro', bold: 'Creciente', sub: 'Seguro de vida con ahorro', icon: 'coins'},
   Narrador: {tag: 'MI HISTORIA', light: 'Mi', bold: 'Carrera', sub: 'Cómo llegué hasta aquí', icon: 'path', logo: false},
@@ -289,6 +300,7 @@ const ActivarC = cv(COVERS.Activar, ActivarMain);
 const MayaC = cv(COVERS.Maya, MayaMain);
 const ActicreC = cv(COVERS.Acticre, ActicreMain);
 const ActiedC = cv(COVERS.Actied, ActiedMain);
+const ActirenC = cv(COVERS.Actiren, ActirenMain);
 const PasactC = cv(COVERS.Pasact, PasactMain);
 const VacAdC = cv(COVERS.VacAd, VacAdMain);
 const Sp500C = cv(COVERS.Sp500, Sp500Main), BancaC = cv(COVERS.Banca, BancaMain), InteresC = cv(COVERS.Interes, InteresMain), NarradorC = cv(COVERS.Narrador, NarradorMain);
@@ -327,6 +339,8 @@ export const Root: React.FC = () => (
     <Composition id="ActicreC" component={ActicreC} durationInFrames={sec(AR_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Actied" component={ActiedMain} durationInFrames={sec(AE_TOTAL)} fps={FPS} width={W} height={H} />
     <Composition id="ActiedC" component={ActiedC} durationInFrames={sec(AE_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="Actiren" component={ActirenMain} durationInFrames={sec(AR2_TOTAL)} fps={FPS} width={W} height={H} />
+    <Composition id="ActirenC" component={ActirenC} durationInFrames={sec(AR2_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Pasact" component={PasactMain} durationInFrames={sec(PA_TOTAL)} fps={FPS} width={W} height={H} />
     <Composition id="PasactC" component={PasactC} durationInFrames={sec(PA_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="VacAd" component={VacAdMain} durationInFrames={sec(VA_TOTAL)} fps={FPS} width={W} height={H} />

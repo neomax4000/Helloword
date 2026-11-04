@@ -5,7 +5,7 @@ Cada corrida toma el PRIMER pendiente `[ ]` de su lista, lo produce, lo marca `[
 
 ## SERIE (productos Actinver, tipo 1, marca Actinver) — guion en guiones/productos/<NOMBRE>.md
 (ACTIREN y ORION: guion en guiones/serie-deuda-en-pesos.md)
-- [ ] ACTIREN
+- [x] ACTIREN (2026-11-04)
 - [ ] ORION
 - [ ] ACTI500
 - [ ] ACTIEUR
