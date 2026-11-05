@@ -25,6 +25,7 @@ import {Pasact, PA_TOTAL} from './pasact';
 import {VacAd, VA_TOTAL} from './vacad';
 import {Protege, PR_TOTAL} from './protege';
 import {Actdual, AD_TOTAL} from './actdual';
+import {Orion, OR_TOTAL} from './orion';
 import bancaData from '../public/banca/words.json';
 import interesData from '../public/interes/words.json';
 import narrData from '../public/narrador/words.json';
@@ -213,6 +214,15 @@ const ActdualMain: React.FC = () => {
   }, [handle]);
   return <Actdual />;
 };
+const OrionMain: React.FC = () => {
+  const [handle] = useState(() => delayRender('fuentes'));
+  useEffect(() => {
+    Promise.all(['300', '400', '500', '600', '700'].map((w) => (document as any).fonts.load(`${w} 40px Poppins`)))
+      .catch(() => null)
+      .then(() => continueRender(handle));
+  }, [handle]);
+  return <Orion />;
+};
 const ActivarMain: React.FC = () => {
   const [handle] = useState(() => delayRender('fuentes'));
   useEffect(() => {
@@ -290,6 +300,7 @@ const COVERS: Record<string, CoverProps> = {
   Acticob: {tag: 'SERIE DEL DÓLAR · 1', light: 'Fondo', bold: 'ACTICOB', sub: 'Para tus gastos y metas en dólares', icon: 'coins'},
   Protege: {tag: 'SERIE DEL DÓLAR · 2', light: 'Fondo', bold: 'PROTEGE', sub: 'Deuda del gobierno de EE.UU.', icon: 'shield'},
   Actdual: {tag: 'SERIE DEL DÓLAR · 3', light: 'Fondo', bold: 'ACTDUAL', sub: '¿Pesos o dólares? ¿Y si no eliges?', icon: 'coins'},
+  Orion: {tag: 'SERIE DEUDA EN PESOS · 3', light: 'Fondo', bold: 'ORION', sub: '¿Y si las tasas bajan?', icon: 'chart'},
   Activar: {tag: 'RENTA VARIABLE LOCAL · 1', light: 'Fondo', bold: 'ACTIVAR', sub: 'La bolsa mexicana en un solo fondo', icon: 'chart'},
   Maya: {tag: 'RENTA VARIABLE LOCAL · 2', light: '¿Seguir al índice', bold: 'o superarlo?', sub: 'ACTIVAR y MAYA, frente a frente', icon: 'chart'},
   Acticre: {tag: 'RENTA VARIABLE LOCAL · 3', light: 'Fondo', bold: 'ACTICRE', sub: '¿Habías escuchado de la inversión en valor?', icon: 'chart'},
@@ -309,6 +320,7 @@ const Vac2C = cv(COVERS.Vac2, Vac2Main);
 const ActicobC = cv(COVERS.Acticob, ActicobMain);
 const ProtegeC = cv(COVERS.Protege, ProtegeMain);
 const ActdualC = cv(COVERS.Actdual, ActdualMain);
+const OrionC = cv(COVERS.Orion, OrionMain);
 const ActivarC = cv(COVERS.Activar, ActivarMain);
 const MayaC = cv(COVERS.Maya, MayaMain);
 const ActicreC = cv(COVERS.Acticre, ActicreMain);
@@ -346,6 +358,8 @@ export const Root: React.FC = () => (
     <Composition id="ProtegeC" component={ProtegeC} durationInFrames={sec(PR_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Actdual" component={ActdualMain} durationInFrames={sec(AD_TOTAL)} fps={FPS} width={W} height={H} />
     <Composition id="ActdualC" component={ActdualC} durationInFrames={sec(AD_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="Orion" component={OrionMain} durationInFrames={sec(OR_TOTAL)} fps={FPS} width={W} height={H} />
+    <Composition id="OrionC" component={OrionC} durationInFrames={sec(OR_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Activar" component={ActivarMain} durationInFrames={sec(AV_TOTAL)} fps={FPS} width={W} height={H} />
     <Composition id="ActivarC" component={ActivarC} durationInFrames={sec(AV_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Maya" component={MayaMain} durationInFrames={sec(MY_TOTAL)} fps={FPS} width={W} height={H} />
