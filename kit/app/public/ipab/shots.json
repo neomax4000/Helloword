@@ -1,0 +1,9 @@
+[
+ {"w":0,"k":"bankfall","bg":0},{"w":11,"k":"neither","bg":0},
+ {"w":23,"k":"intro","bg":1},{"w":36,"k":"pays","bg":1},{"w":48,"k":"limit","bg":1},
+ {"w":60,"k":"udi","bg":2},{"w":77,"k":"follow","bg":2},
+ {"w":89,"k":"covered","bg":3},{"w":105,"k":"notcovered","bg":3},{"w":120,"k":"fund","bg":3},
+ {"w":134,"k":"perbank","bg":4},{"w":147,"k":"real","bg":4},
+ {"w":164,"k":"review","bg":5},{"w":177,"k":"notice","bg":5},
+ {"w":186,"k":"howmuch","bg":6},{"w":195,"k":"final","bg":6}
+]

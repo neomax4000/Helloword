@@ -1,0 +1,14 @@
+import {bundle} from '@remotion/bundler';
+import {renderStill, selectComposition, openBrowser} from '@remotion/renderer';
+import fs from 'fs';
+const out = process.argv[2] || '/tmp/frames_ipab';
+fs.mkdirSync(out, {recursive: true});
+const ts = [1, 3, 7, 10, 14, 19, 23, 28, 31, 35, 41, 45, 51, 55, 60, 66, 69, 73, 75];
+const serveUrl = await bundle({entryPoint: '/home/claude/video/app/src/index.ts', onProgress: () => {}});
+const browser = await openBrowser('chrome', {browserExecutable: '/tmp/chromium', chromeMode: 'headless-shell', chromiumOptions: {gl: 'swangle'}});
+const comp = await selectComposition({serveUrl, id: 'Ipab', puppeteerInstance: browser});
+for (const t of ts) await renderStill({composition: comp, serveUrl, frame: Math.round(t * 30), output: `${out}/f_${String(t).padStart(2, '0')}.png`, puppeteerInstance: browser, scale: 0.3});
+const c = await selectComposition({serveUrl, id: 'IpabC', puppeteerInstance: browser});
+await renderStill({composition: c, serveUrl, frame: 30, output: `${out}/cover.png`, puppeteerInstance: browser, scale: 0.3});
+await browser.close({silent: true});
+console.log('ok');
