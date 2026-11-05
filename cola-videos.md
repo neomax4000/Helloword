@@ -7,7 +7,7 @@ Cada corrida toma el PRIMER pendiente `[ ]` de su lista, lo produce, lo marca `[
 (ACTIREN y ORION: guion en guiones/serie-deuda-en-pesos.md)
 - [x] ACTIREN (2026-11-04)
 - [x] ORION (2026-11-04)
-- [ ] ACTI500
+- [x] ACTI500 (2026-11-05)
 - [ ] ACTIEUR
 - [ ] ACTIAI
 - [ ] ACTIRVT
