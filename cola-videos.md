@@ -8,7 +8,7 @@ Cada corrida toma el PRIMER pendiente `[ ]` de su lista, lo produce, lo marca `[
 - [x] ACTIREN (2026-11-04)
 - [x] ORION (2026-11-04)
 - [x] ACTI500 (2026-11-05)
-- [ ] ACTIEUR
+- [x] ACTIEUR (2026-11-05)
 - [ ] ACTIAI
 - [ ] ACTIRVT
 - [ ] JPMRVUS
