@@ -21,8 +21,15 @@ Brandon Ramírez Salas, Banquero Patrimonial en Actinver (Zapopan). Hace videos 
 - Sin promesas ni cifras de rendimiento; «el valor puede subir o bajar»; «no es garantía»; evitar dobles sentidos.
 - Legales: fondos → aviso del Folleto literal (en `kit/app/src/actimed.tsx`, const LEGAL); Pagaré/CD → leyenda IPAB 400 mil UDIS; VAC → pendiente texto oficial de Cumplimiento; en VAC decir «instrumento», Zurich sin logo.
 - Si grabó su voz y dijo algo de más, se corta. Los videos ya hechos que le gustan no se tocan.
-- Nada se publica sin visto bueno de Cumplimiento: al entregar, lista los pendientes.
-- Entrega: MP4 720×1280 + portada PNG + descripción + hashtags. Él sube los videos a Notion y redes.
+- Cumplimiento: desde el 2026-11-06 Brandon decidió que NO hace falta visto bueno de Cumplimiento para subir, porque el TikTok es personal y no oficial de Actinver. Los videos se programan solos. Al entregar, solo menciona (informativo, sin frenar) los puntos por vigilar: logo Actinver, textos legales y cualquier cifra.
+- Publicación automática (Metricool, marca 7551486, TikTok brandonmichaels2, zona America/Mexico_City): al terminar el render, programa el video tú misma(o) sin preguntar. Pasos:
+  1. Elige el horario con `getBestTimeToPostByNetwork` (tiktok, próximos 7 días) y `getScheduledPosts`: la hora con mayor valor que sea al menos 2 h en el futuro, en punto, que no esté ocupada ni a menos de 3 h de otra publicación, máximo 3 por día. Hoy las horas fuertes son 10:00, 12:00 y 18:00.
+  2. Metricool necesita URL pública: sube el MP4 a la rama temporal `publicar-temp` del repo (worktree aparte, `git push origin <rama>:publicar-temp`, sin force), usa `https://raw.githubusercontent.com/neomax4000/Helloword/publicar-temp/v/<archivo>.mp4`.
+  3. `createScheduledPost` con network tiktok, autoPublish true, `tiktokData.isAigc` true (voz sintética), texto = descripción + hashtags (con «el valor puede subir o bajar; no es garantía» en productos).
+  4. Confirma que la respuesta trae media en `static.metricool.com` y luego borra el MP4 de la rama con un commit normal (`git rm`) y push. Nunca force-push ni borrar la rama.
+  5. Si algo falla, entrega el MP4 por SendUserFile y dilo.
+- Mantén el MP4 fuera de `main`; solo código, guiones y portadas se quedan en el repo.
+- Entrega: MP4 720×1280 + portada PNG + descripción + hashtags + día y hora en que quedó programado en Metricool. Él sube los videos a Notion.
 
 ## Para un video nuevo
 1. Si es importante, propone plan (audiencia, mensaje, acción, formato) antes de producir.
