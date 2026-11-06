@@ -25,6 +25,7 @@ import {Actied, AE_TOTAL} from './actied';
 import {Actiren, AR2_TOTAL} from './actiren';
 import {Acti500, A5_TOTAL} from './acti500';
 import {Actieur, AU_TOTAL} from './actieur';
+import {Actiai, AU_TOTAL as AI_TOTAL} from './actiai';
 import {Pasact, PA_TOTAL} from './pasact';
 import {VacAd, VA_TOTAL} from './vacad';
 import {Protege, PR_TOTAL} from './protege';
@@ -300,6 +301,15 @@ const ActieurMain: React.FC = () => {
   }, [handle]);
   return <Actieur />;
 };
+const ActiaiMain: React.FC = () => {
+  const [handle] = useState(() => delayRender('fuentes'));
+  useEffect(() => {
+    Promise.all(['300', '400', '500', '600', '700'].map((w) => (document as any).fonts.load(`${w} 40px Poppins`)))
+      .catch(() => null)
+      .then(() => continueRender(handle));
+  }, [handle]);
+  return <Actiai />;
+};
 const PasactMain: React.FC = () => {
   const [handle] = useState(() => delayRender('fuentes'));
   useEffect(() => {
@@ -340,6 +350,7 @@ const COVERS: Record<string, CoverProps> = {
   Actiren: {tag: 'SERIE DEUDA EN PESOS · 1', light: 'Fondo', bold: 'ACTIREN', sub: '¿Dinero que vas a necesitar pronto?', icon: 'coins'},
   Acti500: {tag: 'DATO ACTINVER', light: 'Fondo', bold: 'ACTI500', sub: 'Las 500 empresas más grandes de EE.UU.', icon: 'chart'},
   Actieur: {tag: 'DATO ACTINVER', light: 'Fondo', bold: 'ACTIEUR', sub: '¿Solo piensas en el dólar?', icon: 'coins'},
+  Actiai: {tag: 'DATO ACTINVER', light: 'Fondo', bold: 'ACTIAI', sub: '¿Y si inviertes en la IA?', icon: 'chart'},
   Pasact: {tag: 'FINANZAS FÁCILES', light: 'Fondo pasivo', bold: 'vs fondo activo', sub: 'Piloto automático o piloto manual', icon: 'chart'},
   VacAd: {tag: 'ACTINVER · ZURICH', light: 'Vida Ahorro', bold: 'Creciente', sub: 'Seguro de vida con ahorro', icon: 'coins'},
   Inflacion: {tag: 'FINANZAS FÁCILES', light: '¿Tu dinero en el', bold: 'colchón pierde valor?', sub: 'Qué es la inflación, explicado fácil', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
@@ -363,6 +374,7 @@ const ActiedC = cv(COVERS.Actied, ActiedMain);
 const ActirenC = cv(COVERS.Actiren, ActirenMain);
 const Acti500C = cv(COVERS.Acti500, Acti500Main);
 const ActieurC = cv(COVERS.Actieur, ActieurMain);
+const ActiaiC = cv(COVERS.Actiai, ActiaiMain);
 const PasactC = cv(COVERS.Pasact, PasactMain);
 const VacAdC = cv(COVERS.VacAd, VacAdMain);
 const InflacionC = cv(COVERS.Inflacion, InflacionMain);
@@ -413,6 +425,8 @@ export const Root: React.FC = () => (
     <Composition id="Acti500C" component={Acti500C} durationInFrames={sec(A5_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Actieur" component={ActieurMain} durationInFrames={sec(AU_TOTAL)} fps={FPS} width={W} height={H} />
     <Composition id="ActieurC" component={ActieurC} durationInFrames={sec(AU_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="Actiai" component={ActiaiMain} durationInFrames={sec(AI_TOTAL)} fps={FPS} width={W} height={H} />
+    <Composition id="ActiaiC" component={ActiaiC} durationInFrames={sec(AI_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Pasact" component={PasactMain} durationInFrames={sec(PA_TOTAL)} fps={FPS} width={W} height={H} />
     <Composition id="PasactC" component={PasactC} durationInFrames={sec(PA_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="VacAd" component={VacAdMain} durationInFrames={sec(VA_TOTAL)} fps={FPS} width={W} height={H} />

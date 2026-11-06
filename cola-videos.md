@@ -9,7 +9,7 @@ Cada corrida toma el PRIMER pendiente `[ ]` de su lista, lo produce, lo marca `[
 - [x] ORION (2026-11-04)
 - [x] ACTI500 (2026-11-05)
 - [x] ACTIEUR (2026-11-05)
-- [ ] ACTIAI
+- [x] ACTIAI (2026-11-06)
 - [ ] ACTIRVT
 - [ ] JPMRVUS
 - [ ] ROBOTIK
