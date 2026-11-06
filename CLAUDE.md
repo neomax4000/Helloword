@@ -12,12 +12,22 @@ Brandon Ramírez Salas, Banquero Patrimonial en Actinver (Zapopan). Hace videos 
 - `datos/productos.py` — catálogo con fichas, liquidez, calificación y notas de cada producto.
 - Notion (Centro de Mando de IA): «Instructivo: cómo hacemos un video» y «Biblioteca de videos — cómo recrear cada uno» (ficha y capturas de los 15 videos).
 
+## Cadencia diaria (decisión 2026-11-06) y retención
+- 2 videos al día: **1 GLOSARIO todos los días** + **1 video principal** que alterna en ciclo de 3 días: **educativo, educativo, producto**. Ciclo desde el 2026-11-07: n = (fecha − 2026-11-07) mod 3 → 0 y 1 = educativo, 2 = producto. Se acabaron las rutinas de 5 am y 5 pm de la serie. Calidad antes que cantidad.
+- Revisión de métricas el 2026-11-20 (línea base en el proyecto Videos: `metricas-tiktok-2026-11-06.md`): subir/mantener ritmo solo si mejora la retención.
+- Motivo: tiempo promedio visto ≈ 3 s en videos de 50–80 s. Hay que subir la retención en TODOS los videos nuevos:
+  - Gancho en las primeras 8 palabras y desde la primera pantalla (sin intro ni logo ni portada). El primer fotograma ya muestra el tema en grande.
+  - Más velocidad: guion más corto (educativo ≈ 40–55 s, producto ≈ 45–60 s, glosario ≈ 20 s), voz a 1.05–1.1, pausas entre líneas ≤ 0.35 s, un corte o cambio visual cada ~1.5–2 s, sin escenas de relleno.
+  - La respuesta/valor llega antes del segundo 20; la llamada a seguirlo va a mitad, justo antes del punto más relevante.
+  - Educativo/relatable rinde mejor que producto: en producto, abrir con el problema del cliente, no con el nombre del fondo.
+- Portada en TikTok: al programar sube también el PNG como `videoThumbnailUrl` en Metricool (puede ignorarse en cuentas personales). Buffer no acepta imagen de portada. Entrega siempre el PNG; Brandon puede ponerlo a mano desde la app de TikTok.
+
 ## Reglas de siempre
 - 100% animado, sin su cara. Voz por defecto: **Kokoro** (gratis). «La voz sintética que tienes» = Kokoro, no ElevenLabs.
   - Voz 3 (masculina): em_alex 0.6 + im_nicola 0.4. Voz 5 (femenina): ef_dora 0.7 + if_sara 0.3.
   - Diálogo: Ana (voz 5) pregunta, asesor (voz 3) responde.
 - Fondo cambia cada 2–3 escenas; muchos cortes, transiciones variadas, efectos **en las pausas** (no encima de la voz), música con ducking.
-- Siempre portada (1.5 s + PNG) y cierre: pregunta → «Escríbeme» → «Sígueme».
+- Portada: SOLO como PNG aparte (decisión 2026-11-06: la portada de 1.5 s al inicio del video restaba retención). El MP4 arranca directo con el gancho; `render_c.mjs XC` ya lo hace (el PNG sale de la composición con portada y el video de la base). Cierre: pregunta → «Escríbeme» → «Sígueme» (productos); educativo/glosario: «si te sirvió, dale like y sígueme».
 - Productos: marca Actinver (azul #041E42, ocre #B3A369 solo acento, crema #F5F3EE, Poppins). Educativo general puede ir sin marca.
 - Sin promesas ni cifras de rendimiento; «el valor puede subir o bajar»; «no es garantía»; evitar dobles sentidos.
 - Legales: fondos → aviso del Folleto literal (en `kit/app/src/actimed.tsx`, const LEGAL); Pagaré/CD → leyenda IPAB 400 mil UDIS; VAC → pendiente texto oficial de Cumplimiento; en VAC decir «instrumento», Zurich sin logo.

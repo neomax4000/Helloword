@@ -1,6 +1,6 @@
-# Cola de videos programados (3 al día)
+# Cola de videos programados (2 al día desde 2026-11-07: glosario diario + educativo, educativo, producto en ciclo; ver CLAUDE.md)
 
-Reglas: voz Kokoro. Horarios de producción (CDMX): 2:00 glosario · 5:00 serie · 11:00 educativo · 17:00 serie.
+Reglas: voz Kokoro. Horarios de producción (CDMX): 2:00 glosario · 11:00 video principal (educativo o SERIE de productos según el ciclo). Las rutinas de 5:00 y 17:00 se pausaron.
 Cada corrida toma el PRIMER pendiente `[ ]` de su lista, lo produce, lo marca `[x]` con fecha y hace commit + push.
 
 ## SERIE (productos Actinver, tipo 1, marca Actinver) — guion en guiones/productos/<NOMBRE>.md
