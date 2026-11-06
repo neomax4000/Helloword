@@ -26,15 +26,14 @@ const TW = (i: number) => words[i].s;
 /* escenas: palabra inicial, componente, fondo (cambia cada 2–3 escenas) */
 const SC = [
   {w: 0, k: 'bolsa', bg: 0},
-  {w: 12, k: 'intro', bg: 1},
-  {w: 21, k: 'usa', bg: 2},
-  {w: 29, k: 'mezcla', bg: 2},
-  {w: 42, k: 'piso', bg: 3},
-  {w: 53, k: 'cal', bg: 3},
-  {w: 67, k: 'consejo', bg: 4},
-  {w: 80, k: 'riesgo', bg: 4},
-  {w: 93, k: 'cta1', bg: 5},
-  {w: 104, k: 'end', bg: 5},
+  {w: 7, k: 'intro', bg: 0},
+  {w: 19, k: 'mezcla', bg: 1},
+  {w: 32, k: 'piso', bg: 2},
+  {w: 41, k: 'cal', bg: 2},
+  {w: 59, k: 'consejo', bg: 3},
+  {w: 70, k: 'riesgo', bg: 3},
+  {w: 82, k: 'cta1', bg: 4},
+  {w: 91, k: 'end', bg: 4},
 ];
 const TD = 12;
 const starts = SC.map((s, i) => (i === 0 ? 0 : F(TW(s.w) - 0.14)));
@@ -112,22 +111,23 @@ const Shield: React.FC<{x: number; y: number; s: number; c?: string; label?: str
 );
 
 const Bolsa: React.FC<P> = ({f, at, dark}) => {
-  const g = ease((f - (at(5) - 4)) / 26);
-  const pts = 'M100 1000 L260 880 L400 950 L560 740 L700 800 L900 640';
+  const g = ease((f - (at(1) - 4)) / 22);
+  const pts = 'M100 1000 L260 880 L400 950 L560 740 L700 800 L820 700';
   const e = evolvePath(g, pts);
-  const sh = sp(f, at(7) - 4, 12, 200);
-  const coin = sp(f, at(9) - 4, 10, 220);
+  const dn = ease((f - (at(5) - 6)) / 12);
+  const e2 = evolvePath(dn, 'M820 700 L930 980');
+  const sh = sp(f, at(6) - 6, 12, 200);
   return (
     <AbsoluteFill>
-      <Head light="Bolsa" bold="americana" f={f} dark={dark} size={118} />
+      <Head light="¿Bolsa pero" bold="con miedo?" f={f} dark={dark} size={108} />
       <Svg>
         <line x1={100} y1={1060} x2={980} y2={1060} stroke="rgba(245,243,238,0.4)" strokeWidth={4} />
         <path d={pts} stroke={OK} strokeWidth={18} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={e.strokeDasharray} strokeDashoffset={e.strokeDashoffset} />
-        <Shield x={400} y={1260} s={0.8 * sh} />
-        <Coin x={700} y={1250} r={105} t="$" k={coin} c={WARM} fs={120} />
+        <path d="M820 700 L930 980" stroke="#D9534F" strokeWidth={18} fill="none" strokeLinecap="round" strokeDasharray={e2.strokeDasharray} strokeDashoffset={e2.strokeDashoffset} />
+        <Shield x={540} y={1260} s={0.8 * sh} />
       </Svg>
-      <Pill text="CAPITAL EN PESOS" x={540} y={1450} k={sp(f, at(9))} c={NAVY2} tc={WARM} size={44} />
-      <Note text="Ilustración, no representa datos reales." f={f} d={at(5)} dark={dark} top={1498} />
+      <Pill text="MIEDO A PERDER" x={540} y={1450} k={sp(f, at(5))} c={NAVY2} tc={WARM} size={44} />
+      <Note text="Ilustración, no representa datos reales." f={f} d={at(1)} dark={dark} top={1498} />
     </AbsoluteFill>
   );
 };
@@ -136,7 +136,7 @@ const Intro: React.FC<P> = ({f, at}) => {
   const a = sp(f, 4, 10, 220);
   const b = sp(f, 9, 10, 220);
   const line = ease((f - 14) / 16);
-  const logo = sp(f, at(17));
+  const logo = sp(f, at(11));
   const e = evolvePath(line, 'M100 980 H860');
   return (
     <AbsoluteFill>
@@ -151,10 +151,10 @@ const Intro: React.FC<P> = ({f, at}) => {
       <Svg>
         <path d="M100 980 H860" stroke={WARM} strokeWidth={6} strokeLinecap="round" strokeDasharray={e.strokeDasharray} strokeDashoffset={e.strokeDashoffset} />
       </Svg>
-      <div style={{position: 'absolute', left: 100, top: 1020, fontFamily: FONT, fontSize: 42, color: WARM, opacity: ease((f - at(15)) / 10)}}>Fondo de renta variable internacional</div>
+      <div style={{position: 'absolute', left: 100, top: 1020, fontFamily: FONT, fontSize: 42, color: WARM, opacity: ease((f - at(10)) / 10)}}>Fondo de renta variable internacional</div>
       <Img src={staticFile('logo_blanco.png')} style={{position: 'absolute', left: 100, top: 1110, width: 300, opacity: cl(logo * 1.5), transform: `scale(${0.8 + 0.2 * logo})`, transformOrigin: 'left center'}} />
-      <div style={{position: 'absolute', left: 100, top: 1250, fontFamily: FONT, fontSize: 40, color: WARM, opacity: ease((f - at(18)) / 10)}}>Referenciado a la bolsa de EE.UU.</div>
-      <Pill text="CAPITAL PROTEGIDO" x={360} y={1400} k={sp(f, at(19) + 2)} size={50} />
+      <div style={{position: 'absolute', left: 100, top: 1250, fontFamily: FONT, fontSize: 40, color: WARM, opacity: ease((f - at(14)) / 10)}}>Referenciado a la bolsa de EE.UU.</div>
+      <Pill text="CAPITAL PROTEGIDO" x={360} y={1400} k={sp(f, at(13))} size={50} />
       <Sequence from={0} durationInFrames={40}>
         <AbsoluteFill style={{mixBlendMode: 'screen', opacity: 0.4}}>
           <LightLeak seed={7} hueShift={30} durationInFrames={40} />
@@ -164,35 +164,9 @@ const Intro: React.FC<P> = ({f, at}) => {
   );
 };
 
-const Usa: React.FC<P> = ({f, at, dark}) => {
-  const k = sp(f, 4, 12, 200);
-  const g = ease((f - (at(25) - 4)) / 26);
-  const pts = 'M180 1180 L320 1090 L440 1140 L600 960 L720 1010 L880 880';
-  const e = evolvePath(g, pts);
-  const wave = Math.sin(f / 9) * 6;
-  return (
-    <AbsoluteFill>
-      <Head light="Referenciado" bold="a EE.UU." f={f} dark={dark} size={112} />
-      <Svg>
-        <defs><clipPath id="flg"><rect x={-320} y={-200} width={640} height={400} rx={28} /></clipPath></defs>
-        <g transform={`translate(540 880) scale(${k}) translate(0 ${wave})`}>
-          <g clipPath="url(#flg)">
-            {new Array(7).fill(0).map((_, i) => <rect key={i} x={-320} y={-200 + i * (400 / 7)} width={640} height={400 / 7 + 1} fill={i % 2 === 0 ? '#C4403D' : '#F5F3EE'} />)}
-            <rect x={-320} y={-200} width={280} height={215} fill="#1F3A7A" />
-            {new Array(12).fill(0).map((_, i) => <circle key={i} cx={-290 + (i % 4) * 70 + 20} cy={-165 + Math.floor(i / 4) * 60 + 10} r={9} fill="#F5F3EE" />)}
-          </g>
-          <rect x={-320} y={-200} width={640} height={400} rx={28} fill="none" stroke={NAVY} strokeWidth={8} />
-        </g>
-        <path d={pts} stroke={OK} strokeWidth={16} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={e.strokeDasharray} strokeDashoffset={e.strokeDashoffset} />
-      </Svg>
-      <Pill text="BOLSA DE VALORES AMERICANA" x={540} y={1400} k={sp(f, at(25))} c={NAVY2} tc={WARM} size={38} />
-    </AbsoluteFill>
-  );
-};
-
 const Mezcla: React.FC<P> = ({f, at, dark}) => {
-  const gov = sp(f, at(33) - 5, 12, 200);
-  const bol = sp(f, at(37) - 5, 12, 200);
+  const gov = sp(f, at(23) - 5, 12, 200);
+  const bol = sp(f, at(30) - 5, 12, 200);
   const bars = [90, 150, 120, 200, 170];
   return (
     <AbsoluteFill>
@@ -209,17 +183,17 @@ const Mezcla: React.FC<P> = ({f, at, dark}) => {
           {bars.map((h, i) => <rect key={i} x={-110 + i * 46} y={90 - h * 0.9} width={32} height={h * 0.9} rx={6} fill={NAVY} />)}
         </g>
       </Svg>
-      <Pill text="DEUDA GUBERNAMENTAL" x={330} y={1360} k={sp(f, at(33))} c={NAVY2} tc={WARM} size={32} />
-      <Pill text="BOLSA DE EE.UU." x={760} y={1440} k={sp(f, at(37))} c={NAVY2} tc={WARM} size={34} />
-      <Note text="Ilustración, no representa la composición exacta del fondo." f={f} d={at(33)} dark={dark} top={1498} />
+      <Pill text="DEUDA GUBERNAMENTAL" x={330} y={1360} k={sp(f, at(23))} c={NAVY2} tc={WARM} size={32} />
+      <Pill text="BOLSA DE EE.UU." x={760} y={1440} k={sp(f, at(30))} c={NAVY2} tc={WARM} size={34} />
+      <Note text="Ilustración, no representa la composición exacta del fondo." f={f} d={at(23)} dark={dark} top={1498} />
     </AbsoluteFill>
   );
 };
 
 const Piso: React.FC<P> = ({f, at, dark}) => {
-  const fl = sp(f, at(43) - 4, 12, 200);
-  const coin = sp(f, at(45) - 4, 12, 200);
-  const fall = ease((f - (at(50) - 6)) / 22);
+  const fl = sp(f, at(33) - 4, 12, 200);
+  const coin = sp(f, at(35) - 4, 12, 200);
+  const fall = ease((f - (at(39) - 6)) / 20);
   const pts = 'M100 600 L260 700 L380 650 L560 860 L680 820 L880 1080';
   const e = evolvePath(fall, pts);
   return (
@@ -230,22 +204,22 @@ const Piso: React.FC<P> = ({f, at, dark}) => {
         <Coin x={540} y={1040} r={105} t="$" k={coin} c={WARM} fs={120} />
         <path d={pts} stroke="#D9534F" strokeWidth={16} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={e.strokeDasharray} strokeDashoffset={e.strokeDashoffset} />
       </Svg>
-      <Pill text="PROTECCIÓN DE CAPITAL" x={540} y={1290} k={sp(f, at(43))} c={NAVY2} tc={WARM} size={42} />
-      <Note text="Ilustración. La protección aplica al concluir el periodo; no es garantía." f={f} d={at(43)} dark={dark} top={1498} />
+      <Pill text="PROTECCIÓN DE CAPITAL" x={540} y={1290} k={sp(f, at(33))} c={NAVY2} tc={WARM} size={42} />
+      <Note text="Ilustración. La protección aplica al concluir el periodo; no es garantía." f={f} d={at(33)} dark={dark} top={1498} />
     </AbsoluteFill>
   );
 };
 
 const Cal: React.FC<P> = ({f, at, dark}) => {
-  const stamp = sp(f, at(64) - 4, 9, 220);
-  const sh = sp(f, at(61) + 6, 12, 200);
+  const stamp = sp(f, at(56) - 4, 9, 220);
+  const sh = sp(f, at(53) + 6, 12, 200);
   const months = ['E', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
   return (
     <AbsoluteFill>
       <Head light="Periodo" bold="de protección" f={f} dark={dark} size={100} />
       <div style={{position: 'absolute', left: 90, right: 90, top: 590, display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center'}}>
         {months.map((m, i) => {
-          const on = ease((f - (at(58) + i * 3)) / 8);
+          const on = ease((f - (at(48) + i * 3)) / 8);
           return (
             <div key={i} style={{width: 210, height: 120, borderRadius: 22, background: on > 0.5 ? OCRE : WARM, fontFamily: FONT, fontWeight: 700, fontSize: 56, color: NAVY, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 24px rgba(0,0,0,0.22)'}}>{m}</div>
           );
@@ -258,13 +232,13 @@ const Cal: React.FC<P> = ({f, at, dark}) => {
           <text textAnchor="middle" y={24} fontFamily={FONT} fontWeight={700} fontSize={64} fill={OCRE}>VENTAS ANUALES</text>
         </g>
       </Svg>
-      <Note text="La protección aplica una vez concluido el periodo." f={f} d={at(61)} dark={dark} top={1400} />
+      <Note text="La protección aplica una vez concluido el periodo." f={f} d={at(53)} dark={dark} top={1400} />
     </AbsoluteFill>
   );
 };
 
 const Consejo: React.FC<P> = ({f, at, dark}) => {
-  const hi = [{c: 2, r: 1, w: 73}, {c: 5, r: 2, w: 74}, {c: 1, r: 3, w: 75}];
+  const hi = [{c: 2, r: 1, w: 64}, {c: 5, r: 2, w: 65}, {c: 1, r: 3, w: 66}];
   const people = [380, 540, 700];
   return (
     <AbsoluteFill>
@@ -279,7 +253,7 @@ const Consejo: React.FC<P> = ({f, at, dark}) => {
       </div>
       <Svg>
         {people.map((x, i) => {
-          const k = sp(f, at(76) + i * 3, 10, 220);
+          const k = sp(f, at(67) + i * 3, 10, 220);
           return (
             <g key={x} transform={`translate(${x} 1290) scale(${k})`}>
               <circle cy={-34} r={36} fill={WARM} />
@@ -288,16 +262,16 @@ const Consejo: React.FC<P> = ({f, at, dark}) => {
           );
         })}
       </Svg>
-      <Pill text="FIJA EL CONSEJO DE ADMINISTRACIÓN" x={540} y={1440} k={sp(f, at(77))} c={NAVY2} tc={WARM} size={34} />
-      <Note text="Las fechas de compra las fija el Consejo; no hay disponibilidad todos los días." f={f} d={at(77)} dark={dark} top={1498} />
+      <Pill text="FIJA EL CONSEJO DE ADMINISTRACIÓN" x={540} y={1440} k={sp(f, at(67))} c={NAVY2} tc={WARM} size={34} />
+      <Note text="Las fechas de compra las fija el Consejo; no hay disponibilidad todos los días." f={f} d={at(67)} dark={dark} top={1498} />
     </AbsoluteFill>
   );
 };
 
 const Riesgo: React.FC<P> = ({f, at, dark}) => {
-  const up = ease((f - at(86)) / 14);
-  const down = ease((f - at(88)) / 14);
-  const stamp = sp(f, at(90) - 3, 9, 240);
+  const up = ease((f - at(76)) / 14);
+  const down = ease((f - at(78)) / 14);
+  const stamp = sp(f, at(79) - 3, 9, 240);
   const path = 'M100 1040 L240 760 L380 960 L520 700 L640 900 L760 660';
   const path2 = 'M760 660 L900 980';
   const e1 = evolvePath(up, path);
@@ -314,15 +288,15 @@ const Riesgo: React.FC<P> = ({f, at, dark}) => {
           <text textAnchor="middle" y={26} fontFamily={FONT} fontWeight={700} fontSize={78} fill={OCRE}>NO ES GARANTÍA</text>
         </g>
       </Svg>
-      <Pill text="DURANTE EL PERIODO" x={540} y={1450} k={sp(f, at(82))} c={NAVY2} tc={WARM} size={44} />
-      <Note text="Ilustración, no representa datos reales." f={f} d={at(82)} dark={dark} top={1510} />
+      <Pill text="DURANTE EL PERIODO" x={540} y={1476} k={sp(f, at(72))} c={NAVY2} tc={WARM} size={44} />
+      <Note text="Ilustración, no representa datos reales." f={f} d={at(72)} dark={dark} top={1522} />
     </AbsoluteFill>
   );
 };
 
 const Cta1: React.FC<P> = ({f, at}) => {
   const k = sp(f, 2, 10, 200);
-  const q = sp(f, at(103), 10, 220);
+  const q = sp(f, at(90), 10, 220);
   const bars = [60, 100, 80, 130];
   return (
     <AbsoluteFill>
@@ -331,11 +305,11 @@ const Cta1: React.FC<P> = ({f, at}) => {
         <div style={{fontWeight: 700}}>A LA <span style={{color: OCRE}}>BOLSA?</span></div>
       </div>
       <Svg>
-        <g transform={`translate(300 1080) scale(${sp(f, at(99) - 6, 10, 220)})`}>
+        <g transform={`translate(300 1080) scale(${sp(f, at(88) - 6, 10, 220)})`}>
           <circle r={150} fill={WARM} />
           {bars.map((h, i) => <rect key={i} x={-85 + i * 45} y={70 - h} width={30} height={h} rx={6} fill={NAVY} />)}
         </g>
-        <Shield x={540} y={1080} s={0.7 * sp(f, at(101), 10, 220)} />
+        <Shield x={540} y={1080} s={0.7 * sp(f, at(89), 10, 220)} />
         <Coin x={790} y={1080} r={130} t="?" k={q * (1 + 0.04 * Math.sin(f / 5))} fs={190} />
       </Svg>
     </AbsoluteFill>
@@ -347,10 +321,10 @@ const LEGAL =
 
 const End: React.FC<P> = ({f, at}) => {
   const dm = sp(f, 2, 11, 200);
-  const send = ease((f - at(104)) / 10);
-  const card = sp(f, at(105) - 4, 11, 220);
-  const fol = sp(f, at(107), 10, 200);
-  const tap = f - at(110) - 4;
+  const send = ease((f - at(91)) / 10);
+  const card = sp(f, at(92) - 4, 11, 220);
+  const fol = sp(f, at(94), 10, 200);
+  const tap = f - at(97) - 4;
   const pressed = tap > 0 && tap < 8;
   const legalAt = F(LAST.e + 0.5) - starts[SC.length - 1];
   const fade = ease((f - legalAt) / 10);
@@ -383,7 +357,7 @@ const End: React.FC<P> = ({f, at}) => {
   );
 };
 
-const MAP: Record<string, React.FC<P>> = {bolsa: Bolsa, intro: Intro, usa: Usa, mezcla: Mezcla, piso: Piso, cal: Cal, consejo: Consejo, riesgo: Riesgo, cta1: Cta1, end: End};
+const MAP: Record<string, React.FC<P>> = {bolsa: Bolsa, intro: Intro, mezcla: Mezcla, piso: Piso, cal: Cal, consejo: Consejo, riesgo: Riesgo, cta1: Cta1, end: End};
 
 const Scene: React.FC<{idx: number}> = ({idx}) => {
   const f = useCurrentFrame();

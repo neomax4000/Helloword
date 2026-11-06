@@ -6,19 +6,18 @@ VO={'A':V["ef_dora"]*0.7+V["if_sara"]*0.3, 'B':V["em_alex"]*0.6+V["im_nicola"]*0
 SR=24000
 # (hablante, pantalla con *clave*, hablado, velocidad, pausa después)
 L=[
-('B',"¿Te gustaría invertir en la *bolsa americana*… cuidando tu *capital* en pesos?","¿Te gustaría invertir en la bolsa americana, cuidando tu capital en pesos?",.97,.55),
-('B',"*ACTIRVT* es un fondo de *Actinver* de *capital protegido*.","Acti, erre, ve, te, es un fondo de Actinver, de capital protegido.",.94,.55),
-('B',"Está *referenciado* a la *bolsa de valores americana*.","Está referenciado a la bolsa de valores americana.",.97,.55),
-('B',"Invierte sobre todo en *deuda gubernamental* y en instrumentos ligados a esa *bolsa*.","Invierte sobre todo en deuda gubernamental y en instrumentos ligados a esa bolsa.",.97,.55),
-('B',"Busca *proteger* tu *capital* en pesos ante posibles *bajas* del mercado.","Busca proteger tu capital en pesos ante posibles bajas del mercado.",.97,.55),
-('B',"La clave: la *protección* aplica al *concluir el periodo*, y las *ventas* son *anuales*.","La clave: la protección aplica al concluir el periodo, y las ventas son anuales.",.97,.5),
-('B',"Las *compras* son solo en los días que fija el *Consejo de Administración*.","Las compras son solo en los días que fija el Consejo de Administración.",.97,.55),
-('B',"Durante el periodo, el valor puede *subir* o *bajar*, y *no es garantía*.","Durante el periodo, el valor puede subir o bajar, y no es garantía.",.97,.55),
-('B',"¿Te animarías a entrar a la *bolsa* con *protección de capital*?","¿Te animarías a entrar a la bolsa con protección de capital?",.97,.45),
-('B',"*Escríbeme* y lo revisamos *juntos*.","Escríbeme, y lo revisamos juntos.",1.0,.12),
-('B',"Y *sígueme* para conocer más fondos de *Actinver*.","Y sígueme para conocer más fondos de Actinver.",1.0,0),
+('B',"¿Quieres *bolsa*, pero te da *miedo* perder?","¿Quieres bolsa, pero te da miedo perder?",1.07,.3),
+('B',"*ACTIRVT* es un fondo de *capital protegido*, referenciado a la *bolsa americana*.","Acti, erre, ve, te, es un fondo de capital protegido, referenciado a la bolsa americana.",1.04,.3),
+('B',"Invierte sobre todo en *deuda gubernamental* y en instrumentos ligados a esa *bolsa*.","Invierte sobre todo en deuda gubernamental y en instrumentos ligados a esa bolsa.",1.07,.3),
+('B',"Busca *proteger* tu *capital* en pesos ante posibles *bajas*.","Busca proteger tu capital en pesos ante posibles bajas.",1.07,.3),
+('B',"Y *sígueme*: la clave es que la *protección* aplica al *concluir el periodo*, y las *ventas* son *anuales*.","Y sígueme: la clave es que la protección aplica al concluir el periodo, y las ventas son anuales.",1.07,.3),
+('B',"Las *compras* son solo en los días que fija el *Consejo*.","Las compras son solo en los días que fija el Consejo.",1.07,.3),
+('B',"Durante el periodo, el valor puede *subir* o *bajar*. *No es garantía*.","Durante el periodo, el valor puede subir o bajar. No es garantía.",1.07,.3),
+('B',"¿Te animarías a entrar a la *bolsa* con *protección*?","¿Te animarías a entrar a la bolsa con protección?",1.07,.3),
+('B',"*Escríbeme* y lo revisamos *juntos*.","Escríbeme, y lo revisamos juntos.",1.05,.1),
+('B',"Y *sígueme* para más fondos de *Actinver*.","Y sígueme para más fondos de Actinver.",1.05,0),
 ]
-LEAD,TAIL=.3,5.6
+LEAD,TAIL=.1,5.6
 chunks=[np.zeros(int(LEAD*SR),np.float32)]; t=LEAD; words=[]; lines=[]; wi=0
 for li,(spk,pan,hab,spd,gap) in enumerate(L):
     s,_=k.create(hab,voice=VO[spk],speed=spd,lang="es")

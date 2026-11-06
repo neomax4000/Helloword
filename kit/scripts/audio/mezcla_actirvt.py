@@ -9,7 +9,7 @@ TOT=d['total']; N=int(TOT*SR); v=np.pad(v,(0,max(0,N-len(v))))[:N]; fx=np.zeros(
 F=lambda s: round(s*30)
 LN=d['lines']; WL=d['words']
 w0=lambda p: next(w['i'] for w in WL if w['p']==p)
-SCp=[0,1,2,3,4,5,6,7,8,9]
+SCp=[0,1,2,3,4,5,6,7,8]
 starts=[0]+[F(LN[p]['s']-0.14)/30 for p in SCp[1:]]
 rms=np.sqrt(np.mean(v[np.abs(v)>0.02]**2)); print('voz rms dB',round(20*np.log10(rms),1))
 def add(x,t,db):
@@ -27,19 +27,18 @@ for k,t in enumerate(starts[1:],1):
     if k==1: add(riser(0.6),t-0.6+0.05,-9); add(impact(),t+4/30,-5)
     else: add(whoosh(0.38,up=k%2==0),t-0.29,-7)
 # efectos en las pausas (antes de la palabra)
-add(pop(900),T(5)-4/30,-12); add(pop(1000),T(7)-4/30,-12); add(ding(1568,0.8),T(9)-4/30,-13)   # bolsa, escudo, moneda
-add(ding(1568,0.8),T(17)-4/30,-13); add(pop(900),T(19)-4/30,-12)                              # logo, capital protegido
-add(pop(900),T(25)-4/30,-12)                                                                  # bolsa EE.UU.
-add(pop(800),T(33)-4/30,-12); add(pop(1000),T(37)-4/30,-12)                                   # deuda, bolsa
-add(pop(900),T(43)-4/30,-12); add(pop(1100),T(45)-4/30,-12); add(down(),T(50)-2/30,-12)        # piso, moneda, caída
-for i in range(6): add(pop(750+i*70),T(58)+(i*6)/30-4/30,-14)                                 # meses
-add(ding(1318,0.8),T(61)+6/30,-13); add(stamp(),T(64)-3/30,-9)                                # escudo, ventas anuales
-for w in (73,74,75): add(pop(700+w*6),T(w)-4/30,-12)                                          # fechas
-add(pop(900),T(76)-4/30,-12); add(pop(1000),T(77)-4/30,-12)                                   # consejo
-add(bloop(),T(86)-4/30,-12); add(down(),T(88)-2/30,-12); add(stamp(),T(90)-3/30,-9)           # riesgo
-add(bloop(),T(99)-4/30,-12); add(bloop(),T(101)-4/30,-12); add(bloop(),T(103)-4/30,-12)       # pregunta
-add(bloop(),T(104)-0.35,-10); add(chaching(),T(104)+0.2,-14)                                  # escríbeme
-add(click(),T(110)+4/30,-9)                                                                   # sígueme
+add(pop(900),T(1)-4/30,-12); add(down(),T(5)-2/30,-12); add(ding(1568,0.8),T(6)-6/30,-13)      # bolsa, miedo, escudo
+add(ding(1568,0.8),T(11)-4/30,-13); add(pop(900),T(13)-4/30,-12)                              # logo, capital protegido
+add(pop(800),T(23)-4/30,-12); add(pop(1000),T(30)-4/30,-12)                                   # deuda, bolsa
+add(pop(900),T(33)-4/30,-12); add(pop(1100),T(35)-4/30,-12); add(down(),T(39)-2/30,-12)        # piso, moneda, caída
+for i in range(6): add(pop(750+i*70),T(48)+(i*6)/30-4/30,-14)                                 # meses
+add(ding(1318,0.8),T(53)+6/30,-13); add(stamp(),T(56)-3/30,-9)                                # escudo, ventas anuales
+for w in (64,65,66): add(pop(700+w*6),T(w)-4/30,-12)                                          # fechas
+add(pop(900),T(67)-4/30,-12); add(pop(1000),T(67)+3/30,-12)                                   # consejo
+add(bloop(),T(76)-4/30,-12); add(down(),T(78)-2/30,-12); add(stamp(),T(79)-3/30,-9)           # riesgo
+add(bloop(),T(88)-4/30,-12); add(bloop(),T(89)-4/30,-12); add(bloop(),T(90)-4/30,-12)         # pregunta
+add(bloop(),T(91)-0.35,-10); add(chaching(),T(91)+0.2,-14)                                    # escríbeme
+add(click(),T(97)+4/30,-9)                                                                    # sígueme
 dur=N/SR
 subprocess.run(['python3','/home/claude/kit/musica2.py',str(dur),'/tmp/mus.wav',str(starts[2])],check=True)
 m,_=sf.read('/tmp/mus.wav',dtype='float32'); m=m[:N] if len(m)>=N else np.pad(m,((0,N-len(m)),(0,0)))
