@@ -8,7 +8,7 @@ Brandon Ramírez Salas, Banquero Patrimonial en Actinver (Zapopan). Hace videos 
 - `guiones/productos/` — guion base de 33 fondos + Pagaré Platinum + CD Platinum (datos al 31 mar 2026; revisar ficha vigente).
 - `guiones/videos-producidos/` — guion final y notas de los primeros videos.
 - `guiones/serie-deuda-en-pesos.md` — ACTIREN, ACTIGOB, ORION (producidos).
-- `cola-videos.md` — cola de producción: serie de productos, educativos largos y GLOSARIO FINANCIERO (mini videos de una palabra, ~20 s, plantilla `kit/app/src/cat.tsx`).
+- `cola-videos.md` — cola de producción: serie de productos, educativos largos y GLOSARIO FINANCIERO (mini videos de una palabra, ~20 s, plantilla `kit/app/src/glosario.tsx`, estilo claro).
 - `datos/productos.py` — catálogo con fichas, liquidez, calificación y notas de cada producto.
 - Notion (Centro de Mando de IA): «Instructivo: cómo hacemos un video» y «Biblioteca de videos — cómo recrear cada uno» (ficha y capturas de los 15 videos).
 
@@ -31,6 +31,15 @@ Brandon Ramírez Salas, Banquero Patrimonial en Actinver (Zapopan). Hace videos 
   5. Si algo falla, entrega el MP4 por SendUserFile y dilo.
 - Mantén el MP4 fuera de `main`; solo código, guiones y portadas se quedan en el repo.
 - Entrega: MP4 720×1280 + portada PNG + descripción + hashtags + día y hora en que quedó programado en Metricool. Él sube los videos a Notion.
+
+## Estilo del GLOSARIO FINANCIERO (claro) — distinto de los videos largos y de fondos
+Decisión de Brandon (2026-11-06): los mini videos del glosario van en tema claro para diferenciarlos. Plantilla: `kit/app/src/glosario.tsx` (CAT es el ejemplo). Los videos largos, de productos y la serie anterior conservan el diseño oscuro.
+- Fondo blanco con lavado pastel (azul `#E3EDFA`, menta `#E1F3EA`, arena `#FAF1D6`) que cambia cada 2–3 escenas con fundido; solo círculos tenues y muy lentos. Sin rayas ni patrones móviles.
+- Color: azul Actinver `#041E42` para texto y trazos, dorado `#B3A369` en detalles (barra de progreso, subrayado de palabras clave, rótulo), gris `#555759` para apoyo. Rellenos de objetos en pastel (`#D3E3F8`, `#D2EEE0`, `#F6EBC8`, `#F7D8D4`, `#E0DBF5`), trazo azul marino fino (5 px) y sombra suave. El pastel solo en decoración y rellenos, nunca en el texto principal.
+- Subtítulos: sin caja de fondo, azul marino fuerte; palabra activa en azul brillante `#1B4FC4`; palabras clave con subrayado dorado; resplandor blanco leve para legibilidad.
+- Movimiento: solo aparecer/desvanecer, subir/bajar y trasladar suave (componente `Rise`). Nada de giros, inclinaciones, temblores, rebotes ni zoom con golpe. Cámara casi quieta (deriva de 2.5 %).
+- Encabezado fijo «— GLOSARIO FINANCIERO —» arriba en gris con rayitas doradas.
+- Portada clara (`theme: 'light'` en `cover.tsx`): fondo blanco/crema, rótulo y detalles dorados, letras azul marino, subtítulo gris; logo azul solo si es de producto.
 
 ## Para un video nuevo
 1. Si es importante, propone plan (audiencia, mensaje, acción, formato) antes de producir.

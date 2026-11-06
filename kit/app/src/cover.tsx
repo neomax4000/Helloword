@@ -7,6 +7,7 @@ export const COVER_FRAMES = 45;
 export type CoverProps = {
   tag: string; light: string; bold: string; sub: string; logo?: boolean; icon: 'chart' | 'phone' | 'coins' | 'path' | 'shield' | 'basket';
   pal?: {bg1: string; bg2: string; acc: string; tagText: string};
+  theme?: 'light';
 };
 
 const Icon: React.FC<{k: CoverProps['icon']; t: number; acc?: string}> = ({k, t, acc = OCRE}) => {
@@ -25,7 +26,36 @@ const Icon: React.FC<{k: CoverProps['icon']; t: number; acc?: string}> = ({k, t,
   );
 };
 
+
+const GRAY = '#555759';
+const CoverLight: React.FC<CoverProps> = (p) => {
+  const f = useCurrentFrame();
+  const t = Math.min(1, f / 18);
+  const out = interpolate(f, [COVER_FRAMES - 8, COVER_FRAMES], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const rise = (d: number) => Math.min(1, Math.max(0, (f - d) / 12));
+  return (
+    <AbsoluteFill style={{background: 'radial-gradient(circle at 50% 38%, #FFFFFF 0%, #FFFFFF 40%, #F3EEDD 100%)', fontFamily: 'Poppins', opacity: 1 - out * 0.0, transform: `translateY(${-out * 1920}px)`}}>
+      <div style={{position: 'absolute', left: -140, top: 260, width: 520, height: 520, borderRadius: '50%', background: '#E3EDFA', opacity: 0.6}} />
+      <div style={{position: 'absolute', right: -180, top: 1180, width: 640, height: 640, borderRadius: '50%', background: '#FAF1D6', opacity: 0.7}} />
+      <div style={{position: 'absolute', top: 150, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: rise(0)}}>
+        <div style={{background: OCRE, color: NAVY, fontWeight: 700, fontSize: 40, letterSpacing: 8, padding: '18px 44px', borderRadius: 60}}>{p.tag}</div>
+      </div>
+      <div style={{position: 'absolute', top: 360, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: rise(3)}}><Icon k={p.icon} t={t} acc={OCRE} /></div>
+      <div style={{position: 'absolute', top: 850, left: 110, right: 90, display: 'flex', gap: 36}}>
+        <div style={{width: 8, background: OCRE, height: 120 + t * 330, borderRadius: 4}} />
+        <div style={{color: NAVY, textTransform: 'uppercase', lineHeight: 1.08, opacity: rise(5), transform: `translateY(${(1 - rise(5)) * 30}px)`}}>
+          <div style={{fontWeight: 300, fontSize: 96}}>{p.light}</div>
+          <div style={{fontWeight: 700, fontSize: 126, color: NAVY}}>{p.bold}</div>
+          <div style={{fontWeight: 400, fontSize: 44, color: GRAY, marginTop: 30, textTransform: 'none', letterSpacing: 1}}>{p.sub}</div>
+        </div>
+      </div>
+      {p.logo !== false && <Img src={staticFile('logo_azul.png')} style={{position: 'absolute', bottom: 150, left: 0, right: 0, margin: '0 auto', width: 360}} />}
+    </AbsoluteFill>
+  );
+};
+
 export const Cover: React.FC<CoverProps> = (p) => {
+  if (p.theme === 'light') return <CoverLight {...p} />;
   const f = useCurrentFrame();
   const t = Math.min(1, f / 18);
   const out = interpolate(f, [COVER_FRAMES - 8, COVER_FRAMES], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
