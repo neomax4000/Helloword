@@ -37,7 +37,7 @@ Cada corrida toma el PRIMER pendiente `[ ]` de su lista, lo produce, lo marca `[
 Cada tema: gancho en pregunta fuerte, sin cifras de rendimiento ni promesas, fuentes institucionales (Banxico, CONDUSEF, CNBV, IPAB) cuando haya datos.
 - [x] ¿Por qué tu dinero en el colchón pierde valor? (inflación) (2026-11-04)
 - [x] ¿Qué es el IPAB y de verdad protege tu dinero? (2026-11-05)
-- [ ] ¿Qué es el Buró de Crédito y por qué no es una lista negra?
+- [x] ¿Qué es el Buró de Crédito y por qué no es una lista negra? (2026-11-06)
 - [ ] ¿Qué es la tasa de interés y por qué mueve todo?
 - [ ] ¿Qué es el CAT y por qué deberías mirarlo antes de pedir un crédito?
 - [ ] ¿Qué es una Afore y quién la maneja?
