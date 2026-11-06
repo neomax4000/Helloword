@@ -8,6 +8,8 @@ import {Interes} from './interes';
 import {Inflacion} from './inflacion';
 import inflacionData from '../public/inflacion/words.json';
 import {Ipab} from './ipab';
+import {Cat} from './cat';
+import catData from '../public/cat/words.json';
 import ipabData from '../public/ipab/words.json';
 import {Banca} from './banca';
 import {Sp500, SP_TOTAL} from './sp500';
@@ -126,6 +128,16 @@ const InflacionMain: React.FC = () => {
       .then(() => continueRender(handle));
   }, [handle]);
   return <Inflacion />;
+};
+
+const CatMain: React.FC = () => {
+  const [handle] = useState(() => delayRender('fuentes'));
+  useEffect(() => {
+    Promise.all(['400', '700'].map((w) => (document as any).fonts.load(`${w} 40px Poppins`)))
+      .catch(() => null)
+      .then(() => continueRender(handle));
+  }, [handle]);
+  return <Cat />;
 };
 
 const IpabMain: React.FC = () => {
@@ -355,6 +367,7 @@ const COVERS: Record<string, CoverProps> = {
   VacAd: {tag: 'ACTINVER · ZURICH', light: 'Vida Ahorro', bold: 'Creciente', sub: 'Seguro de vida con ahorro', icon: 'coins'},
   Inflacion: {tag: 'FINANZAS FÁCILES', light: '¿Tu dinero en el', bold: 'colchón pierde valor?', sub: 'Qué es la inflación, explicado fácil', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Ipab: {tag: 'FINANZAS FÁCILES', light: '¿El IPAB de verdad', bold: 'protege tu dinero?', sub: 'Qué cubre y qué no, explicado fácil', icon: 'shield', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
+  Cat: {tag: 'GLOSARIO FINANCIERO', light: '¿Sabes cuánto cuesta', bold: 'realmente un crédito?', sub: 'El CAT, explicado en 20 segundos', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Narrador: {tag: 'MI HISTORIA', light: 'Mi', bold: 'Carrera', sub: 'Cómo llegué hasta aquí', icon: 'path', logo: false},
 };
 const FondosC = cv(COVERS.Fondos, FondosMain);
@@ -379,6 +392,7 @@ const PasactC = cv(COVERS.Pasact, PasactMain);
 const VacAdC = cv(COVERS.VacAd, VacAdMain);
 const InflacionC = cv(COVERS.Inflacion, InflacionMain);
 const IpabC = cv(COVERS.Ipab, IpabMain);
+const CatC = cv(COVERS.Cat, CatMain);
 const Sp500C = cv(COVERS.Sp500, Sp500Main), BancaC = cv(COVERS.Banca, BancaMain), InteresC = cv(COVERS.Interes, InteresMain), NarradorC = cv(COVERS.Narrador, NarradorMain);
 
 export const Root: React.FC = () => (
@@ -388,6 +402,7 @@ export const Root: React.FC = () => (
     <Composition id="Sp500" component={Sp500Main} durationInFrames={sec(SP_TOTAL)} fps={FPS} width={W} height={H} />
     <Composition id="Banca" component={BancaMain} durationInFrames={sec(bancaData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Ipab" component={IpabMain} durationInFrames={sec(ipabData.total)} fps={FPS} width={W} height={H} />
+    <Composition id="Cat" component={CatMain} durationInFrames={sec(catData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Inflacion" component={InflacionMain} durationInFrames={sec(inflacionData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Interes" component={InteresMain} durationInFrames={sec(interesData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Narrador" component={NarradorMain} durationInFrames={sec(narrData.total)} fps={FPS} width={W} height={H} />
@@ -435,6 +450,7 @@ export const Root: React.FC = () => (
     <Composition id="BancaC" component={BancaC} durationInFrames={sec(bancaData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="InflacionC" component={InflacionC} durationInFrames={sec(inflacionData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="IpabC" component={IpabC} durationInFrames={sec(ipabData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="CatC" component={CatC} durationInFrames={sec(catData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="InteresC" component={InteresC} durationInFrames={sec(interesData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="NarradorC" component={NarradorC} durationInFrames={sec(narrData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
   </>

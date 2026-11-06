@@ -1,6 +1,6 @@
 # Cola de videos programados (3 al día)
 
-Reglas: voz Kokoro. Horarios (CDMX): 5:00 serie · 11:00 educativo · 17:00 serie.
+Reglas: voz Kokoro. Horarios de producción (CDMX): 2:00 glosario · 5:00 serie · 11:00 educativo · 17:00 serie.
 Cada corrida toma el PRIMER pendiente `[ ]` de su lista, lo produce, lo marca `[x]` con fecha y hace commit + push.
 
 ## SERIE (productos Actinver, tipo 1, marca Actinver) — guion en guiones/productos/<NOMBRE>.md
@@ -50,3 +50,27 @@ Cada tema: gancho en pregunta fuerte, sin cifras de rendimiento ni promesas, fue
 - [ ] ¿Por qué la tarjeta de crédito no es dinero tuyo?
 - [ ] ¿Qué es una tasa real vs. nominal?
 - [ ] ¿Qué son las UDIS?
+
+## GLOSARIO FINANCIERO (mini videos ~20 s, tipo 2 sin marca, una palabra por video)
+Corrida diaria a las 2:00 CDMX; se programa en Metricool en el mejor horario para este tipo de contenido (mediodía, ver CLAUDE.md).
+Formato: gancho en pregunta → qué es → ejemplo cotidiano o cómo usarlo → cierre «Si te sirvió, dale like y sígueme». Plantilla: `kit/app/src/cat.tsx`. Sin cifras de rendimiento ni promesas; datos oficiales (Banxico, CONDUSEF, CNBV, IPAB) verificados en la web.
+- [x] CAT (2026-11-06, primer mini video, en revisión de Brandon antes de programarlo)
+- [ ] CETES
+- [ ] Liquidez
+- [ ] Diversificar
+- [ ] Tasa real
+- [ ] Inflación (versión mini)
+- [ ] UDI
+- [ ] SPEI
+- [ ] Interés compuesto (mini)
+- [ ] Plazo
+- [ ] Comisión
+- [ ] Riesgo y volatilidad
+- [ ] Horizonte de inversión
+- [ ] Fondo de inversión
+- [ ] Afore
+- [ ] Buró de Crédito
+- [ ] Pagaré
+- [ ] Dividendo
+- [ ] ETF
+- [ ] Deuda buena vs mala

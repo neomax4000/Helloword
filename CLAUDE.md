@@ -7,7 +7,8 @@ Brandon Ramírez Salas, Banquero Patrimonial en Actinver (Zapopan). Hace videos 
 - `capturas/` — una hoja de capturas por video (portada + 8 momentos).
 - `guiones/productos/` — guion base de 33 fondos + Pagaré Platinum + CD Platinum (datos al 31 mar 2026; revisar ficha vigente).
 - `guiones/videos-producidos/` — guion final y notas de los primeros videos.
-- `guiones/serie-deuda-en-pesos.md` — ACTIREN, ACTIGOB, ORION (guiones listos, sin producir).
+- `guiones/serie-deuda-en-pesos.md` — ACTIREN, ACTIGOB, ORION (producidos).
+- `cola-videos.md` — cola de producción: serie de productos, educativos largos y GLOSARIO FINANCIERO (mini videos de una palabra, ~20 s, plantilla `kit/app/src/cat.tsx`).
 - `datos/productos.py` — catálogo con fichas, liquidez, calificación y notas de cada producto.
 - Notion (Centro de Mando de IA): «Instructivo: cómo hacemos un video» y «Biblioteca de videos — cómo recrear cada uno» (ficha y capturas de los 15 videos).
 
@@ -23,7 +24,7 @@ Brandon Ramírez Salas, Banquero Patrimonial en Actinver (Zapopan). Hace videos 
 - Si grabó su voz y dijo algo de más, se corta. Los videos ya hechos que le gustan no se tocan.
 - Cumplimiento: desde el 2026-11-06 Brandon decidió que NO hace falta visto bueno de Cumplimiento para subir, porque el TikTok es personal y no oficial de Actinver. Los videos se programan solos. Al entregar, solo menciona (informativo, sin frenar) los puntos por vigilar: logo Actinver, textos legales y cualquier cifra.
 - Publicación automática (Metricool, marca 7551486, TikTok brandonmichaels2, zona America/Mexico_City): al terminar el render, programa el video tú misma(o) sin preguntar. Pasos:
-  1. Elige el horario con `getBestTimeToPostByNetwork` (tiktok, próximos 7 días) y `getScheduledPosts`: la hora con mayor valor que sea al menos 2 h en el futuro, en punto, que no esté ocupada ni a menos de 3 h de otra publicación, máximo 3 por día. Hoy las horas fuertes son 10:00, 12:00 y 18:00.
+  1. Elige el horario con `getBestTimeToPostByNetwork` (tiktok, próximos 7 días) y `getScheduledPosts`: hora en punto, al menos 2 h en el futuro, que no esté ocupada ni a menos de 3 h de otra publicación, máximo 3 por día. Horas fuertes hoy: 10:00, 12:00 y 18:00. Prioriza según el tipo de contenido: glosario (mini ~20 s) → 12:00–14:00; educativo largo → 10:00 o 18:00–19:00; producto Actinver → 18:00–19:00 o 10:00. Si la ideal está ocupada, toma la siguiente mejor del mismo tipo.
   2. Metricool necesita URL pública: sube el MP4 a la rama temporal `publicar-temp` del repo (worktree aparte, `git push origin <rama>:publicar-temp`, sin force), usa `https://raw.githubusercontent.com/neomax4000/Helloword/publicar-temp/v/<archivo>.mp4`.
   3. `createScheduledPost` con network tiktok, autoPublish true, `tiktokData.isAigc` true (voz sintética), texto = descripción + hashtags (con «el valor puede subir o bajar; no es garantía» en productos).
   4. Confirma que la respuesta trae media en `static.metricool.com` y luego borra el MP4 de la rama con un commit normal (`git rm`) y push. Nunca force-push ni borrar la rama.
