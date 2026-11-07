@@ -1,0 +1,49 @@
+import json, subprocess, numpy as np, soundfile as sf
+from kokoro_onnx import Kokoro
+k=Kokoro("/home/claude/video/voz/kokoro-v1.0.onnx","/home/claude/video/voz/voices-v1.0.bin")
+V=np.load("/home/claude/video/voz/voices-v1.0.bin")
+VO={'B':V["em_alex"]*0.6+V["im_nicola"]*0.4}
+SR=24000
+# (hablante, pantalla con *clave*, hablado, velocidad, pausa después)  — voz 3, ritmo 1.07, pausas <= 0.35 s
+L=[
+('B',"El *dinero* también tiene *precio*. ¿Sabes *cuál*?","El dinero también tiene precio. ¿Sabes cuál?",1.07,.3),
+('B',"Se llama *tasa de interés*.","Se llama tasa de interés.",1.07,.3),
+('B',"Si *pides prestado*, es lo que *pagas* por usar ese dinero.","Si pides prestado, es lo que pagas por usar ese dinero.",1.08,.3),
+('B',"Al *ahorrar*, es lo que *te pagan* por prestarlo.","Al ahorrar, es lo que te pagan por prestarlo.",1.08,.3),
+('B',"En México, el *Banco de México* fija la tasa de *referencia*.","En México, el Banco de México fija la tasa de referencia.",1.07,.3),
+('B',"Y *sígueme*: ahora viene lo que *mueve tu bolsillo*.","Y sígueme: ahora viene lo que mueve tu bolsillo.",1.07,.35),
+('B',"Si la *sube*, el crédito se *encarece*.","Si la sube, el crédito se encarece.",1.07,.3),
+('B',"Si la *baja*, el crédito se *abarata*.","Si la baja, el crédito se abarata.",1.07,.3),
+('B',"¿Por qué? Para *frenar* la *inflación*: si todo sube muy rápido, se *enfría* el gasto.","¿Por qué? Para frenar la inflación: si todo sube muy rápido, se enfría el gasto.",1.08,.3),
+('B',"Así se mueven los *créditos* y lo que te pagan por *ahorrar*.","Así se mueven los créditos y lo que te pagan por ahorrar.",1.08,.3),
+('B',"Antes de pedir un crédito, compara el *CAT*: incluye *todos* los costos.","Antes de pedir un crédito, compara el CAT: incluye todos los costos.",1.08,.3),
+('B',"Esto es *información educativa*, no una recomendación de inversión.","Esto es información educativa, no una recomendación de inversión.",1.1,.3),
+('B',"¿Ya sabes qué *tasa* pagas *tú*?","¿Ya sabes qué tasa pagas tú?",1.05,.3),
+('B',"Si te sirvió, dale *like* y *sígueme*.","Si te sirvió, dale like, y sígueme.",1.05,0),
+]
+LEAD,TAIL=.15,2.8
+chunks=[np.zeros(int(LEAD*SR),np.float32)]; t=LEAD; words=[]; lines=[]; wi=0
+for li,(spk,pan,hab,spd,gap) in enumerate(L):
+    s,_=k.create(hab,voice=VO[spk],speed=spd,lang="es")
+    s=s.astype(np.float32); a=np.abs(s); idx=np.where(a>0.01)[0]
+    s=s[max(0,idx[0]-int(.02*SR)):idx[-1]+int(.06*SR)]
+    d=len(s)/SR
+    toks=pan.split(); hw=hab.split()
+    clean=[x.replace('*','') for x in toks]
+    W=[len(x)+2 for x in (hw if len(hw)==len(toks) else clean)]
+    tot=sum(W); acc=0
+    for tk,c,wt in zip(toks,clean,W):
+        ws=t+d*acc/tot; acc+=wt; we=t+d*acc/tot
+        words.append({"i":wi,"w":c,"s":round(ws,3),"e":round(we-0.02,3),"k":'*' in tk,"p":li,"spk":spk}); wi+=1
+    lines.append({"p":li,"spk":spk,"s":round(t,3),"e":round(t+d,3)})
+    chunks+=[s,np.zeros(int(gap*SR),np.float32)]; t+=d+gap
+total=round(t+TAIL,2)
+chunks.append(np.zeros(int(TAIL*SR),np.float32))
+sf.write("raw.wav",np.concatenate(chunks),SR)
+subprocess.run(["ffmpeg","-y","-v","error","-i","raw.wav","-af",
+ "highpass=f=70,equalizer=f=180:t=q:w=1:g=2,equalizer=f=3500:t=q:w=1:g=2,acompressor=threshold=-20dB:ratio=3:attack=5:release=80,aecho=0.8:0.5:25:0.06,loudnorm=I=-14:TP=-1.5",
+ "-ar","48000","-ac","1","/home/claude/video/app/public/tasa/voz.wav"],check=True)
+json.dump({"total":total,"words":words,"lines":lines},open("/home/claude/video/app/public/tasa/words.json","w"),ensure_ascii=False)
+print("total",total,"palabras",len(words))
+for l in lines: print(l['p'],l['s'],l['e'],'first word',next(w['i'] for w in words if w['p']==l['p']))
+print(' '.join(f"{w['i']}:{w['w']}" for w in words))

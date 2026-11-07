@@ -1,0 +1,14 @@
+import {bundle} from '@remotion/bundler';
+import {renderStill, selectComposition, openBrowser} from '@remotion/renderer';
+import fs from 'fs';
+const out = process.argv[2] || '/tmp/frames_tasa';
+fs.mkdirSync(out, {recursive: true});
+const ts = [0, 0.5, 11, 22.7, 24.5, 31, 33.5, 39.5, 41.5, 42.5, 44.5];
+const serveUrl = await bundle({entryPoint: '/home/claude/video/app/src/index.ts', onProgress: () => {}});
+const browser = await openBrowser('chrome', {browserExecutable: '/tmp/chromium', chromeMode: 'headless-shell', chromiumOptions: {gl: 'swangle'}});
+const comp = await selectComposition({serveUrl, id: 'Tasa', puppeteerInstance: browser});
+for (const t of ts) await renderStill({composition: comp, serveUrl, frame: Math.round(t * 30), output: `${out}/f_${String(t).padStart(2, '0')}.png`, puppeteerInstance: browser, scale: 0.3});
+const c = await selectComposition({serveUrl, id: 'TasaC', puppeteerInstance: browser});
+await renderStill({composition: c, serveUrl, frame: 30, output: `${out}/cover.png`, puppeteerInstance: browser, scale: 0.3});
+await browser.close({silent: true});
+console.log('ok');
