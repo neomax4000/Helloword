@@ -12,6 +12,8 @@ import {Buro} from './buro';
 import buroData from '../public/buro/words.json';
 import {Cat} from './cat';
 import {Glosario} from './glosario';
+import {Cetes} from './cetes';
+import cetesData from '../public/cetes/words.json';
 import catData from '../public/cat/words.json';
 import ipabData from '../public/ipab/words.json';
 import {Banca} from './banca';
@@ -142,6 +144,16 @@ const GlosarioMain: React.FC = () => {
       .then(() => continueRender(handle));
   }, [handle]);
   return <Glosario />;
+};
+
+const CetesMain: React.FC = () => {
+  const [handle] = useState(() => delayRender('fuentes'));
+  useEffect(() => {
+    Promise.all(['300', '400', '700'].map((w) => (document as any).fonts.load(`${w} 40px Poppins`)))
+      .catch(() => null)
+      .then(() => continueRender(handle));
+  }, [handle]);
+  return <Cetes />;
 };
 
 const CatMain: React.FC = () => {
@@ -404,6 +416,7 @@ const COVERS: Record<string, CoverProps> = {
   Buro: {tag: 'FINANZAS FÁCILES', light: '¿El Buró de Crédito es una', bold: 'lista negra?', sub: 'Qué es y cómo revisar el tuyo', icon: 'shield', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Cat: {tag: 'GLOSARIO FINANCIERO', light: '¿Sabes cuánto cuesta', bold: 'realmente un crédito?', sub: 'El CAT, explicado en 20 segundos', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Glosario: {tag: 'GLOSARIO FINANCIERO', light: '¿Sabes cuánto cuesta', bold: 'realmente un crédito?', sub: 'El CAT, explicado en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
+  Cetes: {tag: 'GLOSARIO FINANCIERO', light: '¿Puedes prestarle dinero', bold: 'al gobierno?', sub: 'Los Cetes, explicados en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
   Narrador: {tag: 'MI HISTORIA', light: 'Mi', bold: 'Carrera', sub: 'Cómo llegué hasta aquí', icon: 'path', logo: false},
 };
 const FondosC = cv(COVERS.Fondos, FondosMain);
@@ -432,6 +445,7 @@ const IpabC = cv(COVERS.Ipab, IpabMain);
 const BuroC = cv(COVERS.Buro, BuroMain);
 const CatC = cv(COVERS.Cat, CatMain);
 const GlosarioC = cv(COVERS.Glosario, GlosarioMain);
+const CetesC = cv(COVERS.Cetes, CetesMain);
 const Sp500C = cv(COVERS.Sp500, Sp500Main), BancaC = cv(COVERS.Banca, BancaMain), InteresC = cv(COVERS.Interes, InteresMain), NarradorC = cv(COVERS.Narrador, NarradorMain);
 
 export const Root: React.FC = () => (
@@ -443,6 +457,7 @@ export const Root: React.FC = () => (
     <Composition id="Ipab" component={IpabMain} durationInFrames={sec(ipabData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Buro" component={BuroMain} durationInFrames={sec(buroData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Cat" component={CatMain} durationInFrames={sec(catData.total)} fps={FPS} width={W} height={H} />
+    <Composition id="Cetes" component={CetesMain} durationInFrames={sec(cetesData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Glosario" component={GlosarioMain} durationInFrames={sec(catData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Inflacion" component={InflacionMain} durationInFrames={sec(inflacionData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Interes" component={InteresMain} durationInFrames={sec(interesData.total)} fps={FPS} width={W} height={H} />
@@ -495,6 +510,7 @@ export const Root: React.FC = () => (
     <Composition id="IpabC" component={IpabC} durationInFrames={sec(ipabData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="BuroC" component={BuroC} durationInFrames={sec(buroData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="CatC" component={CatC} durationInFrames={sec(catData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="CetesC" component={CetesC} durationInFrames={sec(cetesData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="GlosarioC" component={GlosarioC} durationInFrames={sec(catData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="InteresC" component={InteresC} durationInFrames={sec(interesData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="NarradorC" component={NarradorC} durationInFrames={sec(narrData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
