@@ -56,7 +56,7 @@ Corrida diaria a las 2:00 CDMX; se programa en Metricool en el mejor horario par
 Formato: gancho en afirmación/dato (sin preguntas en la voz) → qué es → ejemplo cotidiano o cómo usarlo → cierre «Si te sirvió, dale like y sígueme». Plantilla (estilo claro, ver CLAUDE.md): `kit/app/src/glosario.tsx`. Sin cifras de rendimiento ni promesas; datos oficiales (Banxico, CONDUSEF, CNBV, IPAB) verificados en la web.
 - [x] CAT (2026-11-06; versión final 2026-11-08 con voz D y solo hechos, `guiones/videos-producidos/cat.md`)
 - [x] CETES (2026-11-07, mini video 2; guion `guiones/videos-producidos/cetes.md`, portada `capturas/31_CETES_portada.png`)
-- [ ] Liquidez
+- [x] Liquidez (2026-11-08; guion `guiones/videos-producidos/liquidez.md`, portada `capturas/34_LIQUIDEZ_portada.png`)
 - [ ] Diversificar
 - [ ] Tasa real
 - [ ] Inflación (versión mini)
