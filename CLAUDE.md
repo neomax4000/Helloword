@@ -50,6 +50,7 @@ Decisión de Brandon (2026-11-06): los mini videos del glosario van en tema clar
 - Subtítulos: sin caja de fondo, azul marino fuerte; palabra activa en azul brillante `#1B4FC4`; palabras clave con subrayado dorado; resplandor blanco leve para legibilidad.
 - Movimiento: solo aparecer/desvanecer, subir/bajar y trasladar suave (componente `Rise`). Nada de giros, inclinaciones, temblores, rebotes ni zoom con golpe. Cámara casi quieta (deriva de 2.5 %).
 - Encabezado fijo «— GLOSARIO FINANCIERO —» arriba en gris con rayitas doradas.
+- Voz del glosario (decisión 2026-11-07): voz D de Kokoro = em_santa 0.5 + em_alex 0.25 + im_nicola 0.25, con `kit/scripts/voz/voz_glosario.py`. Guion SOLO de hechos, sin preguntas (la entonación de pregunta delata la voz sintética); sin pausas largas entre frases (0.08 s) y cada frase arranca con tono alto y golpe de volumen. Palabras en inglés escritas como suenan en el hablado (like → «laik»; «Cat» tal cual) y se verifica la fonética. Si se usara una pregunta, receta F1 en el docstring del script.
 - Portada clara (`theme: 'light'` en `cover.tsx`): fondo blanco/crema, rótulo y detalles dorados, letras azul marino, subtítulo gris; logo azul solo si es de producto.
 
 ## Para un video nuevo
