@@ -7,7 +7,7 @@ Requiere:  pip install pyworld parselmouth --break-system-packages
 Si en un video se usan preguntas, aplicar a CADA frase interrogativa. Escuchar siempre el resultado antes de renderizar.
 Pregunta en DOS partes (probada 2026-11-08): "¿Parte uno? ¿Parte dos?", cada una con pregunta(...). En la parte uno usar inicio=9, tau_s=0.2
 (la primera sílaba arranca +9 st y baja en ~0.2 s, como la subida final) y pegar con 0.1 s de pausa. Usar palabras finales de 3+ sílabas (crédito, tarjeta, retiro).
-Ajuste aprobado por Brandon: la parte uno lleva final=False (sin subida ni estiramiento al final, solo el arranque alto) y la subida final va solo en la parte dos; pausa entre partes ≈0.02 s (casi pegadas).
+Ajuste aprobado por Brandon: la parte uno lleva final=False (sin subida ni estiramiento al final, solo el arranque alto) y la subida final va solo en la parte dos; unir las partes con unir() (fundido de 30 ms, sin pausa).
 (Nota: en los mini videos del GLOSARIO no se usan preguntas; solo hechos.)"""
 import re, numpy as np, pyworld as pw, parselmouth
 def silabas(p):
@@ -36,3 +36,10 @@ def pregunta(s, SR, ultima, gen, rise=15.0, estira=1.25, fp=5.0, inicio=5.0, tau
     idx=np.array(idx); i0=np.floor(idx).astype(int); i1=np.minimum(i0+1,N-1); w=(idx-i0)[:,None]
     y=pw.synthesize(np.interp(idx,np.arange(N),f),np.ascontiguousarray(sp[i0]*(1-w)+sp[i1]*w),np.ascontiguousarray(ap[i0]*(1-w)+ap[i1]*w),SR,fp)
     return y.astype(np.float32)
+
+def unir(a, b, SR=24000, solape=0.03):
+    """Une parte uno y parte dos casi sin pausa (aprobado 2026-11-08): quita la cola de silencio de a y el silencio inicial de b, y las funde 30 ms."""
+    n=int(solape*SR); a=a[:-int(0.03*SR)] if len(a)>int(.1*SR) else a
+    lead=np.where(np.abs(b)>0.02)[0][0]; b=b[max(0,lead-int(.005*SR)):]
+    w=np.linspace(0,1,n,dtype=np.float32)
+    return np.concatenate([a[:-n],a[-n:]*(1-w)+b[:n]*w,b[n:]])
