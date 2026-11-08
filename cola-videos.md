@@ -39,7 +39,7 @@ Cada tema: gancho en pregunta fuerte, sin cifras de rendimiento ni promesas, fue
 - [x] ¿Qué es el IPAB y de verdad protege tu dinero? (2026-11-05)
 - [x] ¿Qué es el Buró de Crédito y por qué no es una lista negra? (2026-11-06)
 - [x] ¿Qué es la tasa de interés y por qué mueve todo? (2026-11-07; guion `guiones/videos-producidos/tasa.md`, portada `capturas/32_TASA_portada.png`)
-- [ ] ¿Qué es el CAT y por qué deberías mirarlo antes de pedir un crédito?
+- [x] ¿Qué es el CAT y por qué deberías mirarlo antes de pedir un crédito? (2026-11-08; guion `guiones/videos-producidos/catedu.md`, portada `capturas/35_CATEDU_portada.png`)
 - [ ] ¿Qué es una Afore y quién la maneja?
 - [ ] ¿Qué es el fondo de emergencia y de cuánto debería ser?
 - [ ] ¿Qué diferencia hay entre ahorrar e invertir?
