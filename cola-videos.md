@@ -53,8 +53,8 @@ Cada tema: gancho en pregunta fuerte, sin cifras de rendimiento ni promesas, fue
 
 ## GLOSARIO FINANCIERO (mini videos ~20 s, tipo 2 sin marca, una palabra por video)
 Corrida diaria a las 2:00 CDMX; se programa en Metricool en el mejor horario para este tipo de contenido (mediodía, ver CLAUDE.md).
-Formato: gancho en pregunta → qué es → ejemplo cotidiano o cómo usarlo → cierre «Si te sirvió, dale like y sígueme». Plantilla (estilo claro, ver CLAUDE.md): `kit/app/src/glosario.tsx`. Sin cifras de rendimiento ni promesas; datos oficiales (Banxico, CONDUSEF, CNBV, IPAB) verificados en la web.
-- [x] CAT (2026-11-06, primer mini video; versión oscura `cat.tsx` descartada, versión clara `glosario.tsx` en revisión de Brandon antes de programarlo)
+Formato: gancho en afirmación/dato (sin preguntas en la voz) → qué es → ejemplo cotidiano o cómo usarlo → cierre «Si te sirvió, dale like y sígueme». Plantilla (estilo claro, ver CLAUDE.md): `kit/app/src/glosario.tsx`. Sin cifras de rendimiento ni promesas; datos oficiales (Banxico, CONDUSEF, CNBV, IPAB) verificados en la web.
+- [x] CAT (2026-11-06; versión final 2026-11-08 con voz D y solo hechos, `guiones/videos-producidos/cat.md`)
 - [x] CETES (2026-11-07, mini video 2; guion `guiones/videos-producidos/cetes.md`, portada `capturas/31_CETES_portada.png`)
 - [ ] Liquidez
 - [ ] Diversificar

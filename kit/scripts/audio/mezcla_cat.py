@@ -7,7 +7,7 @@ v,sr=sf.read(f'{D}/voz.wav',dtype='float32'); assert sr==48000
 if v.ndim>1: v=v.mean(1)
 N=len(v); fx=np.zeros(N)
 F=lambda s: round(s*30)
-SCw=[0,7,14,28,37,43]
+SCw=[0,5,9,23,32,38]
 starts=[0]+[F(W[w]['s']-0.14)/30 for w in SCw[1:]]
 rms=np.sqrt(np.mean(v[np.abs(v)>0.02]**2)); print('voz rms dB',round(20*np.log10(rms),1))
 def add(x,t,db):
@@ -19,17 +19,17 @@ def buzz(dd=0.28):
     return np.sign(np.sin(2*np.pi*140*t))*0.6*np.exp(-t*6)+np.sin(2*np.pi*95*t)*0.4*np.exp(-t*6)
 T=lambda i: W[i]['s']
 for k,t in enumerate(starts[1:],1):
-    add(whoosh(0.38,up=k%2==0),t-0.29,-7)
-add(impact(0.5),T(0)-0.02,-10)
-add(pop(800),T(4)-0.1,-13)            # "realmente"
-add(buzz(),T(9)+0.05,-12)             # no es solo -> tacha
-add(ding(1568,0.8),T(15),-13)         # CAT
-add(pop(900),T(21)-0.05,-12); add(pop(750),T(25)-0.05,-12); add(pop(1000),T(27)-0.05,-12)
-add(chaching(),T(27)+0.35,-14)        # suma
-add(pop(900),T(33)-0.1,-12); add(pop(700),T(34)-0.1,-12)
-add(ding(1760,0.8),T(35),-13)         # comparar
-add(stamp(),T(42)-0.05,-11)           # mira el CAT
-add(ding(1976,0.9),T(46),-13)
+    add(whoosh(0.22,up=k%2==0),t-0.2,-12)
+add(impact(0.5),T(0)-0.02,-14)
+add(pop(800),T(3)-0.05,-16)           # más
+add(buzz(),T(6)+0.05,-15)             # no es solo -> tacha
+add(ding(1568,0.8),T(10),-15)         # CAT
+add(pop(900),T(16)-0.05,-15); add(pop(750),T(20)-0.05,-15); add(pop(1000),T(22)-0.05,-15)
+add(chaching(),T(22)+0.35,-16)
+add(pop(900),T(28)-0.05,-15); add(pop(700),T(29)-0.05,-15)
+add(ding(1760,0.8),T(30),-15)         # comparar
+add(stamp(),T(37)-0.05,-14)           # mira el CAT
+add(ding(1976,0.9),T(41),-15)
 dur=N/SR
 subprocess.run(['python3','/home/claude/kit/musica2.py',str(dur),'/tmp/mus.wav',str(starts[3])],check=True)
 m,_=sf.read('/tmp/mus.wav',dtype='float32'); m=m[:N] if len(m)>=N else np.pad(m,((0,N-len(m)),(0,0)))

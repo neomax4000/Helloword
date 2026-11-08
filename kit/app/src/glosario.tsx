@@ -22,9 +22,9 @@ const T = (i: number) => {
 
 /* ---- ESCENAS: w = índice de la primera palabra; bg cambia cada 2–3 escenas ---- */
 const SHOTS_RAW = [
-  {w: 0, k: 'hook', bg: 0}, {w: 7, k: 'rate', bg: 0},
-  {w: 14, k: 'sum', bg: 1}, {w: 28, k: 'compare', bg: 1},
-  {w: 37, k: 'sign', bg: 2}, {w: 43, k: 'final', bg: 2},
+  {w: 0, k: 'hook', bg: 0}, {w: 5, k: 'rate', bg: 0},
+  {w: 9, k: 'sum', bg: 1}, {w: 23, k: 'compare', bg: 1},
+  {w: 32, k: 'sign', bg: 2}, {w: 38, k: 'final', bg: 2},
 ];
 type Shot = {w: number; k: string; bg: number; a: number; b: number};
 const shots: Shot[] = SHOTS_RAW.map((s, i, arr) => ({
@@ -108,17 +108,17 @@ const Hook: React.FC<SP> = ({f, at}) => (
   <Svg>
     <Rise f={f} d={0} x={540} y={470}><CreditCard /></Rise>
     <Rise f={f} d={6} x={880} y={250} dy={20}>
-      <text textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={190} fill={GOLD}>?</text>
+      <text textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={190} fill={GOLD}>%</text>
     </Rise>
     {[250, 540, 830].map((x, i) => (
-      <Rise key={x} f={f} d={at(3) + i * 5 - 2} x={x} y={880}><Coin /></Rise>
+      <Rise key={x} f={f} d={at(2) + i * 5 - 2} x={x} y={880}><Coin /></Rise>
     ))}
-    <Rise f={f} d={at(4)} x={540} y={1090}><Pill text="¿CUÁNTO CUESTA?" fill={P_SAND} size={62} /></Rise>
+    <Rise f={f}  d={at(3)} x={540} y={1090}><Pill text="CUESTA MÁS" fill={P_SAND} size={62} /></Rise>
   </Svg>
 );
 
 const Rate: React.FC<SP> = ({f, at}) => {
-  const k = ease((f - (at(9) - 2)) / 12);
+  const k = ease((f - (at(6) - 2)) / 12);
   return (
     <Svg>
       <Rise f={f} d={0} x={540} y={500}>
@@ -130,27 +130,27 @@ const Rate: React.FC<SP> = ({f, at}) => {
           <path d="M300 -190 L-300 190" stroke="#C8454F" strokeWidth={18} strokeLinecap="round" strokeDasharray={760} strokeDashoffset={760 * (1 - cl(k * 1.4 - 0.4))} />
         </g>
       </Rise>
-      <Rise f={f} d={at(9)} x={540} y={960}><Pill text="NO ES SOLO LA TASA" fill={NAVY} tc="#fff" size={52} /></Rise>
-      <Rise f={f} d={at(13)} x={540} y={1130}><Pill text="HAY MÁS COSTOS" fill={P_MINT} size={48} /></Rise>
+      <Rise f={f} d={at(6)} x={540} y={960}><Pill text="NO ES SOLO LA TASA" fill={NAVY} tc="#fff" size={52} /></Rise>
+      <Rise f={f} d={at(8)} x={540} y={1130}><Pill text="HAY MÁS COSTOS" fill={P_MINT} size={48} /></Rise>
     </Svg>
   );
 };
 
 const Sum: React.FC<SP> = ({f, at}) => (
   <Svg>
-    <Rise f={f} d={at(15) - 4} x={540} y={340}>
+    <Rise f={f} d={at(10) - 4} x={540} y={340}>
       <g filter="url(#soft)">
         <circle r={190} fill={P_SAND} stroke={GOLD} strokeWidth={9} />
         <text textAnchor="middle" y={28} fontFamily={FONT} fontWeight={700} fontSize={150} fill={NAVY}>CAT</text>
         <text textAnchor="middle" y={92} fontFamily={FONT} fontWeight={700} fontSize={25} fill={GRAY} letterSpacing={2}>COSTO ANUAL TOTAL</text>
       </g>
     </Rise>
-    <Rise f={f} d={at(19)} x={540} y={630} dy={14}>
+    <Rise f={f} d={at(14)} x={540} y={630} dy={14}>
       <text textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={100} fill={GOLD}>=</text>
     </Rise>
-    <Rise f={f} d={at(21)} x={540} y={800}><Pill text="TASA" fill={P_BLUE} size={52} w={560} /></Rise>
-    <Rise f={f} d={at(25)} x={540} y={950}><Pill text="+ COSTOS" fill={P_MINT} size={52} w={560} /></Rise>
-    <Rise f={f} d={at(27)} x={540} y={1100}><Pill text="+ COMISIONES" fill={P_ROSE} size={52} w={560} /></Rise>
+    <Rise f={f} d={at(16)} x={540} y={800}><Pill text="TASA" fill={P_BLUE} size={52} w={560} /></Rise>
+    <Rise f={f} d={at(20)} x={540} y={950}><Pill text="+ COSTOS" fill={P_MINT} size={52} w={560} /></Rise>
+    <Rise f={f} d={at(22)} x={540} y={1100}><Pill text="+ COMISIONES" fill={P_ROSE} size={52} w={560} /></Rise>
   </Svg>
 );
 
@@ -170,14 +170,14 @@ const Bar: React.FC<{x: number; h: number; fill: string; label: string; f: numbe
 const Compare: React.FC<SP> = ({f, at}) => (
   <Svg>
     <Rise f={f} d={0} x={540} y={250}><Pill text="% ANUAL" fill="#fff" size={66} /></Rise>
-    <Bar x={340} h={430} fill={P_LAV} label="CRÉDITO A" f={f} d={at(33) - 6} />
-    <Bar x={740} h={290} fill={P_MINT} label="CRÉDITO B" f={f} d={at(34) - 6} />
-    <Rise f={f} d={at(35)} x={540} y={1160}><Pill text="COMPÁRALOS" fill={P_SAND} size={58} /></Rise>
+    <Bar x={340} h={430} fill={P_LAV} label="CRÉDITO A" f={f} d={at(28) - 6} />
+    <Bar x={740} h={290} fill={P_MINT} label="CRÉDITO B" f={f} d={at(29) - 6} />
+    <Rise f={f} d={at(30)} x={540} y={1160}><Pill text="COMPÁRALOS" fill={P_SAND} size={58} /></Rise>
   </Svg>
 );
 
 const Sign: React.FC<SP> = ({f, at}) => {
-  const hi = ease((f - at(42)) / 14);
+  const hi = ease((f - at(37)) / 14);
   return (
     <Svg>
       <Rise f={f} d={0} x={540} y={520}>
@@ -194,18 +194,18 @@ const Sign: React.FC<SP> = ({f, at}) => {
           ))}
         </g>
       </Rise>
-      <Rise f={f} d={at(41)} x={760} y={600} dx={60} dy={0}>
+      <Rise f={f} d={at(36)} x={760} y={600} dx={60} dy={0}>
         <circle r={92} fill="rgba(255,255,255,0.5)" stroke={NAVY} strokeWidth={9} />
         <path d="M65 65 L140 140" stroke={NAVY} strokeWidth={22} strokeLinecap="round" />
       </Rise>
-      <Rise f={f} d={at(37)} x={540} y={960}><Pill text="ANTES DE FIRMAR" fill="#fff" size={52} /></Rise>
-      <Rise f={f} d={at(42)} x={540} y={1100}><Pill text="MIRA EL CAT" fill={NAVY} tc="#fff" size={58} /></Rise>
+      <Rise f={f} d={at(32)} x={540} y={960}><Pill text="ANTES DE FIRMAR" fill="#fff" size={52} /></Rise>
+      <Rise f={f} d={at(37)} x={540} y={1100}><Pill text="MIRA EL CAT" fill={NAVY} tc="#fff" size={58} /></Rise>
     </Svg>
   );
 };
 
 const Final: React.FC<SP> = ({f, at}) => {
-  const a = ease(f / 16), b = ease((f - (at(46) - 3)) / 16);
+  const a = ease(f / 16), b = ease((f - (at(41) - 3)) / 16);
   return (
     <AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', paddingBottom: 380}}>
       <div style={{textAlign: 'center', opacity: a, transform: `translateY(${(1 - a) * 30}px)`}}>
@@ -215,7 +215,7 @@ const Final: React.FC<SP> = ({f, at}) => {
       <div style={{marginTop: 44, opacity: b, transform: `translateY(${(1 - b) * 30}px)`}}>
         <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 88, color: '#fff', background: NAVY, padding: '8px 52px 16px', borderRadius: 34, borderBottom: `10px solid ${GOLD}`}}>LIKE + SÍGUEME</div>
       </div>
-      <div style={{position: 'absolute', bottom: 120, left: 70, right: 70, textAlign: 'center', fontFamily: FONT, fontWeight: 400, fontSize: 28, color: GRAY, lineHeight: 1.4, opacity: cl((f - at(47)) / 14)}}>
+      <div style={{position: 'absolute', bottom: 120, left: 70, right: 70, textAlign: 'center', fontFamily: FONT, fontWeight: 400, fontSize: 28, color: GRAY, lineHeight: 1.4, opacity: cl((f - at(42)) / 14)}}>
         Contenido educativo. No constituye una recomendación de inversión.
       </div>
     </AbsoluteFill>

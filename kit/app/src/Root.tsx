@@ -427,8 +427,8 @@ const COVERS: Record<string, CoverProps> = {
   Ipab: {tag: 'FINANZAS FÁCILES', light: '¿El IPAB de verdad', bold: 'protege tu dinero?', sub: 'Qué cubre y qué no, explicado fácil', icon: 'shield', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Buro: {tag: 'FINANZAS FÁCILES', light: '¿El Buró de Crédito es una', bold: 'lista negra?', sub: 'Qué es y cómo revisar el tuyo', icon: 'shield', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Tasa: {tag: 'FINANZAS FÁCILES', light: '¿Qué es la', bold: 'tasa de interés?', sub: 'El precio del dinero, explicado fácil', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
-  Cat: {tag: 'GLOSARIO FINANCIERO', light: '¿Sabes cuánto cuesta', bold: 'realmente un crédito?', sub: 'El CAT, explicado en 20 segundos', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
-  Glosario: {tag: 'GLOSARIO FINANCIERO', light: '¿Sabes cuánto cuesta', bold: 'realmente un crédito?', sub: 'El CAT, explicado en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
+  Cat: {tag: 'GLOSARIO FINANCIERO', light: 'Tu crédito cuesta', bold: 'más que su tasa', sub: 'El CAT, explicado en 20 segundos', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
+  Glosario: {tag: 'GLOSARIO FINANCIERO', light: 'Tu crédito cuesta', bold: 'más que su tasa', sub: 'El CAT, explicado en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
   Cetes: {tag: 'GLOSARIO FINANCIERO', light: '¿Puedes prestarle dinero', bold: 'al gobierno?', sub: 'Los Cetes, explicados en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
   Narrador: {tag: 'MI HISTORIA', light: 'Mi', bold: 'Carrera', sub: 'Cómo llegué hasta aquí', icon: 'path', logo: false},
 };
