@@ -5,6 +5,8 @@ Uso:   from pregunta import pregunta
        s = pregunta(s, SR, 'crédito', lambda w: gen(w))     # s = audio float32 de la frase ya recortado; gen(texto)->audio
 Requiere:  pip install pyworld parselmouth --break-system-packages
 Si en un video se usan preguntas, aplicar a CADA frase interrogativa. Escuchar siempre el resultado antes de renderizar.
+Pregunta en DOS partes (probada 2026-11-08): "¿Parte uno? ¿Parte dos?", cada una con pregunta(...). En la parte uno usar inicio=9, tau_s=0.2
+(la primera sílaba arranca +9 st y baja en ~0.2 s, como la subida final) y pegar con 0.1 s de pausa. Usar palabras finales de 3+ sílabas (crédito, tarjeta, retiro).
 (Nota: en los mini videos del GLOSARIO no se usan preguntas; solo hechos.)"""
 import re, numpy as np, pyworld as pw, parselmouth
 def silabas(p):
@@ -13,7 +15,7 @@ def silabas(p):
         fuertes=[c for c in x if c in 'aeoáéíóú' and c not in 'íú']  # vocales fuertes (hiato con tilde en í/ú cuenta aparte)
         n+= 2 if len(fuertes)>=2 or re.search(r'[íú][aeo]|[aeo][íú]',x) else 1
     return max(1,n)
-def pregunta(s, SR, ultima, gen, rise=15.0, estira=1.25, fp=5.0):
+def pregunta(s, SR, ultima, gen, rise=15.0, estira=1.25, fp=5.0, inicio=5.0, tau_s=None):
     x=s.astype(np.float64); T=len(x)/SR; n=silabas(ultima)
     dw=len(gen(ultima))/SR; ini=max(0.0,T-dw)
     snd=parselmouth.Sound(x,SR); it=snd.to_intensity(minimum_pitch=100,time_step=0.01); tt=it.xs(); vv=it.values[0]
@@ -24,7 +26,7 @@ def pregunta(s, SR, ultima, gen, rise=15.0, estira=1.25, fp=5.0):
     f0,t=pw.harvest(x,SR,f0_floor=70,f0_ceil=400,frame_period=fp)
     sp=pw.cheaptrick(x,f0,t,SR); ap=pw.d4c(x,f0,t,SR)
     base=np.median(f0[(t>max(0,ini-0.5))&(t<ini)&(f0>0)]) if ((t>max(0,ini-0.5))&(t<ini)&(f0>0)).any() else np.median(f0[f0>0])
-    f=np.where(f0>0,f0*2**((5.0*np.exp(-t/(0.18*T)))/12),0)
+    f=np.where(f0>0,f0*2**((inicio*np.exp(-t/(tau_s if tau_s else 0.18*T)))/12),0)
     pts_t=[b[0]]+[b[j] for j in range(1,n+1)]; pts_s=[0]+[rise*(j/n)**1.4 for j in range(1,n+1)]
     for i,tm in enumerate(t):
         if tm>=ini: f[i]=base*2**(np.interp(tm,pts_t,pts_s)/12)   # tono forzado incluso donde el original era sordo
