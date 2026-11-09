@@ -7,7 +7,8 @@ Objetivo: sacar un video de noticia financiera el mismo día del hecho (idealmen
 - **NUEVO 7:00 CDMX — Radar de noticias.** Revisa portales, movimientos del mercado y Google Trends; deja 3 candidatos y un veredicto (GO / NO-GO) en `noticias/AAAA-MM-DD.md`. Si es GO, el mismo radar produce y programa el video.
 - 11:00 video principal: primero lee `noticias/AAAA-MM-DD.md`.
   - Si hay noticia aprobada ese día → la noticia ES el video principal del día (siguen siendo 2 videos al día).
-  - El tema desplazado (educativo o producto) se queda de primero en su lista; no se pierde. El ciclo educativo-educativo-producto avanza solo cuando se produce un video del ciclo (contador, no fecha).
+  - El tema desplazado (educativo o producto) se queda de primero en su lista; no se pierde. El ciclo educativo-educativo-producto sigue por fecha; el tema desplazado sale en el siguiente turno de su tipo.
+  - Estados del día en `noticias/AAAA-MM-DD.md`: APROBADA (la noticia es el principal), ESPERA_OK (lista pero sin permiso: el principal sale normal y, con OK, la noticia sale como publicación extra si cabe en el cupo de 3) y NO_GO.
   - Si no hay noticia → ciclo normal.
 - Herramienta de publicación: Metricool (video largo), mismo flujo de `publicar-temp`.
 
