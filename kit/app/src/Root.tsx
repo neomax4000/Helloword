@@ -43,6 +43,7 @@ import {Actieur, AU_TOTAL} from './actieur';
 import {Actiai, AU_TOTAL as AI_TOTAL} from './actiai';
 import {Actirvt, AU_TOTAL as RVT_TOTAL} from './actirvt';
 import {Jpmrvus, AU_TOTAL as JPM_TOTAL} from './jpmrvus';
+import {Nomina, AU_TOTAL as NOM_TOTAL} from './nomina';
 import {Pasact, PA_TOTAL} from './pasact';
 import {VacAd, VA_TOTAL} from './vacad';
 import {Protege, PR_TOTAL} from './protege';
@@ -425,6 +426,15 @@ const JpmrvusMain: React.FC = () => {
   }, [handle]);
   return <Jpmrvus />;
 };
+const NominaMain: React.FC = () => {
+  const [handle] = useState(() => delayRender('fuentes'));
+  useEffect(() => {
+    Promise.all(['300', '400', '500', '600', '700'].map((w) => (document as any).fonts.load(`${w} 40px Poppins`)))
+      .catch(() => null)
+      .then(() => continueRender(handle));
+  }, [handle]);
+  return <Nomina />;
+};
 const PasactMain: React.FC = () => {
   const [handle] = useState(() => delayRender('fuentes'));
   useEffect(() => {
@@ -467,6 +477,7 @@ const COVERS: Record<string, CoverProps> = {
   Actieur: {tag: 'DATO ACTINVER', light: 'Fondo', bold: 'ACTIEUR', sub: '¿Solo piensas en el dólar?', icon: 'coins'},
   Actiai: {tag: 'DATO ACTINVER', light: 'Fondo', bold: 'ACTIAI', sub: '¿Y si inviertes en la IA?', icon: 'chart'},
   Actirvt: {tag: 'DATO ACTINVER', light: 'Fondo', bold: 'ACTIRVT', sub: '¿Bolsa con protección de capital?', icon: 'shield'},
+  Nomina: {tag: 'TUTORIAL APP', light: 'Trae tu nómina', bold: 'a Actinver', sub: 'Gratis y desde tu app', icon: 'phone'},
   Jpmrvus: {tag: 'DATO ACTINVER', light: 'Fondo', bold: 'JPMRVUS', sub: 'Value o growth: no tienes que elegir', icon: 'chart'},
   Pasact: {tag: 'FINANZAS FÁCILES', light: 'Fondo pasivo', bold: 'vs fondo activo', sub: 'Piloto automático o piloto manual', icon: 'chart'},
   VacAd: {tag: 'ACTINVER · ZURICH', light: 'Vida Ahorro', bold: 'Creciente', sub: 'Seguro de vida con ahorro', icon: 'coins'},
@@ -502,6 +513,7 @@ const ActieurC = cv(COVERS.Actieur, ActieurMain);
 const ActiaiC = cv(COVERS.Actiai, ActiaiMain);
 const ActirvtC = cv(COVERS.Actirvt, ActirvtMain);
 const JpmrvusC = cv(COVERS.Jpmrvus, JpmrvusMain);
+const NominaC = cv(COVERS.Nomina, NominaMain);
 const PasactC = cv(COVERS.Pasact, PasactMain);
 const VacAdC = cv(COVERS.VacAd, VacAdMain);
 const InflacionC = cv(COVERS.Inflacion, InflacionMain);
@@ -572,6 +584,8 @@ export const Root: React.FC = () => (
     <Composition id="ActiaiC" component={ActiaiC} durationInFrames={sec(AI_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Actirvt" component={ActirvtMain} durationInFrames={sec(RVT_TOTAL)} fps={FPS} width={W} height={H} />
     <Composition id="ActirvtC" component={ActirvtC} durationInFrames={sec(RVT_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="Nomina" component={NominaMain} durationInFrames={sec(NOM_TOTAL)} fps={FPS} width={W} height={H} />
+    <Composition id="NominaC" component={NominaC} durationInFrames={sec(NOM_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Jpmrvus" component={JpmrvusMain} durationInFrames={sec(JPM_TOTAL)} fps={FPS} width={W} height={H} />
     <Composition id="JpmrvusC" component={JpmrvusC} durationInFrames={sec(JPM_TOTAL) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Pasact" component={PasactMain} durationInFrames={sec(PA_TOTAL)} fps={FPS} width={W} height={H} />
