@@ -11,7 +11,7 @@ Cada corrida toma el PRIMER pendiente `[ ]` de su lista, lo produce, lo marca `[
 - [x] ACTIEUR (2026-11-05)
 - [x] ACTIAI (2026-11-06)
 - [x] ACTIRVT (2026-11-06)
-- [ ] JPMRVUS
+- [x] JPMRVUS (2026-11-09; guion `guiones/videos-producidos/jpmrvus.md`, portada `capturas/37_JPMRVUS_portada.png`)
 - [ ] ROBOTIK
 - [ ] TEMATIK
 - [ ] MAXIMO
