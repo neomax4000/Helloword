@@ -2,6 +2,7 @@
 
 Reglas: voz Kokoro. Horarios de producción (CDMX): 2:00 glosario · 11:00 video principal (educativo o SERIE de productos según el ciclo). Las rutinas de 5:00 y 17:00 se pausaron.
 Cada corrida toma el PRIMER pendiente `[ ]` de su lista, lo produce, lo marca `[x]` con fecha y hace commit + push.
+NOTICIA DEL DÍA (opcional): radar a las 7:00 CDMX según `guiones/protocolo-noticias.md`. Antes de producir, la corrida de las 11:00 lee `noticias/AAAA-MM-DD.md`: si hay noticia aprobada ese día, la noticia es el video principal y NO se toma ningún pendiente de las listas (el desplazado sigue de primero). Avance del ciclo por contador, no por fecha.
 
 ## SERIE (productos Actinver, tipo 1, marca Actinver) — guion en guiones/productos/<NOMBRE>.md
 (ACTIREN y ORION: guion en guiones/serie-deuda-en-pesos.md)
