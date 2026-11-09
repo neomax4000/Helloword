@@ -57,7 +57,7 @@ Formato: gancho en afirmación/dato (sin preguntas en la voz) → qué es → ej
 - [x] CAT (2026-11-06; versión final 2026-11-08 con voz D y solo hechos, `guiones/videos-producidos/cat.md`)
 - [x] CETES (2026-11-07, mini video 2; guion `guiones/videos-producidos/cetes.md`, portada `capturas/31_CETES_portada.png`)
 - [x] Liquidez (2026-11-08; guion `guiones/videos-producidos/liquidez.md`, portada `capturas/34_LIQUIDEZ_portada.png`)
-- [ ] Diversificar
+- [x] Diversificar (2026-11-09; guion `guiones/videos-producidos/diversificar.md`, portada `capturas/36_DIVERSIFICAR_portada.png`)
 - [ ] Tasa real
 - [ ] Inflación (versión mini)
 - [ ] UDI
