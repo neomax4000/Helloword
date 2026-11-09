@@ -52,6 +52,18 @@ Cada tema: gancho en pregunta fuerte, sin cifras de rendimiento ni promesas, fue
 - [ ] ¿Qué es una tasa real vs. nominal?
 - [ ] ¿Qué son las UDIS?
 
+## SERIE «TU NUEVA APP ACTINVER» (8 capítulos + video largo; propuesta 2026-11-09, PENDIENTE de aprobación de ritmo; plan en `guiones/serie-app-nueva.md`)
+Fuente: video interno de capacitación (Acelera Talent). Cada capítulo ≤ 55 s, gancho en afirmación, marca Actinver (diseño oscuro). Al terminar los 8 se arma el video largo (~6–7 min).
+- [ ] 1/8 Qué cambia y qué NO (contraseña y Actipass iguales)
+- [ ] 2/8 Tres secciones: Banco, Inversiones, Productos
+- [ ] 3/8 Banco: saldo disponible, ocultar saldos, alias y cuenta principal
+- [ ] 4/8 Tarjetas y accesos directos (apagar/prender, CVV dinámico, «¿Qué quieres hacer hoy?»)
+- [ ] 5/8 Movimientos y Patrimonio total
+- [ ] 6/8 Inversiones: tu portafolio (saldo total, desglose, posiciones)
+- [ ] 7/8 Inversiones: accesos según tu contrato y resumen por mercado
+- [ ] 8/8 Productos: retiro, créditos y seguros, «Pensados para ti»
+- [ ] VIDEO LARGO: los 8 capítulos + cierre «qué es y qué NO es»
+
 ## GLOSARIO FINANCIERO (mini videos ~20 s, tipo 2 sin marca, una palabra por video)
 Corrida diaria a las 2:00 CDMX; se programa en Metricool en el mejor horario para este tipo de contenido (mediodía, ver CLAUDE.md).
 Formato: gancho en afirmación/dato (sin preguntas en la voz) → qué es → ejemplo cotidiano o cómo usarlo → cierre «Si te sirvió, dale like y sígueme». Plantilla (estilo claro, ver CLAUDE.md): `kit/app/src/glosario.tsx`. Sin cifras de rendimiento ni promesas; datos oficiales (Banxico, CONDUSEF, CNBV, IPAB) verificados en la web.
