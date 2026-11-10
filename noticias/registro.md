@@ -4,6 +4,10 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 
 | Fecha | Tipo | Tema | Puntaje | Veredicto | Vistas 24 h | Tiempo visto | Retención | Compartidos+guardados+comentarios por 1,000 vistas |
 |---|---|---|---|---|---|---|---|---|
+| 2026-11-10 | P | Inflación EE.UU. (hoy 7:30 CDMX) | — | NO_GO (ventana) | — | — | — | — |
+| 2026-11-10 | R | S&P 500 +2.35 % / chips | 57 | NO_GO | — | — | — | — |
+| 2026-11-10 | R | Aguinaldo federal + Buen Fin | ~58 | NO_GO (sin fuente primaria) | — | — | — | — |
+| 2026-11-10 | R | Nvidia / Huang | ~45 | NO_GO | — | — | — | — |
 
 Prueba R vs P: R publicadas 0 de 3 · P publicadas 0 de 3 · fase actual: PRUEBA.
 
