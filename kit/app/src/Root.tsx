@@ -18,6 +18,8 @@ import {Cat} from './cat';
 import {Glosario} from './glosario';
 import {Liquidez} from './liquidez';
 import {Diversificar} from './diversificar';
+import {Value} from './value';
+import valueData from '../public/value/words.json';
 import divData from '../public/diversificar/words.json';
 import {Cetes} from './cetes';
 import cetesData from '../public/cetes/words.json';
@@ -174,6 +176,16 @@ const DiversificarMain: React.FC = () => {
       .then(() => continueRender(handle));
   }, [handle]);
   return <Diversificar />;
+};
+
+const ValueMain: React.FC = () => {
+  const [handle] = useState(() => delayRender('fuentes'));
+  useEffect(() => {
+    Promise.all(['300', '400', '700'].map((w) => (document as any).fonts.load(`${w} 40px Poppins`)))
+      .catch(() => null)
+      .then(() => continueRender(handle));
+  }, [handle]);
+  return <Value />;
 };
 
 const CetesMain: React.FC = () => {
@@ -490,6 +502,7 @@ const COVERS: Record<string, CoverProps> = {
   Glosario: {tag: 'GLOSARIO FINANCIERO', light: 'Tu crédito cuesta', bold: 'más que su tasa', sub: 'El CAT, explicado en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
   Diversificar: {tag: 'GLOSARIO FINANCIERO', light: 'No todo en', bold: 'un solo lugar', sub: 'Diversificar, explicado en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
   Liquidez: {tag: 'GLOSARIO FINANCIERO', light: 'Tu dinero atrapado', bold: 'no te salva', sub: 'La liquidez, explicada en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
+  Value: {tag: 'GLOSARIO FINANCIERO', light: 'Barato no siempre', bold: 'es buen negocio', sub: 'Value, explicado en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
   Cetes: {tag: 'GLOSARIO FINANCIERO', light: '¿Puedes prestarle dinero', bold: 'al gobierno?', sub: 'Los Cetes, explicados en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
   Narrador: {tag: 'MI HISTORIA', light: 'Mi', bold: 'Carrera', sub: 'Cómo llegué hasta aquí', icon: 'path', logo: false},
 };
@@ -525,6 +538,7 @@ const CatC = cv(COVERS.Cat, CatMain);
 const GlosarioC = cv(COVERS.Glosario, GlosarioMain);
 const LiquidezC = cv(COVERS.Liquidez, LiquidezMain);
 const DiversificarC = cv(COVERS.Diversificar, DiversificarMain);
+const ValueC = cv(COVERS.Value, ValueMain);
 const CetesC = cv(COVERS.Cetes, CetesMain);
 const Sp500C = cv(COVERS.Sp500, Sp500Main), BancaC = cv(COVERS.Banca, BancaMain), InteresC = cv(COVERS.Interes, InteresMain), NarradorC = cv(COVERS.Narrador, NarradorMain);
 
@@ -541,6 +555,7 @@ export const Root: React.FC = () => (
     <Composition id="Cat" component={CatMain} durationInFrames={sec(catData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Cetes" component={CetesMain} durationInFrames={sec(cetesData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Liquidez" component={LiquidezMain} durationInFrames={sec(liqData.total)} fps={FPS} width={W} height={H} />
+    <Composition id="Value" component={ValueMain} durationInFrames={sec(valueData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Diversificar" component={DiversificarMain} durationInFrames={sec(divData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Glosario" component={GlosarioMain} durationInFrames={sec(catData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Inflacion" component={InflacionMain} durationInFrames={sec(inflacionData.total)} fps={FPS} width={W} height={H} />
@@ -602,6 +617,7 @@ export const Root: React.FC = () => (
     <Composition id="CatC" component={CatC} durationInFrames={sec(catData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="CetesC" component={CetesC} durationInFrames={sec(cetesData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="LiquidezC" component={LiquidezC} durationInFrames={sec(liqData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="ValueC" component={ValueC} durationInFrames={sec(valueData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="DiversificarC" component={DiversificarC} durationInFrames={sec(divData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="GlosarioC" component={GlosarioC} durationInFrames={sec(catData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="InteresC" component={InteresC} durationInFrames={sec(interesData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
