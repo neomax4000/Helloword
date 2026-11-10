@@ -12,6 +12,8 @@ import {Buro} from './buro';
 import buroData from '../public/buro/words.json';
 import {Tasa} from './tasa';
 import {CatEdu} from './catedu';
+import {Afore as AforeVid} from './afore';
+import aforeData from '../public/afore/words.json';
 import tasaData from '../public/tasa/words.json';
 import catEduData from '../public/catedu/words.json';
 import {Cat} from './cat';
@@ -238,6 +240,15 @@ const TasaMain: React.FC = () => {
   return <Tasa />;
 };
 
+const AforeMain: React.FC = () => {
+  const [handle] = useState(() => delayRender('fuentes'));
+  useEffect(() => {
+    Promise.all(['400', '700'].map((w) => (document as any).fonts.load(`${w} 40px Poppins`)))
+      .catch(() => null)
+      .then(() => continueRender(handle));
+  }, [handle]);
+  return <AforeVid />;
+};
 const CatEduMain: React.FC = () => {
   const [handle] = useState(() => delayRender('fuentes'));
   useEffect(() => {
@@ -496,6 +507,7 @@ const COVERS: Record<string, CoverProps> = {
   Inflacion: {tag: 'FINANZAS FÁCILES', light: '¿Tu dinero en el', bold: 'colchón pierde valor?', sub: 'Qué es la inflación, explicado fácil', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Ipab: {tag: 'FINANZAS FÁCILES', light: '¿El IPAB de verdad', bold: 'protege tu dinero?', sub: 'Qué cubre y qué no, explicado fácil', icon: 'shield', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Buro: {tag: 'FINANZAS FÁCILES', light: '¿El Buró de Crédito es una', bold: 'lista negra?', sub: 'Qué es y cómo revisar el tuyo', icon: 'shield', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
+  Afore: {tag: 'FINANZAS FÁCILES', light: 'Tu Afore maneja', bold: 'dinero que es tuyo', sub: 'Qué es y quién la maneja, explicado fácil', icon: 'shield', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   CatEdu: {tag: 'FINANZAS FÁCILES', light: 'Misma tasa,', bold: 'distinto costo', sub: 'El CAT, explicado fácil', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Tasa: {tag: 'FINANZAS FÁCILES', light: '¿Qué es la', bold: 'tasa de interés?', sub: 'El precio del dinero, explicado fácil', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Cat: {tag: 'GLOSARIO FINANCIERO', light: 'Tu crédito cuesta', bold: 'más que su tasa', sub: 'El CAT, explicado en 20 segundos', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
@@ -533,6 +545,7 @@ const InflacionC = cv(COVERS.Inflacion, InflacionMain);
 const IpabC = cv(COVERS.Ipab, IpabMain);
 const BuroC = cv(COVERS.Buro, BuroMain);
 const TasaC = cv(COVERS.Tasa, TasaMain);
+const AforeC = cv(COVERS.Afore, AforeMain);
 const CatEduC = cv(COVERS.CatEdu, CatEduMain);
 const CatC = cv(COVERS.Cat, CatMain);
 const GlosarioC = cv(COVERS.Glosario, GlosarioMain);
@@ -549,6 +562,7 @@ export const Root: React.FC = () => (
     <Composition id="Sp500" component={Sp500Main} durationInFrames={sec(SP_TOTAL)} fps={FPS} width={W} height={H} />
     <Composition id="Banca" component={BancaMain} durationInFrames={sec(bancaData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Ipab" component={IpabMain} durationInFrames={sec(ipabData.total)} fps={FPS} width={W} height={H} />
+    <Composition id="Afore" component={AforeMain} durationInFrames={sec(aforeData.total)} fps={FPS} width={W} height={H} />
     <Composition id="CatEdu" component={CatEduMain} durationInFrames={sec(catEduData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Tasa" component={TasaMain} durationInFrames={sec(tasaData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Buro" component={BuroMain} durationInFrames={sec(buroData.total)} fps={FPS} width={W} height={H} />
@@ -611,6 +625,7 @@ export const Root: React.FC = () => (
     <Composition id="BancaC" component={BancaC} durationInFrames={sec(bancaData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="InflacionC" component={InflacionC} durationInFrames={sec(inflacionData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="IpabC" component={IpabC} durationInFrames={sec(ipabData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="AforeC" component={AforeC} durationInFrames={sec(aforeData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="CatEduC" component={CatEduC} durationInFrames={sec(catEduData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="TasaC" component={TasaC} durationInFrames={sec(tasaData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="BuroC" component={BuroC} durationInFrames={sec(buroData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
