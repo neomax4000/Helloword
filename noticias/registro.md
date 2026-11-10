@@ -1,9 +1,11 @@
 # Registro de noticias
 
-Una fila por noticia evaluada (fecha, tema, puntaje, veredicto, métricas a 24 h).
+Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas a 24 h). Tipo: R = reacción (noticia fresca del día), P = previa (dato a seguir). Prueba R vs P (protocolo §3c y §7): cuando haya 3 R y 3 P publicadas con métricas se comparan las medianas.
 
-| Fecha | Tema | Puntaje | Veredicto | Vistas 24 h | Tiempo visto | Retención |
-|---|---|---|---|---|---|---|
+| Fecha | Tipo | Tema | Puntaje | Veredicto | Vistas 24 h | Tiempo visto | Retención | Compartidos+guardados+comentarios por 1,000 vistas |
+|---|---|---|---|---|---|---|---|---|
+
+Prueba R vs P: R publicadas 0 de 3 · P publicadas 0 de 3 · fase actual: PRUEBA.
 
 ## Candidatos pre-radar para 2026-11-10 (los dejó Brandon el 9 nov, 23:52)
 Zona a vigilar: finanzas personales y crédito en México + mercado. Leer ANTES de buscar y reconfirmar todo (fuentes y fecha) a las 6:47.
