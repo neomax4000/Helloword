@@ -52,7 +52,7 @@ Cada tema: gancho en pregunta fuerte, sin cifras de rendimiento ni promesas, fue
 - [ ] ¿Qué es una tasa real vs. nominal?
 - [ ] ¿Qué son las UDIS?
 
-## SERIE «TU NUEVA APP ACTINVER» (8 capítulos + video largo; propuesta 2026-11-09, PENDIENTE de aprobación de ritmo; plan en `guiones/serie-app-nueva.md`)
+## SERIE «TU NUEVA APP ACTINVER» (8 capítulos + video largo; ritmo aprobado 2026-11-10: UN capítulo en cada día de PRODUCTO, junto al video del fondo; plan en `guiones/serie-app-nueva.md`)
 Fuente: video interno de capacitación (Acelera Talent). Cada capítulo ≤ 55 s, gancho en afirmación, marca Actinver (diseño oscuro). Al terminar los 8 se arma el video largo (~6–7 min).
 - [ ] 1/8 Qué cambia y qué NO (contraseña y Actipass iguales)
 - [ ] 2/8 Tres secciones: Banco, Inversiones, Productos

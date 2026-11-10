@@ -1,4 +1,4 @@
-# Serie «Tu nueva app Actinver» — plan (propuesto 2026-11-09, pendiente de aprobación)
+# Serie «Tu nueva app Actinver» — plan (aprobado el ritmo 2026-11-10: SOLO en días de producto)
 
 Fuente: video interno «Evolución a Banco · Rediseño de tu App Actinver» (curso de Actinver Acelera Talent para el equipo, presentado por Emilio Pulido, Gerente de Canales Digitales, 8:20 min). Es capacitación para que el asesor le explique al cliente qué cambia y qué no. Los datos de las pantallas (nombre «Alexander», saldos) son de demostración.
 
@@ -27,11 +27,12 @@ Cada capítulo funciona solo (gancho en afirmación desde el primer fotograma, �
 
 Notas de guion: sin preguntas en la voz (preguntas solo escritas en pantalla); palabras en inglés como suenan; «CVV» como «ce, ve, ve»; «Actipass» a verificar con Whisper; no usar «Evolución a Banco» ni prometer «banco de cabecera» en los capítulos para clientes (es nombre interno).
 
-## Ritmo de publicación (opciones; decide Brandon)
-- **A (recomendada):** 8 días seguidos, un capítulo al día como tercera publicación (máx. 3 por día en total, ≥ 3 h entre publicaciones), junto a glosario y principal; al día 9 se sube el video largo. Aprovecha la novedad del lanzamiento.
-- **B:** un capítulo en cada día de PRODUCTO (n = 2), emparejado con el video del fondo (~24 días); más pausado, menos choque con la revisión de métricas del 2026-11-20.
-- **C:** un capítulo cada dos días (~16 días).
-Herramienta: Metricool (videos de producto/largos) para capítulos y video largo, Buffer solo glosario.
+## Ritmo de publicación (decisión de Brandon, 2026-11-10)
+- **Un capítulo en cada día de PRODUCTO**, emparejado con el video del fondo: ese día salen glosario + video de producto + capítulo de la app (3 publicaciones, tope diario; ≥ 3 h entre ellas). El capítulo NO reemplaza al video de producto ni cambia el ciclo educativo-educativo-producto.
+- Orden: capítulos 1 → 8 en orden; el **video largo** sale al terminar el 8/8 (unos 24 días desde el primer capítulo; el primero cae en el siguiente día de producto del ciclo).
+- Horario del capítulo: 10:00 o 18:00–19:00 (el que deje libre el producto); revisar Metricool y Buffer antes de elegir. Herramienta: Metricool (capítulos y video largo).
+- Cada capítulo lo produce la corrida del día de producto, justo después del video del fondo, y se marca [x] en `cola-videos.md`.
+- Antes del 1/8: confirmar con Brandon la fecha en que la app nueva ya está disponible para clientes.
 
 ## Puntos por vigilar (informativo, sin frenar)
 - El video fuente es capacitación interna: confirmar **fecha en que la app nueva ya está disponible para clientes** antes de publicar el primer capítulo, para no anunciarla antes.
