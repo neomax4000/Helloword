@@ -51,7 +51,6 @@ Cada tema: gancho en pregunta fuerte, sin cifras de rendimiento ni promesas, fue
 - [ ] ¿Por qué la tarjeta de crédito no es dinero tuyo?
 - [ ] ¿Qué es una tasa real vs. nominal?
 - [ ] ¿Qué son las UDIS?
-- [ ] Ciberseguridad y fraudes: «Hackearon refrigeradores en Francia; tu cuenta también puede ser un blanco» (idea del 2026-11-11; gancho en afirmación, sin acusar a nadie: los hechos de Francia/Irán solo como contexto, atribución = versión del gobierno francés y Irán lo niega; consejos prácticos: contraseñas, Actipass, no compartir NIP, desconfiar de mensajes urgentes; fuentes Condusef/Banxico para datos)
 
 ## SERIE «TU NUEVA APP ACTINVER» (8 capítulos + video largo; ritmo aprobado 2026-11-10: UN capítulo en cada día de PRODUCTO, junto al video del fondo; plan en `guiones/serie-app-nueva.md`)
 Fuente: video interno de capacitación (Acelera Talent). Cada capítulo ≤ 55 s, gancho en afirmación, marca Actinver (diseño oscuro). Al terminar los 8 se arma el video largo (~6–7 min).
