@@ -12,7 +12,7 @@ D=sys.argv[1]; L=json.load(open(sys.argv[2],encoding='utf-8'))
 k=Kokoro("/home/claude/video/voz/kokoro-v1.0.onnx","/home/claude/video/voz/voices-v1.0.bin")
 V=np.load("/home/claude/video/voz/voices-v1.0.bin")
 VOZ=V["em_santa"]*0.5+V["em_alex"]*0.25+V["im_nicola"]*0.25
-SR=24000; GAP=0.08; LEAD=0.05; TAIL=1.2
+SR=24000; GAP=0.08; LEAD=0.05; TAIL=float(sys.argv[3]) if len(sys.argv)>3 else 1.2
 def gen(t):
     s,_=k.create(t,voice=VOZ,speed=0.97,lang="es"); s=s.astype(np.float32)
     i=np.where(np.abs(s)>0.01)[0]; return s[max(0,i[0]-int(.005*SR)):i[-1]+int(.03*SR)]

@@ -1,0 +1,14 @@
+import {bundle} from '@remotion/bundler';
+import {renderStill, selectComposition, openBrowser} from '@remotion/renderer';
+import fs from 'fs';
+const out = process.argv[2] || '/tmp/frames_bucle';
+fs.mkdirSync(out, {recursive: true});
+const ts = [0, 1.5, 2.5, 4.4, 5.2, 7.2, 8.5, 10.6, 12.4, 14.4, 15.4, 16.69];
+const serveUrl = await bundle({entryPoint: '/home/claude/video/app/src/index.ts', onProgress: () => {}});
+const browser = await openBrowser('chrome', {browserExecutable: '/tmp/chromium', chromeMode: 'headless-shell', chromiumOptions: {gl: 'swangle'}});
+const comp = await selectComposition({serveUrl, id: 'Bucle', puppeteerInstance: browser});
+for (const t of ts) await renderStill({composition: comp, serveUrl, frame: Math.round(t * 30), output: `${out}/f_${String(t).padStart(2, '0')}.png`, puppeteerInstance: browser, scale: 0.3});
+const c = await selectComposition({serveUrl, id: 'BucleC', puppeteerInstance: browser});
+await renderStill({composition: c, serveUrl, frame: 30, output: `${out}/cover.png`, puppeteerInstance: browser, scale: 0.3});
+await browser.close({silent: true});
+console.log('ok');
