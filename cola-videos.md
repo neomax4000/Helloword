@@ -72,7 +72,7 @@ Formato: gancho en afirmación/dato (sin preguntas en la voz) → qué es → ej
 - [x] Liquidez (2026-11-08; guion `guiones/videos-producidos/liquidez.md`, portada `capturas/34_LIQUIDEZ_portada.png`)
 - [x] Diversificar (2026-11-09; guion `guiones/videos-producidos/diversificar.md`, portada `capturas/36_DIVERSIFICAR_portada.png`)
 - [x] Value (inversión en valor) (2026-11-10; guion `guiones/videos-producidos/value.md`, portada `capturas/40_VALUE_portada.png`) — — nota 2026-11-09: explicar qué es en simple (empresas sólidas que cotizan a buen precio frente a lo que valen). Pronunciar «valiu». Verificar definición en fuente (CNBV/Bolsa/gestora) y sin promesas de rendimiento. Enlaza con el video de JPMRVUS (programado 2026-11-13).
-- [ ] Growth (inversión en crecimiento) — nota 2026-11-09: explicar qué es en simple (empresas que crecen rápido; suelen reinvertir utilidades y pueden ser más volátiles). Pronunciar «grouz». Verificar definición en fuente y sin promesas de rendimiento. Pareja de «Value»; idealmente salen en días seguidos, antes del 2026-11-13.
+- [x] Growth (inversión en crecimiento) (2026-11-11; guion `guiones/videos-producidos/growth.md`, portada `capturas/43_GROWTH_portada.png`) — nota 2026-11-09: explicar qué es en simple (empresas que crecen rápido; suelen reinvertir utilidades y pueden ser más volátiles). Pronunciar «grouz». Verificar definición en fuente y sin promesas de rendimiento. Pareja de «Value»; idealmente salen en días seguidos, antes del 2026-11-13.
 - [ ] Tasa real
 - [ ] Inflación (versión mini)
 - [ ] UDI

@@ -21,9 +21,11 @@ import {Glosario} from './glosario';
 import {Liquidez} from './liquidez';
 import {Diversificar} from './diversificar';
 import {Value} from './value';
+import {Growth} from './growth';
 import {Bucle} from './bucle';
 import bucleData from '../public/bucle/words.json';
 import valueData from '../public/value/words.json';
+import growthData from '../public/growth/words.json';
 import divData from '../public/diversificar/words.json';
 import {Cetes} from './cetes';
 import cetesData from '../public/cetes/words.json';
@@ -182,6 +184,15 @@ const DiversificarMain: React.FC = () => {
   return <Diversificar />;
 };
 
+const GrowthMain: React.FC = () => {
+  const [handle] = useState(() => delayRender('fuentes'));
+  useEffect(() => {
+    Promise.all(['300', '400', '700'].map((w) => (document as any).fonts.load(`${w} 40px Poppins`)))
+      .catch(() => null)
+      .then(() => continueRender(handle));
+  }, [handle]);
+  return <Growth />;
+};
 const ValueMain: React.FC = () => {
   const [handle] = useState(() => delayRender('fuentes'));
   useEffect(() => {
@@ -517,6 +528,7 @@ const COVERS: Record<string, CoverProps> = {
   Diversificar: {tag: 'GLOSARIO FINANCIERO', light: 'No todo en', bold: 'un solo lugar', sub: 'Diversificar, explicado en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
   Liquidez: {tag: 'GLOSARIO FINANCIERO', light: 'Tu dinero atrapado', bold: 'no te salva', sub: 'La liquidez, explicada en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
   Bucle: {tag: 'GLOSARIO FINANCIERO', light: 'Tu dinero guardado', bold: 'pierde valor', sub: 'Inflación en bucle', icon: 'coins', logo: false, theme: 'light'},
+  Growth: {tag: 'GLOSARIO FINANCIERO', light: 'Empresas que crecen', bold: 'rápido: growth', sub: 'Growth, explicado en 20 segundos', icon: 'chart', logo: false, theme: 'light'},
   Value: {tag: 'GLOSARIO FINANCIERO', light: 'Barato no siempre', bold: 'es buen negocio', sub: 'Value, explicado en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
   Cetes: {tag: 'GLOSARIO FINANCIERO', light: '¿Puedes prestarle dinero', bold: 'al gobierno?', sub: 'Los Cetes, explicados en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
   Narrador: {tag: 'MI HISTORIA', light: 'Mi', bold: 'Carrera', sub: 'Cómo llegué hasta aquí', icon: 'path', logo: false},
@@ -564,6 +576,7 @@ const BucleMain: React.FC = () => {
   return <Bucle />;
 };
 const BucleC = cv(COVERS.Bucle, BucleMain);
+const GrowthC = cv(COVERS.Growth, GrowthMain);
 const ValueC = cv(COVERS.Value, ValueMain);
 const CetesC = cv(COVERS.Cetes, CetesMain);
 const Sp500C = cv(COVERS.Sp500, Sp500Main), BancaC = cv(COVERS.Banca, BancaMain), InteresC = cv(COVERS.Interes, InteresMain), NarradorC = cv(COVERS.Narrador, NarradorMain);
@@ -583,6 +596,7 @@ export const Root: React.FC = () => (
     <Composition id="Cetes" component={CetesMain} durationInFrames={sec(cetesData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Liquidez" component={LiquidezMain} durationInFrames={sec(liqData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Bucle" component={BucleMain} durationInFrames={sec(bucleData.total)} fps={FPS} width={W} height={H} />
+    <Composition id="Growth" component={GrowthMain} durationInFrames={sec(growthData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Value" component={ValueMain} durationInFrames={sec(valueData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Diversificar" component={DiversificarMain} durationInFrames={sec(divData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Glosario" component={GlosarioMain} durationInFrames={sec(catData.total)} fps={FPS} width={W} height={H} />
@@ -647,6 +661,7 @@ export const Root: React.FC = () => (
     <Composition id="CetesC" component={CetesC} durationInFrames={sec(cetesData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="LiquidezC" component={LiquidezC} durationInFrames={sec(liqData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="BucleC" component={BucleC} durationInFrames={sec(bucleData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="GrowthC" component={GrowthC} durationInFrames={sec(growthData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="ValueC" component={ValueC} durationInFrames={sec(valueData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="DiversificarC" component={DiversificarC} durationInFrames={sec(divData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="GlosarioC" component={GlosarioC} durationInFrames={sec(catData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
