@@ -42,7 +42,7 @@ Cada tema: gancho en pregunta fuerte, sin cifras de rendimiento ni promesas, fue
 - [x] ¿Qué es la tasa de interés y por qué mueve todo? (2026-11-07; guion `guiones/videos-producidos/tasa.md`, portada `capturas/32_TASA_portada.png`)
 - [x] ¿Qué es el CAT y por qué deberías mirarlo antes de pedir un crédito? (2026-11-08; guion `guiones/videos-producidos/catedu.md`, portada `capturas/35_CATEDU_portada.png`)
 - [x] ¿Qué es una Afore y quién la maneja? (2026-11-10; guion `guiones/videos-producidos/afore.md`, portada `capturas/41_AFORE_portada.png`)
-- [ ] ¿Qué es el fondo de emergencia y de cuánto debería ser?
+- [x] ¿Qué es el fondo de emergencia y de cuánto debería ser? (2026-11-11; guion `guiones/videos-producidos/fondo.md`, portada `capturas/44_FONDO_portada.png`)
 - [ ] ¿Qué diferencia hay entre ahorrar e invertir?
 - [ ] ¿Qué es la diversificación? («no pongas todos los huevos en la misma canasta»)
 - [ ] ¿Qué es la deuda buena y la deuda mala?
