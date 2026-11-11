@@ -24,3 +24,7 @@ Y si sientes que esto ya lo escuchaste, es porque todo lo que acabas de oír
 ## Notas
 - Sin cifras ni promesas. Educativo, sin marca Actinver. Descripción con «Contenido educativo, no es una recomendación de inversión».
 - No cuenta como el glosario «Inflación (versión mini)» de la cola: ese sigue pendiente con otro guion.
+
+## Publicación
+- Buffer (canal TikTok brandonmichaels2), programado el **domingo 2026-11-15 a las 10:00 (CDMX)**, isAiGenerated true. Texto: descripción + «Míralo dos veces» + aviso educativo.
+- El MP4 está en la rama `publicar-temp` como `v/bucle_glosario.mp4`. **No borrarlo hasta que el post salga** (Buffer lo descarga en el momento de publicar; los posts programados de Buffer siguen apuntando a la URL raw). Borrarlo con `git rm` el 2026-11-15 después de las 10:05.
