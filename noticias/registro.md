@@ -27,3 +27,9 @@ Zona a vigilar: finanzas personales y crédito en México + mercado. Leer ANTES 
 2. **Nvidia / Jensen Huang** (puntaje estimado ~60–65; respaldo).
    - Hechos del 8–9 nov (CNN, Axios, NBC, CNBC, Al Jazeera, WaPo): Huang admitió una infidelidad; el consejo abrió una investigación independiente por reportes de que fue objetivo de una operación de inteligencia extranjera; NVDA cerró -4.27% el lunes 9.
    - Cuidado: decir «presunta» y «según reportes»; enfocarse en riesgo de liderazgo y reacción del mercado, no en lo personal; sin recomendar comprar ni vender.
+
+## Candidato pre-radar para 2026-11-13 (acordado con Brandon el 12 nov, 16:45): SEGUIMIENTO de la caída de Outlook / Microsoft 365
+Brandon: «mañana publicamos el seguimiento de la noticia»; «buscamos toda la información al respecto y saturamos la pantalla con información complementaria». Usar el estilo saturado y los fondos de tema (ver protocolo, última sección).
+Investigar y reconfirmar a las 6:47 (2 fuentes cada dato): hora y forma del restablecimiento total; causa que publique Microsoft (reporte posterior, EX1550543); alcance (regiones, servicios, empresas y gobiernos afectados, incluido México si hay dato); cifras finales de Downdetector (pico y duración); reacción de MSFT en bolsa (cierre del 12 y/o 13 nov); historial de caídas previas de Microsoft 365 en 2026 (con fecha y fuente: p. ej. ene y abr 2026) y qué cambia para las empresas; si hay compensación o créditos de servicio. Evitar especular sobre ataque: solo lo que Microsoft confirme.
+Video v1 (12 nov): `guiones/videos-producidos/outlook.md`. Programar por Buffer o Metricool respetando cupo (el 12 nov hubo 5 publicaciones; cuidar el máximo de 3 por día y ≥3 h entre ellas).
+

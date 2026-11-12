@@ -3,6 +3,7 @@ import {AbsoluteFill, Audio, staticFile, useCurrentFrame} from 'remotion';
 import data from '../public/outlook/words.json';
 import {FONT, FPS, W} from './theme';
 import {F, cl, ease, sp} from './narrador';
+import {TopicBg, Motif} from './noticia-fondos';
 
 /* Noticia R · caída de Outlook / Microsoft 365 (12 nov 2026). Estilo noticia: fondo oscuro, píldora de etiqueta, 3–5 piezas por bloque. */
 type Word = {i: number; w: string; s: number; e: number; k?: boolean; p: number};
@@ -11,16 +12,16 @@ const lines = data.lines as {p: number; s: number; e: number}[];
 const INK = '#0B1020', TXT = '#F5F3EE', RED = '#FF4D4F', AMB = '#FFB020', GRN = '#38D39F', BLU = '#4DA3FF', MUT = '#9FB0C9';
 
 /* escenas = grupos de líneas del guion */
-const SCENES: {k: string; lines: number[]; bg: number; tag: string}[] = [
-  {k: 'hook', lines: [0], bg: 0, tag: 'ÚLTIMA HORA · 12 NOV'},
-  {k: 'count', lines: [1], bg: 0, tag: 'ÚLTIMA HORA · 12 NOV'},
-  {k: 'apps', lines: [2], bg: 1, tag: 'ÚLTIMA HORA · 12 NOV'},
-  {k: 'servers', lines: [3, 4], bg: 1, tag: 'LO QUE DICE MICROSOFT'},
-  {k: 'mx', lines: [5], bg: 2, tag: 'PARA TU DINERO EN MÉXICO'},
-  {k: 'bank', lines: [6], bg: 2, tag: 'PARA TU DINERO EN MÉXICO'},
-  {k: 'phish', lines: [7], bg: 3, tag: 'PARA TU DINERO EN MÉXICO'},
-  {k: 'backup', lines: [8], bg: 3, tag: 'PARA TU DINERO EN MÉXICO'},
-  {k: 'final', lines: [9, 10], bg: 4, tag: ''},
+const SCENES: {art: Motif; k: string; lines: number[]; bg: number; tag: string}[] = [
+  {art: 'inbox' as Motif, k: 'hook', lines: [0], bg: 0, tag: 'ÚLTIMA HORA · 12 NOV'},
+  {art: 'chart' as Motif, k: 'count', lines: [1], bg: 0, tag: 'ÚLTIMA HORA · 12 NOV'},
+  {art: 'inbox' as Motif, k: 'apps', lines: [2], bg: 1, tag: 'ÚLTIMA HORA · 12 NOV'},
+  {art: 'servers' as Motif, k: 'servers', lines: [3, 4], bg: 1, tag: 'LO QUE DICE MICROSOFT'},
+  {art: 'phone' as Motif, k: 'mx', lines: [5], bg: 2, tag: 'PARA TU DINERO EN MÉXICO'},
+  {art: 'phone' as Motif, k: 'bank', lines: [6], bg: 2, tag: 'PARA TU DINERO EN MÉXICO'},
+  {art: 'alert' as Motif, k: 'phish', lines: [7], bg: 3, tag: 'PARA TU DINERO EN MÉXICO'},
+  {art: 'servers' as Motif, k: 'backup', lines: [8], bg: 3, tag: 'PARA TU DINERO EN MÉXICO'},
+  {art: 'plain' as Motif, k: 'final', lines: [9, 10], bg: 4, tag: ''},
 ];
 const shots = SCENES.map((s, i) => {
   const a = i === 0 ? 0 : lines[s.lines[0]].s - 0.08;
@@ -275,7 +276,7 @@ export const Outlook: React.FC = () => {
   const urgent = si < 4;
   return (
     <AbsoluteFill style={{background: '#000'}}>
-      <Bg f={f} n={shot.bg} />
+      <TopicBg kind={shot.art} f={f} c1={BGS[shot.bg % BGS.length][0]} />
       <AbsoluteFill style={{transform: `translateY(110px) scale(${drift})`, transformOrigin: '540px 760px'}}>
         <Comp f={lf} t0={shot.a} t={t} />
       </AbsoluteFill>
