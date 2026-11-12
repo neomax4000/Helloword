@@ -1,0 +1,12 @@
+import {bundle} from '@remotion/bundler';
+import {renderStill, selectComposition, openBrowser} from '@remotion/renderer';
+import fs from 'fs';
+const out = process.argv[2] || '/tmp/frames_ahorrar';
+fs.mkdirSync(out, {recursive: true});
+const ts = [0, 1.6, 3.5, 6, 9, 11, 14, 17, 21, 24, 27, 30, 34, 38, 41, 45];
+const serveUrl = await bundle({entryPoint: '/home/claude/video/app/src/index.ts', onProgress: () => {}});
+const browser = await openBrowser('chrome', {browserExecutable: '/tmp/chromium', chromeMode: 'headless-shell', chromiumOptions: {gl: 'swangle'}});
+const comp = await selectComposition({serveUrl, id: 'Ahorrar', puppeteerInstance: browser});
+for (const t of ts) await renderStill({composition: comp, serveUrl, frame: Math.round(t * 30), output: `${out}/f_${String(t).padStart(2, '0')}.png`, puppeteerInstance: browser, scale: 0.3});
+await browser.close({silent: true});
+console.log('ok');
