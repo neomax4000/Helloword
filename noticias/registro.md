@@ -4,6 +4,8 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 
 | Fecha | Tipo | Tema | Puntaje | Veredicto | Vistas 24 h | Tiempo visto | Retención | Compartidos+guardados+comentarios por 1,000 vistas |
 |---|---|---|---|---|---|---|---|---|
+| 2026-11-12 | P | IPP EE.UU. octubre (vie 13 nov, 7:30 CDMX) | 50–72 | NO_GO (sin voz Kokoro: Hugging Face bloqueado; consenso con 1 fuente) | — | — | — | — |
+| 2026-11-12 | R | Wall Street 11 nov (S&P +1.3 %, Nasdaq +1.55 %) | ~40 | NO_GO | — | — | — | — |
 | 2026-11-11 | R | IPC EE.UU. octubre +0.4 % (más alto de lo esperado) | 62 | NO_GO (sin 2.ª fuente del consenso y sin tiempo de producción) | — | — | — | — |
 | 2026-11-10 | P | Inflación EE.UU. (hoy 7:30 CDMX) | — | NO_GO (ventana) | — | — | — | — |
 | 2026-11-10 | R | S&P 500 +2.35 % / chips | 57 | NO_GO | — | — | — | — |
