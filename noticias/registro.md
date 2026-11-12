@@ -15,6 +15,8 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 
 Prueba R vs P: R publicadas 0 de 3 · P publicadas 0 de 3 · fase actual: PRUEBA.
 
+| 2026-11-12 | R · Caída de Outlook / Microsoft 365 (pedido de Brandon) | ~47 (sin calcular formal) | PUBLICADA en Buffer 16:40 (supervisado, por pedido directo) | pendiente | pendiente | pendiente |
+
 ## Candidatos pre-radar para 2026-11-10 (los dejó Brandon el 9 nov, 23:52)
 Zona a vigilar: finanzas personales y crédito en México + mercado. Leer ANTES de buscar y reconfirmar todo (fuentes y fecha) a las 6:47.
 

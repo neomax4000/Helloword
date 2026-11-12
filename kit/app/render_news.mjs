@@ -1,0 +1,14 @@
+import {bundle} from '@remotion/bundler';
+import {renderMedia, renderStill, selectComposition, openBrowser} from '@remotion/renderer';
+const [id, out, png] = process.argv.slice(2);
+const serveUrl = await bundle({entryPoint: '/home/claude/helloword/kit/app/src/index.ts', onProgress: () => {}});
+const browser = await openBrowser('chrome', {browserExecutable: process.env.CHROME_BIN || '/usr/bin/google-chrome', chromeMode: 'chrome-for-testing', chromiumOptions: {gl: 'swangle'}});
+// Desde 2026-11-06 el VIDEO ya no lleva la portada de 1.5 s al inicio (restaba retención).
+// La portada PNG se saca de la composición con portada (XC); el video sale de la composición base (X).
+const comp = await selectComposition({serveUrl, id, puppeteerInstance: browser});
+await renderStill({composition: comp, serveUrl, output: png, frame: 12, puppeteerInstance: browser, scale: 2/3});
+let vid = comp;
+if (id.endsWith('C')) { try { vid = await selectComposition({serveUrl, id: id.slice(0, -1), puppeteerInstance: browser}); } catch (e) { vid = comp; console.log('sin composición base; el video lleva portada'); } }
+if (out !== '-') await renderMedia({composition: vid, serveUrl, codec: 'h264', outputLocation: out, puppeteerInstance: browser, crf: 20, scale: 2/3, audioCodec: 'aac', concurrency: 2});
+await browser.close({silent: true});
+console.log('done', id);
