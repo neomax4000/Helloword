@@ -23,9 +23,10 @@ const T = (i: number) => {
 /* ---- ESCENAS ---- */
 const SHOTS_RAW = [
   {w: 0, k: 'hook', bg: 0},
-  {w: 8, k: 'def', bg: 1}, {w: 18, k: 'banxico', bg: 1},
-  {w: 25, k: 'hipo', bg: 2}, {w: 38, k: 'ejemplo', bg: 2},
-  {w: 49, k: 'consejo', bg: 0}, {w: 58, k: 'loop', bg: 0},
+  {w: 8, k: 'def', bg: 1}, {w: 18, k: 'nacio', bg: 1},
+  {w: 26, k: 'valor', bg: 2}, {w: 40, k: 'banxico', bg: 2},
+  {w: 52, k: 'usos', bg: 0}, {w: 64, k: 'ejemplo', bg: 0},
+  {w: 74, k: 'consejo', bg: 1}, {w: 83, k: 'loop', bg: 0},
 ];
 type Shot = {w: number; k: string; bg: number; a: number; b: number};
 const shots: Shot[] = SHOTS_RAW.map((s, i, arr) => ({
@@ -172,79 +173,141 @@ const Check: React.FC = () => (
 );
 const Right: React.FC<{c?: string}> = ({c}) => <g transform="rotate(90)"><Arrow c={c} /></g>;
 
-const Hook: React.FC<SP> = ({f, at}) => (
-  <Svg>
-    <g transform="translate(540 400)"><Pill text="UDI" fill={NAVY} tc="#fff" size={140} w={560} /></g>
-    <Rise f={f} d={at(4)} x={300} y={780}><g transform="scale(1.3)"><Calendar /></g></Rise>
-    <Rise f={f} d={at(4) + 6} x={780} y={780}><g transform="scale(1.6)"><Coin /></g></Rise>
-    <Rise f={f} d={at(2)} x={540} y={1010}><Chip text="CAMBIA DE VALOR" fill={P_SAND} size={50} w={780} /></Rise>
-    <Rise f={f} d={at(5)} x={540} y={1140}><Chip text="TODOS LOS DÍAS" fill={P_MINT} size={50} w={780} /></Rise>
-  </Svg>
+const Doc: React.FC = () => (
+  <g filter="url(#soft)">
+    <rect x={-110} y={-140} width={220} height={280} rx={16} fill="#fff" stroke={NAVY} strokeWidth={STROKE} />
+    {[-90, -55, -20, 15].map((y) => <rect key={y} x={-76} y={y} width={y === -90 ? 120 : 152} height={14} rx={7} fill={y === -90 ? NAVY : P_BLUE} />)}
+    <circle cx={50} cy={90} r={30} fill={GOLD} stroke={NAVY} strokeWidth={4} />
+    <path d="M38 90 L47 99 L63 80" fill="none" stroke={NAVY} strokeWidth={6} strokeLinecap="round" strokeLinejoin="round" />
+  </g>
 );
+const Bond: React.FC = () => (
+  <g filter="url(#soft)">
+    <rect x={-150} y={-100} width={300} height={200} rx={18} fill={P_LAV} stroke={NAVY} strokeWidth={STROKE} />
+    <rect x={-124} y={-76} width={248} height={152} rx={10} fill="none" stroke={GOLD} strokeWidth={4} strokeDasharray="10 8" />
+    <circle cx={0} cy={0} r={44} fill="#fff" stroke={NAVY} strokeWidth={4} />
+    <text textAnchor="middle" y={16} fontFamily={FONT} fontWeight={700} fontSize={48} fill={GOLD_D}>$</text>
+  </g>
+);
+const Lens: React.FC = () => (
+  <g filter="url(#soft)">
+    <circle cx={-14} cy={-14} r={62} fill="#fff" stroke={NAVY} strokeWidth={STROKE + 2} />
+    <circle cx={-14} cy={-14} r={44} fill={P_BLUE} />
+    <path d="M32 32 L84 84" stroke={NAVY} strokeWidth={16} strokeLinecap="round" />
+  </g>
+);
+const Col: React.FC<{h: number; fill: string}> = ({h, fill}) => (
+  <rect x={-70} y={-h} width={140} height={Math.max(h, 1)} rx={10} fill={fill} stroke={NAVY} strokeWidth={STROKE} />
+);
+
+const HookPieces: React.FC<SP & {st?: boolean}> = ({f, at, st}) => {
+  const d = (n: number) => (st ? -100 : n);
+  return (
+    <Svg>
+      <g transform="translate(540 400)"><Pill text="UDI" fill={NAVY} tc="#fff" size={140} w={560} /></g>
+      <Rise f={f} d={d(at(1))} x={540} y={545}><Chip text="UNIDAD DE INVERSIÓN" fill={P_LAV} size={36} w={620} /></Rise>
+      <Rise f={f} d={d(at(4))} x={250} y={820}><g transform="scale(1.3)"><Calendar /></g></Rise>
+      <Rise f={f} d={d(at(4) + 4)} x={540} y={820}><Right /></Rise>
+      <Rise f={f} d={d(at(4) + 6)} x={830} y={820}><g transform="scale(1.6)"><Coin /></g></Rise>
+      <Rise f={f} d={d(at(2))} x={540} y={1050}><Chip text="CAMBIA DE VALOR" fill={P_SAND} size={50} w={780} /></Rise>
+      <Rise f={f} d={d(at(5))} x={540} y={1180}><Chip text="TODOS LOS DÍAS" fill={P_MINT} size={50} w={780} /></Rise>
+    </Svg>
+  );
+};
+const Hook: React.FC<SP> = (p) => <HookPieces {...p} />;
+const Loop: React.FC<SP> = (p) => <HookPieces {...p} st />;
 const Def: React.FC<SP> = ({f, at}) => {
   const m = ease((f - at(14)) / 26);
   return (
     <Svg>
       <Rise f={f} d={at(10)} x={540} y={370}><Chip text="UNIDAD DE CUENTA" fill={P_LAV} size={56} w={900} /></Rise>
-      <Rise f={f} d={at(8)} x={230} y={640}><g transform="scale(1.3)"><Tag text="UDI" size={52} fill={P_BLUE} /></g></Rise>
-      <Rise f={f} d={at(14)} x={560} y={640}><Right /></Rise>
-      <Rise f={f} d={at(16)} x={840} y={640}><g transform="scale(1.2)"><Tag text="INFLACIÓN" size={32} fill={P_ROSE} /></g></Rise>
+      <Rise f={f} d={at(8)} x={230} y={620}><g transform="scale(1.3)"><Tag text="UDI" size={52} fill={P_BLUE} /></g></Rise>
+      <Rise f={f} d={at(14)} x={560} y={620}><Right /></Rise>
+      <Rise f={f} d={at(16)} x={840} y={620}><g transform="scale(1.2)"><Tag text="INFLACIÓN" size={32} fill={P_ROSE} /></g></Rise>
+      <Rise f={f} d={at(17)} x={840} y={760}><Chip text="INPC" fill={P_SAND} size={38} w={240} /></Rise>
       <Rise f={f} d={at(14)} x={540} y={900}><Meter v={0.7 * m} label="UDI" fill={P_BLUE} /></Rise>
-      <Rise f={f} d={at(14)} x={540} y={1070}><Meter v={0.7 * m} label="INFLACIÓN" fill={P_ROSE} /></Rise>
+      <Rise f={f} d={at(14)} x={540} y={1050}><Meter v={0.7 * m} label="INFLACIÓN" fill={P_ROSE} /></Rise>
+      <Rise f={f} d={at(16)} x={540} y={1190}><Chip text="CONSERVA TU PODER DE COMPRA" fill={P_MINT} size={40} w={900} /></Rise>
+    </Svg>
+  );
+};
+const Nacio: React.FC<SP> = ({f, at}) => (
+  <Svg>
+    <Rise f={f} d={at(18)} x={540} y={380}><Chip text="NACE LA UDI" fill={P_MINT} size={48} w={620} /></Rise>
+    <Rise f={f} d={at(19)} x={540} y={570}><Chip text="1995" fill={NAVY} tc="#fff" size={130} w={560} /></Rise>
+    <Rise f={f} d={at(20)} x={250} y={880}><g transform="scale(1.3)"><Calendar /></g></Rise>
+    <Rise f={f} d={at(23)} x={830} y={880}><g transform="scale(0.95)"><Warn /></g></Rise>
+    <Rise f={f} d={at(23)} x={540} y={1110}><Chip text="TRAS LA CRISIS DEL PESO" fill={P_ROSE} size={46} w={900} /></Rise>
+  </Svg>
+);
+const Valor: React.FC<SP> = ({f, at}) => {
+  const g = ease((f - at(37)) / 40);
+  const h = 340 * g;
+  return (
+    <Svg>
+      <Rise f={f} d={at(27)} x={540} y={370}><Chip text="4 DE ABRIL DE 1995" fill={P_SAND} size={48} w={800} /></Rise>
+      <Rise f={f} d={at(33)} x={290} y={1010}><Col h={42} fill={P_BLUE} /></Rise>
+      <Rise f={f} d={at(33)} x={290} y={1100}><Chip text="1 PESO" fill={P_BLUE} size={42} w={280} /></Rise>
+      <Rise f={f} d={at(35)} x={540} y={800}><Right /></Rise>
+      <g transform={`translate(790 1010)`} opacity={cl((f - at(36)) / 12)}><Col h={Math.max(h, 1)} fill={P_MINT} /></g>
+      <g transform={`translate(790 ${1010 - h - 100})`} opacity={cl((f - at(37)) / 14)}><g transform="scale(1.1)"><Coin /></g></g>
+      <Rise f={f} d={at(37)} x={790} y={1100}><Chip text="MÁS DE 8" fill={P_MINT} size={42} w={320} /></Rise>
+      <Rise f={f} d={at(35)} x={540} y={930}><Chip text="HOY" fill={NAVY} tc="#fff" size={40} w={200} /></Rise>
     </Svg>
   );
 };
 const Banxico: React.FC<SP> = ({f, at}) => (
   <Svg>
-    <Rise f={f} d={at(18)} x={260} y={640}><g transform="scale(1.2)"><Building fill={P_SAND} /></g></Rise>
-    <Rise f={f} d={at(19)} x={260} y={940}><Chip text="BANXICO" fill={P_SAND} size={48} w={340} /></Rise>
-    <Rise f={f} d={at(20)} x={540} y={640}><Right /></Rise>
-    <Rise f={f} d={at(22)} x={820} y={640}><g transform="scale(1.1)"><Calendar /></g></Rise>
-    <Rise f={f} d={at(23)} x={820} y={940}><Chip text="CADA DÍA" fill={P_MINT} size={48} w={340} /></Rise>
-    <Rise f={f} d={at(20)} x={540} y={1090}><Chip text="PUBLICA SU VALOR" fill={NAVY} tc="#fff" size={54} w={860} /></Rise>
+    <Rise f={f} d={at(40)} x={250} y={620}><g transform="scale(1.2)"><Building fill={P_SAND} /></g></Rise>
+    <Rise f={f} d={at(41)} x={250} y={900}><Chip text="BANXICO" fill={P_SAND} size={48} w={340} /></Rise>
+    <Rise f={f} d={at(43)} x={540} y={620}><Right /></Rise>
+    <Rise f={f} d={at(48)} x={830} y={620}><g transform="scale(1.1)"><Doc /></g></Rise>
+    <Rise f={f} d={at(50)} x={830} y={900}><Chip text="DIARIO OFICIAL" fill={P_MINT} size={38} w={380} /></Rise>
+    <Rise f={f} d={at(43)} x={250} y={1020}><Chip text="CALCULA" fill="#fff" size={40} w={300} /></Rise>
+    <Rise f={f} d={at(45)} x={830} y={1020}><Chip text="PUBLICA" fill="#fff" size={40} w={300} /></Rise>
+    <Rise f={f} d={at(46)} x={540} y={1170}><Chip text="CON BASE EN EL INPC" fill={NAVY} tc="#fff" size={46} w={860} /></Rise>
   </Svg>
 );
-const Hipo: React.FC<SP> = ({f, at}) => {
-  const m = ease((f - at(33)) / 26);
+const Usos: React.FC<SP> = ({f, at}) => (
+  <Svg>
+    <Rise f={f} d={at(52)} x={540} y={370}><Chip text="SE USA EN" fill={P_LAV} size={52} w={520} /></Rise>
+    <Rise f={f} d={at(55)} x={260} y={650}><g transform="scale(1.1)"><House /></g></Rise>
+    <Rise f={f} d={at(56)} x={260} y={920}><Chip text="HIPOTECARIOS" fill={P_MINT} size={40} w={440} /></Rise>
+    <Rise f={f} d={at(57)} x={540} y={650}><text textAnchor="middle" y={40} fontFamily={FONT} fontWeight={700} fontSize={110} fill={GOLD_D}>+</text></Rise>
+    <Rise f={f} d={at(59)} x={820} y={650}><g transform="scale(1.1)"><Bond /></g></Rise>
+    <Rise f={f} d={at(61)} x={820} y={920}><Chip text="BONOS GOBIERNO" fill={P_LAV} size={36} w={440} /></Rise>
+    <Rise f={f} d={at(62)} x={540} y={1070}><Chip text="UDIBONOS" fill={NAVY} tc="#fff" size={56} w={620} /></Rise>
+    <Rise f={f} d={at(55)} x={540} y={1190}><Chip text="CRÉDITOS Y BONOS EN UDIS" fill={P_SAND} size={38} w={900} /></Rise>
+  </Svg>
+);
+const Ejemplo: React.FC<SP> = ({f, at}) => {
+  const a = ease((f - at(66)) / 26), b = ease((f - at(71)) / 26);
   return (
     <Svg>
-      <Rise f={f} d={at(28)} x={540} y={370}><Chip text="CRÉDITO HIPOTECARIO" fill={P_SAND} size={50} w={900} /></Rise>
-      <Rise f={f} d={at(28)} x={290} y={680}><g transform="scale(1.3)"><House /></g></Rise>
-      <Rise f={f} d={at(26)} x={820} y={680}><g transform="scale(1.4)"><Tag text="UDI" size={52} fill={P_BLUE} /></g></Rise>
-      <Rise f={f} d={at(32)} x={540} y={1000}><Meter v={0.75 * m} label="SE AJUSTA" fill={P_MINT} /></Rise>
-      <Rise f={f} d={at(36)} x={540} y={1130}><Chip text="CON LOS PRECIOS" fill={P_ROSE} size={48} w={760} /></Rise>
+      <Rise f={f} d={at(64)} x={540} y={360}><Chip text="ASÍ FUNCIONA" fill={GOLD} size={52} w={620} /></Rise>
+      <Rise f={f} d={at(66)} x={260} y={650}><g filter="url(#soft)"><circle r={135} fill={P_ROSE} stroke={NAVY} strokeWidth={STROKE} /></g><text textAnchor="middle" y={12} fontFamily={FONT} fontWeight={700} fontSize={36} fill={NAVY}>INFLACIÓN</text></Rise>
+      <Rise f={f} d={at(67)} x={260} y={850}><g transform="scale(0.5)"><Arrow c={GOLD_D} /></g></Rise>
+      <Rise f={f} d={at(69)} x={540} y={650}><Right /></Rise>
+      <Rise f={f} d={at(71)} x={820} y={650}><g filter="url(#soft)"><circle r={135} fill={P_BLUE} stroke={NAVY} strokeWidth={STROKE} /></g><text textAnchor="middle" y={-6} fontFamily={FONT} fontWeight={700} fontSize={34} fill={NAVY}>DEUDA</text><text textAnchor="middle" y={36} fontFamily={FONT} fontWeight={700} fontSize={34} fill={NAVY}>EN UDIS</text></Rise>
+      <Rise f={f} d={at(73)} x={820} y={850}><g transform="scale(0.5)"><Arrow c={GOLD_D} /></g></Rise>
+      <Rise f={f} d={at(66)} x={540} y={990}><Meter v={0.7 * a} label="INFLACIÓN" fill={P_ROSE} /></Rise>
+      <Rise f={f} d={at(71)} x={540} y={1130}><Meter v={0.7 * b} label="DEUDA EN UDIS" fill={P_BLUE} /></Rise>
     </Svg>
   );
 };
-const Ejemplo: React.FC<SP> = ({f, at}) => (
-  <Svg>
-    <Rise f={f} d={at(38)} x={540} y={370}><Chip text="EJEMPLO" fill={GOLD} size={60} w={520} /></Rise>
-    <Rise f={f} d={at(41)} x={260} y={690}><g filter="url(#soft)"><circle r={140} fill={P_ROSE} stroke={NAVY} strokeWidth={STROKE} /></g><text textAnchor="middle" y={12} fontFamily={FONT} fontWeight={700} fontSize={38} fill={NAVY}>INFLACIÓN</text></Rise>
-    <Rise f={f} d={at(42)} x={260} y={940}><g transform="scale(0.55)"><Arrow c={GOLD_D} /></g></Rise>
-    <Rise f={f} d={at(43)} x={540} y={690}><Right /></Rise>
-    <Rise f={f} d={at(44)} x={820} y={690}><g filter="url(#soft)"><circle r={140} fill={P_BLUE} stroke={NAVY} strokeWidth={STROKE} /></g><text textAnchor="middle" y={-6} fontFamily={FONT} fontWeight={700} fontSize={34} fill={NAVY}>DEUDA</text><text textAnchor="middle" y={36} fontFamily={FONT} fontWeight={700} fontSize={34} fill={NAVY}>EN UDIS</text></Rise>
-    <Rise f={f} d={at(47)} x={820} y={940}><g transform="scale(0.55)"><Arrow c={GOLD_D} /></g></Rise>
-    <Rise f={f} d={at(48)} x={540} y={1120}><Chip text="AMBAS SUBEN" fill={NAVY} tc="#fff" size={54} w={680} /></Rise>
-  </Svg>
-);
 const Consejo: React.FC<SP> = ({f, at}) => (
   <Svg>
-    <Rise f={f} d={at(49)} x={540} y={370}><Chip text="ANTES DE CONTRATAR" fill={NAVY} tc="#fff" size={52} w={920} /></Rise>
-    {[['REVISA', 52, 620, P_MINT], ['CÓMO SE AJUSTA', 55, 800, P_SAND], ['TU PAGO', 57, 980, P_ROSE]].map(([t, w, y, c]) => (
+    <Rise f={f} d={at(74)} x={540} y={370}><Chip text="ANTES DE CONTRATAR" fill={NAVY} tc="#fff" size={52} w={920} /></Rise>
+    {[['REVISA', 77, 620, P_MINT], ['CÓMO SE AJUSTA', 80, 800, P_SAND], ['TU PAGO', 82, 980, P_ROSE]].map(([t, w, y, c]) => (
       <React.Fragment key={t as string}>
-        <Rise f={f} d={at(w as number)} x={170} y={y as number}><Check /></Rise>
-        <Rise f={f} d={at(w as number)} x={600} y={y as number}><Chip text={t as string} fill={c as string} size={50} w={760} /></Rise>
+        <Rise f={f} d={at(w as number)} x={140} y={y as number}><Check /></Rise>
+        <Rise f={f} d={at(w as number)} x={520} y={y as number}><Chip text={t as string} fill={c as string} size={46} w={620} /></Rise>
       </React.Fragment>
     ))}
-  </Svg>
-);
-const Loop: React.FC<SP> = ({f, at}) => (
-  <Svg>
-    <g transform="translate(540 400)"><Pill text="UDI" fill={NAVY} tc="#fff" size={140} w={560} /></g>
-    <g transform="translate(300 780)"><g transform="scale(1.3)"><Calendar /></g></g>
-    <g transform="translate(780 780)"><g transform="scale(1.6)"><Coin /></g></g>
-    <g transform="translate(540 1010)"><Chip text="CAMBIA DE VALOR" fill={P_SAND} size={50} w={780} /></g>
-    <g transform="translate(540 1140)"><Chip text="TODOS LOS DÍAS" fill={P_MINT} size={50} w={780} /></g>
+    <Rise f={f} d={at(77)} x={890} y={620}><g transform="scale(0.95)"><Lens /></g></Rise>
+    <Rise f={f} d={at(80)} x={890} y={800}><g transform="scale(0.6)"><Arrow c={GOLD_D} /></g></Rise>
+    <Rise f={f} d={at(82)} x={890} y={980}><g transform="scale(0.9)"><Coin /></g></Rise>
+    <Rise f={f} d={at(80)} x={540} y={1150}><Chip text="LEE CÓMO SE ACTUALIZA" fill={P_LAV} size={38} w={860} /></Rise>
   </Svg>
 );
 
@@ -345,7 +408,7 @@ export const UdiPrueba: React.FC = () => {
   const p: SP = {f: lf, at, d: sd};
   const drift = 1 + 0.025 * cl(f / (data.total * FPS));
   const enter = shot.w === 0 ? 1 : ease(lf / 9);
-  const MAP: Record<string, React.FC<SP>> = {hook: Hook, def: Def, banxico: Banxico, hipo: Hipo, ejemplo: Ejemplo, consejo: Consejo, loop: Loop};
+  const MAP: Record<string, React.FC<SP>> = {hook: Hook, def: Def, nacio: Nacio, valor: Valor, banxico: Banxico, usos: Usos, ejemplo: Ejemplo, consejo: Consejo, loop: Loop};
   const Comp = MAP[shot.k];
   return (
     <AbsoluteFill style={{background: '#fff'}}>
