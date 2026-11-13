@@ -32,12 +32,14 @@ import {Value} from './value';
 import {Growth} from './growth';
 import {TasaReal} from './tasareal';
 import {InflaMini} from './inflamini';
+import {UdiPrueba} from './udiprueba';
 import {Bucle} from './bucle';
 import bucleData from '../public/bucle/words.json';
 import valueData from '../public/value/words.json';
 import growthData from '../public/growth/words.json';
 import tasaRealData from '../public/tasareal/words.json';
 import inflaMiniData from '../public/inflamini/words.json';
+import udiPruebaData from '../public/udiprueba/words.json';
 import divData from '../public/diversificar/words.json';
 import {Cetes} from './cetes';
 import cetesData from '../public/cetes/words.json';
@@ -204,6 +206,15 @@ const GrowthMain: React.FC = () => {
       .then(() => continueRender(handle));
   }, [handle]);
   return <Growth />;
+};
+const UdiPruebaMain: React.FC = () => {
+  const [handle] = useState(() => delayRender('fuentes'));
+  useEffect(() => {
+    Promise.all(['300', '400', '700'].map((w) => (document as any).fonts.load(`${w} 40px Poppins`)))
+      .catch(() => null)
+      .then(() => continueRender(handle));
+  }, [handle]);
+  return <UdiPrueba />;
 };
 const InflaMiniMain: React.FC = () => {
   const [handle] = useState(() => delayRender('fuentes'));
@@ -590,6 +601,7 @@ const COVERS: Record<string, CoverProps> = {
   Liquidez: {tag: 'GLOSARIO FINANCIERO', light: 'Tu dinero atrapado', bold: 'no te salva', sub: 'La liquidez, explicada en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
   Bucle: {tag: 'GLOSARIO FINANCIERO', light: 'Tu dinero guardado', bold: 'pierde valor', sub: 'Inflación en bucle', icon: 'coins', logo: false, theme: 'light'},
   Growth: {tag: 'GLOSARIO FINANCIERO', light: 'Empresas que crecen', bold: 'rápido: growth', sub: 'Growth, explicado en 20 segundos', icon: 'chart', logo: false, theme: 'light'},
+  UdiPrueba: {tag: 'GLOSARIO FINANCIERO', light: 'Una unidad que', bold: 'cambia cada día: UDI', sub: 'La UDI, explicada en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
   InflaMini: {tag: 'GLOSARIO FINANCIERO', light: 'Tu dinero compra', bold: 'menos cada año', sub: 'La inflación, explicada en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
   TasaReal: {tag: 'GLOSARIO FINANCIERO', light: 'Tu dinero crece,', bold: 'pero ¿rinde? Tasa real', sub: 'Tasa real, explicada en 20 segundos', icon: 'chart', logo: false, theme: 'light'},
   Value: {tag: 'GLOSARIO FINANCIERO', light: 'Barato no siempre', bold: 'es buen negocio', sub: 'Value, explicado en 20 segundos', icon: 'coins', logo: false, theme: 'light'},
@@ -646,6 +658,7 @@ const BucleC = cv(COVERS.Bucle, BucleMain);
 const GrowthC = cv(COVERS.Growth, GrowthMain);
 const TasaRealC = cv(COVERS.TasaReal, TasaRealMain);
 const InflaMiniC = cv(COVERS.InflaMini, InflaMiniMain);
+const UdiPruebaC = cv(COVERS.UdiPrueba, UdiPruebaMain);
 const ValueC = cv(COVERS.Value, ValueMain);
 const CetesC = cv(COVERS.Cetes, CetesMain);
 const Sp500C = cv(COVERS.Sp500, Sp500Main), BancaC = cv(COVERS.Banca, BancaMain), InteresC = cv(COVERS.Interes, InteresMain), NarradorC = cv(COVERS.Narrador, NarradorMain);
@@ -672,6 +685,7 @@ export const Root: React.FC = () => (
     <Composition id="Liquidez" component={LiquidezMain} durationInFrames={sec(liqData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Bucle" component={BucleMain} durationInFrames={sec(bucleData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Growth" component={GrowthMain} durationInFrames={sec(growthData.total)} fps={FPS} width={W} height={H} />
+    <Composition id="UdiPrueba" component={UdiPruebaMain} durationInFrames={sec(udiPruebaData.total)} fps={FPS} width={W} height={H} />
     <Composition id="InflaMini" component={InflaMiniMain} durationInFrames={sec(inflaMiniData.total)} fps={FPS} width={W} height={H} />
     <Composition id="TasaReal" component={TasaRealMain} durationInFrames={sec(tasaRealData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Value" component={ValueMain} durationInFrames={sec(valueData.total)} fps={FPS} width={W} height={H} />
@@ -741,6 +755,7 @@ export const Root: React.FC = () => (
     <Composition id="LiquidezC" component={LiquidezC} durationInFrames={sec(liqData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="BucleC" component={BucleC} durationInFrames={sec(bucleData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="GrowthC" component={GrowthC} durationInFrames={sec(growthData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="UdiPruebaC" component={UdiPruebaC} durationInFrames={sec(udiPruebaData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="InflaMiniC" component={InflaMiniC} durationInFrames={sec(inflaMiniData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="TasaRealC" component={TasaRealC} durationInFrames={sec(tasaRealData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="ValueC" component={ValueC} durationInFrames={sec(valueData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
