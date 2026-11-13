@@ -75,7 +75,7 @@ Formato: gancho en afirmación/dato (sin preguntas en la voz) → qué es → ej
 - [x] Growth (inversión en crecimiento) (2026-11-11; guion `guiones/videos-producidos/growth.md`, portada `capturas/43_GROWTH_portada.png`) — nota 2026-11-09: explicar qué es en simple (empresas que crecen rápido; suelen reinvertir utilidades y pueden ser más volátiles). Pronunciar «grouz». Verificar definición en fuente y sin promesas de rendimiento. Pareja de «Value»; idealmente salen en días seguidos, antes del 2026-11-13.
 - [x] Tasa real (2026-11-12; guion `guiones/videos-producidos/tasa-real.md`, portada `capturas/45_TASA_REAL_portada.png`)
 - [x] Inflación (versión mini) (2026-11-13; guion `guiones/videos-producidos/inflacion-mini.md`, portada `capturas/48_INFLACION_portada.png`)
-- [ ] UDI
+- [ ] UDI — FORMATO DE PRUEBA (ver CLAUDE.md «PRUEBA DE FORMATO DEL GLOSARIO»): bucle sin cierre de like + pantalla más saturada
 - [ ] SPEI
 - [ ] Interés compuesto (mini)
 - [ ] Plazo

@@ -56,6 +56,13 @@ Decisión de Brandon (2026-11-06): los mini videos del glosario van en tema clar
 - Voz del glosario (decisión 2026-11-07): voz D de Kokoro = em_santa 0.5 + em_alex 0.25 + im_nicola 0.25, con `kit/scripts/voz/voz_glosario.py`. Guion SOLO de hechos, sin preguntas (la entonación de pregunta delata la voz sintética); sin pausas largas entre frases (0.08 s) y cada frase arranca con tono alto y golpe de volumen. Palabras en inglés escritas como suenan en el hablado (like → «laik»; «Cat» tal cual) y se verifica la fonética. Si se usara una pregunta, receta F1 en el docstring del script.
 - Portada clara (`theme: 'light'` en `cover.tsx`): fondo blanco/crema, rótulo y detalles dorados, letras azul marino, subtítulo gris; logo azul solo si es de producto.
 
+## PRUEBA DE FORMATO DEL GLOSARIO (decisión de Brandon 2026-11-13, aplica al glosario de UDI y siguientes hasta que él diga otra cosa; comparar métricas contra el formato anterior)
+Motivo: el glosario es lo más exitoso (más likes), el gancho funciona; se prueba subir retención con bucle y más información en pantalla.
+- **Sin cierre «Si te sirvió, dale like y sígueme»** (ni en la voz, ni en pantalla, ni en la descripción). Se quita la escena `final`.
+- **Bucle:** la última frase del guion termina con las palabras con que arranca el video, de modo que al repetirse se lea continuo. Ejemplo (inflación): empieza «La inflación es…» y termina «…por eso, la inflación» (el video vuelve a empezar y la frase se cierra). El final debe quedar cortado limpio (sin cola de silencio larga, TAIL mínimo en `voz_glosario.py`) y el último fotograma enlazar visualmente con el primero (mismo fondo/pieza principal). Guion sin preguntas igualmente.
+- **Pantalla más saturada:** más piezas por escena (3–5 elementos: ilustración + rótulos + cifras/etiquetas + chips de apoyo), sin desbordar ni encimar los subtítulos; mismo estilo claro y mismo movimiento permitido (solo aparecer/subir/trasladar).
+- Anotar en `guiones/videos-producidos/<palabra>.md` que usó el formato de prueba, para medir.
+
 ## Para un video nuevo
 1. Si es importante, propone plan (audiencia, mensaje, acción, formato) antes de producir.
 2. Copia la plantilla más parecida: narrador `kit/app/src/actimed.tsx` / `acticob.tsx`; diálogo `vac2.tsx` / `actdual.tsx`.
