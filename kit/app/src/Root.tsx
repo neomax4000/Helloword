@@ -15,7 +15,9 @@ import {CatEdu} from './catedu';
 import {Afore as AforeVid} from './afore';
 import {Fondo as FondoVid} from './fondo';
 import {Outlook as OutlookVid} from './outlook';
+import {Outlook2 as Outlook2Vid} from './outlook2';
 import outlookData from '../public/outlook/words.json';
+import outlook2Data from '../public/outlook2/words.json';
 import {Ahorrar as AhorrarVid} from './ahorrar';
 import ahorrarData from '../public/ahorrar/words.json';
 import fondoData from '../public/fondo/words.json';
@@ -576,6 +578,7 @@ const COVERS: Record<string, CoverProps> = {
   Ipab: {tag: 'FINANZAS FÁCILES', light: '¿El IPAB de verdad', bold: 'protege tu dinero?', sub: 'Qué cubre y qué no, explicado fácil', icon: 'shield', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Buro: {tag: 'FINANZAS FÁCILES', light: '¿El Buró de Crédito es una', bold: 'lista negra?', sub: 'Qué es y cómo revisar el tuyo', icon: 'shield', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Ahorrar: {tag: 'FINANZAS FÁCILES', light: 'Ahorrar no es', bold: 'lo mismo que invertir', sub: 'La diferencia que casi nadie explica', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
+  Outlook2: {tag: 'SEGUIMIENTO · 13 NOV', light: 'Se cayó', bold: 'Outlook', sub: 'Ya sabemos qué pasó y qué hacer', icon: 'shield', logo: false, pal: {bg1: '#2A0F18', bg2: '#0B1020', acc: '#FF4D4F', tagText: '#FFFFFF'}},
   Outlook: {tag: 'ÚLTIMA HORA · 12 NOV', light: 'Se cayó', bold: 'Outlook', sub: 'Qué pasó y qué hacer hoy con tu dinero', icon: 'shield', logo: false, pal: {bg1: '#2A0F18', bg2: '#0B1020', acc: '#FF4D4F', tagText: '#FFFFFF'}},
   Fondo: {tag: 'FINANZAS FÁCILES', light: 'Una emergencia no avisa,', bold: 'tu ahorro debe estar listo', sub: 'El fondo de emergencia, explicado fácil', icon: 'shield', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Afore: {tag: 'FINANZAS FÁCILES', light: 'Tu Afore maneja', bold: 'dinero que es tuyo', sub: 'Qué es y quién la maneja, explicado fácil', icon: 'shield', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
@@ -623,6 +626,7 @@ const TasaC = cv(COVERS.Tasa, TasaMain);
 const AforeC = cv(COVERS.Afore, AforeMain);
 const FondoC = cv(COVERS.Fondo, FondoMain);
 const OutlookC = cv(COVERS.Outlook, OutlookMain);
+const Outlook2C = cv(COVERS.Outlook2, Outlook2Vid);
 const AhorrarC = cv(COVERS.Ahorrar, AhorrarMain);
 const CatEduC = cv(COVERS.CatEdu, CatEduMain);
 const CatC = cv(COVERS.Cat, CatMain);
@@ -656,6 +660,8 @@ export const Root: React.FC = () => (
     <Composition id="Afore" component={AforeMain} durationInFrames={sec(aforeData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Ahorrar" component={AhorrarMain} durationInFrames={sec(ahorrarData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Outlook" component={OutlookMain} durationInFrames={sec(outlookData.total)} fps={FPS} width={W} height={H} />
+    <Composition id="Outlook2" component={Outlook2Vid} durationInFrames={sec(outlook2Data.total)} fps={FPS} width={W} height={H} />
+    <Composition id="Outlook2C" component={Outlook2C} durationInFrames={sec(outlook2Data.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="OutlookC" component={OutlookC} durationInFrames={sec(outlookData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Fondo" component={FondoMain} durationInFrames={sec(fondoData.total)} fps={FPS} width={W} height={H} />
     <Composition id="CatEdu" component={CatEduMain} durationInFrames={sec(catEduData.total)} fps={FPS} width={W} height={H} />

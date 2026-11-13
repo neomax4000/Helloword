@@ -4,6 +4,9 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 
 | Fecha | Tipo | Tema | Puntaje | Veredicto | Vistas 24 h | Tiempo visto | Retención | Compartidos+guardados+comentarios por 1,000 vistas |
 |---|---|---|---|---|---|---|---|---|
+| 2026-11-13 | R | Seguimiento caída de Outlook / Microsoft 365 | 34 | ESPERA_OK (producido; puntaje bajo pero acordado con Brandon el 12 nov; modo supervisado) | — | — | — | — |
+| 2026-11-13 | R | Renuncia de Jensen Huang (cierre NVDA −4.3 %) | 52 | NO_GO | — | — | — | — |
+| 2026-11-13 | P | IPP EE. UU. octubre (hoy 7:30 CDMX) | — | NO_GO (ventana cerrada) | — | — | — | — |
 | 2026-11-12 | R | Jensen Huang renuncia a Nvidia (ocurrió noche 11→12 nov) | 62–67 | ESPERA_OK en papel, NO producido (sin voz Kokoro; falta confirmar −10 % con 2.ª fuente) | — | — | — | — |
 | 2026-11-12 | P | IPP EE.UU. octubre (vie 13 nov, 7:30 CDMX) | 50–72 | NO_GO (sin voz Kokoro: Hugging Face bloqueado; consenso con 1 fuente) | — | — | — | — |
 | 2026-11-12 | R | Wall Street 11 nov (S&P +1.3 %, Nasdaq +1.55 %) | ~40 | NO_GO | — | — | — | — |
@@ -13,7 +16,7 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 | 2026-11-10 | R | Aguinaldo federal + Buen Fin | ~58 | NO_GO (sin fuente primaria) | — | — | — | — |
 | 2026-11-10 | R | Nvidia / Huang | ~45 | NO_GO | — | — | — | — |
 
-Prueba R vs P: R publicadas 0 de 3 · P publicadas 0 de 3 · fase actual: PRUEBA.
+Prueba R vs P: R publicadas 0 de 3 (la del 12 nov salió por pedido directo, métricas pendientes) · P publicadas 0 de 3 · fase actual: PRUEBA.
 
 | 2026-11-12 | R · Caída de Outlook / Microsoft 365 (pedido de Brandon) | ~47 (sin calcular formal) | PUBLICADA en Buffer 16:40 (supervisado, por pedido directo) | pendiente | pendiente | pendiente |
 
