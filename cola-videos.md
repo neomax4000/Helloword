@@ -44,7 +44,7 @@ Cada tema: gancho en pregunta fuerte, sin cifras de rendimiento ni promesas, fue
 - [x] ¿Qué es una Afore y quién la maneja? (2026-11-10; guion `guiones/videos-producidos/afore.md`, portada `capturas/41_AFORE_portada.png`)
 - [x] ¿Qué es el fondo de emergencia y de cuánto debería ser? (2026-11-11; guion `guiones/videos-producidos/fondo.md`, portada `capturas/44_FONDO_portada.png`)
 - [x] ¿Qué diferencia hay entre ahorrar e invertir? (2026-11-12; guion `guiones/videos-producidos/ahorrar.md`, portada `capturas/46_AHORRAR_portada.png`)
-- [ ] ¿Qué es la diversificación? («no pongas todos los huevos en la misma canasta»)
+- [x] ¿Qué es la diversificación? («no pongas todos los huevos en la misma canasta») (2026-11-13; guion `guiones/videos-producidos/diversif.md`, portada `capturas/49_DIVERSIF_portada.png`)
 - [ ] ¿Qué es la deuda buena y la deuda mala?
 - [ ] ¿Qué es el SPEI y por qué es instantáneo?
 - [ ] ¿Qué es un seguro de vida y cuándo sí lo necesitas?

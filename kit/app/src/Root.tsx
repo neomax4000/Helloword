@@ -19,6 +19,8 @@ import {Outlook2 as Outlook2Vid} from './outlook2';
 import outlookData from '../public/outlook/words.json';
 import outlook2Data from '../public/outlook2/words.json';
 import {Ahorrar as AhorrarVid} from './ahorrar';
+import {Diversif as DiversifVid} from './diversif';
+import diversifData from '../public/diversif/words.json';
 import ahorrarData from '../public/ahorrar/words.json';
 import fondoData from '../public/fondo/words.json';
 import aforeData from '../public/afore/words.json';
@@ -312,6 +314,15 @@ const FondoMain: React.FC = () => {
   }, [handle]);
   return <FondoVid />;
 };
+const DiversifMain: React.FC = () => {
+  const [handle] = useState(() => delayRender('fuentes'));
+  useEffect(() => {
+    Promise.all(['400', '700'].map((w) => (document as any).fonts.load(`${w} 40px Poppins`)))
+      .catch(() => null)
+      .then(() => continueRender(handle));
+  }, [handle]);
+  return <DiversifVid />;
+};
 const AhorrarMain: React.FC = () => {
   const [handle] = useState(() => delayRender('fuentes'));
   useEffect(() => {
@@ -588,6 +599,7 @@ const COVERS: Record<string, CoverProps> = {
   Inflacion: {tag: 'FINANZAS FÁCILES', light: '¿Tu dinero en el', bold: 'colchón pierde valor?', sub: 'Qué es la inflación, explicado fácil', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Ipab: {tag: 'FINANZAS FÁCILES', light: '¿El IPAB de verdad', bold: 'protege tu dinero?', sub: 'Qué cubre y qué no, explicado fácil', icon: 'shield', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Buro: {tag: 'FINANZAS FÁCILES', light: '¿El Buró de Crédito es una', bold: 'lista negra?', sub: 'Qué es y cómo revisar el tuyo', icon: 'shield', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
+  Diversif: {tag: 'FINANZAS FÁCILES', light: 'No pongas todo', bold: 'en la misma canasta', sub: 'Qué es diversificar tu dinero', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Ahorrar: {tag: 'FINANZAS FÁCILES', light: 'Ahorrar no es', bold: 'lo mismo que invertir', sub: 'La diferencia que casi nadie explica', icon: 'coins', logo: false, pal: {bg1: '#0E1024', bg2: '#2A2F5A', acc: '#FFC857', tagText: '#1B1F3B'}},
   Outlook2: {tag: 'SEGUIMIENTO · 13 NOV', light: 'Se cayó', bold: 'Outlook', sub: 'Ya sabemos qué pasó y qué hacer', icon: 'shield', logo: false, pal: {bg1: '#2A0F18', bg2: '#0B1020', acc: '#FF4D4F', tagText: '#FFFFFF'}},
   Outlook: {tag: 'ÚLTIMA HORA · 12 NOV', light: 'Se cayó', bold: 'Outlook', sub: 'Qué pasó y qué hacer hoy con tu dinero', icon: 'shield', logo: false, pal: {bg1: '#2A0F18', bg2: '#0B1020', acc: '#FF4D4F', tagText: '#FFFFFF'}},
@@ -640,6 +652,7 @@ const FondoC = cv(COVERS.Fondo, FondoMain);
 const OutlookC = cv(COVERS.Outlook, OutlookMain);
 const Outlook2C = cv(COVERS.Outlook2, Outlook2Vid);
 const AhorrarC = cv(COVERS.Ahorrar, AhorrarMain);
+const DiversifC = cv(COVERS.Diversif, DiversifMain);
 const CatEduC = cv(COVERS.CatEdu, CatEduMain);
 const CatC = cv(COVERS.Cat, CatMain);
 const GlosarioC = cv(COVERS.Glosario, GlosarioMain);
@@ -671,6 +684,7 @@ export const Root: React.FC = () => (
     <Composition id="Banca" component={BancaMain} durationInFrames={sec(bancaData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Ipab" component={IpabMain} durationInFrames={sec(ipabData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Afore" component={AforeMain} durationInFrames={sec(aforeData.total)} fps={FPS} width={W} height={H} />
+    <Composition id="Diversif" component={DiversifMain} durationInFrames={sec(diversifData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Ahorrar" component={AhorrarMain} durationInFrames={sec(ahorrarData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Outlook" component={OutlookMain} durationInFrames={sec(outlookData.total)} fps={FPS} width={W} height={H} />
     <Composition id="Outlook2" component={Outlook2Vid} durationInFrames={sec(outlook2Data.total)} fps={FPS} width={W} height={H} />
@@ -745,6 +759,7 @@ export const Root: React.FC = () => (
     <Composition id="InflacionC" component={InflacionC} durationInFrames={sec(inflacionData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="IpabC" component={IpabC} durationInFrames={sec(ipabData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="AforeC" component={AforeC} durationInFrames={sec(aforeData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="DiversifC" component={DiversifC} durationInFrames={sec(diversifData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="AhorrarC" component={AhorrarC} durationInFrames={sec(ahorrarData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="FondoC" component={FondoC} durationInFrames={sec(fondoData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="CatEduC" component={CatEduC} durationInFrames={sec(catEduData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
