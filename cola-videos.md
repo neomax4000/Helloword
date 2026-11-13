@@ -74,7 +74,7 @@ Formato: gancho en afirmación/dato (sin preguntas en la voz) → qué es → ej
 - [x] Value (inversión en valor) (2026-11-10; guion `guiones/videos-producidos/value.md`, portada `capturas/40_VALUE_portada.png`) — — nota 2026-11-09: explicar qué es en simple (empresas sólidas que cotizan a buen precio frente a lo que valen). Pronunciar «valiu». Verificar definición en fuente (CNBV/Bolsa/gestora) y sin promesas de rendimiento. Enlaza con el video de JPMRVUS (programado 2026-11-13).
 - [x] Growth (inversión en crecimiento) (2026-11-11; guion `guiones/videos-producidos/growth.md`, portada `capturas/43_GROWTH_portada.png`) — nota 2026-11-09: explicar qué es en simple (empresas que crecen rápido; suelen reinvertir utilidades y pueden ser más volátiles). Pronunciar «grouz». Verificar definición en fuente y sin promesas de rendimiento. Pareja de «Value»; idealmente salen en días seguidos, antes del 2026-11-13.
 - [x] Tasa real (2026-11-12; guion `guiones/videos-producidos/tasa-real.md`, portada `capturas/45_TASA_REAL_portada.png`)
-- [ ] Inflación (versión mini)
+- [x] Inflación (versión mini) (2026-11-13; guion `guiones/videos-producidos/inflacion-mini.md`, portada `capturas/48_INFLACION_portada.png`)
 - [ ] UDI
 - [ ] SPEI
 - [ ] Interés compuesto (mini)
