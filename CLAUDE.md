@@ -9,6 +9,7 @@ Brandon Ramírez Salas, Banquero Patrimonial en Actinver (Zapopan). Hace videos 
 - `guiones/videos-producidos/` — guion final y notas de los primeros videos.
 - `guiones/serie-deuda-en-pesos.md` — ACTIREN, ACTIGOB, ORION (producidos).
 - `guiones/deconstruyendo-las-finanzas.md` — tipo de video aparte «Deconstruyendo las finanzas» (reglas, temas planeados y guion 1 de fondos de inversión); proyecto futuro, fuera del ciclo diario.
+- `PROPUESTA-ESTANDAR-PRO.md` — auditoría de calidad y propuesta «Estándar Pro v1» (2026-11-13), con video piloto «Aguinaldo» (`kit/app/src/pro.tsx` + `aguinaldo.tsx`, scripts en `kit/scripts/pro/`). **Es propuesta: no reemplaza las reglas de este archivo hasta que Brandon la apruebe.**
 - `cola-videos.md` — cola de producción: serie de productos, educativos largos y GLOSARIO FINANCIERO (mini videos de una palabra, ~20 s, plantilla `kit/app/src/glosario.tsx`, estilo claro).
 - `datos/productos.py` — catálogo con fichas, liquidez, calificación y notas de cada producto.
 - Notion (Centro de Mando de IA): «Instructivo: cómo hacemos un video» y «Biblioteca de videos — cómo recrear cada uno» (ficha y capturas de los 15 videos).
