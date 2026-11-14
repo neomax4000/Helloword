@@ -77,7 +77,7 @@ Formato (Estándar Pro desde 2026-11-14, `kit/PRO.md`): gancho con dato concreto
 - [x] Tasa real (2026-11-12; guion `guiones/videos-producidos/tasa-real.md`, portada `capturas/45_TASA_REAL_portada.png`)
 - [x] Inflación (versión mini) (2026-11-13; guion `guiones/videos-producidos/inflacion-mini.md`, portada `capturas/48_INFLACION_portada.png`)
 - [x] UDI — FORMATO DE PRUEBA (ver CLAUDE.md «PRUEBA DE FORMATO DEL GLOSARIO»). **PRODUCIDO (v2, 30 s) y PROGRAMADO en Buffer el 2026-11-13** (post 6af72ca15d42e353d99c162a, estado scheduled, 15-nov-2026 13:10 CDMX, 10 min después de Inflación; excede el tope de 3/día por decisión de Brandon). Título «UDI en 30 segundos», isAiGenerated true. **PENDIENTE: borrar `v/udi_prueba_glosario.mp4` de `publicar-temp` (`git rm`, commit normal) DESPUÉS de que se publique el 15-nov** (Buffer aún apunta a la URL raw, no la re-hospedó). «Hoy vale más de 8»: sitio de terceros marca 8.90 el 12-nov-2026; falta confirmar en Banxico/DOF.
-- [x] SPEI (2026-11-14, Estándar Pro; guion `guiones/videos-producidos/spei.md`, portada `capturas/51_SPEI_portada.png`)
+- [x] SPEI (2026-11-14, Estándar Pro; guion `guiones/videos-producidos/spei.md`, portada `capturas/51_SPEI_portada.png`) — PROGRAMADO en Buffer (post 6af81aa74b28296eb1445686, 17-nov-2026 12:00 CDMX). PENDIENTE: borrar `v/spei_glosario.mp4` de `publicar-temp` (`git rm`) DESPUÉS de que salga.
 - [ ] Interés compuesto (mini)
 - [ ] Plazo
 - [ ] Comisión
