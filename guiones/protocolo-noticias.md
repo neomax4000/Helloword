@@ -1,6 +1,6 @@
-# Protocolo de NOTICIAS — video opcional del día (creado 2026-11-09; tipos R y P y prueba entre ellos: 2026-11-10)
+# Protocolo de NOTICIAS — video opcional del día (creado 2026-11-09; tipos R y P: 2026-11-10; regla «atención + puente al dinero», segunda pasada 13:00 y modo automático: 2026-11-14)
 
-Objetivo: sacar un video de noticia financiera el mismo día del hecho (idealmente a menos de 12 h), sin depender de producto, y decidir solo si vale la pena publicarlo. Si ese día no hay noticia que lo merezca, no hay noticia: el ciclo normal sigue igual.
+Objetivo: sacar un video de noticia (financiera o de algo que mucha gente está viviendo, con puente a su dinero) el mismo día del hecho (idealmente a menos de 12 h), sin depender de producto, y decidir solo si vale la pena publicarlo. Si ese día no hay noticia que lo merezca, no hay noticia: el ciclo normal sigue igual.
 
 ## 0. Dos tipos de noticia y la prueba entre ellos (decisión 2026-11-10)
 Idea tomada de un video de referencia (un dato de MAÑANA como gancho de urgencia) más la regla de que toda noticia debe ser útil para el dinero de quien la ve.
@@ -14,7 +14,7 @@ Idea tomada de un video de referencia (un dato de MAÑANA como gancho de urgenci
 ## 1. Dónde cae en la cadencia
 - Glosario diario: igual (2:00, Buffer).
 - **NUEVO 7:00 CDMX — Radar de noticias.** Revisa portales, movimientos del mercado y Google Trends, y además el calendario económico de hoy y de mañana (Banxico, INEGI, BLS y Fed) para detectar previas; deja 3 candidatos, cada uno marcado R o P, y un veredicto (GO / NO-GO) en `noticias/AAAA-MM-DD.md`. Si es GO, el mismo radar produce y programa el video.
-- **Límite del radar matutino (pendiente de decidir):** un dato que sale antes de las 9:00 CDMX (por ejemplo inflación o nómina de EE.UU. a las 7:30) ya pasó o está por pasar cuando corre el radar (6:47). Su PREVIA debió salir la tarde anterior y su REACCIÓN solo es posible en una segunda pasada (idea: radar de cierre a las 9:30).
+- **SEGUNDA PASADA 13:00 CDMX (decisión 2026-11-14):** mismo radar, para lo que pasó después de las 6:47 (la caída de Outlook fue a las 11:30; lo de Huang cambió de noche). Si ya hay una noticia APROBADA o publicada ese día, la de la tarde solo registra y sugiere (cupo de 1 noticia al día). Una R detectada a las 13:00 se publica a las 18:00 o 19:00. La pasada de las 13:00 también sirve para la previa de un dato de la mañana siguiente (publicarla a las 18:00 o 19:00).
 - 11:00 video principal: primero lee `noticias/AAAA-MM-DD.md`.
   - Si hay noticia aprobada ese día → la noticia ES el video principal del día (siguen siendo 2 videos al día).
   - El tema desplazado (educativo o producto) se queda de primero en su lista; no se pierde. El ciclo educativo-educativo-producto sigue por fecha; el tema desplazado sale en el siguiente turno de su tipo.
@@ -27,28 +27,31 @@ Idea tomada de un video de referencia (un dato de MAÑANA como gancho de urgenci
    - R: el hecho tiene menos de 24 h y se puede publicar a menos de 8 h de detectarlo.
    - P: el evento sale en las próximas 24 h con fecha y hora confirmadas por fuente primaria (calendario de Banxico, INEGI, BLS o Fed), y el video puede salir 2 h o más antes del evento. Si no cabe esa ventana, la previa se descarta (nunca se publica después del evento).
 2. **Verificada:** el dato central está en 2 fuentes independientes, una primaria o agencia (Reuters, Bloomberg, AP, Banxico, INEGI, BMV, Fed).
-3. **Segura:** sin «compra/vende», sin rendimientos, sin rumores ni personas privadas, sin postura partidista (solo el efecto en el mercado), sin tragedias como gancho, sin productos ni logo de Actinver. En P además: no se pronostica el resultado; «lo esperado» es el consenso citado con fuente y hora, los escenarios son «si sale arriba / si sale abajo», y las probabilidades de mercado (por ejemplo CME FedWatch) solo se citan con fuente y fecha.
+3. **Segura:** temas permitidos (decisión 2026-11-14): finanzas y mercado, y TAMBIÉN tecnología, caídas de servicios, empresas y personas famosas de negocios, finanzas o desarrollo personal, siempre con un puente honesto a su dinero o trabajo. Fuera: política partidista, tragedias, crimen y espectáculos sin puente. Un hecho sin confirmación oficial (por ejemplo una muerte reportada solo por medios) solo entra con el formato «lo que sí sabemos y lo que no», sin afirmarlo en el gancho, y nunca como algo confirmado. Además: sin «compra/vende», sin rendimientos, sin rumores ni personas privadas, sin postura partidista (solo el efecto en el mercado), sin tragedias como gancho, sin productos ni logo de Actinver. En P además: no se pronostica el resultado; «lo esperado» es el consenso citado con fuente y hora, los escenarios son «si sale arriba / si sale abajo», y las probabilidades de mercado (por ejemplo CME FedWatch) solo se citan con fuente y fecha.
 4. **Cupo:** máximo 1 noticia al día y 3 a la semana; 3 publicaciones en total ese día; 3 h o más entre publicaciones; hora entre 7:00 y 21:00.
 5. **Hilo claro:** se cuenta en 3 frases. R: qué pasó → a quién golpeó → qué vigilar. P: qué dato sale y cuándo → qué se espera → qué cambia si sale arriba o abajo.
 6. **Factible:** guion de 60 s o menos y entrega en 3 h o menos.
 
-## 3. Puntaje de REACCIÓN (R, 0–100)
+## 3. Puntaje de REACCIÓN (R, 0–100) · regla «ATENCIÓN + PUENTE AL DINERO» (vigente desde 2026-11-14)
+Por qué cambió: con la tabla anterior (centrada en cuánto se movió el mercado) el radar no detectó ninguna de las 3 noticias que mejor funcionaron (Outlook, renuncia de Huang, Brian Tracy); Outlook sacaba 34–47. Lo que funciona es lo que mucha gente está viviendo o comentando, con una lección real para su dinero. Antes: ver `HISTORIAL-DECISIONES.md`.
 | Criterio | Puntos | Cómo se califica |
 |---|---|---|
-| Movimiento de mercado | 0–30 | Índice (S&P 500, Nasdaq, IPC): 1–2 % = 10, 2–3 % = 20, 3 % o más = 30. Dólar/peso: 0.7–1.2 % = 10, 1.2–2 % = 20, 2 % o más = 30. Empresa emblemática: 5–8 % = 10, 8–15 % = 20, 15 % o más = 30. Decisión o dato oficial (Banxico, Fed, inflación INEGI): 20 si es relevante, 30 si sorprende. Se toma el mayor. |
-| Interés de búsqueda | 0–25 | Top 10 de Google Trends (México o EE.UU.) = 25; Top 11–25 = 18; en portada de 3 o más portales financieros = 10; en 1 portal = 4; nada = 0. |
-| Relevancia para México | 0–20 | Toca peso, tasas, crédito, ahorro, Afore o precios = 20; bolsa de EE.UU. con efecto en IPC o peso = 12; solo extranjera = 4. |
-| Frescura | 0–15 | 6 h o menos = 15; hasta 12 h = 10; hasta 24 h = 5. |
-| Claridad del ángulo | 0–10 | Dato central + causa + qué vigilar, todo verificado = 10; falta uno = 5; faltan dos = 0. |
-| Bono de gancho | +5 | El #1 de Google Trends se conecta de forma real con la noticia. Si no se conecta, no se fuerza. |
+| Atención | 0–35 | Se toma el MAYOR: top 10 de Google Trends México o EE.UU. = 35; top 11–25 = 25; caída o falla de un servicio masivo (banco, app, Microsoft, Google, WhatsApp; Downdetector con decenas de miles de reportes) = 25; en portada de 3 o más medios GENERALES (no solo financieros: Milenio, El Universal, AP, Reuters, N+) = 25; mercado: índice (S&P 500, Nasdaq, IPC) 2 % o más, peso 1.2 % o más, empresa emblemática 8 % o más, o decisión o dato oficial que sorprende = 20; índice 1–2 %, peso 0.7–1.2 %, emblemática 5–8 % o dato oficial esperado = 10; solo 1 portal = 5; nada = 0. |
+| Cercanía | 0–20 | La gente lo vivió (usa el servicio, lo paga, le cambia el precio) o conoce bien al protagonista = 20; lo conoce de nombre = 10; ajeno a su vida = 0. |
+| Puente al dinero en México | 0–20 | Acción concreta y verdadera para su dinero o trabajo (proteger su cuenta, pedir un reembolso, revisar su crédito, qué pasa con el peso o las tasas) = 20; lección general útil (qué aprender de esto) = 10; sin puente honesto = 0 → **no pasa**, aunque sume 60. |
+| Frescura | 0–15 | 6 h o menos = 15; hasta 12 h = 10; hasta 24 h = 5. Un seguimiento con un hecho nuevo (causa, reembolso, cifra final) cuenta desde ese hecho nuevo. |
+| Claridad del ángulo | 0–10 | Qué pasó + por qué + qué hacer o vigilar, todo verificado = 10; falta uno = 5; faltan dos = 0. |
+| Bono de gancho | +5 | El #1 de Google Trends es la noticia o se conecta de forma real con ella. No se fuerza. |
+
+Prueba con casos reales (2026-11-14): Outlook 12 nov ≈ 25+20+20+15+10 = **90**; Microsoft créditos ≈ 25+20+20+5+10 = **80**; Huang renuncia ≈ 25+10+10+15+10 = **70**; Brian Tracy ≈ 25+20+10+10+5 = **70**; Wall Street 13 nov (−0.4 %) ≈ 5+0+10+5+5 = **25** (sigue fuera). Con la regla nueva las 4 noticias que sí funcionaron pasan y el día plano sigue fuera.
 
 ## 3b. Puntaje de PREVIA (P, 0–100)
 Mismas escalas y mismos umbrales que R, para poder compararlas.
 | Criterio | Puntos | Cómo se califica |
 |---|---|---|
 | Peso del evento | 0–30 | Tipo de evento (hasta 20): decisión de tasa (Banxico o Fed) o inflación (INEGI o EE.UU.) = 20; nómina de EE.UU., PIB, minutas = 14; otro dato oficial = 8. Posibilidad de mover mercado (hasta 10, con fuente): la última vez que salió movió S&P 500, IPC o USD/MXN 1 % o más = 10; 0.5–1 % = 5; menos = 0. |
-| Interés de búsqueda | 0–25 | Igual que R (§3). |
-| Relevancia para México | 0–20 | Igual que R (§3). |
+| Interés de búsqueda | 0–25 | Top 10 de Google Trends = 25; top 11–25 = 18; portada de 3 o más medios (generales o financieros) = 10; 1 portal = 4; nada = 0. |
+| Relevancia para México | 0–20 | Toca peso, tasas, crédito, ahorro, Afore o precios = 20; bolsa de EE.UU. con efecto en IPC o peso = 12; solo extranjera = 4. |
 | Ventana | 0–15 | Sale 12–24 h antes del evento = 15; 6–12 h = 10; 2–6 h = 5; menos de 2 h = no hay previa. |
 | Claridad del ángulo | 0–10 | Dato + lo que espera el consenso (con fuente y hora) + escenarios arriba/abajo, todo verificado = 10; falta uno = 5; faltan dos = 0. |
 | Bono de gancho | +5 | Igual que R (§3). |
@@ -65,9 +68,11 @@ Mismas escalas y mismos umbrales que R, para poder compararlas.
 ## 4. Decisión (igual para R y P)
 - **75 o más → se aprueba sola.** Se produce, pasa el control de calidad y se programa.
 - **60 a 74 → se produce y se pide OK a Brandon.** Si no contesta en 4 h, se descarta (no se publica).
-- **Menos de 60 → se descarta.** Se anota en `noticias/` para tener historial.
+- **50 a 59 → SUGERENCIA.** No se produce; se le manda a Brandon (tema, puntaje y desglose, ángulo propuesto). Si responde «hazlo», se produce y pasa por la ruta de 60–74.
+- **Menos de 50 → se descarta.** Se anota en `noticias/` para tener historial.
+- **Siempre se avisa:** cada pasada del radar manda a Brandon sus 3 mejores candidatos con puntaje, aunque el estado sea NO_GO, para que pueda corregir al radar si ve algo que se le pasó.
 
-**Modo supervisado (arranque):** las primeras 3 noticias y cualquier semana después de un freno automático requieren OK de Brandon sin importar el puntaje.
+**Modo AUTOMÁTICO desde 2026-11-14** (decisión de Brandon; ya hay 3 noticias publicadas con su OK). 75 o más se programa solo, al menos 2 h adelante (ventana de veto). **Modo supervisado** solo después de un freno automático (§7): mientras dure, todo requiere OK de Brandon sin importar el puntaje.
 
 ## 5. Control de calidad antes de programar (los 11 deben pasar)
 1. Duración de 45 a 60 s (máximo 75).
@@ -92,6 +97,7 @@ Si falla algo: se corrige una vez. Si falla otra vez: no se publica y se avisa a
 
 ## 7. Seguimiento y freno automático
 - A las 24 h se anotan tipo (R o P), vistas, tiempo promedio visto y retención en `noticias/registro.md`.
+- **¿Funcionó como noticia? (2026-11-14):** a las 24 h, FUNCIONÓ si tiene vistas iguales o mayores a la mediana de los últimos 10 videos de la cuenta Y tiempo promedio visto de 7 s o más; si cumple solo una, PARCIAL; si no cumple ninguna, NO FUNCIONÓ. Se anota en el registro junto con su puntaje. En la revisión del 20 nov (y cada 2 semanas) se compara puntaje contra resultado: si varias noticias de 75 o más NO FUNCIONAN o varias de menos de 60 que Brandon pidió FUNCIONAN, se ajustan los pesos de §3.
 - **Prueba R vs P:** cuando haya 3 R y 3 P con métricas a 24 h, se compara la MEDIANA de cada tipo, en este orden: (1) tiempo promedio visto; si difieren menos de 10 %, (2) vistas respecto a la mediana de los últimos 10 videos; si sigue empatado, (3) compartidos + guardados + comentarios por cada 1,000 vistas. Gana el tipo que gane el primer criterio no empatado. El resultado se anota en el registro y se pasa a la fase de peso (§3c). Es una muestra pequeña: orienta, no demuestra; se puede repetir con 3 más de cada tipo.
 - **Freno:** si 3 noticias seguidas quedan en tiempo promedio visto igual o menor a la línea base (≈ 3 s, 2026-11-06) o con menos vistas que la mediana de los últimos 10 videos, el modo automático se pausa y todo pasa a «requiere OK».
 - Si una fuente primaria corrige una cifra publicada: aviso inmediato y retiro del post si aún no ha salido.
@@ -137,7 +143,7 @@ flowchart TD
 ```
 
 ## 9. Fuentes para el radar
-Reuters, Bloomberg, AP, El Financiero, Expansión, El Economista; Banxico, INEGI, BMV, Fed; calendarios oficiales para previas (calendario de anuncios de Banxico, calendario de difusión del INEGI, calendario de publicaciones del BLS y calendario de la Fed; un calendario de terceros sirve solo como pista y la hora se confirma en el oficial); Google Trends (tendencias del momento, México y EE.UU.). Nota: Google Trends no tiene API oficial; hay que probar el acceso (búsqueda web o Chrome) y, si falla, usar las búsquedas en tendencia de Google y X.
+**Obligatorio en cada pasada (2026-11-14):** (1) Google Trends México y EE.UU. con WebFetch a https://trends.google.com/trending?geo=MX y ?geo=US (o vía subagente web-fetch); si no se puede leer, anotarlo y buscar «tendencias hoy México»; (2) portadas de medios GENERALES (Milenio, El Universal, N+, Infobae México, AP, Reuters), no solo financieros; (3) Downdetector México (caídas de bancos, apps y servicios); (4) lo de abajo. Reuters, Bloomberg, AP, El Financiero, Expansión, El Economista; Banxico, INEGI, BMV, Fed; calendarios oficiales para previas (calendario de anuncios de Banxico, calendario de difusión del INEGI, calendario de publicaciones del BLS y calendario de la Fed; un calendario de terceros sirve solo como pista y la hora se confirma en el oficial); Google Trends (tendencias del momento, México y EE.UU.). Nota: Google Trends no tiene API oficial; hay que probar el acceso (búsqueda web o Chrome) y, si falla, usar las búsquedas en tendencia de Google y X.
 
 Prueba 2026-11-09: WebFetch SÍ lee https://trends.google.com/trending?geo=MX (tabla de los 25 primeros temas con búsquedas, inicio y estado, últimas 24 h). El feed https://trends.google.com/trending/rss?geo=MX devolvió una copia vieja (27 oct 2026): NO usarlo. Trends ordena temas en alza, no "noticias más vistas": casi todo es deporte y espectáculos; para finanzas se cruza con portales y mercado, y solo cuenta el bono de gancho si hay conexión real.
 
