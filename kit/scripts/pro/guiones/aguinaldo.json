@@ -1,0 +1,126 @@
+{
+ "id": "aguinaldo",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 2,
+ "sin_whoosh": [
+  5
+ ],
+ "bloques": [
+  {
+   "t": "Tu aguinaldo no es un regalo: es ley.",
+   "c": "Tu aguinaldo | no es un regalo: | es ley.",
+   "p": 0.22
+  },
+  {
+   "t": "Y trae tres números que casi nadie revisa.",
+   "c": "Y trae | tres números | que casi nadie | revisa.",
+   "p": 0.25
+  },
+  {
+   "t": "Uno: quince días de salario. Es el mínimo.",
+   "c": "Uno: | quince días | de salario. | Es el mínimo.",
+   "p": 0.16
+  },
+  {
+   "t": "Si ganas doce mil al mes, son seis mil pesos.",
+   "c": "Si ganas | doce mil al mes, | son seis mil | pesos.",
+   "p": 0.28
+  },
+  {
+   "t": "Dos: veinte de diciembre. Te lo deben pagar antes de ese día.",
+   "c": "Dos: | veinte de diciembre. | Te lo deben pagar | antes de ese día.",
+   "p": 0.3
+  },
+  {
+   "t": "Y tres, el que más se pierde.",
+   "c": "Y tres, | el que más | se pierde.",
+   "p": 0.2
+  },
+  {
+   "t": "Si no trabajaste todo el año, te toca la parte proporcional. Seis meses, la mitad.",
+   "c": "Si no trabajaste | todo el año, | te toca la parte | proporcional. | Seis meses, | la mitad.",
+   "p": 0.28
+  },
+  {
+   "t": "Se paga en dinero: ni vales, ni mercancía.",
+   "c": "Se paga | en dinero: | ni vales, | ni mercancía.",
+   "p": 0.25
+  },
+  {
+   "t": "Y si no llega, tienes un año para reclamarlo. La Profedet te asesora gratis.",
+   "c": "Y si no llega, | tienes un año | para reclamarlo. | La Profedet | te asesora gratis.",
+   "p": 0.28
+  },
+  {
+   "t": "Haz tu cuenta antes de gastarlo, porque,",
+   "c": "Haz tu cuenta | antes de gastarlo, | porque,",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "pop",
+   "palabra": 2,
+   "dt": -0.05,
+   "f": 700,
+   "db": -14
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 6,
+   "dt": -0.06
+  },
+  {
+   "tipo": "ticks",
+   "palabra": 17,
+   "dt": -0.05,
+   "n": 8
+  },
+  {
+   "tipo": "pop",
+   "palabra": 21,
+   "f": 1000,
+   "db": -15
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 3,
+   "dt": 0.02
+  },
+  {
+   "tipo": "pop",
+   "palabra": 37,
+   "f": 900,
+   "db": -15
+  },
+  {
+   "tipo": "riser",
+   "bloque": 5,
+   "dt": -0.22
+  },
+  {
+   "tipo": "impact",
+   "bloque": 5,
+   "dt": 0.02
+  },
+  {
+   "tipo": "pop",
+   "palabra": 73,
+   "dt": -0.02,
+   "f": 600
+  },
+  {
+   "tipo": "pop",
+   "palabra": 75,
+   "dt": -0.02,
+   "f": 520
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 8,
+   "dt": 0.02,
+   "f": 1760
+  }
+ ]
+}

@@ -1,6 +1,6 @@
 # Propuesta: Estándar Pro v1 (2026-11-13)
 
-Auditoría del repositorio y de Notion, y propuesta para subir la calidad. El video piloto «Tu aguinaldo no es un regalo: es ley» está hecho con todo lo que aquí se propone. **Nada de esto reemplaza todavía las reglas de `CLAUDE.md`: falta que Brandon lo apruebe.**
+Auditoría del repositorio y de Notion, y propuesta para subir la calidad. El video piloto «Tu aguinaldo no es un regalo: es ley» está hecho con todo lo que aquí se propone. **APROBADA por Brandon el 2026-11-13 y aplicada:** reglas vigentes en `CLAUDE.md` y `kit/PRO.md`; reglas anteriores en `HISTORIAL-DECISIONES.md`.
 
 ## 1. Diagnóstico (lo que encontré)
 

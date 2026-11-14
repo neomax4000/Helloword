@@ -1,0 +1,11 @@
+import {bundle} from '@remotion/bundler';
+import {renderStill, selectComposition, openBrowser} from '@remotion/renderer';
+import fs from 'fs';
+const [id, outdir, scale, ...ts] = process.argv.slice(2);
+fs.mkdirSync(outdir, {recursive: true});
+const serveUrl = await bundle({entryPoint: new URL('./src/index.ts', import.meta.url).pathname, onProgress: () => {}});
+const browser = await openBrowser('chrome', {browserExecutable: '/tmp/chromium', chromeMode: 'headless-shell', chromiumOptions: {gl: 'swangle'}});
+const comp = await selectComposition({serveUrl, id, puppeteerInstance: browser, inputProps: {audio: false}});
+for (const t of ts) await renderStill({composition: comp, serveUrl, inputProps: {audio: false}, frame: Math.min(comp.durationInFrames - 1, Math.round(+t * 30)), output: `${outdir}/t${String(Math.round(+t*100)).padStart(5,'0')}.png`, puppeteerInstance: browser, scale: +scale});
+await browser.close({silent: true});
+console.log('ok', comp.durationInFrames);

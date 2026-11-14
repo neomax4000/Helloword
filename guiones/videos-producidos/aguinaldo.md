@@ -1,5 +1,5 @@
 # Aguinaldo (educativo, sin marca) — 32 s — PILOTO DEL ESTÁNDAR PRO v1
-Producido 2026-11-13 · Sistema: `kit/app/src/pro.tsx` · Código: `kit/app/src/aguinaldo.tsx` (Root: `Aguinaldo` / `AguinaldoCover`) · Voz: `kit/scripts/pro/voz_pro.py` + `guion_aguinaldo.json` (voz 3, velocidad 1.03, por bloques) · Tiempos: `kit/scripts/pro/alinear_pro.py` (Whisper por palabra) · Mezcla: `kit/scripts/pro/mezcla_aguinaldo.py` · Render: `kit/app/render_pro.mjs` · Portada: `capturas/50_AGUINALDO_portada.png`
+Producido 2026-11-13 · Sistema: `kit/app/src/pro.tsx` · Código: `kit/app/src/aguinaldo.tsx` (Root: `Aguinaldo` / `AguinaldoCover`) · Guion, cortes y efectos: `kit/scripts/pro/guiones/aguinaldo.json` · Voz: `python3 kit/scripts/pro/voz_pro.py aguinaldo` (voz 3, 1.03, por bloques, alineada con Whisper) · Mezcla: `python3 kit/scripts/pro/mezcla_pro.py aguinaldo` (−14 LUFS) · Render: `kit/app/render_pro.mjs` · Portada: `capturas/50_AGUINALDO_portada.png`
 Formato: gancho en afirmación, promesa numerada, ejemplo con cifra, llamadas a la acción y aviso legal solo escritos, cierre en bucle. Ver `PROPUESTA-ESTANDAR-PRO.md`.
 
 ## Guion hablado ( | = corte de subtítulo)

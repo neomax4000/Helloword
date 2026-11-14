@@ -1,72 +1,51 @@
 # Instrucciones para Claude — videos de Brandon
 
-Brandon Ramírez Salas, Banquero Patrimonial en Actinver (Zapopan). Hace videos verticales animados para redes (TikTok brandonmichaels2): productos Actinver, tutoriales de la app y educación financiera. Escríbele en español, cercano y claro, de tú.
+Brandon Ramírez Salas, Banquero Patrimonial en Actinver (Zapopan). Hace videos verticales animados para redes (TikTok brandonmichaels2): educación financiera, glosario, noticias, productos Actinver y tutoriales de la app. Escríbele en español, cercano y claro, de tú.
+
+Este archivo tiene SOLO las reglas vigentes. El porqué de cada decisión está en `HISTORIAL-DECISIONES.md` (no son reglas).
+
+## Cómo se hace un video: ESTÁNDAR PRO (vigente desde 2026-11-13)
+**Todo video nuevo (glosario, educativo, noticia y producto) se hace con `kit/PRO.md`.** Ahí están las reglas de guion, voz, diseño, animación, sonido, el paso a paso y la lista de control. Resumen:
+- Guion: gancho = dato concreto en afirmación (≤ 8 palabras, desde el primer fotograma) → promesa numerada → ejemplo con cifras → lo más valioso al final y anunciado → cierre en bucle hacia la primera frase. Nada hablado sin valor: «sígueme», «si te sirvió» y avisos legales van escritos.
+- Duración: glosario 18–25 s · educativo 28–40 s · noticia 35–50 s · producto 35–45 s (+ legal).
+- Voz Kokoro por bloques a 1.03 (`kit/scripts/pro/voz_pro.py`), alineada con Whisper palabra por palabra. Sin preguntas en la voz.
+- Un solo sistema visual (`kit/app/src/pro.tsx`): fondo profundo con malla de color y grano, tarjetas crema, una pieza protagonista grande por escena, subtítulos por frase con cortes a mano, zonas seguras de TikTok. La serie se distingue por el rótulo; producto con `<Brand value={ACTINVER}>` (ocre y logo).
+- Mezcla `kit/scripts/pro/mezcla_pro.py` a −14 LUFS. Render `kit/app/render_pro.mjs` (720×1280).
+- Plantilla de referencia: `kit/app/src/aguinaldo.tsx` + `kit/scripts/pro/guiones/aguinaldo.json`.
+- Las plantillas viejas (`glosario.tsx`, `actimed.tsx`, `diversif.tsx`, `noticia-fondos.tsx`, scripts `voz_*.py`/`mezcla_*.py`) solo sirven para recrear videos anteriores o tomar piezas; no se usan como base de videos nuevos.
 
 ## Dónde está todo
-- `kit/` — código para producir y recrear los videos (Remotion + Kokoro + audio). Lee `kit/LEEME.md` antes de empezar.
-- `capturas/` — una hoja de capturas por video (portada + 8 momentos).
-- `guiones/productos/` — guion base de 33 fondos + Pagaré Platinum + CD Platinum (datos al 31 mar 2026; revisar ficha vigente).
-- `guiones/videos-producidos/` — guion final y notas de los primeros videos.
-- `guiones/serie-deuda-en-pesos.md` — ACTIREN, ACTIGOB, ORION (producidos).
-- `guiones/deconstruyendo-las-finanzas.md` — tipo de video aparte «Deconstruyendo las finanzas» (reglas, temas planeados y guion 1 de fondos de inversión); proyecto futuro, fuera del ciclo diario.
-- `PROPUESTA-ESTANDAR-PRO.md` — auditoría de calidad y propuesta «Estándar Pro v1» (2026-11-13), con video piloto «Aguinaldo» (`kit/app/src/pro.tsx` + `aguinaldo.tsx`, scripts en `kit/scripts/pro/`). **Es propuesta: no reemplaza las reglas de este archivo hasta que Brandon la apruebe.**
-- `cola-videos.md` — cola de producción: serie de productos, educativos largos y GLOSARIO FINANCIERO (mini videos de una palabra, ~20 s, plantilla `kit/app/src/glosario.tsx`, estilo claro).
-- `datos/productos.py` — catálogo con fichas, liquidez, calificación y notas de cada producto.
-- Notion (Centro de Mando de IA): «Instructivo: cómo hacemos un video» y «Biblioteca de videos — cómo recrear cada uno» (ficha y capturas de los 15 videos).
+- `kit/PRO.md` — el estándar (léelo antes de producir). `kit/LEEME.md` — instalación del entorno.
+- `kit/scripts/pro/guiones/<id>.json` — guion hablado + cortes de subtítulo + efectos de cada video nuevo.
+- `guiones/videos-producidos/<id>.md` — guion final, fuentes y notas de cada video. `capturas/` — portadas.
+- `guiones/productos/` — guion base de 33 fondos + Pagaré Platinum + CD Platinum (datos al 31 mar 2026; revisar ficha vigente). `datos/productos.py` — catálogo de productos.
+- `guiones/protocolo-noticias.md` — protocolo de noticias. `noticias/` — radar diario y registro.
+- `guiones/serie-app-nueva.md`, `guiones/serie-deuda-en-pesos.md`, `guiones/deconstruyendo-las-finanzas.md` (proyecto futuro, fuera del ciclo).
+- `cola-videos.md` — cola de producción. `PROPUESTA-ESTANDAR-PRO.md` — auditoría que originó el estándar.
+- Notion (Centro de Mando de IA): «Instructivo: cómo hacemos un video» (espejo de estas reglas para el celular) y «Biblioteca de videos».
+- Métricas: `claude/historico-metricas-tiktok.md` en el proyecto Videos (agregar un corte en cada revisión).
 
-## Cadencia diaria (decisión 2026-11-06) y retención
-- 2 videos al día: **1 GLOSARIO todos los días** + **1 video principal**. **Desde 2026-11-11 (decisión de Brandon, por métricas: educativo/glosario rinden 3–5× más vistas y retención que producto)** el principal sigue un ciclo de 6 días: **educativo ×5 y producto ×1**. Ciclo: m = (fecha − 2026-11-11) mod 6 → 0 a 4 = educativo, 5 = producto (primer producto del nuevo ciclo: 2026-11-16). Antes (2026-11-07 a 2026-11-10) era educativo, educativo, producto. La serie «Tu nueva app Actinver» sale ahora un capítulo por día de PRODUCTO (más lenta). Las NOTICIAS aprobadas por el protocolo se priorizan: Brandon quiere más retención con noticias (el video de Wall Street de 2:42 retuvo 25 s promedio). Histórico de métricas: `claude/historico-metricas-tiktok.md` en el proyecto Videos (agregar un corte en cada revisión). Se acabaron las rutinas de 5 am y 5 pm de la serie. Calidad antes que cantidad.
-- **NOTICIA DEL DÍA (opcional, decisión 2026-11-09):** protocolo completo en `guiones/protocolo-noticias.md` (6 compuertas, puntaje 0–100, 11 controles de calidad, freno automático). **Desde 2026-11-10 hay dos tipos:** R = reacción (noticia fresca del día) y P = previa (dato oficial de las próximas 24 h con posibilidad de mover mercado, gancho con hora, escenarios «si sale arriba / abajo» sin pronóstico, sale la tarde anterior 18–19 h y 2 h o más antes del evento); cada uno con su puntaje y una **elección de ruta** (§3c) que durante la prueba iguala la muestra (3 R y 3 P) y después da +10 al tipo ganador (medianas de tiempo visto, vistas e interacciones). Toda noticia lleva la frase «qué significa para tu dinero en México». Estilo visual de noticia propio (§0, fondo con imagen del tema, 3–5 piezas por bloque). Radar a las 7:00 CDMX; si hay noticia aprobada, ES el video principal del día (siguen 2 videos al día) y el tema desplazado se queda primero en su lista. El ciclo educativo-educativo-producto sigue por fecha; el tema desplazado sale en el siguiente turno de su tipo. Estados en `noticias/AAAA-MM-DD.md`: APROBADA (la noticia es el video principal; la corrida de las 11:00 no produce), ESPERA_OK (noticia lista pero sin permiso: el video principal del día sale normal y, si Brandon da el OK, la noticia sale como publicación extra si cabe en el cupo de 3) y NO_GO. Puntaje 75 o más = se publica sin pedir permiso (Brandon puede vetar en Metricool antes de la hora); 60–74 = pide OK y a las 4 h sin respuesta se descarta; menos de 60 = se descarta. Las primeras 3 noticias van en modo supervisado (requieren OK). Decisión de ir/no ir: regístrala en `noticias/AAAA-MM-DD.md`.
-- Revisión de métricas el 2026-11-20 (línea base en el proyecto Videos: `metricas-tiktok-2026-11-06.md`): subir/mantener ritmo solo si mejora la retención.
-- Motivo: tiempo promedio visto ≈ 3 s en videos de 50–80 s. Hay que subir la retención en TODOS los videos nuevos:
-  - Gancho en las primeras 8 palabras y desde la primera pantalla (sin intro ni logo ni portada). El primer fotograma ya muestra el tema en grande.
-  - Más velocidad: guion más corto (educativo ≈ 40–55 s, producto ≈ 45–60 s, glosario ≈ 20 s), voz a 1.05–1.1, pausas entre líneas ≤ 0.35 s, un corte o cambio visual cada ~1.5–2 s, sin escenas de relleno.
-  - La respuesta/valor llega antes del segundo 20; la llamada a seguirlo va a mitad, justo antes del punto más relevante.
-  - Educativo/relatable rinde mejor que producto: en producto, abrir con el problema del cliente, no con el nombre del fondo.
-- Portada en TikTok: al programar sube también el PNG como `videoThumbnailUrl` en Metricool (puede ignorarse en cuentas personales). Buffer no acepta imagen de portada. Entrega siempre el PNG; Brandon puede ponerlo a mano desde la app de TikTok.
+## Cadencia
+- 2 videos al día: **1 GLOSARIO** + **1 video principal**. El principal sigue un ciclo de 6 días: m = (fecha − 2026-11-11) mod 6 → 0 a 4 = EDUCATIVO, 5 = PRODUCTO (próximos productos: 2026-11-16, 2026-11-22…). Los días de producto sale además un capítulo de «Tu nueva app Actinver».
+- **NOTICIA DEL DÍA (opcional):** protocolo completo en `guiones/protocolo-noticias.md` (tipos R = reacción y P = previa, compuertas, puntaje 0–100, elección de ruta, controles, freno, modo supervisado mientras no haya 3 noticias con OK). Radar 6:47 CDMX. Si hay noticia APROBADA, es el video principal del día y el tema desplazado queda primero en su lista. Estados y decisiones en `noticias/AAAA-MM-DD.md`.
+- Máximo 3 publicaciones al día en total y ≥ 3 h entre ellas (salvo que Brandon pida otra cosa).
+- Revisión de métricas 2026-11-20: comparar los videos del Estándar Pro contra la línea base (educativo: mediana 338 vistas, 5.5–7.0 s vistos; glosario: 354 vistas, 3.7–5.5 s). Seguir solo si mejora la retención.
 
-## Reglas de siempre
-- 100% animado, sin su cara. Voz por defecto: **Kokoro** (gratis). «La voz sintética que tienes» = Kokoro, no ElevenLabs.
-  - Voz 3 (masculina): em_alex 0.6 + im_nicola 0.4. Voz 5 (femenina): ef_dora 0.7 + if_sara 0.3.
-  - Diálogo: Ana (voz 5) pregunta, asesor (voz 3) responde.
-- **Preguntas en la voz (decisión 2026-11-08, aplica a TODOS los videos con Kokoro):** Kokoro lee «¿…?» como afirmación y eso delata que es IA. Preferir afirmaciones/datos como gancho (la pregunta puede ir escrita en pantalla). Si una frase interrogativa se queda en el audio, aplicar SIEMPRE `kit/scripts/voz/pregunta.py` (la última palabra sube desde su primera sílaba, 0→+3→+9→+15 st, última sílaba 1.25x, frase arranca alta; receta F1 aprobada) y escucharla antes de renderizar. Mejor aún: partir la pregunta en DOS cortas pegadas con `unir()` (aprobado 2026-11-08): parte uno con `inicio=9, tau_s=0.2, final=False, estira=0.7` (arranca alta, sin subida final, última sílaba corta) y parte dos con subida final; palabras finales de 3+ sílabas. Inglés escrito como suena en el hablado (like → «laik»). Los tiempos/pausas recortados son solo del glosario por ahora; no tocar los demás formatos.
-- Fondo cambia cada 2–3 escenas; muchos cortes, transiciones variadas, efectos **en las pausas** (no encima de la voz), música con ducking.
-- Portada: SOLO como PNG aparte (decisión 2026-11-06: la portada de 1.5 s al inicio del video restaba retención). El MP4 arranca directo con el gancho; `render_c.mjs XC` ya lo hace (el PNG sale de la composición con portada y el video de la base). Cierre: pregunta → «Escríbeme» → «Sígueme» (productos); educativo/glosario: «si te sirvió, dale like y sígueme».
-- Productos: marca Actinver (azul #041E42, ocre #B3A369 solo acento, crema #F5F3EE, Poppins). Educativo general puede ir sin marca.
-- Sin promesas ni cifras de rendimiento; «el valor puede subir o bajar»; «no es garantía»; evitar dobles sentidos.
-- Legales: fondos → aviso del Folleto literal (en `kit/app/src/actimed.tsx`, const LEGAL); Pagaré/CD → leyenda IPAB 400 mil UDIS; VAC → pendiente texto oficial de Cumplimiento; en VAC decir «instrumento», Zurich sin logo.
-- Si grabó su voz y dijo algo de más, se corta. Los videos ya hechos que le gustan no se tocan.
-- Cumplimiento: desde el 2026-11-06 Brandon decidió que NO hace falta visto bueno de Cumplimiento para subir, porque el TikTok es personal y no oficial de Actinver. Los videos se programan solos. Al entregar, solo menciona (informativo, sin frenar) los puntos por vigilar: logo Actinver, textos legales y cualquier cifra.
-- Publicación automática (Metricool, marca 7551486, TikTok brandonmichaels2, zona America/Mexico_City): al terminar el render, programa el video tú misma(o) sin preguntar. Pasos:
-  1. Elige el horario con `getBestTimeToPostByNetwork` (tiktok, próximos 7 días) y `getScheduledPosts`: hora en punto, al menos 2 h en el futuro, que no esté ocupada ni a menos de 3 h de otra publicación, máximo 3 por día. Horas fuertes hoy: 10:00, 12:00 y 18:00. Prioriza según el tipo de contenido: glosario (mini ~20 s) → 12:00–14:00; educativo largo → 10:00 o 18:00–19:00; producto Actinver → 18:00–19:00 o 10:00. Si la ideal está ocupada, toma la siguiente mejor del mismo tipo.
-  2. Metricool necesita URL pública: sube el MP4 a la rama temporal `publicar-temp` del repo (worktree aparte, `git push origin <rama>:publicar-temp`, sin force), usa `https://raw.githubusercontent.com/neomax4000/Helloword/publicar-temp/v/<archivo>.mp4`.
-  3. `createScheduledPost` con network tiktok, autoPublish true, `tiktokData.isAigc` true (voz sintética), texto = descripción + hashtags (con «el valor puede subir o bajar; no es garantía» en productos).
-  4. Confirma que la respuesta trae media en `static.metricool.com` y luego borra el MP4 de la rama con un commit normal (`git rm`) y push. Nunca force-push ni borrar la rama.
-  5. Si algo falla, entrega el MP4 por SendUserFile y dilo.
-- Reparto de herramientas (decisión 2026-11-06, Metricool tiene tope mensual de publicaciones): **Metricool** para videos largos y de producto; **Buffer** (conector `mcp__Buffer__*`, organización 6aee2a5b736a55e56b275fe1, canal TikTok brandonmichaels2 `6aee2b0fe29c69a171871113`, zona America/Mexico_City) para los mini videos del GLOSARIO. Si una herramienta llega a su tope, usa la otra. Mismo flujo de MP4 en `publicar-temp` y mismas reglas de horario (máx. 3 por día en TOTAL, ≥3 h entre publicaciones): revisa `getScheduledPosts` (Metricool) **y** `list_posts` con status scheduled (Buffer) antes de elegir hora. En Buffer: `create_post` con mode customScheduled + dueAt, schedulingType automatic, assets video con la URL raw, metadata.tiktok.isAiGenerated true y title. El plan gratis de Buffer permite 10 programadas por canal; revisa cuántas hay antes. Primera publicación real en Buffer = prueba: confirmar que acepta el MP4 y que queda en estado scheduled.
-- Mantén el MP4 fuera de `main`; solo código, guiones y portadas se quedan en el repo.
-- **Subida de videos (decisión 2026-11-09): NUNCA preguntes si lo quiere en Google Drive.** La forma estándar y más fácil de subir un video es la publicación temporal en GitHub: MP4 a la rama `publicar-temp` → URL raw → Metricool/Buffer lo descarga y lo re-hospeda en `static.metricool.com` / Buffer → se borra el MP4 de la rama con commit normal. Drive solo si Brandon lo pide explícitamente.
-- Entrega: MP4 720×1280 + portada PNG + descripción + hashtags + día y hora en que quedó programado en Metricool. Él sube los videos a Notion.
+## Reglas de contenido
+- 100% animado, sin su cara. Voz Kokoro (gratis): voz 3 = em_alex 0.6 + im_nicola 0.4 (narrador); voz 5 = ef_dora 0.7 + if_sara 0.3 (narradora); voz D = em_santa 0.5 + em_alex 0.25 + im_nicola 0.25 (glosario). «La voz sintética que tienes» = Kokoro, no ElevenLabs.
+- Si una pregunta tiene que ir en el audio: receta de `kit/scripts/voz/pregunta.py` (o partirla en dos con `unir()`), y escucharla. Mejor: pregunta solo escrita.
+- Sin promesas ni cifras de rendimiento; «el valor puede subir o bajar»; «no es garantía»; sin dobles sentidos. Cada cifra con dos fuentes.
+- Educativo, glosario y noticia: sin marca ni productos de Actinver; nota «Contenido educativo, no es recomendación de inversión».
+- Producto: marca Actinver (azul #041E42, ocre #B3A369 solo acento, crema #F5F3EE, Poppins), abrir con el problema del cliente (no con el nombre del fondo), cierre hablado corto «Escríbeme»; legales: fondos → aviso del Folleto literal (const LEGAL en `kit/app/src/actimed.tsx`); Pagaré/CD → leyenda IPAB 400 mil UDIS; VAC → decir «instrumento», Zurich sin logo, leyenda pendiente de Cumplimiento.
+- Si grabó su voz y dijo algo de más, se corta. Los videos ya publicados no se tocan.
+- Cumplimiento: no hace falta su visto bueno (TikTok personal, decisión 2026-11-06). Al entregar, solo menciona los puntos por vigilar: logo Actinver, textos legales y cifras.
 
-## Estilo del GLOSARIO FINANCIERO (claro) — distinto de los videos largos y de fondos
-Decisión de Brandon (2026-11-06): los mini videos del glosario van en tema claro para diferenciarlos. Plantilla: `kit/app/src/glosario.tsx` (CAT es el ejemplo). Los videos largos, de productos y la serie anterior conservan el diseño oscuro.
-- Fondo blanco con lavado pastel (azul `#E3EDFA`, menta `#E1F3EA`, arena `#FAF1D6`) que cambia cada 2–3 escenas con fundido; solo círculos tenues y muy lentos. Sin rayas ni patrones móviles.
-- Color: azul Actinver `#041E42` para texto y trazos, dorado `#B3A369` en detalles (barra de progreso, subrayado de palabras clave, rótulo), gris `#555759` para apoyo. Rellenos de objetos en pastel (`#D3E3F8`, `#D2EEE0`, `#F6EBC8`, `#F7D8D4`, `#E0DBF5`), trazo azul marino fino (5 px) y sombra suave. El pastel solo en decoración y rellenos, nunca en el texto principal.
-- Subtítulos: sin caja de fondo, azul marino fuerte; palabra activa en azul brillante `#1B4FC4`; palabras clave con subrayado dorado; resplandor blanco leve para legibilidad.
-- Movimiento: solo aparecer/desvanecer, subir/bajar y trasladar suave (componente `Rise`). Nada de giros, inclinaciones, temblores, rebotes ni zoom con golpe. Cámara casi quieta (deriva de 2.5 %).
-- Encabezado fijo «— GLOSARIO FINANCIERO —» arriba en gris con rayitas doradas.
-- Voz del glosario (decisión 2026-11-07): voz D de Kokoro = em_santa 0.5 + em_alex 0.25 + im_nicola 0.25, con `kit/scripts/voz/voz_glosario.py`. Guion SOLO de hechos, sin preguntas (la entonación de pregunta delata la voz sintética); sin pausas largas entre frases (0.08 s) y cada frase arranca con tono alto y golpe de volumen. Palabras en inglés escritas como suenan en el hablado (like → «laik»; «Cat» tal cual) y se verifica la fonética. Si se usara una pregunta, receta F1 en el docstring del script.
-- Portada clara (`theme: 'light'` en `cover.tsx`): fondo blanco/crema, rótulo y detalles dorados, letras azul marino, subtítulo gris; logo azul solo si es de producto.
-
-## PRUEBA DE FORMATO DEL GLOSARIO (decisión de Brandon 2026-11-13, aplica al glosario de UDI y siguientes hasta que él diga otra cosa; comparar métricas contra el formato anterior)
-Motivo: el glosario es lo más exitoso (más likes), el gancho funciona; se prueba subir retención con bucle y más información en pantalla.
-- **Sin cierre hablado «Si te sirvió, dale like y sígueme»** (se quita de la voz, de la escena `final` y del guion: no roba tiempo al dictado). **Las llamadas a la acción SÍ se quedan en pantalla, solo escritas y sin voz** (aclaración de Brandon 2026-11-13): varias a la vez o rotando durante el video (p. ej. «LIKE», «SÍGUEME», «COMPARTE», «GUARDA») como chips/rótulos fijos o que aparecen y se quedan, sin tapar subtítulos ni piezas, con el mismo estilo claro y solo aparecer/subir. La descripción puede conservar su llamada a la acción escrita.
-- **Bucle:** la última frase del guion termina con las palabras con que arranca el video, de modo que al repetirse se lea continuo. Ejemplo (inflación): empieza «La inflación es…» y termina «…por eso, la inflación» (el video vuelve a empezar y la frase se cierra). El final debe quedar cortado limpio (sin cola de silencio larga, TAIL mínimo en `voz_glosario.py`) y el último fotograma enlazar visualmente con el primero (mismo fondo/pieza principal). Guion sin preguntas igualmente.
-- **Pantalla más saturada:** más piezas por escena (3–5 elementos: ilustración + rótulos + cifras/etiquetas + chips de apoyo), sin desbordar ni encimar los subtítulos; mismo estilo claro y mismo movimiento permitido (solo aparecer/subir/trasladar).
-- Anotar en `guiones/videos-producidos/<palabra>.md` que usó el formato de prueba, para medir.
-
-## Para un video nuevo
-1. Si es importante, propone plan (audiencia, mensaje, acción, formato) antes de producir.
-2. Copia la plantilla más parecida: narrador `kit/app/src/actimed.tsx` / `acticob.tsx`; diálogo `vac2.tsx` / `actdual.tsx`.
-3. Voz con `kit/scripts/voz/voz_*.py`, verifica pronunciación, mezcla con `kit/scripts/audio/mezcla_*.py`, revisa fotogramas y renderiza con `kit/app/render_c.mjs`.
-4. Al terminar, guarda aquí: código nuevo en `kit/`, captura en `capturas/`, guion en `guiones/`.
+## Publicación automática
+Al terminar el render, programa el video sin preguntar.
+1. Horario: `getBestTimeToPostByNetwork` (tiktok, 7 días), `getScheduledPosts` (Metricool) **y** `list_posts` status scheduled (Buffer). Hora en punto, ≥ 2 h en el futuro, libre, ≥ 3 h de otra publicación, máx. 3 al día. Glosario → 12:00–14:00; educativo → 10:00 o 18:00–19:00; producto → 18:00–19:00 o 10:00.
+2. URL pública: MP4 (y PNG) a la rama temporal `publicar-temp` (worktree aparte, `git push origin <rama>:publicar-temp`, sin force): `https://raw.githubusercontent.com/neomax4000/Helloword/publicar-temp/v/<archivo>.mp4`. **Nunca preguntes por Google Drive** (solo si Brandon lo pide).
+3. **Metricool** (marca 7551486, zona America/Mexico_City) para educativo, noticia y producto: `createScheduledPost` con network tiktok, autoPublish true, `tiktokData.isAigc` true, PNG como `videoThumbnailUrl`, texto = descripción + hashtags («el valor puede subir o bajar; no es garantía» en producto). Confirma media en `static.metricool.com` y borra el MP4 de la rama con `git rm` (commit normal).
+4. **Buffer** (org 6aee2a5b736a55e56b275fe1, canal TikTok `6aee2b0fe29c69a171871113`) para el glosario: `create_post` mode customScheduled + dueAt, schedulingType automatic, assets video con la URL raw, metadata.tiktok.isAiGenerated true y title. Máx. 10 programadas en el plan gratis. Buffer NO re-hospeda al programar: el MP4 se queda en la rama hasta que el post salga; bórralo después.
+5. Si una herramienta llega a su tope, usa la otra. Si algo falla, entrega el MP4 por SendUserFile y dilo. Nunca force-push ni borrar la rama.
+- El MP4 nunca va en `main`; solo código, guiones y portadas.
+- Entrega: MP4 720×1280 + portada PNG + descripción + hashtags + día y hora programados. Brandon sube los videos a Notion. La portada también se puede poner a mano en la app de TikTok.

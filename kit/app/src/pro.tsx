@@ -1,7 +1,7 @@
 // ESTÁNDAR PRO v1 — sistema visual único del canal (2026-11-13)
 // Una sola identidad para todos los videos: fondo profundo con malla de color y grano,
 // tarjetas crema con sombra, un acento ámbar, números gigantes y subtítulos por frase.
-import React from 'react';
+import React, {createContext, useContext} from 'react';
 import {AbsoluteFill, Img, spring, staticFile, useCurrentFrame} from 'remotion';
 
 export const W = 1080;
@@ -25,12 +25,25 @@ export const P = {
   mute: 'rgba(255,255,255,0.62)',
 };
 
+/* ---------------- marca ----------------
+   Por defecto el canal usa el acento ámbar (educativo, glosario, noticia).
+   Los videos de PRODUCTO envuelven todo en <Brand value={ACTINVER}>: acento ocre #B3A369,
+   logo Actinver arriba a la derecha y fondos azul Actinver (mood 'actinver'). */
+export type BrandT = {accent: string; accentDeep: string; logo: boolean};
+export const CANAL: BrandT = {accent: '#FFC247', accentDeep: '#E59A12', logo: false};
+export const ACTINVER: BrandT = {accent: '#C9B97A', accentDeep: '#B3A369', logo: true};
+const BrandCtx = createContext<BrandT>(CANAL);
+export const Brand = BrandCtx.Provider;
+export const useBrand = () => useContext(BrandCtx);
+
 export type Mood = {a: string; b: string; blob: string; blob2: string};
 export const MOODS: Record<string, Mood> = {
   navy: {a: '#070D26', b: '#16307A', blob: '#3D6BFF', blob2: '#12B5E5'},
   forest: {a: '#04191A', b: '#0C4B43', blob: '#19C79C', blob2: '#B7E24A'},
   plum: {a: '#170A2C', b: '#4B1A78', blob: '#B455FF', blob2: '#FF5FA8'},
   ember: {a: '#1A0B0B', b: '#5E1D16', blob: '#FF6A3D', blob2: '#FFC247'},
+  actinver: {a: '#020A1A', b: '#041E42', blob: '#2C5AA8', blob2: '#B3A369'},
+  steel: {a: '#060B14', b: '#1D2A3E', blob: '#4F6E99', blob2: '#9FB3CF'},
 };
 
 export const cl = (v: number, a = 0, b = 1) => Math.max(a, Math.min(b, v));
@@ -148,7 +161,7 @@ export const Mask: React.FC<{at: number; size: number; weight?: number; color?: 
   const p = spr(f, at, 16, 150);
   return (
     <div style={{overflow: 'hidden', lineHeight: 1.05, paddingBottom: size * 0.08, ...style}}>
-      <div style={{fontFamily: FONT, fontWeight: weight, fontSize: size, color, letterSpacing: `${ls}em`, transform: `translateY(${(1 - p) * 110}%)`, whiteSpace: 'nowrap'}}>{children}</div>
+      <div style={{fontFamily: FONT, fontWeight: weight, fontSize: size, color, letterSpacing: `${ls}em`, transform: `translateY(${(1 - p) * 145}%)`, whiteSpace: 'nowrap'}}>{children}</div>
     </div>
   );
 };
@@ -186,12 +199,13 @@ export const buildGroups = (words: Wd[], blocks: {s: number; e: number}[], maxCh
 export const Captions: React.FC<{groups: Group[]; keys?: string[]; y?: number}> = ({groups, keys = [], y = 1300}) => {
   const f = useCurrentFrame();
   const t = f / FPS;
+  const br = useBrand();
   const g = groups.find((x) => t >= x.a && t < x.b);
   if (!g) return null;
   const pin = spr(f, g.a, 14, 240, 0.5);
   const clean = (s: string) => s.replace(/[.,:;]/g, '').toUpperCase();
   return (
-    <div style={{position: 'absolute', left: 60, right: 60, top: y, display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0 22px', transform: `translateY(${(1 - pin) * 26}px) scale(${lerp(0.9, 1, pin)})`, opacity: cl(pin * 2)}}>
+    <div style={{position: 'absolute', left: 60, right: 60, top: y, display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0 28px', transform: `translateY(${(1 - pin) * 26}px) scale(${lerp(0.9, 1, pin)})`, opacity: cl(pin * 2)}}>
       {g.ws.map((w, wi) => {
         const on = t >= w.s - 0.04;
         const nx = g.ws[wi + 1];
@@ -207,9 +221,9 @@ export const Captions: React.FC<{groups: Group[]; keys?: string[]; y?: number}> 
               fontSize: 76,
               lineHeight: 1.14,
               letterSpacing: '-0.01em',
-              color: act || (on && key) ? P.amber : P.white,
+              color: act || (on && key) ? br.accent : P.white,
               opacity: on ? 1 : 0.38,
-              transform: `scale(${on ? lerp(1.14, 1, k) : 1})`,
+              transform: `scale(${on ? lerp(1.07, 1, k) : 1})`,
               display: 'inline-block',
               textShadow: '0 6px 0 rgba(0,0,0,0.55), 0 0 34px rgba(0,0,0,0.6)',
               WebkitTextStroke: '3px rgba(8,10,22,0.9)',
@@ -228,22 +242,28 @@ export const Captions: React.FC<{groups: Group[]; keys?: string[]; y?: number}> 
 export const Frame: React.FC<{serie: string; total: number; nota: string; pasos?: {at: number; label: string}[]}> = ({serie, total, nota, pasos}) => {
   const f = useCurrentFrame();
   const t = f / FPS;
+  const br = useBrand();
   let paso = '';
   (pasos ?? []).forEach((p) => {
     if (t >= p.at) paso = p.label;
   });
   return (
     <>
-      <div style={{position: 'absolute', left: 0, top: 0, height: 10, width: `${(t / total) * 100}%`, background: `linear-gradient(90deg, ${P.amberDeep}, ${P.amber})`, borderRadius: '0 8px 8px 0'}} />
+      <div style={{position: 'absolute', left: 0, top: 0, height: 10, width: `${(t / total) * 100}%`, background: `linear-gradient(90deg, ${br.accentDeep}, ${br.accent})`, borderRadius: '0 8px 8px 0'}} />
       <div style={{position: 'absolute', top: 96, left: 70, right: 70, display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
         <div style={{display: 'flex', alignItems: 'center', gap: 14, fontFamily: FONT, fontWeight: 700, fontSize: 30, letterSpacing: '0.2em', color: P.mute}}>
-          <span style={{width: 16, height: 16, borderRadius: 99, background: P.amber, display: 'inline-block'}} />
+          <span style={{width: 16, height: 16, borderRadius: 99, background: br.accent, display: 'inline-block'}} />
           {serie}
         </div>
-        {paso && (
-          <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 30, letterSpacing: '0.14em', color: P.ink, background: P.amber, borderRadius: 999, padding: '8px 26px'}}>{paso}</div>
-        )}
+        {br.logo ? (
+          <Img src={staticFile('logo_blanco.png')} style={{height: 44}} />
+        ) : paso ? (
+          <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 30, letterSpacing: '0.14em', color: P.ink, background: br.accent, borderRadius: 999, padding: '8px 26px'}}>{paso}</div>
+        ) : null}
       </div>
+      {br.logo && paso && (
+        <div style={{position: 'absolute', top: 166, right: 70, fontFamily: FONT, fontWeight: 700, fontSize: 28, letterSpacing: '0.14em', color: P.ink, background: br.accent, borderRadius: 999, padding: '7px 24px'}}>{paso}</div>
+      )}
       <div style={{position: 'absolute', left: 70, right: 200, top: 1532, fontFamily: FONT, fontWeight: 400, fontSize: 23, lineHeight: 1.3, color: 'rgba(255,255,255,0.5)'}}>{nota}</div>
     </>
   );
