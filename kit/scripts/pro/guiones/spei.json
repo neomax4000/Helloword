@@ -1,0 +1,64 @@
+{
+ "id": "spei",
+ "voz": "D",
+ "velocidad": 1.03,
+ "musica_desde": 1,
+ "bloques": [
+  {
+   "t": "Espéi mueve tu dinero a cualquier hora.",
+   "c": "SPEI mueve | tu dinero | a cualquier hora.",
+   "p": 0.22
+  },
+  {
+   "t": "Es el sistema de Bansico que conecta las cuentas de todos los bancos.",
+   "c": "Es el sistema | de Banxico | que conecta las cuentas | de todos los bancos.",
+   "p": 0.25
+  },
+  {
+   "t": "Un domingo, once de la noche: pagas mil quinientos pesos de renta.",
+   "c": "Un domingo, | once de la noche: | pagas mil quinientos | pesos de renta.",
+   "p": 0.2
+  },
+  {
+   "t": "Llega en segundos. No esperas al lunes.",
+   "c": "Llega | en segundos. | No esperas | al lunes.",
+   "p": 0.25
+  },
+  {
+   "t": "La comisión, si la hay, la fija tu banco.",
+   "c": "La comisión, | si la hay, | la fija tu banco.",
+   "p": 0.28
+  },
+  {
+   "t": "Y pide tu cep: el comprobante electrónico de pago.",
+   "c": "Y pide tu CEP: | el comprobante | electrónico de pago.",
+   "p": 0.28
+  },
+  {
+   "t": "Guárdalo siempre, porque",
+   "c": "Guárdalo siempre, | porque",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "ding",
+   "palabra": 29,
+   "dt": 0.1,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "palabra": 34,
+   "dt": -0.05,
+   "f": 800,
+   "db": -14
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 51,
+   "dt": -0.06,
+   "db": -12
+  }
+ ]
+}
