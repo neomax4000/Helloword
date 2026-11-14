@@ -3,7 +3,7 @@ import {AbsoluteFill} from 'remotion';
 
 /* Fondos de NOTICIA (protocolo §0): imagen del tema dibujada en código, grande y tenue, bajo una capa oscura.
    Un motivo por bloque; cambia con el bloque. Uso: <TopicBg kind="inbox" f={frame} c1="#2A0F18" /> */
-export type Motif = 'inbox' | 'servers' | 'phone' | 'alert' | 'search' | 'chart' | 'plain';
+export type Motif = 'inbox' | 'servers' | 'phone' | 'alert' | 'search' | 'chart' | 'plain' | 'spot' | 'books' | 'candle' | 'coins';
 const BLU = '#4DA3FF', RED = '#FF4D4F', GRN = '#38D39F', AMB = '#FFB020';
 
 const Inbox: React.FC<{f: number}> = ({f}) => (
@@ -63,6 +63,41 @@ const Chart: React.FC<{f: number}> = ({f}) => (
     <path d="M0 -600 L220 -760 L400 -480 L640 -920 L860 -700" stroke={AMB} strokeWidth={16} fill="none" strokeLinecap="round" strokeLinejoin="round" />
   </g>
 );
+const Spot: React.FC<{f: number}> = ({f}) => (
+  <g>
+    <path d={`M${540 - 70} 0 L${540 + 70} 0 L${540 + 520} 1500 L${540 - 520} 1500Z`} fill={AMB} opacity={0.22 + 0.04 * Math.sin(f / 40)} />
+    <ellipse cx={540} cy={1500} rx={560} ry={120} fill="none" stroke={AMB} strokeWidth={8} opacity={0.6} />
+    {Array.from({length: 5}, (_, i) => <rect key={i} x={140 + i * 190} y={1560} width={110} height={30} rx={10} fill={BLU} opacity={0.35} />)}
+  </g>
+);
+const Books: React.FC<{f: number}> = ({f}) => (
+  <g transform="translate(90 330)">
+    {Array.from({length: 7}, (_, r) => (
+      <g key={r} transform={`translate(0 ${r * 215})`}>
+        {Array.from({length: 11}, (_, c) => {
+          const h = 130 + ((c * 37 + r * 53) % 70), w = 54 + ((c * 13) % 20);
+          return <rect key={c} x={c * 84} y={190 - h} width={w} height={h} rx={6} fill="none" stroke={(c + r) % 3 === 0 ? AMB : BLU} strokeWidth={6} />;
+        })}
+        <path d="M0 195 L930 195" stroke={BLU} strokeWidth={6} />
+      </g>
+    ))}
+  </g>
+);
+const Candle: React.FC<{f: number}> = ({f}) => (
+  <g transform="translate(540 1000)">
+    <rect x={-70} y={0} width={140} height={420} rx={20} fill="none" stroke={AMB} strokeWidth={10} />
+    <path d={`M0 ${-40 - 6 * Math.sin(f / 7)} C-60 -150 -40 -230 0 -300 C40 -230 60 -150 0 ${-40 - 6 * Math.sin(f / 7)}Z`} fill={AMB} opacity={0.9} />
+    <circle r={300 + 16 * Math.sin(f / 30)} cy={-120} fill="none" stroke={AMB} strokeWidth={6} opacity={0.35} />
+  </g>
+);
+const Coins: React.FC<{f: number}> = ({f}) => (
+  <g>
+    {Array.from({length: 14}, (_, i) => {
+      const x = 120 + ((i * 197) % 840), y = 240 + ((i * 331 + f * 1.2) % 1500);
+      return <g key={i} transform={`translate(${x} ${y})`}><circle r={70} fill="none" stroke={AMB} strokeWidth={9} /><text textAnchor="middle" y={26} fontSize={80} fontWeight={700} fill={AMB} fontFamily="sans-serif">$</text></g>;
+    })}
+  </g>
+);
 export const TopicBg: React.FC<{kind: Motif; f: number; c1: string; c2?: string; dim?: number}> = ({kind, f, c1, c2 = '#0B1020', dim = 0.5}) => (
   <AbsoluteFill style={{background: `radial-gradient(1300px 1300px at 50% 30%, ${c1}, ${c2} 70%)`}}>
     {kind !== 'plain' && (
@@ -73,6 +108,10 @@ export const TopicBg: React.FC<{kind: Motif; f: number; c1: string; c2?: string;
         {kind === 'alert' && <Alert f={f} />}
         {kind === 'search' && <Search f={f} />}
         {kind === 'chart' && <Chart f={f} />}
+        {kind === 'spot' && <Spot f={f} />}
+        {kind === 'books' && <Books f={f} />}
+        {kind === 'candle' && <Candle f={f} />}
+        {kind === 'coins' && <Coins f={f} />}
       </svg>
     )}
     <AbsoluteFill style={{background: `rgba(5,8,18,${dim})`}} />

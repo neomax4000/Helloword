@@ -4,7 +4,9 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 
 | Fecha | Tipo | Tema | Puntaje | Veredicto | Vistas 24 h | Tiempo visto | Retención | Compartidos+guardados+comentarios por 1,000 vistas |
 |---|---|---|---|---|---|---|---|---|
-| 2026-11-13 | R | Seguimiento caída de Outlook / Microsoft 365 | 34 | ESPERA_OK (producido; puntaje bajo pero acordado con Brandon el 12 nov; modo supervisado) | — | — | — | — |
+| 2026-11-14 | R | Microsoft: créditos del SLA por la caída (pedido de Brandon; Buffer 22:47) | n/c | PUBLICADA (supervisado, por pedido directo) | pendiente | pendiente | pendiente | pendiente |
+| 2026-11-14 | R | Brian Tracy: lo que sí sabemos y lo que no (homenaje; pedido de Brandon; Buffer 22:49) | n/c | PUBLICADA (supervisado, por pedido directo) | pendiente | pendiente | pendiente | pendiente |
+| 2026-11-13 | R | Seguimiento caída de Outlook / Microsoft 365 | 34 | SUSTITUIDO por el video de créditos de Microsoft (14 nov); no se publicó | — | — | — | — |
 | 2026-11-13 | R | Renuncia de Jensen Huang (cierre NVDA −4.3 %) | 52 | NO_GO | — | — | — | — |
 | 2026-11-13 | P | IPP EE. UU. octubre (hoy 7:30 CDMX) | — | NO_GO (ventana cerrada) | — | — | — | — |
 | 2026-11-12 | R | Jensen Huang renuncia a Nvidia (ocurrió noche 11→12 nov) | 62–67 | ESPERA_OK en papel, NO producido (sin voz Kokoro; falta confirmar −10 % con 2.ª fuente) | — | — | — | — |
