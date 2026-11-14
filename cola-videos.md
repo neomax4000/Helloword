@@ -89,3 +89,6 @@ Formato: gancho en afirmación/dato (sin preguntas en la voz) → qué es → ej
 - [ ] Dividendo
 - [ ] ETF
 - [ ] Deuda buena vs mala
+
+## DECONSTRUYENDO LAS FINANZAS (tipo aparte, proyecto futuro; NO entra al ciclo diario)
+Reglas, temas planeados y guion 1 (fondos de inversión, terminado) en `guiones/deconstruyendo-las-finanzas.md`. Todavía no se produce ningún video de este tipo; esperar la instrucción de Brandon.

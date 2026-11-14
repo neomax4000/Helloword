@@ -8,6 +8,7 @@ Brandon Ramírez Salas, Banquero Patrimonial en Actinver (Zapopan). Hace videos 
 - `guiones/productos/` — guion base de 33 fondos + Pagaré Platinum + CD Platinum (datos al 31 mar 2026; revisar ficha vigente).
 - `guiones/videos-producidos/` — guion final y notas de los primeros videos.
 - `guiones/serie-deuda-en-pesos.md` — ACTIREN, ACTIGOB, ORION (producidos).
+- `guiones/deconstruyendo-las-finanzas.md` — tipo de video aparte «Deconstruyendo las finanzas» (reglas, temas planeados y guion 1 de fondos de inversión); proyecto futuro, fuera del ciclo diario.
 - `cola-videos.md` — cola de producción: serie de productos, educativos largos y GLOSARIO FINANCIERO (mini videos de una palabra, ~20 s, plantilla `kit/app/src/glosario.tsx`, estilo claro).
 - `datos/productos.py` — catálogo con fichas, liquidez, calificación y notas de cada producto.
 - Notion (Centro de Mando de IA): «Instructivo: cómo hacemos un video» y «Biblioteca de videos — cómo recrear cada uno» (ficha y capturas de los 15 videos).
