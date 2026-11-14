@@ -46,7 +46,7 @@ Los títulos de abajo son el TEMA, no el gancho: el gancho se reescribe como dat
 - [x] ¿Qué diferencia hay entre ahorrar e invertir? (2026-11-12; guion `guiones/videos-producidos/ahorrar.md`, portada `capturas/46_AHORRAR_portada.png`)
 - [x] ¿Qué es la diversificación? («no pongas todos los huevos en la misma canasta») (2026-11-13; guion `guiones/videos-producidos/diversif.md`, portada `capturas/49_DIVERSIF_portada.png`)
 - [x] Aguinaldo: no es un regalo, es ley (2026-11-13; PILOTO del Estándar Pro, aprobado; guion `guiones/videos-producidos/aguinaldo.md`, portada `capturas/50_AGUINALDO_portada.png`; programado en Metricool el 16-nov-2026 13:00, id 427761458)
-- [x] ¿Qué es la deuda buena y la deuda mala? (2026-11-14; guion `guiones/videos-producidos/deuda.md`, portada `capturas/52_DEUDA_portada.png`)
+- [x] ¿Qué es la deuda buena y la deuda mala? (2026-11-14; guion `guiones/videos-producidos/deuda.md`, portada `capturas/52_DEUDA_portada.png`; programado en Metricool el 17-nov-2026 18:00, id 428178066)
 - [ ] ¿Qué es el SPEI y por qué es instantáneo?
 - [ ] ¿Qué es un seguro de vida y cuándo sí lo necesitas?
 - [ ] ¿Por qué la tarjeta de crédito no es dinero tuyo?
