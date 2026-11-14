@@ -1,0 +1,131 @@
+{
+ "id": "deuda",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 2,
+ "bloques": [
+  {
+   "t": "Tu tarjeta cobra treinta y seis por ciento.",
+   "c": "Tu tarjeta | cobra | treinta y seis | por ciento.",
+   "p": 0.22
+  },
+  {
+   "t": "Y así distingues la deuda mala de la buena: con tres señales.",
+   "c": "Y así distingues | la deuda mala | de la buena: | con tres señales.",
+   "p": 0.25
+  },
+  {
+   "t": "Uno: qué financias. Estudios, negocio o casa, pueden ser buena. Viajes o despensa a crédito, mala.",
+   "c": "Uno: | qué financias. | Estudios, negocio | o casa, | pueden ser buena. | Viajes o despensa | a crédito, | mala.",
+   "p": 0.28
+  },
+  {
+   "t": "Dos: cuánto cuesta. Diez mil pesos sin pagar, en un año, suman tres mil seiscientos de intereses.",
+   "c": "Dos: | cuánto cuesta. | Diez mil pesos | sin pagar, | en un año, | suman tres mil seiscientos | de intereses.",
+   "p": 0.3
+  },
+  {
+   "t": "Y tres, el que más se olvida: cuánto pesa en tu sueldo.",
+   "c": "Y tres, | el que más | se olvida: | cuánto pesa | en tu sueldo.",
+   "p": 0.2
+  },
+  {
+   "t": "Tus pagos de deuda no deberían pasar de treinta por ciento de tu ingreso.",
+   "c": "Tus pagos de deuda | no deberían pasar | de treinta por ciento | de tu ingreso.",
+   "p": 0.22
+  },
+  {
+   "t": "Si ganas quince mil, son cuatro mil quinientos al mes.",
+   "c": "Si ganas | quince mil, | son cuatro mil | quinientos al mes.",
+   "p": 0.28
+  },
+  {
+   "t": "Hasta una deuda buena se vuelve mala si no cabe ahí.",
+   "c": "Hasta una deuda buena | se vuelve mala | si no cabe ahí.",
+   "p": 0.25
+  },
+  {
+   "t": "Haz esta cuenta antes de pedir crédito, porque,",
+   "c": "Haz esta cuenta | antes de pedir crédito, | porque,",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "impact",
+   "palabra": 7,
+   "dt": -0.1,
+   "db": -12
+  },
+  {
+   "tipo": "pop",
+   "palabra": 12,
+   "dt": 0.1,
+   "f": 600,
+   "db": -15
+  },
+  {
+   "tipo": "pop",
+   "palabra": 15,
+   "dt": 0.05,
+   "f": 800,
+   "db": -15
+  },
+  {
+   "tipo": "pop",
+   "palabra": 29,
+   "dt": -0.02,
+   "f": 900
+  },
+  {
+   "tipo": "pop",
+   "palabra": 35,
+   "dt": -0.02,
+   "f": 520
+  },
+  {
+   "tipo": "ticks",
+   "palabra": 48,
+   "dt": -0.05,
+   "n": 8
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 3,
+   "dt": 0.02
+  },
+  {
+   "tipo": "riser",
+   "bloque": 4,
+   "dt": -0.22
+  },
+  {
+   "tipo": "impact",
+   "bloque": 4,
+   "dt": 0.02
+  },
+  {
+   "tipo": "ticks",
+   "palabra": 73,
+   "dt": -0.05,
+   "n": 6
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 6,
+   "dt": 0.02,
+   "f": 1760
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 95,
+   "dt": -0.06
+  },
+  {
+   "tipo": "pop",
+   "palabra": 98,
+   "dt": -0.05,
+   "f": 520
+  }
+ ]
+}

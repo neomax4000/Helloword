@@ -1,5 +1,6 @@
 import {SpeiMain, SpeiCover, SPEI_TOTAL} from './spei';
 import {AguinaldoMain, AguinaldoCover, AGUI_TOTAL} from './aguinaldo';
+import {DeudaMain, DeudaCover, DEUDA_TOTAL} from './deuda';
 import React, {useEffect, useState} from 'react';
 import {AbsoluteFill, Audio, Composition, Sequence, continueRender, delayRender, staticFile} from 'remotion';
 import timing from '../public/timing.json';
@@ -793,6 +794,8 @@ export const Root: React.FC = () => (
     <Composition id="InteresC" component={InteresC} durationInFrames={sec(interesData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Aguinaldo" component={AguinaldoMain} durationInFrames={Math.round(AGUI_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="AguinaldoCover" component={AguinaldoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="Deuda" component={DeudaMain} durationInFrames={Math.round(DEUDA_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="DeudaCover" component={DeudaCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Spei" component={SpeiMain} durationInFrames={Math.round(SPEI_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="SpeiCover" component={SpeiCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="NarradorC" component={NarradorC} durationInFrames={sec(narrData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
