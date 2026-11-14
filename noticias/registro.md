@@ -4,6 +4,7 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 
 | Fecha | Tipo | Tema | Puntaje | Veredicto | Vistas 24 h | Tiempo visto | Retención | Compartidos+guardados+comentarios por 1,000 vistas |
 |---|---|---|---|---|---|---|---|---|
+| 2026-11-14 | R | Cierre Wall Street 13 nov / Nvidia / peso (sábado, sin evento nuevo) | 26–35 | NO_GO | — | — | — | — |
 | 2026-11-14 | R | Microsoft: créditos del SLA por la caída (pedido de Brandon; Buffer 22:47) | n/c | PUBLICADA (supervisado, por pedido directo) | pendiente | pendiente | pendiente | pendiente |
 | 2026-11-14 | R | Brian Tracy: lo que sí sabemos y lo que no (homenaje; pedido de Brandon; Buffer 22:49) | n/c | PUBLICADA (supervisado, por pedido directo) | pendiente | pendiente | pendiente | pendiente |
 | 2026-11-13 | R | Seguimiento caída de Outlook / Microsoft 365 | 34 | SUSTITUIDO por el video de créditos de Microsoft (14 nov); no se publicó | — | — | — | — |
@@ -18,7 +19,7 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 | 2026-11-10 | R | Aguinaldo federal + Buen Fin | ~58 | NO_GO (sin fuente primaria) | — | — | — | — |
 | 2026-11-10 | R | Nvidia / Huang | ~45 | NO_GO | — | — | — | — |
 
-Prueba R vs P: R publicadas 0 de 3 (la del 12 nov salió por pedido directo, métricas pendientes) · P publicadas 0 de 3 · fase actual: PRUEBA.
+Prueba R vs P: R publicadas con métricas 1 de 3 (Outlook v1, 12 nov, por pedido directo: 779 vistas, 7.52 s visto, 28 reacciones, 2 compartidos; Brian Tracy y Microsoft créditos cumplen 24 h el 15 nov) · P publicadas 0 de 3 · fase actual: PRUEBA.
 
 | 2026-11-12 | R · Caída de Outlook / Microsoft 365 (pedido de Brandon) | ~47 (sin calcular formal) | PUBLICADA en Buffer 16:40 (supervisado, por pedido directo) | pendiente | pendiente | pendiente |
 
