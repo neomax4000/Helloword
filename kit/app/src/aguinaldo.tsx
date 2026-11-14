@@ -426,7 +426,7 @@ const S10: React.FC = () => {
         const back = easeIO(prog(t, T(95) - 0.1, AGUI_TOTAL - 0.2));
         return (
           <>
-            <div style={{opacity: 1 - back, transform: `translateY(${back * 260}px) scale(${1 - back * 0.3})`}}>
+            <div style={{opacity: 1 - cl(back * 2.2), transform: `translateY(${back * 260}px) scale(${1 - back * 0.3})`}}>
               <Mask at={A[9] + 0.05} size={104} style={abs(80, 215)}>HAZ TU CUENTA</Mask>
               {items.map((it, k) => (
                 <Rise key={k} at={T(90) + 0.12 + k * 0.17} dx={-160} dy={0} style={abs(80, 370 + k * 250, 900)}>
@@ -437,7 +437,7 @@ const S10: React.FC = () => {
                 </Rise>
               ))}
             </div>
-            <div style={{opacity: back, transform: `scale(${lerp(0.8, 1, back)})`, transformOrigin: '50% 40%'}}>
+            <div style={{opacity: cl((back - 0.45) / 0.55), transform: `scale(${lerp(0.8, 1, back)})`, transformOrigin: '50% 40%'}}>
               <HookBase f={0} />
             </div>
           </>
