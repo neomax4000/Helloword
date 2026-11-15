@@ -4,6 +4,7 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 
 | Fecha | Tipo | Tema | Puntaje | Veredicto | Vistas 24 h | Tiempo visto | Retención | Compartidos+guardados+comentarios por 1,000 vistas |
 |---|---|---|---|---|---|---|---|---|
+| 2026-11-15 | R | Pasada tarde (domingo): Buen Fin sin hecho nuevo, sin caída masiva ni dato oficial verificado; Trends no legible | ~45–55 | NO_GO | — | — | — | — |
 | 2026-11-15 | R | Radar mañana (domingo): Buen Fin termina el lunes 17 (sin hecho nuevo), peso/dólar sin movimiento, sin caída masiva ni dato oficial verificado | ≤35 | NO_GO | — | — | — | — |
 | 2026-11-14 | R | Pasada tarde: sin candidato nuevo (Wall Street 13 nov / peso); Trends no legible | ≤35 | NO_GO | — | — | — | — |
 | 2026-11-14 | R | Cierre Wall Street 13 nov / Nvidia / peso (sábado, sin evento nuevo) | 26–35 | NO_GO | — | — | — | — |
