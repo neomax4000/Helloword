@@ -1,6 +1,7 @@
 import {SpeiMain, SpeiCover, SPEI_TOTAL} from './spei';
 import {InteresCompuestoMain, InteresCompuestoCover, IC_TOTAL} from './interes-compuesto';
 import {AguinaldoMain, AguinaldoCover, AGUI_TOTAL} from './aguinaldo';
+import {SpeiEduMain, SpeiEduCover, SPEIE_TOTAL} from './spei-edu';
 import {DeudaMain, DeudaCover, DEUDA_TOTAL} from './deuda';
 import React, {useEffect, useState} from 'react';
 import {AbsoluteFill, Audio, Composition, Sequence, continueRender, delayRender, staticFile} from 'remotion';
@@ -795,6 +796,8 @@ export const Root: React.FC = () => (
     <Composition id="InteresC" component={InteresC} durationInFrames={sec(interesData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Aguinaldo" component={AguinaldoMain} durationInFrames={Math.round(AGUI_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="AguinaldoCover" component={AguinaldoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="SpeiEdu" component={SpeiEduMain} durationInFrames={Math.round(SPEIE_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="SpeiEduCover" component={SpeiEduCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Deuda" component={DeudaMain} durationInFrames={Math.round(DEUDA_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="DeudaCover" component={DeudaCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Spei" component={SpeiMain} durationInFrames={Math.round(SPEI_TOTAL * 30)} fps={30} width={1080} height={1920} />

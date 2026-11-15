@@ -1,0 +1,114 @@
+{
+ "id": "spei-edu",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 1,
+ "bloques": [
+  {
+   "t": "Tu banco cierra. El espéi no.",
+   "c": "Tu banco cierra. | El SPEI no.",
+   "p": 0.22
+  },
+  {
+   "t": "Es el sistema de Bansico que mueve tu dinero. Y trae tres cosas que casi nadie revisa.",
+   "c": "Es el sistema | de Banxico | que mueve tu dinero. | Y trae tres cosas | que casi nadie | revisa.",
+   "p": 0.2
+  },
+  {
+   "t": "Uno: opera veinticuatro siete. Todos los días, a cualquier hora.",
+   "c": "Uno: | opera 24 7. | Todos los días, | a cualquier hora.",
+   "p": 0.2
+  },
+  {
+   "t": "Un domingo, once de la noche: pagas mil quinientos de renta, y no esperas al lunes.",
+   "c": "Un domingo, | once de la noche: | pagas mil quinientos | de renta, | y no esperas | al lunes.",
+   "p": 0.28
+  },
+  {
+   "t": "Dos: cada pago trae una clave de rastreo. Con ella, Bansico te dice si ya quedó liquidado.",
+   "c": "Dos: | cada pago trae | una clave de rastreo. | Con ella, Banxico | te dice si ya | quedó liquidado.",
+   "p": 0.3
+  },
+  {
+   "t": "Y tres, el que más se olvida.",
+   "c": "Y tres, | el que más | se olvida.",
+   "p": 0.2
+  },
+  {
+   "t": "El sep: el comprobante oficial. Si dice liquidado y no ves el dinero, llévalo a tu banco.",
+   "c": "El CEP: | el comprobante oficial. | Si dice liquidado | y no ves el dinero, | llévalo a tu banco.",
+   "p": 0.28
+  },
+  {
+   "t": "Y ojo: si te equivocas de cuenta, el banco no puede quitárselo a nadie. Solo si quien lo recibió acepta devolverlo.",
+   "c": "Y ojo: | si te equivocas de cuenta, | el banco no puede | quitárselo a nadie. | Solo si quien lo recibió | acepta devolverlo.",
+   "p": 0.2
+  },
+  {
+   "t": "La clabe tiene dieciocho dígitos. Revísalos todos antes de enviar, porque",
+   "c": "La CLABE | tiene 18 dígitos. | Revísalos todos | antes de enviar, | porque",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "stamp",
+   "palabra": 4,
+   "dt": -0.06
+  },
+  {
+   "tipo": "pop",
+   "palabra": 17,
+   "dt": -0.05,
+   "f": 700,
+   "db": -14
+  },
+  {
+   "tipo": "ticks",
+   "palabra": 25,
+   "dt": -0.05,
+   "n": 8
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 3,
+   "dt": 0.02
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 65,
+   "dt": -0.06,
+   "db": -6
+  },
+  {
+   "tipo": "riser",
+   "bloque": 5,
+   "dt": -0.22
+  },
+  {
+   "tipo": "impact",
+   "bloque": 5,
+   "dt": 0.02
+  },
+  {
+   "tipo": "pop",
+   "palabra": 77,
+   "dt": -0.02,
+   "f": 900,
+   "db": -14
+  },
+  {
+   "tipo": "pop",
+   "palabra": 99,
+   "dt": -0.02,
+   "f": 520,
+   "db": -14
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 7,
+   "dt": 0.02,
+   "f": 1760
+  }
+ ]
+}
