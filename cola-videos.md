@@ -66,7 +66,7 @@ Fuente: video interno de capacitación (Acelera Talent). Cada capítulo 35–45 
 - [ ] VIDEO LARGO: los 8 capítulos + cierre «qué es y qué NO es»
 
 ## GLOSARIO FINANCIERO (mini videos 18–25 s, tipo 2 sin marca, una palabra por video)
-Corrida diaria a las 2:00 CDMX; se programa en Buffer al mediodía (ver CLAUDE.md).
+Desde 2026-11-15: 3 producciones al día (2:00, 3:00 y 4:00 am CDMX), 1 publicación al día en Buffer al mediodía; el resto EN RESERVA (MP4 en `publicar-temp`, sin post). Ver `guiones/procedimiento-glosario.md`. Estados: `[ ]` pendiente · `[~]` en producción · `[x]` producido (EN RESERVA o PROGRAMADO).
 Formato (Estándar Pro desde 2026-11-14, `kit/PRO.md`): gancho con dato concreto en afirmación → qué es en una frase → ejemplo con cifras → consejo corto → cierre en bucle hacia la primera frase. Rótulo «GLOSARIO FINANCIERO», voz D, CTA solo escritos. Sin cifras de rendimiento ni promesas; datos oficiales verificados en la web.
 - [x] CAT (2026-11-06; versión final 2026-11-08 con voz D y solo hechos, `guiones/videos-producidos/cat.md`)
 - [x] CETES (2026-11-07, mini video 2; guion `guiones/videos-producidos/cetes.md`, portada `capturas/31_CETES_portada.png`)

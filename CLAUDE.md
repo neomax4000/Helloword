@@ -26,9 +26,9 @@ Este archivo tiene SOLO las reglas vigentes. El porqué de cada decisión está 
 - Métricas: `claude/historico-metricas-tiktok.md` en el proyecto Videos (agregar un corte en cada revisión).
 
 ## Cadencia
-- 2 videos al día: **1 GLOSARIO** + **1 video principal**. El principal sigue un ciclo de 6 días: m = (fecha − 2026-11-11) mod 6 → 0 a 4 = EDUCATIVO, 5 = PRODUCTO (próximos productos: 2026-11-16, 2026-11-22…). Los días de producto sale además un capítulo de «Tu nueva app Actinver».
+- **GLOSARIO: se PRODUCEN 3 al día (turnos 2:00, 3:00 y 4:00 am CDMX) pero solo se PUBLICA 1 al día; el resto queda EN RESERVA y se sube después, el más antiguo primero. Procedimiento en `guiones/procedimiento-glosario.md` (desde 2026-11-15).** Más **1 video principal** al día. El principal sigue un ciclo de 6 días: m = (fecha − 2026-11-11) mod 6 → 0 a 4 = EDUCATIVO, 5 = PRODUCTO (próximos productos: 2026-11-16, 2026-11-22…). Los días de producto sale además un capítulo de «Tu nueva app Actinver».
 - **NOTICIA DEL DÍA (opcional):** protocolo completo en `guiones/protocolo-noticias.md` (tipos R = reacción y P = previa, compuertas, puntaje R «atención + puente al dinero» 0–100, elección de ruta, controles, freno). Temas: finanzas y también tecnología, caídas de servicios, empresas y personas famosas de negocios o desarrollo personal, siempre con puente a su dinero. Modo AUTOMÁTICO desde 2026-11-14 (75 o más se programa solo; 60–74 pide OK; 50–59 es sugerencia; supervisado solo tras un freno). Radar 6:47 y 13:00 CDMX; cada pasada le manda a Brandon sus 3 mejores candidatos aunque sea NO_GO. Si hay noticia APROBADA, es el video principal del día y el tema desplazado queda primero en su lista. Estados y decisiones en `noticias/AAAA-MM-DD.md`.
-- Máximo 3 publicaciones al día en total y ≥ 3 h entre ellas (salvo que Brandon pida otra cosa).
+- Máximo 3 publicaciones al día en total (glosario: 1 al día) y ≥ 3 h entre ellas (salvo que Brandon pida otra cosa).
 - Revisión de métricas 2026-11-20: comparar los videos del Estándar Pro contra la línea base (educativo: mediana 338 vistas, 5.5–7.0 s vistos; glosario: 354 vistas, 3.7–5.5 s). Seguir solo si mejora la retención.
 
 ## Reglas de contenido
