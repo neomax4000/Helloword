@@ -1,0 +1,59 @@
+{
+ "id": "interes-compuesto",
+ "voz": "D",
+ "velocidad": 1.03,
+ "musica_desde": 1,
+ "bloques": [
+  {
+   "t": "Tus intereses también ganan intereses.",
+   "c": "Tus intereses | también ganan | intereses.",
+   "p": 0.22
+  },
+  {
+   "t": "Eso es el interés compuesto: los intereses se suman al capital y generan nuevos intereses.",
+   "c": "Eso es el interés compuesto: | los intereses se suman | al capital | y generan | nuevos intereses.",
+   "p": 0.25
+  },
+  {
+   "t": "Ejemplo: diez mil pesos, al diez por ciento anual, durante tres años.",
+   "c": "Ejemplo: | diez mil pesos, | al diez por ciento anual, | durante tres años.",
+   "p": 0.22
+  },
+  {
+   "t": "Con interés simple terminas con trece mil. Con compuesto, trece mil trescientos diez.",
+   "c": "Con interés simple | terminas con trece mil. | Con compuesto, | trece mil trescientos diez.",
+   "p": 0.25
+  },
+  {
+   "t": "También cuenta en deudas: lo que no pagas, genera más intereses.",
+   "c": "También cuenta en deudas: | lo que no pagas, | genera más intereses.",
+   "p": 0.28
+  },
+  {
+   "t": "Déjalos trabajar a tu favor, porque",
+   "c": "Déjalos trabajar | a tu favor, | porque",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "pop",
+   "palabra": 25,
+   "dt": -0.05,
+   "f": 800,
+   "db": -14
+  },
+  {
+   "tipo": "ding",
+   "palabra": 44,
+   "dt": 0.1,
+   "db": -16
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 53,
+   "dt": -0.06,
+   "db": -12
+  }
+ ]
+}

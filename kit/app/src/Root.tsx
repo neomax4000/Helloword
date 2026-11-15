@@ -1,4 +1,5 @@
 import {SpeiMain, SpeiCover, SPEI_TOTAL} from './spei';
+import {InteresCompuestoMain, InteresCompuestoCover, IC_TOTAL} from './interes-compuesto';
 import {AguinaldoMain, AguinaldoCover, AGUI_TOTAL} from './aguinaldo';
 import {DeudaMain, DeudaCover, DEUDA_TOTAL} from './deuda';
 import React, {useEffect, useState} from 'react';
@@ -798,6 +799,8 @@ export const Root: React.FC = () => (
     <Composition id="DeudaCover" component={DeudaCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Spei" component={SpeiMain} durationInFrames={Math.round(SPEI_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="SpeiCover" component={SpeiCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="InteresCompuesto" component={InteresCompuestoMain} durationInFrames={Math.round(IC_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="InteresCompuestoCover" component={InteresCompuestoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="NarradorC" component={NarradorC} durationInFrames={sec(narrData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
   </>
 );
