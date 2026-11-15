@@ -4,10 +4,11 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 
 | Fecha | Tipo | Tema | Puntaje | Veredicto | Vistas 24 h | Tiempo visto | Retención | Compartidos+guardados+comentarios por 1,000 vistas |
 |---|---|---|---|---|---|---|---|---|
+| 2026-11-15 | R | Radar mañana (domingo): Buen Fin termina el lunes 17 (sin hecho nuevo), peso/dólar sin movimiento, sin caída masiva ni dato oficial verificado | ≤35 | NO_GO | — | — | — | — |
 | 2026-11-14 | R | Pasada tarde: sin candidato nuevo (Wall Street 13 nov / peso); Trends no legible | ≤35 | NO_GO | — | — | — | — |
 | 2026-11-14 | R | Cierre Wall Street 13 nov / Nvidia / peso (sábado, sin evento nuevo) | 26–35 | NO_GO | — | — | — | — |
-| 2026-11-14 | R | Microsoft: créditos del SLA por la caída (pedido de Brandon; Buffer 22:47) | n/c | PUBLICADA (supervisado, por pedido directo) | pendiente | pendiente | pendiente | pendiente |
-| 2026-11-14 | R | Brian Tracy: lo que sí sabemos y lo que no (homenaje; pedido de Brandon; Buffer 22:49) | n/c | PUBLICADA (supervisado, por pedido directo) | pendiente | pendiente | pendiente | pendiente |
+| 2026-11-14 | R | Microsoft: créditos del SLA por la caída (pedido de Brandon; Buffer 22:47) | n/c (~80 con la regla nueva) | PUBLICADA (supervisado, por pedido directo) · ¿FUNCIONÓ? PARCIAL | 174 | 10.98 s | n/d | 34 (6 reacciones, 0 comp., 0 compartidos) |
+| 2026-11-14 | R | Brian Tracy: lo que sí sabemos y lo que no (homenaje; pedido de Brandon; Buffer 22:49) | n/c (~70 con la regla nueva) | PUBLICADA (supervisado, por pedido directo) · ¿FUNCIONÓ? FUNCIONÓ | 484 | 7.44 s | n/d | 17 (8 reacciones, 0 comp., 0 compartidos) |
 | 2026-11-13 | R | Seguimiento caída de Outlook / Microsoft 365 | 34 | SUSTITUIDO por el video de créditos de Microsoft (14 nov); no se publicó | — | — | — | — |
 | 2026-11-13 | R | Renuncia de Jensen Huang (cierre NVDA −4.3 %) | 52 | NO_GO | — | — | — | — |
 | 2026-11-13 | P | IPP EE. UU. octubre (hoy 7:30 CDMX) | — | NO_GO (ventana cerrada) | — | — | — | — |
@@ -22,7 +23,7 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 
 **MODO: AUTOMÁTICO desde 2026-11-14** (decisión de Brandon; regla R «atención + puente al dinero», ver protocolo §3). Sin freno activo. Columna nueva desde hoy en las notas: ¿FUNCIONÓ? (vistas ≥ mediana de los últimos 10 y ≥ 7 s visto). Outlook v1: FUNCIONÓ (779 vistas, 7.52 s).
 
-Prueba R vs P: R publicadas con métricas 1 de 3 (Outlook v1, 12 nov, por pedido directo: 779 vistas, 7.52 s visto, 28 reacciones, 2 compartidos; Brian Tracy y Microsoft créditos cumplen 24 h el 15 nov) · P publicadas 0 de 3 · fase actual: PRUEBA.
+Prueba R vs P: R publicadas con métricas 3 de 3 (Outlook v1: 779 vistas, 7.52 s; Brian Tracy: 484 vistas, 7.44 s; Microsoft créditos: 174 vistas, 10.98 s; Buffer 15 nov 04:40 CDMX; medianas por comparar cuando haya 3 P) · P publicadas 0 de 3 · fase actual: PRUEBA.
 
 | 2026-11-12 | R · Caída de Outlook / Microsoft 365 (pedido de Brandon) | ~47 (sin calcular formal) | PUBLICADA en Buffer 16:40 (supervisado, por pedido directo) | pendiente | pendiente | pendiente |
 
