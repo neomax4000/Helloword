@@ -41,6 +41,7 @@ Este archivo tiene SOLO las reglas vigentes. El porqué de cada decisión está 
 - Cumplimiento: no hace falta su visto bueno (TikTok personal, decisión 2026-11-06). Al entregar, solo menciona los puntos por vigilar: logo Actinver, textos legales y cifras.
 
 ## Publicación automática
+**REGLA 2026-11-15 (Brandon): programar SOLO videos que se publican EL MISMO DÍA de su producción** (nada de programar con días de anticipación). Hora en punto, ≥ 2 h en el futuro, de los horarios de cada tipo; si ese día ya no queda hueco (máx. 3 al día, ≥ 3 h entre publicaciones), no programes: entrega el MP4 y la portada por SendUserFile y dilo. No reprogramar los fallidos de Metricool (nómina y Afore del 14-nov).
 **AVISO 2026-11-15: el límite mensual de Metricool se agotó. Por ahora TODO se programa en Buffer** (el paso 4 aplica a todos los videos, también educativo, noticia y producto; sigue el paso 2 para la URL raw y el MP4 se queda en `publicar-temp` hasta que salga el post, luego `git rm`). No uses Metricool hasta que Brandon avise que se renovó. Buffer no acepta portada: va en la entrega para ponerla a mano en TikTok.
 Al terminar el render, programa el video sin preguntar.
 1. Horario: `getBestTimeToPostByNetwork` (tiktok, 7 días), `getScheduledPosts` (Metricool) **y** `list_posts` status scheduled (Buffer). Hora en punto, ≥ 2 h en el futuro, libre, ≥ 3 h de otra publicación, máx. 3 al día. Glosario → 12:00–14:00; educativo → 10:00 o 18:00–19:00; producto → 18:00–19:00 o 10:00.
