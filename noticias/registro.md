@@ -5,6 +5,8 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 | Fecha | Tipo | Tema | Puntaje | Veredicto | Vistas 24 h | Tiempo visto | Retención | Compartidos+guardados+comentarios por 1,000 vistas |
 |---|---|---|---|---|---|---|---|---|
 | 2026-11-16 | R | Radar mañana (lunes): Buen Fin (cierra hoy), Wall Street/peso del 13 nov y caídas de servicios sin hecho nuevo fechado ni 2 fuentes; Trends/Downdetector no legibles | ≤40 | NO_GO | — | — | — | — |
+| 2026-11-16 | R | Pasada tarde: Wall Street −2 % Nasdaq víspera de Nvidia (cifras de medio día sin cierre) | ~70 | NO_GO (sin voz Kokoro: HF inaccesible; cifras sin 2 fuentes) | — | — | — | — |
+| 2026-11-16 | R | Rumor «apagón 17 nov» / prueba EAS de FEMA-FCC | ~65 | NO_GO (sin voz; puente débil) | — | — | — | — |
 | 2026-11-15 | R | Pasada tarde (domingo): Buen Fin sin hecho nuevo, sin caída masiva ni dato oficial verificado; Trends no legible | ~45–55 | NO_GO | — | — | — | — |
 | 2026-11-15 | R | Radar mañana (domingo): Buen Fin termina el lunes 17 (sin hecho nuevo), peso/dólar sin movimiento, sin caída masiva ni dato oficial verificado | ≤35 | NO_GO | — | — | — | — |
 | 2026-11-14 | R | Pasada tarde: sin candidato nuevo (Wall Street 13 nov / peso); Trends no legible | ≤35 | NO_GO | — | — | — | — |
