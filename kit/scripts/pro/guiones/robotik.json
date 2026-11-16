@@ -1,0 +1,110 @@
+{
+ "id": "robotik",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 2,
+ "bloques": [
+  {
+   "t": "Más de seiscientos mil robots llegaron a fábricas.",
+   "c": "Más de 600 mil | robots llegaron | a fábricas.",
+   "p": 0.25
+  },
+  {
+   "t": "Y si quieres invertir en eso, no tienes que escoger empresas una por una.",
+   "c": "Y si quieres | invertir en eso, | no tienes que escoger | empresas | una por una.",
+   "p": 0.25
+  },
+  {
+   "t": "Robótik es un fondo de Actinver, asesorado por Axa Inbéstment Mánayers.",
+   "c": "ROBOTIK | es un fondo | de Actinver, | asesorado por | AXA Investment Managers.",
+   "p": 0.28
+  },
+  {
+   "t": "Y junta tres temas.",
+   "c": "Y junta | tres temas.",
+   "p": 0.22
+  },
+  {
+   "t": "Uno: automatización industrial, las máquinas que arman y mueven en las fábricas.",
+   "c": "Uno: | automatización | industrial, | las máquinas que | arman y mueven | en las fábricas.",
+   "p": 0.25
+  },
+  {
+   "t": "Dos: vehículos autónomos e implementos médicos.",
+   "c": "Dos: | vehículos autónomos | e implementos | médicos.",
+   "p": 0.28
+  },
+  {
+   "t": "Y tres, lo más importante: es renta variable global, su valor puede subir o bajar y no es garantía.",
+   "c": "Y tres, | lo más importante: | es renta variable | global, su valor | puede subir o bajar | y no es garantía.",
+   "p": 0.28
+  },
+  {
+   "t": "Es de largo plazo. Compras y vendes cualquier día hábil, y se liquida en veinticuatro horas.",
+   "c": "Es de largo plazo. | Compras y vendes | cualquier día hábil, | y se liquida | en 24 horas.",
+   "p": 0.28
+  },
+  {
+   "t": "Escríbeme y lo revisamos juntos.",
+   "c": "Escríbeme | y lo revisamos | juntos.",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "ticks",
+   "palabra": 2,
+   "dt": -0.05,
+   "n": 8
+  },
+  {
+   "tipo": "ding",
+   "palabra": 4,
+   "dt": 0.0,
+   "f": 1320,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "palabra": 14,
+   "dt": -0.02,
+   "f": 600,
+   "db": -15
+  },
+  {
+   "tipo": "riser",
+   "bloque": 2,
+   "dt": -0.22
+  },
+  {
+   "tipo": "impact",
+   "bloque": 2,
+   "dt": 0.02,
+   "db": -12
+  },
+  {
+   "tipo": "pop",
+   "palabra": 37,
+   "f": 800,
+   "db": -15
+  },
+  {
+   "tipo": "pop",
+   "palabra": 49,
+   "f": 900,
+   "db": -15
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 71,
+   "dt": -0.06,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 7,
+   "dt": 0.02,
+   "f": 1760
+  }
+ ]
+}

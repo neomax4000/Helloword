@@ -13,7 +13,7 @@ NOTICIA DEL DÍA (opcional): radar a las 7:00 CDMX según `guiones/protocolo-not
 - [x] ACTIAI (2026-11-06)
 - [x] ACTIRVT (2026-11-06)
 - [x] JPMRVUS (2026-11-09; guion `guiones/videos-producidos/jpmrvus.md`, portada `capturas/37_JPMRVUS_portada.png`)
-- [ ] ROBOTIK
+- [x] ROBOTIK (2026-11-16; guion `guiones/videos-producidos/robotik.md`, portada `capturas/56_ROBOTIK_portada.png`)
 - [ ] TEMATIK
 - [ ] MAXIMO
 - [ ] DINAMO
