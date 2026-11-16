@@ -79,7 +79,7 @@ Formato (Estándar Pro desde 2026-11-14, `kit/PRO.md`): gancho con dato concreto
 - [x] UDI — FORMATO DE PRUEBA (ver CLAUDE.md «PRUEBA DE FORMATO DEL GLOSARIO»). **PRODUCIDO (v2, 30 s) y PROGRAMADO en Buffer el 2026-11-13** (post 6af72ca15d42e353d99c162a, estado scheduled, 15-nov-2026 13:10 CDMX, 10 min después de Inflación; excede el tope de 3/día por decisión de Brandon). Título «UDI en 30 segundos», isAiGenerated true. **PENDIENTE: borrar `v/udi_prueba_glosario.mp4` de `publicar-temp` (`git rm`, commit normal) DESPUÉS de que se publique el 15-nov** (Buffer aún apunta a la URL raw, no la re-hospedó). «Hoy vale más de 8»: sitio de terceros marca 8.90 el 12-nov-2026; falta confirmar en Banxico/DOF.
 - [x] SPEI (2026-11-14, Estándar Pro; guion `guiones/videos-producidos/spei.md`, portada `capturas/51_SPEI_portada.png`) — PROGRAMADO en Buffer (post 6af81aa74b28296eb1445686, 17-nov-2026 12:00 CDMX). PENDIENTE: borrar `v/spei_glosario.mp4` de `publicar-temp` (`git rm`) DESPUÉS de que salga.
 - [x] Interés compuesto (mini) (2026-11-15, Estándar Pro, turno 2; guion `guiones/videos-producidos/interes-compuesto.md`, portada `capturas/53_INTERES_COMPUESTO_portada.png`) — EN RESERVA
-- [x] Plazo (2026-11-16, Estándar Pro, turno 2; guion `guiones/videos-producidos/plazo.md`, portada `capturas/55_PLAZO_portada.png`) — EN RESERVA
+- [x] Plazo (2026-11-16, Estándar Pro, turno 2; guion `guiones/videos-producidos/plazo.md`, portada `capturas/55_PLAZO_portada.png`) — EN RESERVA (MP4+PNG en `publicar-temp`; hoy sin hueco: Metricool tiene 3 borradores el 16-nov 10:00/13:00/18:00)
 - [ ] Comisión
 - [ ] Riesgo y volatilidad
 - [ ] Horizonte de inversión
