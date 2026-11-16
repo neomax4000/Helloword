@@ -1,0 +1,65 @@
+{
+ "id": "plazo",
+ "voz": "D",
+ "velocidad": 1.03,
+ "musica_desde": 1,
+ "bloques": [
+  {
+   "t": "Más plazo, tres veces más intereses.",
+   "c": "Más plazo, | tres veces | más intereses.",
+   "p": 0.22
+  },
+  {
+   "t": "El plazo es el tiempo que tienes para pagar un crédito.",
+   "c": "El plazo es | el tiempo | que tienes para pagar | un crédito.",
+   "p": 0.25
+  },
+  {
+   "t": "Pides cincuenta mil pesos, al veinticuatro por ciento anual.",
+   "c": "Pides cincuenta mil pesos, | al veinticuatro | por ciento anual.",
+   "p": 0.2
+  },
+  {
+   "t": "A doce meses, casi siete mil de intereses. A treinta y seis, más de veinte mil.",
+   "c": "A doce meses, | casi siete mil | de intereses. | A treinta y seis, | más de veinte mil.",
+   "p": 0.25
+  },
+  {
+   "t": "La mensualidad baja, pero el costo total sube.",
+   "c": "La mensualidad baja, | pero el costo total | sube.",
+   "p": 0.28
+  },
+  {
+   "t": "Compara siempre el costo total, porque",
+   "c": "Compara siempre | el costo total, | porque",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "stamp",
+   "palabra": 2,
+   "dt": -0.06,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 19,
+   "dt": 0.3,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "palabra": 38,
+   "dt": -0.05,
+   "f": 800,
+   "db": -14
+  },
+  {
+   "tipo": "ding",
+   "palabra": 49,
+   "dt": 0.0,
+   "db": -16
+  }
+ ]
+}

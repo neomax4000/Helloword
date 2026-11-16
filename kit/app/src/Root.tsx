@@ -1,3 +1,4 @@
+import {PlazoMain, PlazoCover, PLAZO_TOTAL} from './plazo';
 import {SpeiMain, SpeiCover, SPEI_TOTAL} from './spei';
 import {InteresCompuestoMain, InteresCompuestoCover, IC_TOTAL} from './interes-compuesto';
 import {AguinaldoMain, AguinaldoCover, AGUI_TOTAL} from './aguinaldo';
@@ -801,6 +802,8 @@ export const Root: React.FC = () => (
     <Composition id="Deuda" component={DeudaMain} durationInFrames={Math.round(DEUDA_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="DeudaCover" component={DeudaCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Spei" component={SpeiMain} durationInFrames={Math.round(SPEI_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="Plazo" component={PlazoMain} durationInFrames={Math.round(PLAZO_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="PlazoCover" component={PlazoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="SpeiCover" component={SpeiCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="InteresCompuesto" component={InteresCompuestoMain} durationInFrames={Math.round(IC_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="InteresCompuestoCover" component={InteresCompuestoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
