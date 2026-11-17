@@ -80,7 +80,7 @@ Formato (Estándar Pro desde 2026-11-14, `kit/PRO.md`): gancho con dato concreto
 - [x] SPEI (2026-11-14, Estándar Pro; guion `guiones/videos-producidos/spei.md`, portada `capturas/51_SPEI_portada.png`) — PROGRAMADO en Buffer (post 6af81aa74b28296eb1445686, 17-nov-2026 12:00 CDMX). PENDIENTE: borrar `v/spei_glosario.mp4` de `publicar-temp` (`git rm`) DESPUÉS de que salga.
 - [x] Interés compuesto (mini) (2026-11-15, Estándar Pro, turno 2; guion `guiones/videos-producidos/interes-compuesto.md`, portada `capturas/53_INTERES_COMPUESTO_portada.png`) — EN RESERVA
 - [x] Plazo (2026-11-16, Estándar Pro, turno 2; guion `guiones/videos-producidos/plazo.md`, portada `capturas/55_PLAZO_portada.png`) — EN RESERVA (MP4+PNG en `publicar-temp`; hoy sin hueco: Metricool tiene 3 borradores el 16-nov 10:00/13:00/18:00)
-- [~] Comisión en producción, turno (auto)
+- [x] Comisión (2026-11-17, Estándar Pro, turno 2; guion `guiones/videos-producidos/comision.md`, portada `capturas/57_COMISION_portada.png`) — EN RESERVA
 - [ ] Riesgo y volatilidad
 - [ ] Horizonte de inversión
 - [ ] Fondo de inversión

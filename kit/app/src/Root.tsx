@@ -1,5 +1,6 @@
 import {PlazoMain, PlazoCover, PLAZO_TOTAL} from './plazo';
 import {SpeiMain, SpeiCover, SPEI_TOTAL} from './spei';
+import {ComisionMain, ComisionCover, COMISION_TOTAL} from './comision';
 import {InteresCompuestoMain, InteresCompuestoCover, IC_TOTAL} from './interes-compuesto';
 import {AguinaldoMain, AguinaldoCover, AGUI_TOTAL} from './aguinaldo';
 import {RobotikMain, RobotikCover, ROBO_TOTAL} from './robotik';
@@ -808,6 +809,8 @@ export const Root: React.FC = () => (
     <Composition id="Plazo" component={PlazoMain} durationInFrames={Math.round(PLAZO_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="PlazoCover" component={PlazoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="SpeiCover" component={SpeiCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="Comision" component={ComisionMain} durationInFrames={Math.round(COMISION_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="ComisionCover" component={ComisionCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="InteresCompuesto" component={InteresCompuestoMain} durationInFrames={Math.round(IC_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="InteresCompuestoCover" component={InteresCompuestoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="NarradorC" component={NarradorC} durationInFrames={sec(narrData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />

@@ -1,0 +1,59 @@
+{
+ "id": "comision",
+ "voz": "D",
+ "velocidad": 1.03,
+ "musica_desde": 1,
+ "bloques": [
+  {
+   "t": "Cien pesos al mes cuestan mil doscientos al año.",
+   "c": "Cien pesos al mes | cuestan mil doscientos | al año.",
+   "p": 0.22
+  },
+  {
+   "t": "Eso es una comisión: lo que tu banco te cobra por un servicio.",
+   "c": "Eso es una comisión: | lo que tu banco | te cobra | por un servicio.",
+   "p": 0.25
+  },
+  {
+   "t": "Una cuenta cobra cien pesos mensuales. En doce meses, son mil doscientos.",
+   "c": "Una cuenta cobra | cien pesos mensuales. | En doce meses, | son mil doscientos.",
+   "p": 0.22
+  },
+  {
+   "t": "Hay cobros prohibidos: Bansico no permite cobrar retiros ni consultas de saldo en cajeros del mismo banco.",
+   "c": "Hay cobros prohibidos: | Banxico no permite | cobrar retiros ni consultas | de saldo en cajeros | del mismo banco.",
+   "p": 0.25
+  },
+  {
+   "t": "Antes de abrir una cuenta, pide su lista de comisiones.",
+   "c": "Antes de abrir | una cuenta, | pide su lista | de comisiones.",
+   "p": 0.28
+  },
+  {
+   "t": "Y revisa tu estado de cuenta, porque",
+   "c": "Y revisa | tu estado de cuenta, | porque",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "ding",
+   "palabra": 33,
+   "dt": 0.1,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "palabra": 41,
+   "dt": -0.05,
+   "f": 800,
+   "db": -14
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 60,
+   "dt": -0.06,
+   "db": -14
+  }
+ ]
+}
