@@ -3,6 +3,7 @@ import {SpeiMain, SpeiCover, SPEI_TOTAL} from './spei';
 import {ComisionMain, ComisionCover, COMISION_TOTAL} from './comision';
 import {InteresCompuestoMain, InteresCompuestoCover, IC_TOTAL} from './interes-compuesto';
 import {AguinaldoMain, AguinaldoCover, AGUI_TOTAL} from './aguinaldo';
+import {SeguroVidaMain, SeguroVidaCover, SEG_TOTAL} from './seguro-vida';
 import {RobotikMain, RobotikCover, ROBO_TOTAL} from './robotik';
 import {SpeiEduMain, SpeiEduCover, SPEIE_TOTAL} from './spei-edu';
 import {DeudaMain, DeudaCover, DEUDA_TOTAL} from './deuda';
@@ -799,6 +800,8 @@ export const Root: React.FC = () => (
     <Composition id="InteresC" component={InteresC} durationInFrames={sec(interesData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Aguinaldo" component={AguinaldoMain} durationInFrames={Math.round(AGUI_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="AguinaldoCover" component={AguinaldoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="SeguroVida" component={SeguroVidaMain} durationInFrames={Math.round(SEG_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="SeguroVidaCover" component={SeguroVidaCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Robotik" component={RobotikMain} durationInFrames={Math.round(ROBO_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="RobotikCover" component={RobotikCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="SpeiEdu" component={SpeiEduMain} durationInFrames={Math.round(SPEIE_TOTAL * 30)} fps={30} width={1080} height={1920} />

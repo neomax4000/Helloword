@@ -1,0 +1,103 @@
+{
+ "id": "seguro-vida",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 2,
+ "sin_whoosh": [
+  8
+ ],
+ "bloques": [
+  {
+   "t": "Tu seguro de vida lo cobra otra persona.",
+   "c": "Tu seguro de vida | lo cobra | otra persona.",
+   "p": 0.22
+  },
+  {
+   "t": "Y hay tres señales de que sí lo necesitas.",
+   "c": "Y hay | tres señales | de que sí | lo necesitas.",
+   "p": 0.25
+  },
+  {
+   "t": "Uno: alguien depende de tu ingreso. Tus hijos, tu pareja o tus papás.",
+   "c": "Uno: | alguien depende | de tu ingreso. | Tus hijos, | tu pareja | o tus papás.",
+   "p": 0.25
+  },
+  {
+   "t": "Dos: tienes deudas. Según Condusef, el beneficiario recibe la suma completa, aunque debas.",
+   "c": "Dos: | tienes deudas. | Según Condusef, | el beneficiario | recibe la suma | completa, | aunque debas.",
+   "p": 0.28
+  },
+  {
+   "t": "Y tres, el que más se olvida.",
+   "c": "Y tres, | el que más | se olvida.",
+   "p": 0.2
+  },
+  {
+   "t": "Saber cuánto. Condusef sugiere cubrir tres años de gastos básicos de tu familia.",
+   "c": "Saber cuánto. | Condusef sugiere | cubrir tres años | de gastos básicos | de tu familia.",
+   "p": 0.28
+  },
+  {
+   "t": "Si gastan quince mil al mes, son quinientos cuarenta mil pesos.",
+   "c": "Si gastan | quince mil al mes, | son quinientos | cuarenta mil | pesos.",
+   "p": 0.28
+  },
+  {
+   "t": "Revisa la suma asegurada, no solo lo que pagas cada mes.",
+   "c": "Revisa | la suma asegurada, | no solo | lo que pagas | cada mes.",
+   "p": 0.25
+  },
+  {
+   "t": "Elige bien a quién protege, porque",
+   "c": "Elige bien | a quién protege, | porque",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "stamp",
+   "palabra": 6,
+   "dt": -0.06
+  },
+  {
+   "tipo": "pop",
+   "palabra": 10,
+   "dt": -0.05,
+   "f": 700,
+   "db": -14
+  },
+  {
+   "tipo": "pop",
+   "palabra": 18,
+   "f": 1000,
+   "db": -15
+  },
+  {
+   "tipo": "pop",
+   "palabra": 31,
+   "f": 900,
+   "db": -15
+  },
+  {
+   "tipo": "riser",
+   "bloque": 4,
+   "dt": -0.22
+  },
+  {
+   "tipo": "impact",
+   "bloque": 4,
+   "dt": 0.02
+  },
+  {
+   "tipo": "ticks",
+   "palabra": 65,
+   "dt": -0.05,
+   "n": 8
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 6,
+   "dt": 0.02
+  }
+ ]
+}
