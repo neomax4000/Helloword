@@ -4,6 +4,7 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 
 | Fecha | Tipo | Tema | Puntaje | Veredicto | Vistas 24 h | Tiempo visto | Retención | Compartidos+guardados+comentarios por 1,000 vistas |
 |---|---|---|---|---|---|---|---|---|
+| 2026-11-18 | R | Radar mañana: Nvidia (reacción), Wall Street/peso 17 nov, previa de calendario; sin hecho 2026 con 2 fuentes y sin entorno de producción (Kokoro/HF 403) | ≤50 | NO_GO | — | — | — | — |
 | 2026-11-17 | R/P | Pasada tarde: resultados Nvidia (tras cierre, sin hora oficial ni ventana) / caída de chips / peso-dólar (fuentes de 2025) | ~50–55 | NO_GO (sin verificación y producción imposible en este entorno) | — | — | — | — |
 | 2026-11-17 | P | Previa Nvidia (resultados hoy 17 nov, hora y consenso sin confirmar) / cierre Wall Street 16 nov | ~55–65 | NO_GO (sin voz Kokoro: HF 403; hora oficial y 2.ª fuente sin confirmar) | — | — | — | — |
 | 2026-11-16 | R | Radar mañana (lunes): Buen Fin (cierra hoy), Wall Street/peso del 13 nov y caídas de servicios sin hecho nuevo fechado ni 2 fuentes; Trends/Downdetector no legibles | ≤40 | NO_GO | — | — | — | — |
