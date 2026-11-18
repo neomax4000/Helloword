@@ -81,7 +81,7 @@ Formato (Estándar Pro desde 2026-11-14, `kit/PRO.md`): gancho con dato concreto
 - [x] Interés compuesto (mini) (2026-11-15, Estándar Pro, turno 2; guion `guiones/videos-producidos/interes-compuesto.md`, portada `capturas/53_INTERES_COMPUESTO_portada.png`) — EN RESERVA
 - [x] Plazo (2026-11-16, Estándar Pro, turno 2; guion `guiones/videos-producidos/plazo.md`, portada `capturas/55_PLAZO_portada.png`) — EN RESERVA (MP4+PNG en `publicar-temp`; hoy sin hueco: Metricool tiene 3 borradores el 16-nov 10:00/13:00/18:00)
 - [x] Comisión (2026-11-17, Estándar Pro, turno 2; guion `guiones/videos-producidos/comision.md`, portada `capturas/57_COMISION_portada.png`) — EN RESERVA
-- [ ] Riesgo y volatilidad
+- [~] Riesgo y volatilidad — en producción, turno 2:00 (2026-11-18)
 - [ ] Horizonte de inversión
 - [ ] Fondo de inversión
 - [ ] Afore
