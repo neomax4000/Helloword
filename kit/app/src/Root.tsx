@@ -4,6 +4,7 @@ import {RiesgoMain, RiesgoCover, RIESGO_TOTAL} from './riesgo';
 import {ComisionMain, ComisionCover, COMISION_TOTAL} from './comision';
 import {InteresCompuestoMain, InteresCompuestoCover, IC_TOTAL} from './interes-compuesto';
 import {AguinaldoMain, AguinaldoCover, AGUI_TOTAL} from './aguinaldo';
+import {NvidiaRecordMain, NvidiaRecordCover, NVR_TOTAL} from './nvidia-record';
 import {TarjetaMain, TarjetaCover, TARJ_TOTAL} from './tarjeta-credito';
 import {SeguroVidaMain, SeguroVidaCover, SEG_TOTAL} from './seguro-vida';
 import {RobotikMain, RobotikCover, ROBO_TOTAL} from './robotik';
@@ -802,6 +803,8 @@ export const Root: React.FC = () => (
     <Composition id="InteresC" component={InteresC} durationInFrames={sec(interesData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="Aguinaldo" component={AguinaldoMain} durationInFrames={Math.round(AGUI_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="AguinaldoCover" component={AguinaldoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="NvidiaRecord" component={NvidiaRecordMain} durationInFrames={Math.round(NVR_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="NvidiaRecordCover" component={NvidiaRecordCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Tarjeta" component={TarjetaMain} durationInFrames={Math.round(TARJ_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="TarjetaCover" component={TarjetaCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="SeguroVida" component={SeguroVidaMain} durationInFrames={Math.round(SEG_TOTAL * 30)} fps={30} width={1080} height={1920} />

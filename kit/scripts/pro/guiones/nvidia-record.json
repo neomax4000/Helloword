@@ -1,0 +1,109 @@
+{
+ "id": "nvidia-record",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 2,
+ "sin_whoosh": [],
+ "bloques": [
+  {
+   "t": "Nvidia reportó récord y cerró en rojo.",
+   "c": "Nvidia reportó | récord | y cerró | en rojo.",
+   "p": 0.22
+  },
+  {
+   "t": "Y tres señales de ese día tocan tu dinero.",
+   "c": "Y tres señales | de ese día | tocan | tu dinero.",
+   "p": 0.25
+  },
+  {
+   "t": "Uno: vendió ciento dieciséis mil millones de dólares. El doble que hace un año.",
+   "c": "Uno: vendió | ciento dieciséis | mil millones de dólares. | El doble | que hace un año.",
+   "p": 0.28
+  },
+  {
+   "t": "Y para el próximo trimestre prevé ciento treinta mil millones.",
+   "c": "Y para el próximo | trimestre prevé | ciento treinta | mil millones.",
+   "p": 0.28
+  },
+  {
+   "t": "Subió hasta dos punto siete por ciento. Y terminó perdiendo dos punto nueve.",
+   "c": "Subió hasta | dos punto siete | por ciento. | Y terminó perdiendo | dos punto nueve.",
+   "p": 0.3
+  },
+  {
+   "t": "Fue su primer reporte desde que Jénsen Juang dejó el cargo de director.",
+   "c": "Fue su primer reporte | desde que Jensen Huang | dejó el cargo | de director.",
+   "p": 0.28
+  },
+  {
+   "t": "Dos: la Fed. Sus minutas apuntan a más subidas de tasas.",
+   "c": "Dos: | la Fed. | Sus minutas apuntan | a más subidas | de tasas.",
+   "p": 0.28
+  },
+  {
+   "t": "Por eso el Dow cayó uno punto uno por ciento, y el oro tocó su nivel más bajo en más de un año.",
+   "c": "Por eso | el Dow cayó | uno punto uno | por ciento, | y el oro tocó | su nivel más bajo | en más de un año.",
+   "p": 0.3
+  },
+  {
+   "t": "Y tres, el que más te toca: tu Afore y tus fondos pueden tener parte de este mercado.",
+   "c": "Y tres, | el que más te toca: | tu Afore | y tus fondos | pueden tener | parte de este mercado.",
+   "p": 0.28
+  },
+  {
+   "t": "Un día malo no es tu plan. Revisa cuánto riesgo aguantas, porque,",
+   "c": "Un día malo | no es tu plan. | Revisa cuánto | riesgo aguantas, | porque,",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "pop",
+   "palabra": 2,
+   "dt": -0.05,
+   "f": 700,
+   "db": -14
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 6,
+   "dt": -0.06
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 2,
+   "dt": 0.02
+  },
+  {
+   "tipo": "pop",
+   "palabra": 42,
+   "dt": -0.05,
+   "f": 900,
+   "db": -15
+  },
+  {
+   "tipo": "impact",
+   "palabra": 48,
+   "dt": -0.05
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 4,
+   "dt": 0.02,
+   "f": 1200
+  },
+  {
+   "tipo": "pop",
+   "palabra": 88,
+   "dt": -0.05,
+   "f": 600,
+   "db": -14
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 8,
+   "dt": 0.02,
+   "f": 1760
+  }
+ ]
+}
