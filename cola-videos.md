@@ -49,7 +49,7 @@ Los títulos de abajo son el TEMA, no el gancho: el gancho se reescribe como dat
 - [x] ¿Qué es la deuda buena y la deuda mala? (2026-11-14; guion `guiones/videos-producidos/deuda.md`, portada `capturas/52_DEUDA_portada.png`; programado en Buffer el 17-nov-2026 18:00 CDMX, post 6af9438d76c23bf1c75de095; el de Metricool 428178066 quedó en borrador. PENDIENTE: borrar `v/deuda_educativo.mp4` de `publicar-temp` (`git rm`) DESPUÉS de que salga)
 - [x] ¿Qué es el SPEI y por qué es instantáneo? (2026-11-15; guion `guiones/videos-producidos/spei-edu.md`, portada `capturas/54_SPEI_EDU_portada.png`; PROGRAMADO en Buffer el 15-nov-2026 21:00 CDMX (post 6afa4f07ff465c57dac1776d; movido de 18-nov a hoy por pedido de Brandon, 4.º del día). PENDIENTE: borrar `v/spei_educativo.mp4` de `publicar-temp` (`git rm`) DESPUÉS de que salga)
 - [x] ¿Qué es un seguro de vida y cuándo sí lo necesitas? (2026-11-17; guion `guiones/videos-producidos/seguro-vida.md`, portada `capturas/58_SEGURO_VIDA_portada.png`; SIN PROGRAMAR: el 17-nov ya no había hueco educativo (18:00 ocupado en Buffer, 10:00 pasado); MP4 entregado por SendUserFile)
-- [x] ¿Por qué la tarjeta de crédito no es dinero tuyo? (2026-11-18; guion `guiones/videos-producidos/tarjeta-credito.md`, portada `capturas/60_TARJETA_CREDITO_portada.png`)
+- [x] ¿Por qué la tarjeta de crédito no es dinero tuyo? (2026-11-18; guion `guiones/videos-producidos/tarjeta-credito.md`, portada `capturas/60_TARJETA_CREDITO_portada.png`; PROGRAMADO en Buffer el 18-nov-2026 18:00 CDMX, post 6afddd424b233b0b898aac82. PENDIENTE: borrar `v/tarjeta_educativo.mp4` y `.png` de `publicar-temp` (`git rm`) DESPUÉS de que salga)
 - [ ] ¿Qué es una tasa real vs. nominal?
 - [ ] ¿Qué son las UDIS?
 
