@@ -1,0 +1,59 @@
+{
+ "id": "riesgo-volatilidad",
+ "voz": "D",
+ "velocidad": 1.03,
+ "musica_desde": 1,
+ "bloques": [
+  {
+   "t": "Tu inversión puede bajar antes de subir.",
+   "c": "Tu inversión | puede bajar | antes de subir.",
+   "p": 0.22
+  },
+  {
+   "t": "El riesgo es la incertidumbre de lo que pasará con tu dinero.",
+   "c": "El riesgo es la incertidumbre | de lo que pasará | con tu dinero.",
+   "p": 0.22
+  },
+  {
+   "t": "Volatilidad es cuánto sube y baja su precio.",
+   "c": "Volatilidad es | cuánto sube y baja | su precio.",
+   "p": 0.25
+  },
+  {
+   "t": "Diez mil pesos invertidos valen nueve mil en un mes. Y luego, otra vez diez mil.",
+   "c": "Diez mil pesos invertidos | valen nueve mil | en un mes. | Y luego, | otra vez diez mil.",
+   "p": 0.25
+  },
+  {
+   "t": "A más volatilidad, más incertidumbre.",
+   "c": "A más volatilidad, | más incertidumbre.",
+   "p": 0.25
+  },
+  {
+   "t": "Decide cuánta baja puedes aguantar, porque",
+   "c": "Decide cuánta baja | puedes aguantar, | porque",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "pop",
+   "palabra": 11,
+   "dt": -0.05,
+   "f": 800,
+   "db": -14
+  },
+  {
+   "tipo": "ding",
+   "palabra": 32,
+   "dt": 0.05,
+   "db": -16
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 46,
+   "dt": -0.06,
+   "db": -14
+  }
+ ]
+}
