@@ -1,0 +1,130 @@
+{
+ "id": "peso-fed",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 2,
+ "sin_whoosh": [],
+ "bloques": [
+  {
+   "t": "El peso cayó dos punto cuatro por ciento.",
+   "c": "El peso | cayó | dos punto cuatro | por ciento.",
+   "p": 0.22
+  },
+  {
+   "t": "Fue su peor día desde abril de dos mil veinticinco.",
+   "c": "Fue su peor día | desde abril | de dos mil veinticinco.",
+   "p": 0.25
+  },
+  {
+   "t": "Y tres cosas explican por qué te toca.",
+   "c": "Y tres cosas | explican | por qué | te toca.",
+   "p": 0.25
+  },
+  {
+   "t": "Uno: la Fed. Sus minutas muestran que algunos funcionarios quieren una subida de tasas mayor en diciembre.",
+   "c": "Uno: | la Fed. | Sus minutas muestran | que algunos funcionarios | quieren una subida | de tasas mayor | en diciembre.",
+   "p": 0.28
+  },
+  {
+   "t": "Con tasas más altas allá, el dólar se vuelve más atractivo.",
+   "c": "Con tasas | más altas allá, | el dólar | se vuelve | más atractivo.",
+   "p": 0.28
+  },
+  {
+   "t": "Dos: el dólar llegó hasta dieciocho pesos con ochenta y ocho.",
+   "c": "Dos: | el dólar llegó | hasta dieciocho pesos | con ochenta y ocho.",
+   "p": 0.28
+  },
+  {
+   "t": "Ejemplo hipotético: mil dólares pasan de dieciocho mil cuatrocientos treinta a dieciocho mil ochocientos ochenta pesos.",
+   "c": "Ejemplo hipotético: | mil dólares | pasan de | dieciocho mil | cuatrocientos treinta | a dieciocho mil | ochocientos ochenta | pesos.",
+   "p": 0.3
+  },
+  {
+   "t": "Y tres, el que más te sirve: qué vigilar.",
+   "c": "Y tres, | el que más te sirve: | qué vigilar.",
+   "p": 0.2
+  },
+  {
+   "t": "La reunión de la Fed en diciembre. Ahí se decide la tasa.",
+   "c": "La reunión | de la Fed | en diciembre. | Ahí se decide | la tasa.",
+   "p": 0.28
+  },
+  {
+   "t": "Y revisa qué pagas en dólares: viajes, apps y compras en línea, porque,",
+   "c": "Y revisa | qué pagas | en dólares: | viajes, apps | y compras en línea, | porque,",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "pop",
+   "palabra": 2,
+   "dt": -0.05,
+   "f": 700,
+   "db": -14
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 6,
+   "dt": -0.06
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 10,
+   "dt": -0.06
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 2,
+   "dt": 0.02
+  },
+  {
+   "tipo": "pop",
+   "palabra": 33,
+   "dt": -0.05,
+   "f": 900,
+   "db": -15
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 4,
+   "dt": 0.02,
+   "f": 1200
+  },
+  {
+   "tipo": "ticks",
+   "palabra": 59,
+   "dt": -0.05,
+   "n": 8
+  },
+  {
+   "tipo": "impact",
+   "palabra": 64,
+   "dt": -0.05
+  },
+  {
+   "tipo": "pop",
+   "palabra": 79,
+   "dt": -0.02,
+   "f": 600,
+   "db": -14
+  },
+  {
+   "tipo": "riser",
+   "bloque": 7,
+   "dt": -0.22
+  },
+  {
+   "tipo": "impact",
+   "bloque": 7,
+   "dt": 0.02
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 8,
+   "dt": 0.02,
+   "f": 1760
+  }
+ ]
+}
