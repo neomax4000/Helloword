@@ -1,4 +1,4 @@
-"""PRUEBA (no es el flujo estándar): voces XTTS v2 para el A/B de voces. Brandon A (clon, refs/brandon_A.wav fuera del repo) y Daisy Studious.
+"""PRUEBA (no es el flujo estándar): voces XTTS v2 para el A/B de voces. Brandon A (clon, refs/brandon_A.wav fuera del repo), Daisy Studious, Zacharie Aimilios y Baldur Sanjin.
 Necesita coqui-tts, torch 2.8 CPU y Whisper offline (/home/claude/asr). Licencia XTTS: no comercial."""
 import os, re, json, time, difflib, subprocess, unicodedata
 os.environ['COQUI_TOS_AGREED'] = '1'  # licencia CPML aceptada por Brandon en la sesión
@@ -62,4 +62,6 @@ def generar(name, kw, vel, temps, fp, reintentos):
 rep = {}
 rep['brandon_A_final'] = generar('brandon_A_final', dict(speaker_wav=['refs/brandon_A.wav']), 1.15, [0.8, 0.85, 0.7, 0.9, 0.75], 0.5, 5)
 rep['daisy_final'] = generar('daisy_final', dict(speaker='Daisy Studious'), 1.2, [0.85, 0.75, 0.9, 0.7, 0.8], 0.5, 5)
+rep['zacharie_final'] = generar('zacharie_final', dict(speaker='Zacharie Aimilios'), 1.1, [0.85, 0.75, 0.9, 0.7, 0.8], 0.5, 5)
+rep['baldur_final'] = generar('baldur_final', dict(speaker='Baldur Sanjin'), 1.1, [0.85, 0.75, 0.9, 0.7, 0.8], 0.5, 5)
 json.dump(rep, open('final2.json', 'w'), ensure_ascii=False, indent=1)
