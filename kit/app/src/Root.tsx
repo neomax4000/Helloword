@@ -6,6 +6,7 @@ import {InteresCompuestoMain, InteresCompuestoCover, IC_TOTAL} from './interes-c
 import {AguinaldoMain, AguinaldoCover, AGUI_TOTAL} from './aguinaldo';
 import {DeconstruyendoPruebaMain, DECO_TOTAL} from './deconstruyendo-prueba';
 import {DeconstruyendoContinuoMain, DECOC_TOTAL} from './deconstruyendo-continuo';
+import {DeconstruyendoFondosMain, DECOF_TOTAL} from './deconstruyendo-fondos';
 import {NvidiaRecordMain, NvidiaRecordCover, NVR_TOTAL} from './nvidia-record';
 import {PesoFedMain, PesoFedCover, PF_TOTAL} from './peso-fed';
 import {TarjetaMain, TarjetaCover, TARJ_TOTAL} from './tarjeta-credito';
@@ -806,6 +807,7 @@ export const Root: React.FC = () => (
     <Composition id="InteresC" component={InteresC} durationInFrames={sec(interesData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="DeconstruyendoPrueba" component={DeconstruyendoPruebaMain} durationInFrames={Math.round(DECO_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="DeconstruyendoContinuo" component={DeconstruyendoContinuoMain} durationInFrames={Math.round(DECOC_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="DeconstruyendoFondos" component={DeconstruyendoFondosMain} durationInFrames={Math.round(DECOF_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="Aguinaldo" component={AguinaldoMain} durationInFrames={Math.round(AGUI_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="AguinaldoCover" component={AguinaldoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="NvidiaRecord" component={NvidiaRecordMain} durationInFrames={Math.round(NVR_TOTAL * 30)} fps={30} width={1080} height={1920} />

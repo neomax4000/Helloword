@@ -1,0 +1,568 @@
+{
+ "id": "deconstruyendo-fondos",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 1,
+ "bloques": [
+  {
+   "t": "Quieres poner tu dinero en algo que crezca.",
+   "p": 0.25
+  },
+  {
+   "t": "En ese momento te conviertes en un inversionista.",
+   "p": 0.25
+  },
+  {
+   "t": "Pero vas al mercado a comprar acciones y las que quieres están caras.",
+   "p": 0.22
+  },
+  {
+   "t": "Tu dinero no alcanza.",
+   "p": 0.22
+  },
+  {
+   "t": "Entonces te juntas con más inversionistas y cada uno pone una parte.",
+   "p": 0.25
+  },
+  {
+   "t": "Ahora ya tienes una sociedad de inversión.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero cada inversionista aportó una cantidad distinta. Entonces divides todo el dinero reunido en partes iguales, y cada inversionista recibe las partes que corresponden a lo que puso. Esas partes son los títulos.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero la sociedad de inversión no puede operar solo porque varias personas juntaron su dinero. Tiene que constituirse legalmente y recibir la autorización de la autoridad. Ya constituida y autorizada, ahora ya tienes un fondo de inversión.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero el fondo no puede comprar y vender directamente en la bolsa. Necesita una empresa autorizada que lo administre y opere por cuenta del fondo. Esa es la sociedad operadora.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero los inversionistas no se ponen de acuerdo en qué comprar. Entonces escriben reglas que definen en qué tipo de activos se invierte el dinero y cuáles son sus límites. Ahora ya tienes tu política de inversión.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero todo ese dinero no se puede quedar en la casa de alguien ni en cualquier lugar. Entonces buscas una entidad que lo guarde a nombre de los inversionistas, separado del dinero de la sociedad operadora. Ese es el custodio.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero el custodio no sabe qué parte le corresponde a cada inversionista. Entonces lleva una lista con los títulos que tiene cada quien. Ese es el registro de títulos.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero la sociedad operadora usa el dinero en algo distinto a lo que dice la política de inversión. Entonces reúne a un grupo de personas con experiencia en inversiones que revisa cada decisión de compra y venta. Ahora ya tienes un comité de inversión.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero aun con el comité, el fondo se sale de sus límites. Entonces la sociedad operadora reúne a otro grupo de personas que solo revisa esos límites todos los días y reporta lo que se sale para corregirlo. Ahora ya tienes un área de cumplimiento.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero las inversiones crecen. El dinero del fondo sube y el número de títulos sigue siendo el mismo, así que cada título vale más. Ese es el precio del título.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero ese precio cambia todos los días. Entonces cada día se suma lo que vale el fondo, se le resta lo que debe y se divide entre los títulos. Esa es la valuación.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero algunos activos del fondo no tienen un precio claro en el mercado. Entonces una empresa independiente calcula su valor con una metodología pública, para que la sociedad operadora no fije el precio por su cuenta. Ese es el proveedor de precios.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero otras personas quieren entrar al fondo y no tienen dónde comprar títulos. Entonces una institución autorizada los ofrece al público. Esa es la casa de bolsa.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero la persona necesita convertir su dinero en títulos. Entonces entrega su dinero a la casa de bolsa y recibe títulos al precio del día. Esa es la suscripción.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero un inversionista quiere salir. Entonces entrega sus títulos y recibe su dinero al precio del día. Ese es el reembolso.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero para pagar el reembolso el fondo necesita efectivo, y cada activo tarda un tiempo distinto en convertirse en dinero. Entonces el fondo guarda una parte en activos que se convierten en efectivo rápido. Esos son los activos líquidos.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero el mercado opera en un horario fijo, y el fondo recibe órdenes solo hasta cierta hora del día. Un inversionista pide su reembolso después de esa hora, y su orden se procesa con el precio del día siguiente. Esa es la hora de corte.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero el dinero del reembolso no sale ese mismo día, porque el fondo tiene que convertir sus activos en efectivo. Los días que tarda ese pago son el plazo de liquidación.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero alguien administra el fondo, y ese trabajo tiene un costo. Entonces se destina un pequeño porcentaje del dinero del fondo, que se descuenta cada día del precio del título, para pagar a quienes lo administran. Esa es la comisión de administración.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero el fondo genera intereses y dividendos. Entonces esos rendimientos se quedan dentro, se vuelven a invertir y suben el precio del título. Esa es la reinversión.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero el gobierno ve que los inversionistas ganan dinero, y cada ganancia paga un impuesto. Entonces el fondo aparta una parte y la entrega a la autoridad a nombre de cada inversionista. Esa es la retención de impuestos.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero al final del año cada inversionista necesita comprobar lo que ganó y lo que se le retuvo. Entonces recibe un documento con esa información. Esa es la constancia fiscal.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero las personas que quieren entrar necesitan conocer todo esto antes de poner su dinero. Entonces el fondo publica un documento con su política de inversión, sus límites, sus comisiones, sus plazos y sus riesgos. Ese es el prospecto.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero todas estas piezas tienen que cumplir sus reglas. Entonces una autoridad supervisa al fondo, a la sociedad operadora, al custodio y a la casa de bolsa, y sanciona a quien no cumple. Ese es el regulador.",
+   "p": 0.3
+  },
+  {
+   "t": "Inversionistas, títulos, sociedad operadora, política de inversión, custodio, comité, cumplimiento, valuación, liquidez, comisiones, impuestos, prospecto y regulador. Todo junto, eso es un fondo de inversión.",
+   "p": 0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "stamp",
+   "palabra": 15,
+   "dt": -0.04,
+   "db": -12
+  },
+  {
+   "tipo": "impact",
+   "palabra": 26,
+   "dt": 0.18,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 49,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "pop",
+   "bloque": 6,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 84,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 84,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 7,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 119,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 119,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 8,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 150,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 150,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 9,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 186,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 186,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 10,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 228,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 228,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 11,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 255,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 255,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 12,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 299,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 299,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 13,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 344,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 344,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 14,
+   "dt": 1.34,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 374,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 374,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 15,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 409,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 409,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 16,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 449,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 449,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 17,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 476,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 476,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 18,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 507,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 507,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 19,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 528,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 528,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 20,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 566,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 566,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 21,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 610,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 610,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 22,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 641,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 641,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 23,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 683,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 683,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 24,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 712,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 712,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 25,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 748,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 748,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 26,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 779,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 779,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 27,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 819,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 819,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "bloque": 28,
+   "dt": 1.6,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 856,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 856,
+   "dt": 0.45,
+   "db": -16
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 879,
+   "dt": -0.05,
+   "db": -10
+  }
+ ]
+}
