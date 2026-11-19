@@ -15,6 +15,17 @@ Estilo de referencia: videos que "deconstruyen" algo (cómo se hace un pozo de a
 - Totalmente explicativo.
 - Notion: Centro de Mando de IA → «Deconstruyendo las finanzas».
 
+## Reglas de animación (solo para Deconstruyendo las finanzas)
+- Animación continua: sin saltos de escena, sin cortes de cámara y sin cambios de escena. Un solo mundo corrido de principio a fin.
+- Títulos grandes desde el primer fotograma; cambian sobre la misma escena, sin cortarla.
+- La persona que invierte está desde el primer fotograma; la historia avanza caminando y la cámara la sigue.
+- Cada problema aparece dentro del mismo mundo (p. ej. una barrera que bloquea el camino) y cada solución se arma ahí, a la vista.
+- Paleta de la serie: Abyss #014E6A, Nebula #28AFCB, Pulse #FF3D8E (Pulse = acento: protagonista, problema, sellos de nombre). Mood `abyss` en `kit/app/src/pro.tsx`.
+- Al nombrar una pieza aparece un sello con su nombre. Sin marca ni productos de Actinver; nota «Contenido educativo, no es recomendación de inversión».
+- Estas reglas aplican solo a esta serie; el resto de los videos sigue el Estándar Pro.
+- Voz: se probará Baldur (XTTS); mientras no esté integrada, Kokoro voz 3.
+- Código del fragmento de apertura: `kit/app/src/deconstruyendo-continuo.tsx` + `kit/scripts/pro/guiones/deconstruyendo-continuo.json`.
+
 ## Temas planeados
 - [x] Fondos de inversión (guion abajo)
 - [ ] La bolsa de valores
