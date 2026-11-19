@@ -10,6 +10,14 @@ const words = data.words as Wd[];
 const blocks = data.blocks as {s: number; e: number}[];
 export const DECOC_TOTAL = blocks[blocks.length - 1].e + 0.28;
 const T = (i: number) => words[i].s;
+// Los tiempos de movimiento se escribieron sobre la voz Kokoro (KOK = inicio de cada palabra); W() los lleva a la voz actual palabra por palabra.
+const KOK = [0.26, 0.56, 0.86, 1.2, 1.44, 1.7, 1.88, 2.1, 2.82, 2.98, 3.3, 3.66, 3.9, 4.54, 4.66, 5, 5.98, 6.22, 6.42, 6.74, 6.96, 7.24, 7.52, 8.06, 8.18, 8.32, 8.64, 8.96, 9.28, 9.92, 10.24, 10.52, 10.72, 11.84, 12.14, 12.38, 12.76, 12.98, 13.4, 14.2, 14.44, 14.62, 14.92, 15.08, 15.44, 16.1, 16.34, 16.72, 17.06, 17.48, 17.76, 18];
+const W = (t: number) => {
+  const n = KOK.length;
+  if (t <= KOK[0]) return t - KOK[0] + words[0].s;
+  for (let i = 1; i < n; i++) if (t <= KOK[i]) return lerp(words[i - 1].s, words[i].s, (t - KOK[i - 1]) / (KOK[i] - KOK[i - 1]));
+  return t - KOK[n - 1] + words[n - 1].s;
+};
 const groups = buildGroups(words, blocks);
 const KEYS = ['DINERO', 'CREZCA', 'INVERSIONISTA', 'ACCIONES', 'CARAS', 'ALCANZA', 'SOCIEDAD', 'INVERSIÓN'];
 
@@ -60,20 +68,20 @@ type WalkerSpec = {
 };
 const CHEER = T(49);
 const MAIN: WalkerSpec = {
-  id: 'main', t0: 2.0, t1: 9.1, x0: 250, x1: 1480, rin: 0.5, rout: 0.6,
+  id: 'main', t0: W(2.0), t1: W(9.1), x0: 250, x1: 1480, rin: 0.5, rout: 0.6,
   shirt: C.pulse, shirtD: C.pulseD, skin: '#F2D3B8', hair: '#1B1530',
-  rel: [10.25, 10.38, 10.51], holdFrom: 1.2, pick: [1.1, 1.35, 1.6],
+  rel: [W(10.25), W(10.38), W(10.51)], holdFrom: W(1.2), pick: [W(1.1), W(1.35), W(1.6)],
 };
 const OTHERS: WalkerSpec[] = [
-  {id: 'A', t0: 10.7, t1: 12.6, x0: 990, x1: 1375, rin: 0.2, rout: 0.35, shirt: '#F4FAFC', shirtD: '#BCD3DA', skin: '#D9A27E', hair: '#2B1B12', rel: [12.8, 12.93, 13.06], holdFrom: -1},
-  {id: 'B', t0: 11.7, t1: 13.6, x0: 990, x1: 1285, rin: 0.2, rout: 0.35, shirt: C.nebulaL, shirtD: '#4FB7CF', skin: '#A66E4B', hair: '#120C0A', rel: [13.85, 13.98, 14.11], holdFrom: -1},
-  {id: 'C', t0: 12.9, t1: 14.55, x0: 990, x1: 1195, rin: 0.2, rout: 0.35, shirt: C.pulseL, shirtD: '#E88FB4', skin: '#F0C8A0', hair: '#5B3A1E', rel: [14.8, 14.93, 15.06], holdFrom: -1},
+  {id: 'A', t0: W(10.7), t1: W(12.6), x0: 990, x1: 1375, rin: 0.2, rout: 0.35, shirt: '#F4FAFC', shirtD: '#BCD3DA', skin: '#D9A27E', hair: '#2B1B12', rel: [W(12.8), W(12.93), W(13.06)], holdFrom: -9},
+  {id: 'B', t0: W(11.7), t1: W(13.6), x0: 990, x1: 1285, rin: 0.2, rout: 0.35, shirt: C.nebulaL, shirtD: '#4FB7CF', skin: '#A66E4B', hair: '#120C0A', rel: [W(13.85), W(13.98), W(14.11)], holdFrom: -9},
+  {id: 'C', t0: W(12.9), t1: W(14.55), x0: 990, x1: 1195, rin: 0.2, rout: 0.35, shirt: C.pulseL, shirtD: '#E88FB4', skin: '#F0C8A0', hair: '#5B3A1E', rel: [W(14.8), W(14.93), W(15.06)], holdFrom: -9},
 ];
 const ALL = [MAIN, ...OTHERS];
 const FLIGHT = 0.55; // vuelo de la moneda hasta el tubo
 const LANDINGS = ALL.flatMap((w) => w.rel.map((r) => r + FLIGHT)).sort((a, b) => a - b);
 const NEED = LANDINGS.length; // 12 monedas = precio
-const GATE_DROP = 8.55; // la barrera baja justo antes de «caras»
+const GATE_DROP = W(8.55); // la barrera baja justo antes de «caras»
 const GATE_RISE = LANDINGS[NEED - 1] + 0.1;
 const camAt = (t: number) => Math.max(0, motion(t, MAIN.t0, MAIN.t1, MAIN.x0, MAIN.x1, MAIN.rin, MAIN.rout) - 430);
 
@@ -284,13 +292,13 @@ const center = (y: number): React.CSSProperties => ({position: 'absolute', left:
 type Ln = {t: string; size: number; y: number; at: number; color?: string; ls?: number};
 type Slot = {a: number; b: number; lines: Ln[]};
 const SLOTS: Slot[] = [
-  {a: 0, b: 2.62, lines: [{t: 'TU', size: 74, y: 230, at: 0, color: C.mute, ls: 0.3}, {t: 'DINERO', size: 190, y: 298, at: 0.05}]},
-  {a: 2.62, b: 4.96, lines: [{t: 'EN ESE MOMENTO', size: 56, y: 240, at: 2.7, color: C.mute, ls: 0.22}, {t: 'TÚ', size: 250, y: 300, at: T(11) - 0.08, color: C.white}]},
-  {a: 6.5, b: 7.42, lines: [{t: 'AL MERCADO', size: 130, y: 280, at: T(19) - 0.1}]},
-  {a: 7.42, b: 9.82, lines: [{t: 'ACCIONES', size: 150, y: 230, at: T(22) - 0.1}, {t: 'CARAS', size: 150, y: 372, at: T(28) - 0.06, color: C.pulse}]},
-  {a: 9.82, b: 11.75, lines: [{t: 'TU DINERO', size: 70, y: 240, at: T(29) - 0.05, color: C.mute, ls: 0.12}, {t: 'NO ALCANZA', size: 135, y: 330, at: T(31) - 0.1, color: C.pulse}]},
-  {a: 11.75, b: 16.0, lines: [{t: 'MÁS', size: 80, y: 250, at: T(33), color: C.mute, ls: 0.2}, {t: 'INVERSIONISTAS', size: 102, y: 340, at: T(37) - 0.1}]},
-  {a: 16.0, b: 17.4, lines: [{t: 'AHORA YA TIENES', size: 70, y: 280, at: T(45), color: C.mute, ls: 0.12}]},
+  {a: W(0), b: W(2.62), lines: [{t: 'TU', size: 74, y: 230, at: 0, color: C.mute, ls: 0.3}, {t: 'DINERO', size: 190, y: 298, at: 0.05}]},
+  {a: W(2.62), b: W(4.96), lines: [{t: 'EN ESE MOMENTO', size: 56, y: 240, at: W(2.7), color: C.mute, ls: 0.22}, {t: 'TÚ', size: 250, y: 300, at: T(11) - 0.08, color: C.white}]},
+  {a: W(6.5), b: W(7.42), lines: [{t: 'AL MERCADO', size: 130, y: 280, at: T(19) - 0.1}]},
+  {a: W(7.42), b: W(9.82), lines: [{t: 'ACCIONES', size: 150, y: 230, at: T(22) - 0.1}, {t: 'CARAS', size: 150, y: 372, at: T(28) - 0.06, color: C.pulse}]},
+  {a: W(9.82), b: W(11.75), lines: [{t: 'TU DINERO', size: 70, y: 240, at: T(29) - 0.05, color: C.mute, ls: 0.12}, {t: 'NO ALCANZA', size: 135, y: 330, at: T(31) - 0.1, color: C.pulse}]},
+  {a: W(11.75), b: W(16.0), lines: [{t: 'MÁS', size: 80, y: 250, at: T(33), color: C.mute, ls: 0.2}, {t: 'INVERSIONISTAS', size: 102, y: 340, at: T(37) - 0.1}]},
+  {a: W(16.0), b: W(17.15), lines: [{t: 'AHORA YA TIENES', size: 70, y: 280, at: T(45), color: C.mute, ls: 0.12}]},
 ];
 const Titles: React.FC<{t: number}> = ({t}) => (
   <>
