@@ -9,6 +9,7 @@ import {DeconstruyendoContinuoMain, DECOC_TOTAL} from './deconstruyendo-continuo
 import {DeconstruyendoFondosMain, DECOF_TOTAL} from './deconstruyendo-fondos';
 import {NvidiaRecordMain, NvidiaRecordCover, NVR_TOTAL} from './nvidia-record';
 import {PesoFedMain, PesoFedCover, PF_TOTAL} from './peso-fed';
+import {TutoFondosMain, TutoFondosCover, TF_TOTAL} from './tuto-fondos';
 import {TarjetaMain, TarjetaCover, TARJ_TOTAL} from './tarjeta-credito';
 import {SeguroVidaMain, SeguroVidaCover, SEG_TOTAL} from './seguro-vida';
 import {RobotikMain, RobotikCover, ROBO_TOTAL} from './robotik';
@@ -814,6 +815,8 @@ export const Root: React.FC = () => (
     <Composition id="NvidiaRecordCover" component={NvidiaRecordCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="PesoFed" component={PesoFedMain} durationInFrames={Math.round(PF_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="PesoFedCover" component={PesoFedCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="TutoFondos" component={TutoFondosMain} durationInFrames={Math.round(TF_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="TutoFondosCover" component={TutoFondosCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Tarjeta" component={TarjetaMain} durationInFrames={Math.round(TARJ_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="TarjetaCover" component={TarjetaCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="SeguroVida" component={SeguroVidaMain} durationInFrames={Math.round(SEG_TOTAL * 30)} fps={30} width={1080} height={1920} />
