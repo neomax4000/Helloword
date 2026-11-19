@@ -1,4 +1,8 @@
-# Procedimiento del GLOSARIO (3 producciones al día, 1 publicación al día) — vigente desde 2026-11-15
+# Procedimiento del GLOSARIO (2 publicaciones por semana: lunes y jueves) — vigente desde 2026-11-19
+
+**ACTUALIZACIÓN 2026-11-19 (Brandon, tras el corte de métricas):** el glosario se PUBLICA solo lunes y jueves (12:00–14:00 CDMX, mismo día) y la tarea programada corre solo esos dos días a las 2:00 am. Los turnos de 3:00 y 4:00 desaparecen. En cada corrida: (1) prepara el entorno con `bash kit/scripts/preparar_entorno.sh` y carga Buffer/GitHub/Notion (ver «Herramientas obligatorias» de CLAUDE.md); (2) borra de `publicar-temp` los MP4 de glosario con post `sent`; (3) si la reserva (videos con MP4 en `publicar-temp` sin post) es **menor de 3**, produce un video nuevo; si no, NO produces (ahorra tokens); (4) programa el más antiguo en reserva para hoy. Las reglas de abajo que mencionan 3 turnos al día quedan sustituidas por esto; el resto (producción, reserva, entrega) sigue igual.
+
+# (Texto original, desde 2026-11-15)
 
 Decisión de Brandon (2026-11-15): se producen **3 videos de glosario al día**, en tres turnos —**2:00, 3:00 y 4:00 am CDMX**—, pero **solo se sube (programa) 1 al día**. Los demás se quedan **EN RESERVA** para subirse después. Los videos principales y las noticias no cambian.
 

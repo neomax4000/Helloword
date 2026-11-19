@@ -13,6 +13,7 @@
 - `scripts/asr/asr.mjs` — Whisper offline.
 
 ## Instalación en un entorno nuevo (Linux)
+**Atajo (REGLA 2026-11-19): `bash kit/scripts/preparar_entorno.sh` hace todo lo de abajo, salta lo que ya está e imprime `[ok]`/`[FALTA]`.** Hay que correrlo ANTES de producir o subir cualquier video; además deben estar cargados los conectores Buffer, GitHub y Notion (ToolSearch). Detalle manual:
 ```bash
 cd app && npm install                      # Remotion y paquetes
 pip install kokoro-onnx soundfile numpy --break-system-packages

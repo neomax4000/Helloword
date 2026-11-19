@@ -81,3 +81,13 @@ Motivo: el glosario es lo más exitoso (más likes), el gancho funciona; se prue
 Motivo: el radar no detectó ninguna de las 3 noticias que mejor funcionaron (Outlook 12 nov: 779 vistas, 7.5 s; Brian Tracy: 353 vistas a 8 h; Microsoft créditos: 11.6 s de tiempo visto); las tres las trajo Brandon. La tabla R anterior daba 50 de 100 puntos a «movimiento de mercado» y «toca peso o tasas», buscaba solo en portales financieros, Google Trends nunca se pudo leer, corría solo a las 6:47 y solo avisaba si algo pasaba de 60.
 Tabla R anterior (para referencia): mercado 0–30, interés de búsqueda 0–25 (3+ portales financieros = 10), relevancia para México 0–20 (solo extranjera = 4), frescura 0–15, claridad 0–10, bono +5.
 Cambios: tabla R nueva (atención 0–35, cercanía 0–20, puente al dinero 0–20 obligatorio, frescura, claridad); temas fuera de finanzas permitidos con puente honesto; hechos sin confirmación solo con formato «lo que sí sabemos y lo que no»; banda 50–59 = sugerencia; aviso de los 3 mejores candidatos en cada pasada; segunda pasada 13:00 CDMX; fuentes obligatorias Trends, medios generales y Downdetector; criterio «¿funcionó?» a 24 h (vistas ≥ mediana de los últimos 10 y ≥ 7 s); modo automático desde 75. Muestra pequeña (3 videos, dos publicados a las 22:49): se recalibra con métricas en la revisión del 20 nov.
+
+
+---
+
+## Decisiones posteriores (con el porqué)
+
+### 2026-11-19 — Menos videos, más noticias y herramientas obligatorias
+- **Qué:** glosario 2 por semana (lun y jue), educativo 2 por semana (mar y vie), producto 1 por semana (mié) en perfeccionamiento, noticias en los huecos; regla de bajar las herramientas antes de producir.
+- **Por qué:** corte de métricas del 19 nov (Buffer, 27 videos del 11 al 19 nov): retención y engagement subieron con el Estándar Pro (tiempo visto 3.9 → 6.1 s, engagement 2.27 → 3.38 %), pero las vistas se quedaron en ~180 por video y los seguidores casi no se movieron (1,064 el 24 oct → 1,076 el 19 nov). Más volumen no mejoró el alcance; las noticias de reacción sí (Outlook 782, Brian Tracy 493). Producto: mediana 45 vistas. Menos videos baja el uso de tokens.
+- **Herramientas:** varias corridas programadas no pudieron subir el video por faltar Buffer, Kokoro u otras herramientas en la sesión; ahora se corre `kit/scripts/preparar_entorno.sh` y se cargan los conectores antes de empezar.
