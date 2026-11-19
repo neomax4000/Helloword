@@ -60,5 +60,9 @@
    "dt": 0.0,
    "db": -16
   }
- ]
+ ],
+ "xtts": {
+  "speaker": "Baldur Sanjin",
+  "velocidad": 1.1
+ }
 }
