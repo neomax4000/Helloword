@@ -10,7 +10,7 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 | 2026-11-16 | R | Radar mañana (lunes): Buen Fin (cierra hoy), Wall Street/peso del 13 nov y caídas de servicios sin hecho nuevo fechado ni 2 fuentes; Trends/Downdetector no legibles | ≤40 | NO_GO | — | — | — | — |
 | 2026-11-16 | R | Pasada tarde: Wall Street −2 % Nasdaq víspera de Nvidia (cifras de medio día sin cierre) | ~70 | NO_GO (sin voz Kokoro: HF inaccesible; cifras sin 2 fuentes) | — | — | — | — |
 | 2026-11-16 | R | Rumor «apagón 17 nov» / prueba EAS de FEMA-FCC | ~65 | NO_GO (sin voz; puente débil) | — | — | — | — |
-| 2026-11-18 | R | Nvidia récord y cierre −2.9 % (video nvidia-record, pedido de Brandon, entorno reparado) | ~65–70 | ESPERA_OK (MP4 entregado, sin programar: hoy no cabe hueco ≥2 h en hora fuerte) | — | — | — | — |
+| 2026-11-18 | R | Nvidia récord y cierre −2.9 % (video nvidia-record, pedido de Brandon, entorno reparado) | ~65–70 | APROBADA por Brandon («súbelo»): programada en Buffer 18 nov 23:00 CDMX (pedido suyo, <2 h de margen; MP4 en publicar-temp hasta que salga) | — | — | — | — |
 | 2026-11-18 | R | Pasada tarde: Wall Street 4.ª caída (Nasdaq −2.49 %, 17 nov) / falla de Apple; entorno sin Kokoro/HF/node_modules | ~58–62 | NO_GO (producción imposible) | — | — | — | — |
 | 2026-11-15 | R | Pasada tarde (domingo): Buen Fin sin hecho nuevo, sin caída masiva ni dato oficial verificado; Trends no legible | ~45–55 | NO_GO | — | — | — | — |
 | 2026-11-15 | R | Radar mañana (domingo): Buen Fin termina el lunes 17 (sin hecho nuevo), peso/dólar sin movimiento, sin caída masiva ni dato oficial verificado | ≤35 | NO_GO | — | — | — | — |
