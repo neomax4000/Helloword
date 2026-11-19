@@ -15,4 +15,6 @@ Se actualiza cada vez que se prueba una fuente. «LEE» = WebFetch funciona. «F
 | 2026-11-19 | TikTok Creative Center (hashtags) | VACÍO | necesita JavaScript |
 | 2026-11-19 | CONDUSEF (páginas de contenido) | FALLA | robots.txt; los PDF de `condusef.gob.mx/documentos/` sí se leen |
 
+| 2026-11-19 | Espresso Matutino (newsletter en Gmail de Brandon, llega ~5–6 am CDMX; `noticias@mail.espressomatutino.com`) | LEE | Gmail: search_threads `Espresso newer_than:2d` + get_thread (el texto es largo: extraer con python). Resume mercados, negocios y México; sirve de pista, la cifra se confirma con 2.ª fuente |
+
 Pendiente de probar: Banxico (sala de prensa y calendario), INEGI (calendario), Emisnet/BMV, Reuters, El Financiero, El Economista, Expansión, Milenio, Infobae, páginas de estado de Microsoft, Google, AWS y Cloudflare.
