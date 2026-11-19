@@ -1,3 +1,5 @@
+**ACTUALIZACIÓN 2026-11-19 (Brandon: «bajar la vara» y más fuentes):** umbrales más bajos (automática desde 65; 50–64 pide OK; 40–49 sugerencia; menos de 40 se descarta), cupo de 2 noticias al día y 6 a la semana, ventana R de 12 h, verificación más flexible (una fuente primaria o agencia basta si se nombra en el video) y lista ampliada de fuentes (§9). Motivo: casi todos los NO_GO del 14 al 18 nov fueron por falta de entorno de producción (Kokoro/HF, node_modules) o por la 2.ª fuente, no por el puntaje. Donde el texto de abajo diga 75/60/50 o «1 noticia al día», manda esta nota y §4.
+
 # Protocolo de NOTICIAS — video opcional del día (creado 2026-11-09; tipos R y P: 2026-11-10; regla «atención + puente al dinero», segunda pasada 13:00 y modo automático: 2026-11-14)
 
 Objetivo: sacar un video de noticia (financiera o de algo que mucha gente está viviendo, con puente a su dinero) el mismo día del hecho (idealmente a menos de 12 h), sin depender de producto, y decidir solo si vale la pena publicarlo. Si ese día no hay noticia que lo merezca, no hay noticia: el ciclo normal sigue igual.
@@ -14,7 +16,7 @@ Idea tomada de un video de referencia (un dato de MAÑANA como gancho de urgenci
 ## 1. Dónde cae en la cadencia
 - Glosario diario: igual (2:00, Buffer).
 - **NUEVO 7:00 CDMX — Radar de noticias.** Revisa portales, movimientos del mercado y Google Trends, y además el calendario económico de hoy y de mañana (Banxico, INEGI, BLS y Fed) para detectar previas; deja 3 candidatos, cada uno marcado R o P, y un veredicto (GO / NO-GO) en `noticias/AAAA-MM-DD.md`. Si es GO, el mismo radar produce y programa el video.
-- **SEGUNDA PASADA 13:00 CDMX (decisión 2026-11-14):** mismo radar, para lo que pasó después de las 6:47 (la caída de Outlook fue a las 11:30; lo de Huang cambió de noche). Si ya hay una noticia APROBADA o publicada ese día, la de la tarde solo registra y sugiere (cupo de 1 noticia al día). Una R detectada a las 13:00 se publica a las 18:00 o 19:00. La pasada de las 13:00 también sirve para la previa de un dato de la mañana siguiente (publicarla a las 18:00 o 19:00).
+- **SEGUNDA PASADA 13:00 CDMX (decisión 2026-11-14):** mismo radar, para lo que pasó después de las 6:47 (la caída de Outlook fue a las 11:30; lo de Huang cambió de noche). Si ya hay una noticia APROBADA o publicada ese día, la de la tarde solo registra y sugiere (cupo de 2 noticias al día: la segunda solo si llega a 65 o más). Una R detectada a las 13:00 se publica a las 18:00 o 19:00. La pasada de las 13:00 también sirve para la previa de un dato de la mañana siguiente (publicarla a las 18:00 o 19:00).
 - 11:00 video principal: primero lee `noticias/AAAA-MM-DD.md`.
   - Si hay noticia aprobada ese día → la noticia ES el video principal del día (siguen siendo 2 videos al día).
   - El tema desplazado (educativo o producto) se queda de primero en su lista; no se pierde. El ciclo educativo-educativo-producto sigue por fecha; el tema desplazado sale en el siguiente turno de su tipo.
@@ -24,11 +26,11 @@ Idea tomada de un video de referencia (un dato de MAÑANA como gancho de urgenci
 
 ## 2. Compuertas (si falla UNA, no hay video)
 1. **Fresca (R) o Agendada (P):**
-   - R: el hecho tiene menos de 24 h y se puede publicar a menos de 8 h de detectarlo.
+   - R: el hecho tiene menos de 24 h y se puede publicar a menos de 12 h de detectarlo.
    - P: el evento sale en las próximas 24 h con fecha y hora confirmadas por fuente primaria (calendario de Banxico, INEGI, BLS o Fed), y el video puede salir 2 h o más antes del evento. Si no cabe esa ventana, la previa se descarta (nunca se publica después del evento).
-2. **Verificada:** el dato central está en 2 fuentes independientes, una primaria o agencia (Reuters, Bloomberg, AP, Banxico, INEGI, BMV, Fed).
+2. **Verificada (flexibilizada 2026-11-19):** basta UNA fuente primaria (Banxico, INEGI, BMV/Emisnet, Fed, BLS, SEC, comunicado o reporte de la propia empresa, página de estado oficial del servicio) o UNA agencia (Reuters, Bloomberg, AP) si en el video y en la descripción se nombra («según Reuters», «según Microsoft»). Si la fuente es un medio que no es agencia ni primaria, hacen falta 2 fuentes independientes. Cifras de mercado (cierres, porcentajes) se toman de una fuente de mercado con hora. Un hecho sin confirmación oficial solo entra como «lo que sí sabemos y lo que no».
 3. **Segura:** temas permitidos (decisión 2026-11-14): finanzas y mercado, y TAMBIÉN tecnología, caídas de servicios, empresas y personas famosas de negocios, finanzas o desarrollo personal, siempre con un puente honesto a su dinero o trabajo. Fuera: política partidista, tragedias, crimen y espectáculos sin puente. Un hecho sin confirmación oficial (por ejemplo una muerte reportada solo por medios) solo entra con el formato «lo que sí sabemos y lo que no», sin afirmarlo en el gancho, y nunca como algo confirmado. Además: sin «compra/vende», sin rendimientos, sin rumores ni personas privadas, sin postura partidista (solo el efecto en el mercado), sin tragedias como gancho, sin productos ni logo de Actinver. En P además: no se pronostica el resultado; «lo esperado» es el consenso citado con fuente y hora, los escenarios son «si sale arriba / si sale abajo», y las probabilidades de mercado (por ejemplo CME FedWatch) solo se citan con fuente y fecha.
-4. **Cupo:** máximo 1 noticia al día y 3 a la semana; 3 publicaciones en total ese día; 3 h o más entre publicaciones; hora entre 7:00 y 21:00.
+4. **Cupo (2026-11-19):** máximo 2 noticias al día y 6 a la semana; 3 publicaciones en total ese día; 3 h o más entre publicaciones; hora entre 7:00 y 21:00.
 5. **Hilo claro:** se cuenta en 3 frases. R: qué pasó → a quién golpeó → qué vigilar. P: qué dato sale y cuándo → qué se espera → qué cambia si sale arriba o abajo.
 6. **Factible:** guion de 60 s o menos y entrega en 3 h o menos.
 
@@ -63,16 +65,17 @@ Mismas escalas y mismos umbrales que R, para poder compararlas.
 4. Si compiten R y P el mismo día:
    - **Fase de prueba** (mientras no haya 3 R y 3 P publicadas con métricas a 24 h): sale el tipo que lleve MENOS videos en la prueba, para igualar la muestra. Si van igual, el de mayor puntaje; si empatan en puntaje, R.
    - **Fase de peso** (después de la prueba): el tipo ganador (§7) recibe +10 puntos solo para elegir entre R y P (no cuentan para pasar los umbrales). Sale el de mayor puntaje ajustado.
-5. La elección y su motivo se anotan en `noticias/AAAA-MM-DD.md`. Cupo sin cambios: 1 noticia al día y 3 a la semana, así que la prueba completa (6 videos) toma unas 2 semanas.
+5. La elección y su motivo se anotan en `noticias/AAAA-MM-DD.md`. Cupo desde 2026-11-19: 2 noticias al día y 6 a la semana.
 
 ## 4. Decisión (igual para R y P)
-- **75 o más → se aprueba sola.** Se produce, pasa el control de calidad y se programa.
-- **60 a 74 → se produce y se pide OK a Brandon.** Si no contesta en 4 h, se descarta (no se publica).
-- **50 a 59 → SUGERENCIA.** No se produce; se le manda a Brandon (tema, puntaje y desglose, ángulo propuesto). Si responde «hazlo», se produce y pasa por la ruta de 60–74.
-- **Menos de 50 → se descarta.** Se anota en `noticias/` para tener historial.
+- **65 o más → se aprueba sola** (antes 75). Se produce, pasa el control de calidad y se programa.
+- **50 a 64 → se produce y se pide OK a Brandon** (antes 60–74). Si no contesta en 4 h, se descarta (no se publica).
+- **40 a 49 → SUGERENCIA** (antes 50–59). No se produce; se le manda a Brandon (tema, puntaje y desglose, ángulo propuesto). Si responde «hazlo», se produce y pasa por la ruta de 50–64.
+- **Menos de 40 → se descarta.** Se anota en `noticias/` para tener historial.
+- Las compuertas de §2 siguen siendo obligatorias (sin puente al dinero no pasa, aunque sume).
 - **Siempre se avisa:** cada pasada del radar manda a Brandon sus 3 mejores candidatos con puntaje, aunque el estado sea NO_GO, para que pueda corregir al radar si ve algo que se le pasó.
 
-**Modo AUTOMÁTICO desde 2026-11-14** (decisión de Brandon; ya hay 3 noticias publicadas con su OK). 75 o más se programa solo, al menos 2 h adelante (ventana de veto). **Modo supervisado** solo después de un freno automático (§7): mientras dure, todo requiere OK de Brandon sin importar el puntaje.
+**Modo AUTOMÁTICO desde 2026-11-14** (decisión de Brandon; ya hay 3 noticias publicadas con su OK). 65 o más se programa solo (desde 2026-11-19), al menos 2 h adelante (ventana de veto). **Modo supervisado** solo después de un freno automático (§7): mientras dure, todo requiere OK de Brandon sin importar el puntaje.
 
 ## 5. Control de calidad antes de programar (los 11 deben pasar)
 1. Duración de 45 a 60 s (máximo 75).
@@ -143,6 +146,15 @@ flowchart TD
 ```
 
 ## 9. Fuentes para el radar
+**LISTA AMPLIADA (2026-11-19).** Se prueba cada fuente y lo que se pueda o no leer se anota en `noticias/fuentes-probadas.md` (con fecha). Si una fuente no se puede leer con WebFetch, se usa WebSearch con `allowed_domains` de esa fuente (en modo «standard»; «extended» solo si no sale nada). Cruzar siempre al menos 3 familias: tendencia/atención, medios, y fuente primaria.
+- **Atención:** Google Trends MX y EE.UU. (se lee); búsqueda de «lo más leído hoy» en medios generales; X y Reddit solo como pista (nunca como fuente); Downdetector y páginas de estado (se lee por WebSearch: Downdetector está bloqueado en WebFetch).
+- **Medios generales México:** Milenio, El Universal, N+, Infobae México, Reforma, La Jornada (solo hechos), Animal Político (solo hechos), Expansión, Forbes México, El CEO.
+- **Medios financieros:** El Financiero, El Economista, Expansión, Bloomberg Línea, Reuters, Bloomberg, CNBC, MarketWatch, Yahoo Finance, Investing.com (calendario económico), Mexico Business News.
+- **Internacionales y tecnología:** AP, Reuters, BBC Mundo (bloqueada en WebFetch; usar búsqueda), CNN en Español, DW, The Verge, Xataka, TechCrunch (para caídas, empresas y personas de negocios).
+- **Primarias oficiales México:** Banxico (calendario de anuncios, sala de prensa), INEGI (calendario de difusión), SHCP, SAT, CNBV, CONDUSEF, CONSAR, Profeco (Buen Fin y consumo), IMSS, Infonavit, DOF, BMV y Emisnet (avisos de emisoras).
+- **Primarias EE.UU.:** feeds que SÍ se leen (probados 2026-11-19): Fed `https://www.federalreserve.gov/feeds/press_all.xml`, BLS `https://www.bls.gov/feed/bls_latest.rss`, SEC `https://www.sec.gov/news/pressreleases.rss`. Además: BEA, Tesoro, y las páginas de relaciones con inversionistas de las empresas (8-K).
+- **No se leen con WebFetch (2026-11-19):** Google News RSS (robots), CNBC RSS, BBC Mundo RSS, Downdetector, TikTok Creative Center (vacío sin JavaScript). Usar WebSearch para esos temas.
+Lista anterior:
 **Obligatorio en cada pasada (2026-11-14):** (1) Google Trends México y EE.UU. con WebFetch a https://trends.google.com/trending?geo=MX y ?geo=US (o vía subagente web-fetch); si no se puede leer, anotarlo y buscar «tendencias hoy México»; (2) portadas de medios GENERALES (Milenio, El Universal, N+, Infobae México, AP, Reuters), no solo financieros; (3) Downdetector México (caídas de bancos, apps y servicios); (4) lo de abajo. Reuters, Bloomberg, AP, El Financiero, Expansión, El Economista; Banxico, INEGI, BMV, Fed; calendarios oficiales para previas (calendario de anuncios de Banxico, calendario de difusión del INEGI, calendario de publicaciones del BLS y calendario de la Fed; un calendario de terceros sirve solo como pista y la hora se confirma en el oficial); Google Trends (tendencias del momento, México y EE.UU.). Nota: Google Trends no tiene API oficial; hay que probar el acceso (búsqueda web o Chrome) y, si falla, usar las búsquedas en tendencia de Google y X.
 
 Prueba 2026-11-09: WebFetch SÍ lee https://trends.google.com/trending?geo=MX (tabla de los 25 primeros temas con búsquedas, inicio y estado, últimas 24 h). El feed https://trends.google.com/trending/rss?geo=MX devolvió una copia vieja (27 oct 2026): NO usarlo. Trends ordena temas en alza, no "noticias más vistas": casi todo es deporte y espectáculos; para finanzas se cruza con portales y mercado, y solo cuenta el bono de gancho si hay conexión real.
