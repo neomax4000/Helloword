@@ -18,3 +18,5 @@ Se actualiza cada vez que se prueba una fuente. «LEE» = WebFetch funciona. «F
 | 2026-11-19 | Espresso Matutino (newsletter en Gmail de Brandon, llega ~5–6 am CDMX; `noticias@mail.espressomatutino.com`) | LEE | Gmail: search_threads `Espresso newer_than:2d` + get_thread (el texto es largo: extraer con python). Resume mercados, negocios y México; sirve de pista, la cifra se confirma con 2.ª fuente |
 
 Pendiente de probar: Banxico (sala de prensa y calendario), INEGI (calendario), Emisnet/BMV, Reuters, El Financiero, El Economista, Expansión, Milenio, Infobae, páginas de estado de Microsoft, Google, AWS y Cloudflare.
+| 2026-11-19 (tarde) | WebFetch/subagente web-fetch (Trends, Fed, Banxico) | FALLA | PROVENANCE_REQUIRED: permiso sin responder en corrida desatendida; Bloomberg Línea sí se leyó (artículo de 2025) |
+| 2026-11-19 (tarde) | WebSearch con `allowed_domains` (infobae.com, milenio.com) | LEE (solo títulos y URL) | Sirve para detectar qué salió hoy, no para leer cifras; varios dominios juntos a veces dan PROXY_REJECTED |
