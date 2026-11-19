@@ -4,6 +4,8 @@ import {RiesgoMain, RiesgoCover, RIESGO_TOTAL} from './riesgo';
 import {ComisionMain, ComisionCover, COMISION_TOTAL} from './comision';
 import {InteresCompuestoMain, InteresCompuestoCover, IC_TOTAL} from './interes-compuesto';
 import {AguinaldoMain, AguinaldoCover, AGUI_TOTAL} from './aguinaldo';
+import {DeconstruyendoPruebaMain, DECO_TOTAL} from './deconstruyendo-prueba';
+import {DeconstruyendoContinuoMain, DECOC_TOTAL} from './deconstruyendo-continuo';
 import {NvidiaRecordMain, NvidiaRecordCover, NVR_TOTAL} from './nvidia-record';
 import {TarjetaMain, TarjetaCover, TARJ_TOTAL} from './tarjeta-credito';
 import {SeguroVidaMain, SeguroVidaCover, SEG_TOTAL} from './seguro-vida';
@@ -801,6 +803,8 @@ export const Root: React.FC = () => (
     <Composition id="DiversificarC" component={DiversificarC} durationInFrames={sec(divData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="GlosarioC" component={GlosarioC} durationInFrames={sec(catData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="InteresC" component={InteresC} durationInFrames={sec(interesData.total) + COVER_FRAMES} fps={FPS} width={W} height={H} />
+    <Composition id="DeconstruyendoPrueba" component={DeconstruyendoPruebaMain} durationInFrames={Math.round(DECO_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="DeconstruyendoContinuo" component={DeconstruyendoContinuoMain} durationInFrames={Math.round(DECOC_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="Aguinaldo" component={AguinaldoMain} durationInFrames={Math.round(AGUI_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="AguinaldoCover" component={AguinaldoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="NvidiaRecord" component={NvidiaRecordMain} durationInFrames={Math.round(NVR_TOTAL * 30)} fps={30} width={1080} height={1920} />

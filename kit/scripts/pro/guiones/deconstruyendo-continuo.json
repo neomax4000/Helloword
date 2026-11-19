@@ -1,0 +1,64 @@
+{
+ "id": "deconstruyendo-continuo",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 1,
+ "bloques": [
+  {
+   "t": "Quieres poner tu dinero en algo que crezca.",
+   "c": "Quieres poner | tu dinero | en algo | que crezca.",
+   "p": 0.25
+  },
+  {
+   "t": "En ese momento te conviertes en un inversionista.",
+   "c": "En ese momento | te conviertes | en un | inversionista.",
+   "p": 0.25
+  },
+  {
+   "t": "Pero vas al mercado a comprar acciones y las que quieres están caras.",
+   "c": "Pero vas | al mercado | a comprar acciones | y las que quieres | están caras.",
+   "p": 0.22
+  },
+  {
+   "t": "Tu dinero no alcanza.",
+   "c": "Tu dinero | no alcanza.",
+   "p": 0.22
+  },
+  {
+   "t": "Entonces te juntas con más inversionistas y cada uno pone una parte.",
+   "c": "Entonces | te juntas | con más inversionistas | y cada uno | pone una parte.",
+   "p": 0.25
+  },
+  {
+   "t": "Ahora ya tienes una sociedad de inversión.",
+   "c": "Ahora ya tienes | una sociedad | de inversión.",
+   "p": 0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "stamp",
+   "palabra": 15,
+   "dt": -0.04,
+   "db": -12
+  },
+  {
+   "tipo": "impact",
+   "palabra": 26,
+   "dt": 0.18,
+   "db": -12
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 49,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "ding",
+   "palabra": 47,
+   "dt": 0.0,
+   "db": -16
+  }
+ ]
+}

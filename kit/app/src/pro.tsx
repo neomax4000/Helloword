@@ -44,6 +44,7 @@ export const MOODS: Record<string, Mood> = {
   ember: {a: '#1A0B0B', b: '#5E1D16', blob: '#FF6A3D', blob2: '#FFC247'},
   actinver: {a: '#020A1A', b: '#041E42', blob: '#2C5AA8', blob2: '#B3A369'},
   steel: {a: '#060B14', b: '#1D2A3E', blob: '#4F6E99', blob2: '#9FB3CF'},
+  abyss: {a: '#01222F', b: '#014E6A', blob: '#28AFCB', blob2: '#FF3D8E'}, // paleta Deconstruyendo las finanzas: Abyss / Nebula / Pulse
 };
 
 export const cl = (v: number, a = 0, b = 1) => Math.max(a, Math.min(b, v));

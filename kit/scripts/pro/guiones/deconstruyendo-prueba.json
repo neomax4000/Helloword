@@ -1,0 +1,21 @@
+{
+ "id": "deconstruyendo-prueba",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 1,
+ "bloques": [
+  {
+   "t": "Quieres poner tu dinero en algo que crezca.",
+   "c": "Quieres poner | tu dinero | en algo | que crezca.",
+   "p": 0.25
+  },
+  {
+   "t": "En ese momento te conviertes en un inversionista.",
+   "c": "En ese momento | te conviertes | en un | inversionista.",
+   "p": 0
+  }
+ ],
+ "sfx": [
+  {"tipo": "stamp", "palabra": 15, "dt": -0.04, "db": -12}
+ ]
+}
