@@ -55,3 +55,4 @@ Investigar y reconfirmar a las 6:47 (2 fuentes cada dato): hora y forma del rest
 Video v1 (12 nov): `guiones/videos-producidos/outlook.md`. Programar por Buffer o Metricool respetando cupo (el 12 nov hubo 5 publicaciones; cuidar el máximo de 3 por día y ≥3 h entre ellas).
 
 | 2026-11-19 | R (pasada tarde) | Minuta Banxico (junta dividida por el peso) | ~55 (sin verificar) | NO_GO (compuerta verificada: WebFetch sin permiso, solo titular) | — | — | — | — |
+| 2026-11-19 | C (carrusel Plan B) | Banxico minuta · Fed minutas · autopartes/KPMG | n/a | PROGRAMADO Buffer 21:00 CDMX | pendiente | pendiente | pendiente | pendiente |

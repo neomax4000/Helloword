@@ -1,3 +1,4 @@
+import {Carrusel1, Carrusel2, Carrusel3, CarruselCover} from './carrusel';
 import {PlazoMain, PlazoCover, PLAZO_TOTAL} from './plazo';
 import {SpeiMain, SpeiCover, SPEI_TOTAL} from './spei';
 import {RiesgoMain, RiesgoCover, RIESGO_TOTAL} from './riesgo';
@@ -810,6 +811,10 @@ export const Root: React.FC = () => (
     <Composition id="DeconstruyendoContinuo" component={DeconstruyendoContinuoMain} durationInFrames={Math.round(DECOC_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="DeconstruyendoFondos" component={DeconstruyendoFondosMain} durationInFrames={Math.round(DECOF_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="Aguinaldo" component={AguinaldoMain} durationInFrames={Math.round(AGUI_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="CarruselCover" component={CarruselCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="Carrusel1" component={Carrusel1} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="Carrusel2" component={Carrusel2} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="Carrusel3" component={Carrusel3} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="AguinaldoCover" component={AguinaldoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="NvidiaRecord" component={NvidiaRecordMain} durationInFrames={Math.round(NVR_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="NvidiaRecordCover" component={NvidiaRecordCover} durationInFrames={30} fps={30} width={1080} height={1920} />
