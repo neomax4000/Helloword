@@ -1,0 +1,105 @@
+{
+ "id": "anthropic-debut",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 2,
+ "sin_whoosh": [],
+ "bloques": [
+  {
+   "t": "Anthropic subió diecisiete por ciento en su debut.",
+   "c": "Anthropic | subió | diecisiete | por ciento | en su debut.",
+   "p": 0.22
+  },
+  {
+   "t": "Pero abrió treinta y cuatro por ciento arriba, y cerró casi trece por ciento abajo de esa apertura.",
+   "c": "Pero abrió | treinta y cuatro | por ciento arriba, | y cerró casi | trece por ciento | abajo de esa apertura.",
+   "p": 0.25
+  },
+  {
+   "t": "Y tres cifras explican qué pasó.",
+   "c": "Y tres cifras | explican | qué pasó.",
+   "p": 0.25
+  },
+  {
+   "t": "Uno: ochenta y tres dólares. Ese fue el precio de salida.",
+   "c": "Uno: | ochenta y tres dólares. | Ese fue | el precio de salida.",
+   "p": 0.25
+  },
+  {
+   "t": "Ejemplo hipotético: comprar a ciento once con cincuenta y vender a noventa y siete con diecisiete es perder casi trece por ciento.",
+   "c": "Ejemplo hipotético: | comprar a | ciento once con cincuenta | y vender a | noventa y siete con diecisiete | es perder | casi trece por ciento.",
+   "p": 0.3
+  },
+  {
+   "t": "Dos: ochenta y un mil millones de dólares. Es lo que recaudó, un récord.",
+   "c": "Dos: | ochenta y un mil millones | de dólares. | Es lo que recaudó, | un récord.",
+   "p": 0.28
+  },
+  {
+   "t": "Y tres, el que más importa para tu dinero.",
+   "c": "Y tres, | el que más importa | para tu dinero.",
+   "p": 0.22
+  },
+  {
+   "t": "Ese mismo día, el S y P quinientos cayó dos por ciento. Seis caídas seguidas.",
+   "c": "Ese mismo día, | el S y P quinientos | cayó | dos por ciento. | Seis caídas seguidas.",
+   "p": 0.28
+  },
+  {
+   "t": "Un analista advierte que las grandes salidas a bolsa suelen coincidir con máximos del mercado. No es un pronóstico.",
+   "c": "Un analista advierte | que las grandes | salidas a bolsa | suelen coincidir | con máximos | del mercado. | No es un pronóstico.",
+   "p": 0.28
+  },
+  {
+   "t": "Si tu ahorro está en fondos de acciones, el valor puede subir o bajar. Revisa cuánto tienes en tecnología, porque,",
+   "c": "Si tu ahorro | está en fondos | de acciones, | el valor puede | subir o bajar. | Revisa cuánto | tienes en tecnología, | porque,",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "pop",
+   "palabra": 2,
+   "dt": -0.05,
+   "f": 700,
+   "db": -14
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 19,
+   "dt": -0.06
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 3,
+   "dt": 0.02
+  },
+  {
+   "tipo": "ticks",
+   "palabra": 61,
+   "dt": -0.05,
+   "n": 6
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 5,
+   "dt": 0.02
+  },
+  {
+   "tipo": "riser",
+   "bloque": 6,
+   "dt": -0.22
+  },
+  {
+   "tipo": "impact",
+   "bloque": 6,
+   "dt": 0.02
+  },
+  {
+   "tipo": "pop",
+   "palabra": 118,
+   "dt": -0.02,
+   "f": 600
+  }
+ ]
+}
