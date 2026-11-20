@@ -95,7 +95,7 @@ const camAt = (t: number) => Math.max(0, motion(t, MAIN.t0, MAIN.t1, MAIN.x0, MA
 
 /* ---------------- pose de cada personaje ---------------- */
 const pose = (w: WalkerSpec, t: number) => {
-  const xOf = (u: number) => motion(u, w.t0, w.t1, w.x0, w.x1, w.rin ?? 0.4, w.rout ?? 0.5) + shiftAt(u);
+  const xOf = (u: number) => motion(u, w.t0, w.t1, w.x0, w.x1, w.rin ?? 0.4, w.rout ?? 0.5) + shiftAt(u) - (w.id === 'C' ? exitOff(u) : 0);
   const x = xOf(t);
   const speed = Math.abs(xOf(t + 0.03) - xOf(t - 0.03)) / 0.06;
   const amp = cl(speed / 60);
@@ -110,6 +110,7 @@ const pose = (w: WalkerSpec, t: number) => {
   armF = lerp(armF, -65, hold);
   armF = lerp(armF, -125, lift);
   armF = lerp(armF, -168, cheer);
+  if (w.id === 'C') armF = lerp(armF, -62, sm(prog(t, Q(19).solve + 0.45, Q(19).solve + 0.6)));
   let armB = -aDeg * 0.8;
   armB = lerp(armB, -158, cheer);
   const hop = cheer * 24 * Math.abs(Math.sin((t - CHEER) * Math.PI * 1.7));
@@ -123,11 +124,12 @@ const handPos = (x: number, armDeg: number) => {
 };
 
 /* ---------------- dibujo: personaje (vista lateral, mira a la derecha) ---------------- */
-const Figure: React.FC<{x: number; spec: WalkerSpec; p: ReturnType<typeof pose>}> = ({x, spec, p}) => {
+type Look = Pick<WalkerSpec, 'shirt' | 'shirtD' | 'skin' | 'hair'>;
+const Figure: React.FC<{x: number; spec: Look; p: ReturnType<typeof pose>; flip?: boolean; badge?: string}> = ({x, spec, p, flip = false, badge}) => {
   const aD = (p.a * 180) / Math.PI;
   const pants = C.abyssDD;
   return (
-    <svg style={{position: 'absolute', left: x - 120, top: GY - 420 - p.hop - p.bob, overflow: 'visible'}} width={240} height={440} viewBox="-120 -420 240 440">
+    <svg style={{position: 'absolute', left: x - 120, top: GY - 420 - p.hop - p.bob, overflow: 'visible', transform: flip ? 'scaleX(-1)' : undefined}} width={240} height={440} viewBox="-120 -420 240 440">
       <ellipse cx={0} cy={6 + p.hop + p.bob} rx={74} ry={11} fill="rgba(0,0,0,0.35)" />
       <g transform={`rotate(${p.armB} 0 -250)`}>
         <rect x={-12} y={-252} width={24} height={124} rx={12} fill={spec.shirtD} />
@@ -143,6 +145,7 @@ const Figure: React.FC<{x: number; spec: WalkerSpec; p: ReturnType<typeof pose>}
       </g>
       <rect x={-50} y={-272} width={100} height={180} rx={46} fill={spec.shirt} />
       <rect x={-50} y={-272} width={100} height={180} rx={46} fill="url(#fsh)" />
+      {badge && <rect x={6} y={-236} width={30} height={22} rx={5} fill={badge} stroke={C.white} strokeWidth={3} />}
       <circle cx={8} cy={-322} r={46} fill={spec.skin} />
       <ellipse cx={4} cy={-352} rx={46} ry={26} fill={spec.hair} />
       <circle cx={32} cy={-324} r={5.5} fill={C.ink} />
@@ -296,18 +299,20 @@ const Skyline: React.FC<{cam: number}> = ({cam}) => {
     </>
   );
 };
-const Ground: React.FC<{cam: number}> = ({cam}) => {
-  const x0 = cam - 500;
-  const t0 = Math.floor((cam - 300) / 170) * 170;
-  const p0 = Math.floor((cam - 300) / 640) * 640;
+const Ground: React.FC<{l: number; r: number; z: number}> = ({l, r, z}) => {
+  const w = r - l;
+  const t0 = Math.floor(l / 170) * 170;
+  const nT = z > 0.3 ? Math.min(160, Math.ceil(w / 170) + 1) : 0;
+  const p0 = Math.floor(l / 640) * 640;
+  const nP = Math.min(60, Math.ceil(w / 640) + 1);
   return (
     <>
-      <div style={{position: 'absolute', left: x0, top: GY, width: 3200, height: 190, background: 'linear-gradient(180deg, rgba(1,30,43,0.92), rgba(1,30,43,0))'}} />
-      <div style={{position: 'absolute', left: x0, top: GY - 2, width: 3200, height: 5, background: C.nebula, opacity: 0.4}} />
-      {Array.from({length: 22}, (_, k) => (
+      <div style={{position: 'absolute', left: l, top: GY, width: w, height: 190 / Math.max(z, 0.2) * 0.85, background: 'linear-gradient(180deg, rgba(1,30,43,0.92), rgba(1,30,43,0))'}} />
+      <div style={{position: 'absolute', left: l, top: GY - 2, width: w, height: 5 / Math.min(1, z / 0.85), background: C.nebula, opacity: 0.4}} />
+      {Array.from({length: nT}, (_, k) => (
         <div key={k} style={{position: 'absolute', left: t0 + k * 170, top: GY + 44, width: 64, height: 6, borderRadius: 3, background: 'rgba(255,255,255,0.12)'}} />
       ))}
-      {Array.from({length: 6}, (_, k) => (
+      {Array.from({length: nP}, (_, k) => (
         <div key={'p' + k} style={{position: 'absolute', left: p0 + k * 640, top: GY - 380, width: 10, height: 380, background: 'rgba(40,175,203,0.22)', borderRadius: 5}}>
           <div style={{position: 'absolute', left: -9, top: -10, width: 28, height: 28, borderRadius: 14, background: C.nebulaL, opacity: 0.55}} />
         </div>
@@ -368,10 +373,12 @@ const StampTitle: React.FC<{at: number; until: number; lines: string[]; size: nu
 const World: React.FC = () => {
   const f = useCurrentFrame();
   const t = f / FPS;
-  const cam = camAt(t);
+  const cam = camera(t);
+  const vl = cam.cx - 540 / cam.z - 300;
+  const vr = cam.cx + 540 / cam.z + 300;
   const mainP = pose(MAIN, t);
   const others = OTHERS.map((w) => ({w, p: pose(w, t)}));
-  const n = LANDINGS.filter((l) => l <= t).length;
+  const n = LANDINGS.filter((l) => l <= t).length + TUBE_DELTA.filter((d) => t >= d.t).reduce((a, d) => a + d.d, 0);
   // barrera: baja antes de «caras» y sube cuando el tubo llega al precio
   const dropP = spr(f, GATE_DROP, 14, 200, 0.55);
   const rise = sm(prog(t, GATE_RISE, GATE_RISE + 0.7));
@@ -387,35 +394,53 @@ const World: React.FC = () => {
     const u = (t - k) / 0.28;
     if (u > 0 && u < 1) {
       const h = handPos(mainP.x, mainP.armF);
-      const sx = mainP.x + 14;
-      const sy = GY - 170;
-      flying.push(<CoinFlat key={'p' + i} x={lerp(sx, h.x, u)} y={lerp(sy, h.y - 10, u) - 60 * 4 * u * (1 - u)} r={18} rot={u * 360} />);
+      flying.push(<CoinFlat key={'p' + i} x={lerp(mainP.x + 14, h.x, u)} y={lerp(GY - 170, h.y - 10, u) - 60 * 4 * u * (1 - u)} r={18} rot={u * 360} />);
     }
   });
   ALL.forEach((w) => {
-    const slotX = w.x1;
-    const from = handPos(slotX, -125);
+    const from = handPos(w.x1, -125);
     w.rel.forEach((r, i) => {
       const u = (t - r) / FLIGHT;
-      if (u > 0 && u < 1) {
-        flying.push(<CoinFlat key={w.id + i} x={lerp(from.x, TUBE_X, u)} y={lerp(from.y, GY - 500, u) - 190 * 4 * u * (1 - u)} r={22} rot={u * 540} />);
-      }
+      if (u > 0 && u < 1) flying.push(<CoinFlat key={w.id + i} x={lerp(from.x, TUBE_X, u)} y={lerp(from.y, GY - 500, u) - 190 * 4 * u * (1 - u)} r={22} rot={u * 540} />);
     });
   });
-  // aro de la sociedad
+  FLY.forEach((q, i) => {
+    const u = (t - q.t0) / q.dur;
+    if (u > 0 && u < 1) {
+      const x = lerp(q.x0, q.x1, sm(u));
+      const y = lerp(q.y0, q.y1, u) - q.arc * 4 * u * (1 - u);
+      flying.push(q.kind === 'coin' ? <CoinFlat key={'f' + i} x={x} y={y} r={24} rot={u * 540} /> : <DocIcon key={'f' + i} x={x} y={y} rot={u * 360} />);
+    }
+  });
+  // personas nuevas: D entra por la casa de bolsa; C sale con su reembolso
+  const dOn = t >= D_T0;
+  const dP = walkP(dX, t);
+  const dHold = t < Q(18).solve + 0.2;
+  if (dOn && dHold) dP.armF = lerp(dP.armF, -65, 1);
+  if (dOn && t > Q(18).solve - 0.25 && t < Q(18).solve + 0.45) dP.armF = -125;
+  const cP = others.find((o) => o.w.id === 'C')!;
+  const cGone = t > EXIT_T + 5;
+  // títulos sobre la cabeza (estación 6) y para D al suscribirse
+  const tk6 = Q(6);
+  const heads = [mainP, ...others.map((o) => o.p)];
   const ringP = spr(f, CHEER - 0.1, 14, 140, 0.8);
   return (
     <AbsoluteFill style={{transform: `translateX(${impact}px)`}}>
-      <Skyline cam={cam} />
-      <div style={{position: 'absolute', left: 0, top: 0, width: 3000, height: 1920, transform: `translate(${-cam * S}px, 0) scale(${S})`, transformOrigin: '0 0'}}>
-        <Ground cam={cam} />
+      <div style={{position: 'absolute', inset: 0, opacity: cl((cam.z - 0.35) / 0.35)}}>
+        <Skyline cam={cam.cx - 540 / S} />
+      </div>
+      <div style={{position: 'absolute', left: 0, top: 0, width: 3000, height: 1920, transform: `translate(${540 - cam.cx * cam.z}px, ${cam.gy - GY * cam.z}px) scale(${cam.z})`, transformOrigin: '0 0'}}>
+        <Ground l={vl} r={vr} z={cam.z} />
         <div style={{opacity: 1 - sm(prog(t, ST[0].ws, ST[0].ws + 1.4))}}>
           <Market lit={lit} f={f} />
           <Gate hh={hh} />
         </div>
+        <Insts t={t} f={f} z={cam.z} vl={vl} vr={vr} />
+        <Crowd t={t} />
         <Tube n={n} t={t} f={f} dx={shiftAt(t)} />
         <Stations t={t} f={f} />
-        {others.map(({w, p}) => (t >= w.t0 - 0.05 ? <Figure key={w.id} x={p.x} spec={w} p={p} /> : null))}
+        {dOn && <div style={{opacity: cl((t - D_T0) / 0.3)}}><Figure x={dP.x} spec={D_LOOK} p={dP} /></div>}
+        {others.map(({w, p}) => (t >= w.t0 - 0.05 && !(w.id === 'C' && cGone) ? <Figure key={w.id} x={p.x} spec={w} p={p} flip={w.id === 'C' && t > EXIT_T - 0.1} /> : null))}
         <Figure x={mainP.x} spec={MAIN} p={mainP} />
         {others.map(({w, p}) => {
           const rl = w.rel.filter((r) => t >= r).length;
@@ -430,6 +455,14 @@ const World: React.FC = () => {
           const h = handPos(mainP.x, mainP.armF);
           return <HandCoins x={h.x} y={h.y - mainP.bob - mainP.hop} n={cnt} />;
         })()}
+        {dOn && dHold && (() => { const h = handPos(dP.x, dP.armF); return <HandCoins x={h.x} y={h.y - dP.bob} n={1} />; })()}
+        {t > Q(19).solve + 0.55 && !cGone && (() => { const h = handPos(cP.p.x, cP.p.armF); const hx = t > EXIT_T - 0.1 ? 2 * cP.p.x - h.x : h.x; return <HandCoins x={hx} y={h.y - cP.p.bob} n={1} />; })()}
+        {t > tk6.solve + 0.6 && t < Q(7).name &&
+          heads.map((p, i) => {
+            const s = spr(f, tk6.solve + 0.6 + i * 0.22, 12, 200, 0.6);
+            return <Ticket key={'tk' + i} x={p.x + 8} y={GY - 470 - p.hop - p.bob} n={3} s={Math.max(0, s) * (1 - sm(prog(t, Q(7).name - 0.4, Q(7).name)))} />;
+          })}
+        {dOn && t > Q(18).name - 0.1 && t < Q(18).name + 2.4 && <Ticket x={dP.x + 8} y={GY - 470 - dP.bob} n={1} s={Math.max(0, spr(f, Q(18).name - 0.1, 12, 200, 0.6)) * (1 - sm(prog(t, Q(18).name + 2, Q(18).name + 2.4)))} />}
         {flying}
         {t > CHEER - 0.12 && t < CH_OFF + 0.4 && (
           <svg style={{position: 'absolute', left: 1330 + shiftAt(t) - 300, top: GY - 560, overflow: 'visible', opacity: cl(ringP * 2) * (1 - sm(prog(t, CH_OFF, CH_OFF + 0.3)))}} width={600} height={660} viewBox="-300 -560 600 660">
@@ -455,6 +488,7 @@ export const DeconstruyendoFondosMain: React.FC<{audio?: boolean}> = ({audio = t
       <Grain />
       <Frame serie="DECONSTRUYENDO LAS FINANZAS" total={DECOF_TOTAL} pasos={PASOS} nota="Contenido educativo, no es recomendación de inversión." />
       <Rail />
+      <DatoCard />
       <TitlesLayer />
       <Captions groups={groups} keys={KEYS} />
       {audio && <Audio src={staticFile('deconstruyendo-fondos/voz_mix.wav')} />}
@@ -531,7 +565,7 @@ const Glyph: React.FC<{id: string; scale: number; stroke: string; sw?: number}> 
 
 /* ---------------- estaciones: letrero del problema → insignia de la solución ---------------- */
 const STOP0 = 1480; // donde queda la cabeza de la caravana al terminar la apertura
-const PROP_DX = 470; // el letrero está delante de la caravana
+const PROP_DX = 500; // el letrero está delante de la caravana
 const stopX = (k: number) => STOP0 + DIST * (k - 5);
 const Station: React.FC<{q: (typeof ST)[number]; t: number; f: number}> = ({q, t, f}) => {
   const x = stopX(q.k) + PROP_DX;
@@ -545,8 +579,8 @@ const Station: React.FC<{q: (typeof ST)[number]; t: number; f: number}> = ({q, t
   const burst = prog(t, q.solve + 0.2, q.solve + 0.9);
   return (
     <g transform={`translate(${x} ${GY}) scale(1 ${Math.max(0.001, ap) * (1 - collapse)})`}>
-      <ellipse cx={0} cy={8} rx={110} ry={12} fill="rgba(0,0,0,0.35)" />
-      <rect x={-9} y={-340} width={18} height={340} rx={6} fill="#0A4A63" stroke={C.nebula} strokeWidth={2} />
+      <ellipse cx={0} cy={8} rx={110} ry={12} fill="rgba(0,0,0,0.35)" opacity={1 - flip} />
+      <rect x={-9} y={-340} width={18} height={340} rx={6} fill="#0A4A63" stroke={C.nebula} strokeWidth={2} opacity={1 - flip} />
       <g transform={`translate(0 ${-440 + bob})`}>
         {bx > 0.01 && (
           <g transform={`scale(${bx} 1)`}>
@@ -559,7 +593,7 @@ const Station: React.FC<{q: (typeof ST)[number]; t: number; f: number}> = ({q, t
             ))}
           </g>
         )}
-        {gx > 0.01 && t < q.dock && (
+        {false && gx > 0.01 && t < q.dock && (
           <g transform={`scale(${gx} ${Math.min(1, gx)})`}>
             <circle r={128} fill={C.nebulaLL} stroke={C.nebula} strokeWidth={10} style={{filter: `drop-shadow(0 0 26px ${C.nebula})`}} />
             <Glyph id={q.glyph} scale={1.5} stroke={C.abyss} sw={8} />
@@ -585,7 +619,7 @@ const Stations: React.FC<{t: number; f: number}> = ({t, f}) => (
 /* ---------------- tablero de piezas (medallas): lo que ya tienes armado ---------------- */
 const MED = ['persona', 'grupo', ...ST.map((q) => q.glyph)];
 const MED_AT = [T(15) + 0.4, T(49) + 0.55, ...ST.map((q) => q.dock)];
-const MED_FROM = [{x: 540, y: 380}, {x: 540, y: 400}, ...ST.map(() => ({x: (PROP_DX + 430) * S, y: (GY - 440) * S}))];
+const MED_FROM = [{x: 540, y: 380}, {x: 540, y: 400}, ...ST.map(() => ({x: (PROP_DX + 430) * S, y: (GY - 650) * S}))];
 const slot = (i: number) => {
   const r = i < 13 ? 0 : 1;
   const c = i < 13 ? i : i - 13;
@@ -629,3 +663,329 @@ const Rail: React.FC = () => {
     </svg>
   );
 };
+
+/* =====================================================================================
+   PRODUCCIÓN 2 (2026-11-20): instituciones en el camino, personal que se suma, datos en pantalla
+   y recorrido final por toda la calle. Todo sigue siendo UN SOLO PLANO continuo.
+   ===================================================================================== */
+const Q = (k: number) => ST.find((q) => q.k === k)!;
+const leadX = (t: number) => motion(t, MAIN.t0, MAIN.t1, MAIN.x0, MAIN.x1, MAIN.rin, MAIN.rout) + shiftAt(t);
+const instX = (k: number) => stopX(k) + PROP_DX; // la institución aparece detrás del letrero del problema
+const tubeTop = (k: number) => ({x: stopX(k) + 120, y: GY - 520});
+
+/* ---- quien entra y quien sale ---- */
+const EXIT_T = Q(19).solve + 0.9; // C pide su reembolso y se va
+const exitOff = (u: number) => motion(u, EXIT_T, EXIT_T + 5, 0, 2300, 0.5, 0.2);
+const D_T0 = Q(17).name + 0.7; // una persona nueva sale de la casa de bolsa
+const D_LOOK: Look = {shirt: C.nebula, shirtD: '#1E8FA8', skin: '#C68B62', hair: '#2B1B12'};
+const dX = (u: number) => {
+  const fr = motion(u, D_T0, D_T0 + 2.1, 0, 1, 0.3, 0.4);
+  return lerp(instX(17), leadX(u) - 375, fr) + motion(u, EXIT_T + 1.0, EXIT_T + 2.0, 0, 90, 0.3, 0.3);
+};
+const walkP = (xf: (u: number) => number, t: number) => {
+  const x = xf(t);
+  const sp = Math.abs(xf(t + 0.03) - xf(t - 0.03)) / 0.06;
+  const amp = cl(sp / 60);
+  const a = Math.sin((x * 2 * Math.PI) / 190) * 0.52 * amp;
+  const aDeg = (a * 180) / Math.PI;
+  return {x, a, armF: aDeg * 0.8 + Math.sin(t * 2.3 + x) * 2 * (1 - amp), armB: -aDeg * 0.8, hop: 0, bob: (1 - amp) * Math.sin(t * 3 + x * 0.01) * 3 + amp * Math.abs(Math.sin((x * Math.PI) / 190)) * 7, hold: false};
+};
+
+/* ---- personal que se suma a la caravana (filas de atrás) ---- */
+const JOIN = [
+  {k: 8, n: 2, role: 'SOCIEDAD OPERADORA', shirt: '#0A4A63'},
+  {k: 10, n: 1, role: 'CUSTODIO', shirt: '#163F52'},
+  {k: 12, n: 3, role: 'COMITÉ DE INVERSIÓN', shirt: '#1E7F98'},
+  {k: 13, n: 2, role: 'CUMPLIMIENTO', shirt: '#3D5A6C'},
+  {k: 17, n: 1, role: 'CASA DE BOLSA', shirt: '#0B5D7A'},
+  {k: 28, n: 1, role: 'REGULADOR', shirt: '#7A1F45'},
+];
+const SKINS = ['#F2D3B8', '#C68B62', '#E8B894', '#8D5A3B', '#F0C8A0', '#A66E4B'];
+const HAIRS = ['#1B1530', '#2B1B12', '#5B3A1E', '#120C0A', '#3A2A20', '#8A8A8A'];
+const STAFF = JOIN.flatMap((j, gi) =>
+  Array.from({length: j.n}, (_, i) => ({...j, i, spawn: Q(j.k).solve + 0.5 + i * 0.45, gi})),
+).map((s, slot) => ({...s, slot, look: {shirt: s.shirt, shirtD: s.shirt, skin: SKINS[slot % 6], hair: HAIRS[(slot * 5) % 6]} as Look}));
+const slotRel = (slot: number) => {
+  const row = slot % 2;
+  const col = Math.floor(slot / 2);
+  return {dx: 30 - col * 85 - row * 42, dy: row ? -330 : -255, sc: row ? 0.6 : 0.7};
+};
+
+/* ---- monedas y documentos que viajan ---- */
+type Fly = {t0: number; dur: number; x0: number; y0: number; x1: number; y1: number; kind: 'coin' | 'doc'; arc: number};
+const handOf = (x: number, deg: number) => handPos(x, deg);
+const FLY: Fly[] = [
+  {t0: Q(14).solve + 0.1, dur: 0.6, x0: tubeTop(14).x, y0: GY - 1150, x1: tubeTop(14).x, y1: tubeTop(14).y, kind: 'coin', arc: 0},
+  {t0: Q(18).solve + 0.2, dur: 0.55, x0: handOf(stopX(18) - 375, -65).x, y0: handOf(0, -65).y, ...{x1: tubeTop(18).x, y1: tubeTop(18).y}, kind: 'coin', arc: 220},
+  {t0: Q(19).solve, dur: 0.55, x0: tubeTop(19).x, y0: tubeTop(19).y, x1: handOf(stopX(19) - 285, -62).x, y1: handOf(0, -62).y, kind: 'coin', arc: 200},
+  {t0: Q(23).solve + 0.2, dur: 0.7, x0: tubeTop(23).x, y0: tubeTop(23).y, x1: stopX(23) + 30, y1: GY - 560, kind: 'coin', arc: 160},
+  {t0: Q(24).solve + 0.3, dur: 0.75, x0: stopX(24) + 760, y0: GY - 1150, x1: tubeTop(24).x, y1: tubeTop(24).y, kind: 'coin', arc: 120},
+  {t0: Q(25).solve + 0.2, dur: 0.8, x0: tubeTop(25).x, y0: tubeTop(25).y, x1: instX(25), y1: GY - 600, kind: 'coin', arc: 220},
+  ...[0, -105, -195, -285].map((dx, i) => ({t0: Q(26).solve + 0.25 + i * 0.22, dur: 0.6, x0: instX(26), y0: GY - 520, x1: stopX(26) + dx, y1: GY - 470, kind: 'doc' as const, arc: 140})),
+];
+const TUBE_DELTA = [
+  {t: Q(14).solve + 0.7, d: 1},
+  {t: Q(18).solve + 0.75, d: 1},
+  {t: Q(19).solve, d: -1},
+  {t: Q(24).solve + 1.05, d: 1},
+];
+const DocIcon: React.FC<{x: number; y: number; rot: number}> = ({x, y, rot}) => (
+  <svg style={{position: 'absolute', left: x - 26, top: y - 32, overflow: 'visible'}} width={52} height={64} viewBox="-26 -32 52 64">
+    <g transform={`rotate(${rot})`}>
+      <rect x={-22} y={-28} width={44} height={56} rx={6} fill={C.nebulaLL} stroke={C.abyss} strokeWidth={3} />
+      <path d="M-12 -12H12 M-12 0H12 M-12 12H4" stroke={C.abyss} strokeWidth={3.5} strokeLinecap="round" />
+    </g>
+  </svg>
+);
+const Ticket: React.FC<{x: number; y: number; n: number; s: number}> = ({x, y, n, s}) => (
+  <svg style={{position: 'absolute', left: x - 40, top: y - 50, overflow: 'visible', transform: `scale(${s})`}} width={80} height={60} viewBox="-40 -50 80 60">
+    {Array.from({length: n}, (_, k) => (
+      <g key={k} transform={`translate(${k * 9 - (n - 1) * 4.5} ${-k * 9}) rotate(${-6 + k * 5})`}>
+        <rect x={-26} y={-16} width={52} height={32} rx={6} fill={C.nebulaLL} stroke={C.abyss} strokeWidth={3} />
+        <circle cx={-26} cy={0} r={6} fill={C.abyss} />
+        <circle cx={26} cy={0} r={6} fill={C.abyss} />
+        <path d="M-12 -4H12 M-12 6H6" stroke={C.abyss} strokeWidth={3} strokeLinecap="round" />
+      </g>
+    ))}
+  </svg>
+);
+
+/* ---- instituciones y anuncios del camino ---- */
+type Kind = 'torre' | 'gob' | 'boveda' | 'sala' | 'pantallas' | 'bolsa' | 'reloj' | 'anuncio';
+const INST: {k: number; kind: Kind; label: string; sub?: string}[] = [
+  {k: 6, kind: 'anuncio', label: 'TÍTULOS'},
+  {k: 7, kind: 'gob', label: 'AUTORIDAD', sub: 'AUTORIZA'},
+  {k: 8, kind: 'torre', label: 'SOCIEDAD OPERADORA'},
+  {k: 9, kind: 'anuncio', label: 'POLÍTICA DE INVERSIÓN'},
+  {k: 10, kind: 'boveda', label: 'CUSTODIO'},
+  {k: 11, kind: 'anuncio', label: 'REGISTRO DE TÍTULOS'},
+  {k: 12, kind: 'sala', label: 'COMITÉ DE INVERSIÓN'},
+  {k: 13, kind: 'torre', label: 'CUMPLIMIENTO'},
+  {k: 14, kind: 'anuncio', label: 'PRECIO DEL TÍTULO'},
+  {k: 15, kind: 'anuncio', label: 'VALUACIÓN'},
+  {k: 16, kind: 'pantallas', label: 'PROVEEDOR DE PRECIOS'},
+  {k: 17, kind: 'bolsa', label: 'CASA DE BOLSA'},
+  {k: 18, kind: 'anuncio', label: 'SUSCRIPCIÓN'},
+  {k: 19, kind: 'anuncio', label: 'REEMBOLSO'},
+  {k: 20, kind: 'anuncio', label: 'ACTIVOS LÍQUIDOS'},
+  {k: 21, kind: 'reloj', label: 'HORA DE CORTE'},
+  {k: 22, kind: 'anuncio', label: 'PLAZO DE LIQUIDACIÓN'},
+  {k: 23, kind: 'anuncio', label: 'COMISIÓN'},
+  {k: 24, kind: 'anuncio', label: 'REINVERSIÓN'},
+  {k: 25, kind: 'gob', label: 'AUTORIDAD FISCAL', sub: 'SAT'},
+  {k: 26, kind: 'anuncio', label: 'CONSTANCIA FISCAL'},
+  {k: 27, kind: 'anuncio', label: 'PROSPECTO'},
+  {k: 28, kind: 'gob', label: 'REGULADOR', sub: 'CNBV'},
+];
+const KIND_H: Record<Kind, number> = {torre: 590, gob: 540, boveda: 430, sala: 400, pantallas: 540, bolsa: 570, reloj: 600, anuncio: 600};
+const txt = (x: number, y: number, size: number, fill: string, s: string, ls = 0.04) => (
+  <text x={x} y={y} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={size} letterSpacing={`${ls}em`} fill={fill}>
+    {s}
+  </text>
+);
+const coinG = (x: number, y: number, r = 26) => (
+  <g transform={`translate(${x} ${y})`}>
+    <circle r={r} fill={C.nebula} stroke={C.abyss} strokeWidth={4} />
+    {txt(0, r * 0.36, r, C.abyss, '$', 0)}
+  </g>
+);
+const ticketG = (x: number, y: number, s = 1) => (
+  <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <rect x={-26} y={-16} width={52} height={32} rx={6} fill={C.nebulaLL} stroke={C.abyss} strokeWidth={3} />
+    <circle cx={-26} cy={0} r={6} fill={C.abyssDD} />
+    <circle cx={26} cy={0} r={6} fill={C.abyssDD} />
+  </g>
+);
+const arrowG = (x: number, y: number) => <path d={`M${x - 30} ${y}H${x + 24} M${x + 8} ${y - 16}L${x + 26} ${y}L${x + 8} ${y + 16}`} stroke={C.pulse} strokeWidth={9} strokeLinecap="round" strokeLinejoin="round" fill="none" />;
+const INV_COLORS = [C.pulse, '#F4FAFC', C.nebulaL, C.pulseL];
+/** contenido de cada anuncio (panel de 440 × 330, centro en 0,0) */
+const Board: React.FC<{k: number; f: number; on: number}> = ({k, f, on}) => {
+  switch (k) {
+    case 6:
+      return (<>{coinG(-130, -20)}{coinG(-100, 20)}{coinG(-150, 40)}{arrowG(-20, 10)}{ticketG(80, -30)}{ticketG(150, -30)}{ticketG(80, 30)}{ticketG(150, 30)}{txt(0, 120, 30, C.mute, 'PARTES IGUALES')}</>);
+    case 9:
+      return (<>{['QUÉ COMPRAR', 'CUÁNTO DE CADA COSA', 'LÍMITES'].map((l, i) => (<g key={i}><circle cx={-170} cy={-80 + i * 80} r={18} fill={C.nebula} /><path d={`M${-178} ${-80 + i * 80}l6 7l12 -14`} stroke={C.abyssDD} strokeWidth={5} fill="none" />{txt(20, -68 + i * 80, 34, C.white, l, 0)}</g>))}</>);
+    case 11:
+      return (<>{INV_COLORS.map((c, i) => (<g key={i}><circle cx={-160} cy={-105 + i * 68} r={22} fill={c} />{[0, 1, 2].map((j) => ticketG(-80 + j * 66, -105 + i * 68, 0.8))}{txt(150, -94 + i * 68, 32, C.white, '× 3', 0)}</g>))}</>);
+    case 14:
+      return (<><polyline points={`-170,90 -100,50 -40,64 30,0 100,-20 170,-90`} fill="none" stroke={C.pulse} strokeWidth={12} strokeLinecap="round" strokeLinejoin="round" />{txt(-90, -60, 70, C.nebulaL, '$', 0)}{txt(70, 120, 30, C.mute, 'MISMOS TÍTULOS')}</>);
+    case 15:
+      return (<>{[['LO QUE VALE EL FONDO', C.white], ['− LO QUE DEBE', C.pulseL], ['÷ NÚMERO DE TÍTULOS', C.nebulaL], ['= PRECIO DEL TÍTULO', C.white]].map(([l, c], i) => <g key={i}>{txt(0, -88 + i * 64, 32, c, l, 0)}</g>)}</>);
+    case 18:
+      return (<>{coinG(-120, 0, 44)}{arrowG(0, 0)}{ticketG(120, 0, 1.6)}{txt(0, 120, 30, C.mute, 'DINERO → TÍTULOS')}</>);
+    case 19:
+      return (<>{ticketG(-120, 0, 1.6)}{arrowG(0, 0)}{coinG(120, 0, 44)}{txt(0, 120, 30, C.mute, 'TÍTULOS → DINERO')}</>);
+    case 20:
+      return (<><path d="M-90 -100C-130 -40 -136 -20 -136 0A46 46 0 0 0 -44 0C-44 -20 -50 -40 -90 -100Z" fill={C.nebula} />{[0, 1, 2, 3].map((i) => <rect key={i} x={10 + i * 44} y={60 - (i + 1) * 36} width={30} height={(i + 1) * 36} rx={6} fill={C.nebulaL} />)}{txt(0, 120, 30, C.mute, 'SE VUELVEN EFECTIVO RÁPIDO')}</>);
+    case 22:
+      return (<>{['HOY', '+1', '+2', '+3'].map((l, i) => (<g key={i}><rect x={-190 + i * 96} y={-70} width={84} height={100} rx={12} fill={i === 0 ? C.pulse : C.abyss} stroke={C.nebula} strokeWidth={4} />{txt(-148 + i * 96, -6, 34, C.white, l, 0)}</g>))}{txt(0, 100, 30, C.mute, 'DÍAS HÁBILES, SEGÚN EL FONDO')}</>);
+    case 23:
+      return (<>{txt(-80, 40, 150, C.pulse, '%', 0)}{txt(90, -10, 34, C.white, 'ANUAL', 0)}{txt(90, 40, 30, C.nebulaL, 'SE DESCUENTA', 0)}{txt(90, 76, 30, C.nebulaL, 'CADA DÍA', 0)}</>);
+    case 24:
+      return (<g transform={`rotate(${(f * 2) % 360})`}><path d="M-80 -10A80 80 0 0 1 60 -54 M66 -96V-50H20" stroke={C.nebula} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" /><path d="M80 10A80 80 0 0 1 -60 54 M-66 96V50H-20" stroke={C.pulse} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>);
+    case 26:
+      return (<><rect x={-110} y={-120} width={220} height={240} rx={14} fill={C.nebulaLL} />{txt(0, -70, 26, C.abyss, 'CONSTANCIA', 0)}{['INTERESES', 'ISR RETENIDO', 'AÑO'].map((l, i) => <g key={i}><rect x={-80} y={-40 + i * 50} width={160} height={10} rx={5} fill={C.abyss} opacity={0.25} />{txt(0, -24 + i * 50, 20, C.abyss, l, 0)}</g>)}</>);
+    case 27:
+      return (<><path d="M-170 -80Q-90 -110 0 -70V110Q-90 76 -170 100Z" fill={C.nebulaLL} /><path d="M170 -80Q90 -110 0 -70V110Q90 76 170 100Z" fill={C.nebulaL} />{['POLÍTICA', 'LÍMITES', 'COMISIONES', 'RIESGOS'].map((l, i) => <g key={i}>{txt(-86, -30 + i * 38, 22, C.abyss, l, 0)}</g>)}{txt(86, 10, 44, C.abyss, 'DICI', 0)}</>);
+    default:
+      return null;
+  }
+};
+const Inst: React.FC<{s: (typeof INST)[number]; t: number; f: number; z: number}> = ({s, t, f, z}) => {
+  const q = Q(s.k);
+  const x = instX(s.k);
+  const on = sm(prog(t, q.solve, q.solve + 0.7));
+  const lt = (LIT.find((l) => l.medal === s.k - 4) ?? {t: 1e9}).t;
+  const flash = Math.max(t > lt ? Math.exp(-(t - lt) * 1.6) : 0, t > CLOSE.todo ? 0.6 + 0.4 * Math.sin(f / 6 + s.k) : 0);
+  const H = KIND_H[s.kind];
+  const lab = s.label;
+  const ls = Math.min(40, 380 / (lab.length * 0.66));
+  const win = (on > 0.5 ? C.nebulaL : '#0A3F55');
+  const glow = flash > 0.05 ? `drop-shadow(0 0 ${30 * flash}px ${C.pulse})` : on > 0.5 ? `drop-shadow(0 0 16px rgba(40,175,203,0.55))` : undefined;
+  const beacon = cl((0.32 - z) / 0.18);
+  let body: React.ReactNode = null;
+  if (s.kind === 'torre') {
+    body = (<><rect x={-170} y={-H} width={340} height={H} rx={10} fill="#0C5B79" />{Array.from({length: 4 * 7}, (_, i) => <rect key={i} x={-140 + (i % 4) * 74} y={-H + 40 + Math.floor(i / 4) * 62} width={50} height={40} rx={6} fill={win} opacity={on > 0.5 ? 0.55 + 0.45 * Math.sin(i * 7.1 + f / 25) : 1} />)}<rect x={-45} y={-115} width={90} height={115} rx={10} fill={C.abyssDD} /></>);
+  } else if (s.kind === 'gob') {
+    body = (<><rect x={-230} y={-40} width={460} height={40} fill="#0C5B79" />{[-170, -102, -34, 34, 102, 170].map((cx) => <rect key={cx} x={cx - 17} y={-380} width={34} height={340} fill={C.nebulaLL} opacity={0.85} />)}<rect x={-220} y={-420} width={440} height={44} fill={C.nebulaL} /><path d={`M-240 -420L0 ${-H}L240 -420Z`} fill={C.nebula} />{s.sub && txt(0, -440, s.sub.length > 4 ? 30 : 46, C.abyssDD, s.sub, 0.1)}<rect x={-40} y={-150} width={80} height={110} fill={C.abyssDD} /></>);
+  } else if (s.kind === 'boveda') {
+    body = (<><rect x={-210} y={-H} width={420} height={H} rx={34} fill="#0A4A63" /><circle cx={0} cy={-210} r={130} fill="#0C5B79" stroke={on > 0.5 ? C.nebulaL : C.mute} strokeWidth={16} /><g transform={`translate(0 -210) rotate(${on * 120 + (on > 0.99 ? (f % 360) * 0.2 : 0)})`}>{[0, 60, 120].map((r) => <rect key={r} x={-100} y={-7} width={200} height={14} rx={7} fill={C.nebulaL} transform={`rotate(${r})`} />)}<circle r={26} fill={C.abyssDD} /></g></>);
+  } else if (s.kind === 'sala') {
+    body = (<><rect x={-210} y={-H} width={420} height={H - 20} rx={16} fill="rgba(143,224,240,0.16)" stroke={C.nebulaL} strokeWidth={6} />{[-120, 0, 120].map((cx) => <g key={cx}><circle cx={cx} cy={-235} r={32} fill={on > 0.5 ? '#E8B894' : '#2a5566'} /><rect x={cx - 42} y={-200} width={84} height={70} rx={30} fill={on > 0.5 ? '#1E7F98' : '#24485a'} /></g>)}<rect x={-180} y={-140} width={360} height={22} rx={8} fill={C.nebulaLL} /><rect x={-160} y={-118} width={14} height={98} fill={C.nebulaL} /><rect x={146} y={-118} width={14} height={98} fill={C.nebulaL} /></>);
+  } else if (s.kind === 'pantallas') {
+    body = (<><rect x={-200} y={-H} width={400} height={H} rx={10} fill="#0C5B79" />{Array.from({length: 6}, (_, i) => { const sx = -170 + (i % 2) * 175; const sy = -H + 40 + Math.floor(i / 2) * 120; return (<g key={i}><rect x={sx} y={sy} width={165} height={100} rx={10} fill={C.abyssDD} stroke={C.nebula} strokeWidth={3} />{on > 0.5 && <polyline points={Array.from({length: 7}, (_, j) => `${sx + 12 + j * 23},${sy + 50 + 26 * Math.sin(j * 1.3 + i + f / 12)}`).join(' ')} fill="none" stroke={i % 2 ? C.pulse : C.nebulaL} strokeWidth={5} />}</g>); })}</>);
+  } else if (s.kind === 'bolsa') {
+    body = (<><rect x={-210} y={-H} width={420} height={H} rx={10} fill="#0C5B79" /><rect x={-210} y={-H + 70} width={420} height={60} fill={C.abyssDD} /><g>{Array.from({length: 7}, (_, i) => { const xx = ((i * 120 - (on > 0.5 ? f * 3 : 0)) % 840 + 840) % 840 - 420; return <path key={i} d={i % 3 === 1 ? `M${xx} ${-H + 88}l14 22l14 -22z` : `M${xx} ${-H + 112}l14 -22l14 22z`} fill={i % 3 === 1 ? C.pulse : C.nebulaL} opacity={Math.abs(xx) < 200 ? 1 : 0} />; })}</g>{Array.from({length: 3 * 4}, (_, i) => <rect key={i} x={-150 + (i % 3) * 110} y={-H + 170 + Math.floor(i / 3) * 70} width={80} height={46} rx={6} fill={win} />)}<path d="M-120 -150H120L100 -120H-100Z" fill={C.pulse} /><rect x={-60} y={-120} width={120} height={120} fill={C.abyssDD} /></>);
+  } else if (s.kind === 'reloj') {
+    const hr = (-60 + 30 * 2) * 1; // 2:00 pm
+    body = (<><rect x={-90} y={-H} width={180} height={H} rx={12} fill="#0C5B79" /><circle cx={0} cy={-H + 120} r={92} fill={C.nebulaLL} stroke={C.nebula} strokeWidth={10} /><g transform={`translate(0 ${-H + 120})`}><rect x={-6} y={-50} width={12} height={54} rx={6} fill={C.abyssDD} transform={`rotate(${hr + 60})`} /><rect x={-4} y={-74} width={8} height={78} rx={4} fill={C.pulse} transform={`rotate(${on > 0.5 ? 0 : (f * 6) % 360})`} /></g><rect x={-40} y={-120} width={80} height={120} fill={C.abyssDD} /></>);
+  } else {
+    body = (<><rect x={-160} y={-270} width={16} height={270} fill="#0A4A63" /><rect x={144} y={-270} width={16} height={270} fill="#0A4A63" /><rect x={-230} y={-H} width={460} height={340} rx={20} fill={C.abyssDD} stroke={on > 0.5 ? C.nebula : '#2a5566'} strokeWidth={6} /><g transform={`translate(0 ${-H + 170})`} opacity={0.35 + 0.65 * on}><Board k={s.k} f={f} on={on} /></g></>);
+  }
+  return (
+    <svg style={{position: 'absolute', left: x - 260, top: GY - 760, overflow: 'visible', opacity: 0.5 + 0.5 * on, filter: glow}} width={520} height={780} viewBox="-260 -760 520 780">
+      <ellipse cx={0} cy={6} rx={230} ry={12} fill="rgba(0,0,0,0.3)" />
+      {body}
+      <rect x={-215} y={-H - 90} width={430} height={74} rx={16} fill={C.abyssDD} stroke={flash > 0.05 ? C.pulse : on > 0.5 ? C.nebula : '#2a5566'} strokeWidth={5} />
+      {txt(0, -H - 90 + 37 + ls * 0.36, ls, on > 0.5 ? C.white : C.mute, lab, 0.03)}
+      {beacon > 0 && (<g opacity={beacon}><rect x={-3 / z} y={-H - 160} width={6 / z} height={H + 160} fill={C.nebulaL} opacity={0.35} /><circle cx={0} cy={-H - 160} r={11 / z} fill={on > 0.5 ? (flash > 0.3 ? C.pulse : C.nebulaL) : '#2a5566'} /></g>)}
+    </svg>
+  );
+};
+
+/* ---- cámara: sigue a la caravana; al final recorre toda la calle y se aleja ---- */
+const CLOSE = est.cierre;
+const LIT = CLOSE.lit as {medal: number; t: number}[];
+const tgX = (m: number) => (m === 0 ? stopX(6) - 450 : stopX(m + 4) + 260);
+const Z_LIST = 0.55;
+const STREET_L = 900;
+const STREET_R = stopX(28) + 800;
+const Z_FIT = 1000 / (STREET_R - STREET_L);
+const F0 = Q(28).dock + 0.15;
+const F1 = LIT[0].t + 0.45;
+const camera = (t: number) => {
+  if (t < F0) return {cx: camAt(t) + 540 / S, z: S, gy: 1130};
+  if (t < F1) {
+    const u = prog(t, F0, F1);
+    const e = sm(u);
+    return {cx: lerp(camAt(F0) + 540 / S, tgX(LIT[0].medal), e), z: Math.exp(lerp(Math.log(S), Math.log(Z_LIST), e) - 2.3 * Math.sin(Math.PI * u)), gy: 1130};
+  }
+  let cx = tgX(LIT[0].medal);
+  for (let i = 1; i < LIT.length; i++) cx = lerp(cx, tgX(LIT[i].medal), sm(prog(t, LIT[i].t - 0.4, LIT[i].t + 0.1)));
+  const zo = sm(prog(t, CLOSE.todo - 0.1, CLOSE.todo + 1.9));
+  return {cx: lerp(cx, (STREET_L + STREET_R) / 2, zo), z: Math.exp(lerp(Math.log(Z_LIST), Math.log(Z_FIT), zo)), gy: lerp(1130, 960, zo)};
+};
+
+/* ---- datos en pantalla (verificados; fuentes en guiones/videos-producidos/deconstruyendo-fondos.md) ---- */
+const DAT: Record<number, string[]> = {
+  6: ['A los títulos también se les llama acciones del fondo.'],
+  7: ['La ley nació en 2001 como Ley de Sociedades de Inversión; con la reforma financiera de 2014 se llama Ley de Fondos de Inversión.', 'Por ley hay 4 tipos de fondo: renta variable, deuda, capitales y cobertura (LFI, art. 6).'],
+  8: ['En México hay 29 operadoras de fondos (AMIB, febrero de 2026).'],
+  9: ['La política de inversión va en el prospecto, y la CNBV lo autoriza antes (LFI, art. 9).'],
+  10: ['Por ley, los valores del fondo se depositan en una institución para el depósito de valores (LFI, art. 16).', 'En México, esa institución es el S.D. Indeval.'],
+  11: ['Indeval lleva el registro electrónico de los valores y les asigna su código ISIN.'],
+  12: ['El consejo de la operadora fija y revisa las políticas de inversión (LFI, art. 11).'],
+  13: ['La vigilancia del fondo le toca al contralor normativo de la operadora (LFI, art. 10).'],
+  14: ['Los fondos en México suman más de 5 billones de pesos (AMIB, febrero de 2026).'],
+  15: ['El método y la frecuencia de valuación vienen en el prospecto (LFI, art. 9).'],
+  16: ['La proveeduría de precios es un servicio que el fondo debe contratar (LFI, art. 32).', 'Valmer, de Grupo BMV, es uno de los proveedores de precios en México.'],
+  17: ['En México operan 36 casas de bolsa autorizadas por la CNBV.', 'Hay dos bolsas de valores: la BMV y BIVA, que abrió en 2018.'],
+  18: ['Hay fondos abiertos, que recompran sus acciones, y cerrados, que no lo hacen (LFI, art. 7).'],
+  19: ['Cada fondo dice en su prospecto cada cuándo puedes vender: diario, semanal o mensual.'],
+  20: ['Más de 16 millones de clientes tienen fondos de inversión en México (AMIB, 2026).'],
+  21: ['La hora de corte de cada fondo viene en su prospecto.'],
+  22: ['Desde el 27 de mayo de 2024, las operaciones de la bolsa mexicana se liquidan en T+1: un día hábil.'],
+  23: ['La comisión se expresa como porcentaje anual y se descuenta todos los días del precio.'],
+  24: ['Por eso la ganancia de un fondo se ve en el cambio de precio de su título.'],
+  25: ['En 2026 la retención es de 0.90% anual sobre el capital invertido; en 2025 era de 0.50%.'],
+  26: ['Con la constancia presentas tu declaración anual ante el SAT.'],
+  27: ['Junto al prospecto va el DICI: el documento con información clave para la inversión (LFI, art. 9).'],
+  28: ['La CNBV nació en 1995 al fusionarse la Comisión Nacional Bancaria y la Comisión Nacional de Valores.', 'También participan la SHCP, Banxico, la CONDUSEF y la AMIB, que es el organismo autorregulador.'],
+};
+type Dato = {a: number; b: number; txt: string; q?: boolean};
+const DATOS: Dato[] = [
+  {a: T(15) + 0.5, b: T(19) - 0.2, txt: 'En México, los fondos de inversión tienen más de 16 millones de clientes (AMIB, 2026).'},
+  {a: T(22) + 0.2, b: T(33) - 0.2, txt: 'Las acciones se compran en la bolsa. En México hay dos: la BMV y BIVA.'},
+  {a: T(49) + 0.5, b: ST[0].appear - 0.3, txt: 'Una sociedad de inversión junta el dinero de muchas personas para invertirlo en conjunto.'},
+  ...ST.flatMap((q, i) => {
+    const d = DAT[q.k] ?? [];
+    const next = ST[i + 1];
+    const end = next ? next.appear - 0.3 : LIT[0].t - 0.3;
+    if (d.length === 1) return [{a: q.solve + 0.3, b: end, txt: d[0]}];
+    if (d.length === 2) return [{a: q.solve + 0.3, b: q.name - 0.15, txt: d[0]}, {a: q.name + 0.5, b: end, txt: d[1]}];
+    return [];
+  }),
+  {a: LIT[0].t + 0.2, b: CLOSE.todo - 0.2, txt: 'Fondos en México: 29 operadoras, más de 16 millones de clientes y más de 5 billones de pesos (AMIB, 2026).'},
+  {a: CLOSE.fondo + 0.6, b: DECOF_TOTAL + 1, txt: '¿Cuál de estas piezas no conocías? Te leo en comentarios.', q: true},
+];
+const DatoCard: React.FC = () => {
+  const f = useCurrentFrame();
+  const t = f / FPS;
+  const d = DATOS.find((x) => t >= x.a - 0.05 && t <= x.b + 0.3);
+  if (!d) return null;
+  const inn = sm(prog(t, d.a, d.a + 0.35));
+  const out = 1 - sm(prog(t, d.b, d.b + 0.3));
+  const size = d.txt.length > 90 ? 27 : 30;
+  return (
+    <div style={{position: 'absolute', left: 90, width: 900, top: 1378, opacity: inn * out, transform: `translateY(${(1 - inn) * 24}px)`}}>
+      <div style={{display: 'flex', gap: 18, alignItems: 'flex-start', background: 'rgba(1,30,43,0.86)', border: `2px solid ${d.q ? C.pulse : 'rgba(40,175,203,0.55)'}`, borderLeft: `8px solid ${d.q ? C.pulse : C.nebula}`, borderRadius: 18, padding: '14px 22px 14px 18px', boxShadow: '0 18px 40px rgba(0,0,0,0.45)'}}>
+        <div style={{flex: 'none', fontFamily: FONT, fontWeight: 800, fontSize: 20, letterSpacing: '0.16em', color: C.abyssDD, background: d.q ? C.pulse : C.nebula, borderRadius: 8, padding: '6px 10px 3px', marginTop: 4}}>{d.q ? 'TU TURNO' : 'DATO'}</div>
+        <div style={{fontFamily: FONT, fontWeight: 600, fontSize: size, lineHeight: 1.22, color: C.white}}>{d.txt}</div>
+      </div>
+    </div>
+  );
+};
+
+/* ---- capas nuevas del mundo ---- */
+const Insts: React.FC<{t: number; f: number; z: number; vl: number; vr: number}> = ({t, f, z, vl, vr}) => (
+  <>{INST.map((s) => (instX(s.k) > vl - 300 && instX(s.k) < vr + 300 ? <Inst key={s.k} s={s} t={t} f={f} z={z} /> : null))}</>
+);
+const Crowd: React.FC<{t: number}> = ({t}) => (
+  <>
+    {STAFF.map((s) => {
+      if (t < s.spawn) return null;
+      const r = slotRel(s.slot);
+      const door = instX(s.k);
+      const fr = (u: number) => motion(u, s.spawn, s.spawn + 1.9, 0, 1, 0.3, 0.5);
+      const xf = (u: number) => lerp(door, leadX(u) + r.dx, fr(u));
+      const p = walkP(xf, t);
+      const e = fr(t);
+      const yy = lerp(0, r.dy, e);
+      const sc = lerp(0.82, r.sc, e);
+      const fade = cl((t - s.spawn) / 0.3);
+      const tag = cl((t - s.spawn) / 0.3) * (1 - sm(prog(t, s.spawn + 2.6, s.spawn + 3.1)));
+      return (
+        <div key={s.slot} style={{position: 'absolute', left: 0, top: 0, opacity: fade, transform: `translate(0px, ${yy}px)`}}>
+          <div style={{position: 'absolute', left: 0, top: 0, transformOrigin: `${p.x}px ${GY}px`, transform: `scale(${sc})`, filter: 'brightness(0.86)'}}>
+            <Figure x={p.x} spec={s.look} p={p} badge={C.nebulaLL} />
+          </div>
+          {tag > 0.01 && s.i === 0 && (
+            <div style={{position: 'absolute', left: p.x - 200, width: 400, top: GY - 420 * sc - 70, display: 'flex', justifyContent: 'center', opacity: tag}}>
+              <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 30, letterSpacing: '0.08em', color: C.abyssDD, background: C.nebulaL, borderRadius: 12, padding: '6px 14px 2px', whiteSpace: 'nowrap'}}>{s.role}</div>
+            </div>
+          )}
+        </div>
+      );
+    })}
+  </>
+);
