@@ -35,6 +35,7 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 | 2026-11-10 | R | Aguinaldo federal + Buen Fin | ~58 | NO_GO (sin fuente primaria) | — | — | — | — |
 | 2026-11-10 | R | Nvidia / Huang | ~45 | NO_GO | — | — | — | — |
 
+| 2026-11-20 | R (pasada tarde) | Anthropic 2.º día (−6 a −11 % intradía, Nasdaq −1.5 %) / peso ~19 | ~55–60 / ~42 | NO_GO (sin texto leído: WebFetch PROVENANCE_REQUIRED; cifras intradía) / SUGERENCIA peso | — | — | — | — |
 **MODO: AUTOMÁTICO desde 2026-11-14** (decisión de Brandon; regla R «atención + puente al dinero», ver protocolo §3). Sin freno activo. Columna nueva desde hoy en las notas: ¿FUNCIONÓ? (vistas ≥ mediana de los últimos 10 y ≥ 7 s visto). Outlook v1: FUNCIONÓ (779 vistas, 7.52 s).
 
 Prueba R vs P: R publicadas con métricas 3 de 3 (Outlook v1: 779 vistas, 7.52 s; Brian Tracy: 484 vistas, 7.44 s; Microsoft créditos: 174 vistas, 10.98 s; Buffer 15 nov 04:40 CDMX; medianas por comparar cuando haya 3 P) · P publicadas 0 de 3 · fase actual: PRUEBA.
