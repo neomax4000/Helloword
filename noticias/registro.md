@@ -4,6 +4,9 @@ Una fila por noticia evaluada (fecha, tipo, tema, puntaje, veredicto, métricas 
 
 | Fecha | Tipo | Tema | Puntaje | Veredicto | Vistas 24 h | Tiempo visto | Retención | Compartidos+guardados+comentarios por 1,000 vistas |
 |---|---|---|---|---|---|---|---|---|
+| 2026-11-20 | R | Anthropic debuta en bolsa (+17 %; abrió +34 %, cerró −12.9 % vs apertura; S&P −2 %) | ~70 | APROBADA · PROGRAMADO Buffer 10:00 CDMX (post 6b0045b57efc64d5e41e335b) | pendiente | pendiente | pendiente | pendiente |
+| 2026-11-20 | R | Peso >19 por dólar / BMV −0.6 % | ~45 | SUGERENCIA | — | — | — | — |
+| 2026-11-20 | R | Nu y Plata: tarjetas, CAT ~150 % | ~45 | SUGERENCIA | — | — | — | — |
 | 2026-11-19 | R | Peso −2.4 % (peor día desde abril 2025) por actas de la Fed; detectado vía Espresso Matutino (aviso de Brandon) y confirmado con Expansión, Bloomberg Línea, Investing.com, N+ | ~75 | APROBADA · PUBLICADA 19 nov 11:42 CDMX por pedido de Brandon («súbelo ya», adelantada de las 18:00; post 6aff1bb35f7d5b08771a0c84; métricas por anotar mañana) | — | — | — | — |
 | 2026-11-19 | R | Radar mañana: minuta de Banxico (5 nov, tasa 6.25 %) sin poder leer fuente primaria / Wall Street-Nvidia (17 nov) / falla bancos EE. UU. (16 nov); WebFetch sin permiso | 55–60 / ~38 / <30 | NO_GO (compuerta verificada; sin lectura de fuente primaria) | — | — | — | — |
 | 2026-11-18 | R | Radar mañana: Nvidia (reacción), Wall Street/peso 17 nov, previa de calendario; sin hecho 2026 con 2 fuentes y sin entorno de producción (Kokoro/HF 403) | ≤50 | NO_GO | — | — | — | — |
@@ -56,3 +59,5 @@ Video v1 (12 nov): `guiones/videos-producidos/outlook.md`. Programar por Buffer 
 
 | 2026-11-19 | R (pasada tarde) | Minuta Banxico (junta dividida por el peso) | ~55 (sin verificar) | NO_GO (compuerta verificada: WebFetch sin permiso, solo titular) | — | — | — | — |
 | 2026-11-19 | C (carrusel Plan B) | Banxico minuta · Fed minutas · autopartes/KPMG | n/a | PROGRAMADO Buffer 21:00 CDMX | pendiente | pendiente | pendiente | pendiente |
+
+- 2026-11-20 (corte mañana): Nvidia récord (R, 18 nov) = PARCIAL (125 vistas, 9.28 s; mediana últimos 10 ≈ 145). Peso-fed (R) a 19 h: 118 vistas, 17.24 s, 1 compartido (veredicto mañana). Prueba R vs P: R con métricas 4; P 0; fase PRUEBA. Sin freno.
