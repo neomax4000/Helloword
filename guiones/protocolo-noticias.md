@@ -177,3 +177,5 @@ Cada noticia se investiga a fondo (no solo el dato central) y la pantalla se lle
 **Avisos:** siempre SendUserMessage con las imágenes (SendUserFile), descripción, fuentes, hora programada y «puedes cancelarlo en Buffer antes de esa hora»; PushNotification si se programó o si no se pudo.
 
 **Probado 2026-11-19:** Buffer acepta un post de TikTok con 4 `assets` de imagen. Usar JPG (calidad 92) en `publicar-temp/v/`, no PNG (TikTok no admite PNG en fotos). Si la pasada no puede leer las notas por WebFetch, usar el subagente `web-fetch` y, si tampoco, no hay carrusel.
+
+**Zona segura de FOTOS en TikTok (2026-11-19, medida con la captura del primer carrusel):** la barra «Buscar contenido relacionado» tapa la parte de arriba hasta ~y 340, los botones de la derecha empiezan en ~x 900 y los puntos y la descripción empiezan en ~y 1560 (lienzo 1080×1920). Es más estricta que la de video: todo el contenido, incluido el rótulo, va entre y 360 y y 1540, y entre x 70 y x 880. La plantilla `kit/app/src/carrusel.tsx` ya lo aplica (componente `Zona`, escala 0.8).

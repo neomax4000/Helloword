@@ -1,7 +1,24 @@
 // PLAN B — Carrusel de noticias 2026-11-19 (protocolo-noticias.md §10). 4 imágenes fijas 1080×1920.
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
-import {Backdrop, Card, Chip, FONT, Frame, Grain, P} from './pro';
+import {Backdrop, Card, Chip, FONT, Grain, P} from './pro';
+
+// Zona segura de FOTOS en TikTok (medida con la captura del carrusel del 19 nov):
+// arriba la barra «Buscar» tapa hasta ~y 340; a la derecha los botones desde ~x 900; abajo los puntos y la descripción desde ~y 1560.
+// Todo el contenido va en una caja de diseño de 880 px de ancho escalada a S, desde (70, 360).
+const S = 0.8;
+const Zona: React.FC<{children: React.ReactNode}> = ({children}) => (
+  <div style={{position: 'absolute', left: 70, top: 360, width: 880, transformOrigin: 'top left', transform: `scale(${S})`, display: 'flex', flexDirection: 'column', gap: 18}}>{children}</div>
+);
+const Cabeza: React.FC<{pag?: string}> = ({pag}) => (
+  <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: FONT, fontWeight: 700, fontSize: 30, letterSpacing: '0.2em', color: P.mute}}>
+    <div style={{display: 'flex', alignItems: 'center', gap: 14}}><span style={{width: 16, height: 16, borderRadius: 99, background: P.amber, display: 'inline-block'}} />NOTICIAS · 19 NOV</div>
+    {pag && <div style={{color: P.ink, background: P.amber, borderRadius: 999, padding: '6px 24px', letterSpacing: '0.1em'}}>{pag}</div>}
+  </div>
+);
+const Nota: React.FC<{children: React.ReactNode}> = ({children}) => (
+  <div style={{fontFamily: FONT, fontWeight: 400, fontSize: 24, lineHeight: 1.3, color: 'rgba(255,255,255,0.55)'}}>{children}</div>
+);
 
 const NOTA = 'Contenido educativo, no es recomendación de inversión.';
 
@@ -11,12 +28,12 @@ type SlideP = {idx: number; mood: string; tag: string; title: string; big: strin
 const Slide: React.FC<SlideP> = ({idx, mood, tag, title, big, bigSub, cards, puente, fuentes, pregunta}) => (
   <AbsoluteFill style={{background: P.ink}}>
     <Backdrop moods={[{at: 0, mood}]} />
-    <Frame serie="NOTICIAS · 19 NOV" total={1000} nota={`${NOTA} Fuentes: ${fuentes}`} pasos={[{at: 0, label: `${idx}/3`}]} />
-    <div style={{position: 'absolute', left: 70, width: 880, top: 190, display: 'flex', flexDirection: 'column', gap: 24}}>
+    <Zona>
+      <Cabeza pag={`${idx}/3`} />
       <div><Chip size={28} bg={P.amber} color={P.ink}>{tag}</Chip></div>
-      <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 80, lineHeight: 1.04, color: P.white, letterSpacing: '-0.02em'}}>{title}</div>
+      <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 76, lineHeight: 1.04, color: P.white, letterSpacing: '-0.02em'}}>{title}</div>
       <Card style={{padding: '30px 40px', textAlign: 'center'}}>
-        <div style={{fontWeight: 800, fontSize: 190, lineHeight: 1.12, letterSpacing: '-0.03em', color: P.ink}}>{big}</div>
+        <div style={{fontWeight: 800, fontSize: 160, lineHeight: 1.12, letterSpacing: '-0.03em', color: P.ink}}>{big}</div>
         <div style={{fontWeight: 600, fontSize: 36, lineHeight: 1.2, color: '#4A4F5E', marginTop: 18}}>{bigSub}</div>
       </Card>
       <div style={{display: 'flex', gap: 24}}>
@@ -35,7 +52,8 @@ const Slide: React.FC<SlideP> = ({idx, mood, tag, title, big, bigSub, cards, pue
       {pregunta && (
         <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 34, lineHeight: 1.2, color: P.ink, background: P.amber, borderRadius: 30, padding: '16px 28px', textAlign: 'center'}}>{pregunta}</div>
       )}
-    </div>
+      <Nota>{NOTA} Fuentes: {fuentes}</Nota>
+    </Zona>
     <Grain />
   </AbsoluteFill>
 );
@@ -86,21 +104,24 @@ export const Carrusel3: React.FC = () => (
 export const CarruselCover: React.FC = () => (
   <AbsoluteFill style={{background: P.ink}}>
     <Backdrop moods={[{at: 0, mood: 'navy'}]} />
-    <Frame serie="NOTICIAS · 19 NOV" total={1000} nota={NOTA} />
-    <div style={{position: 'absolute', left: 70, width: 880, top: 300, fontFamily: FONT}}>
+    <Zona>
+      <Cabeza />
+      <div style={{fontFamily: FONT, marginTop: 30}}>
       <div style={{fontWeight: 700, fontSize: 60, letterSpacing: '0.3em', color: P.mute}}>3 NOTICIAS</div>
       <div style={{fontWeight: 800, fontSize: 150, lineHeight: 1.0, letterSpacing: '-0.03em', color: P.white, marginTop: 10}}>QUE TOCAN</div>
       <div style={{fontWeight: 800, fontSize: 150, lineHeight: 1.0, letterSpacing: '-0.03em', color: P.amber}}>TU DINERO</div>
       <div style={{display: 'flex', flexDirection: 'column', gap: 22, marginTop: 90}}>
         {[['1', 'Banxico recortó con la junta partida'], ['2', 'La Fed no descarta subir tasas'], ['3', 'Autopartes: 90,000 empleos menos']].map(([n, t]) => (
           <Card key={n} style={{display: 'flex', alignItems: 'center', gap: 28, padding: '26px 34px', borderRadius: 36}}>
-            <div style={{fontWeight: 800, fontSize: 84, color: P.amberDeep, lineHeight: 1, width: 60, textAlign: 'center'}}>{n}</div>
+            <div style={{fontWeight: 800, fontSize: 84, color: P.amberDeep, lineHeight: 1, width: 64, flexShrink: 0, textAlign: 'center'}}>{n}</div>
             <div style={{fontWeight: 700, fontSize: 40, lineHeight: 1.15}}>{t}</div>
           </Card>
         ))}
       </div>
-      <div style={{marginTop: 70, fontWeight: 600, fontSize: 40, color: P.mute}}>Desliza →</div>
-    </div>
+      <div style={{marginTop: 60, fontWeight: 600, fontSize: 40, color: P.mute}}>Desliza →</div>
+      </div>
+      <Nota>{NOTA}</Nota>
+    </Zona>
     <Grain />
   </AbsoluteFill>
 );
