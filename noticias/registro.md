@@ -62,3 +62,7 @@ Video v1 (12 nov): `guiones/videos-producidos/outlook.md`. Programar por Buffer 
 | 2026-11-19 | C (carrusel Plan B) | Banxico minuta · Fed minutas · autopartes/KPMG | n/a | PROGRAMADO Buffer 21:00 CDMX | pendiente | pendiente | pendiente | pendiente |
 
 - 2026-11-20 (corte mañana): Nvidia récord (R, 18 nov) = PARCIAL (125 vistas, 9.28 s; mediana últimos 10 ≈ 145). Peso-fed (R) a 19 h: 118 vistas, 17.24 s, 1 compartido (veredicto mañana). Prueba R vs P: R con métricas 4; P 0; fase PRUEBA. Sin freno.
+
+| 2026-11-21 | R | Nasdaq −5.28 % / S&P 500 −3.70 % en corrección (cierre 20 nov) | 63 | ESPERA_OK (producido, sin programar; espera «publícalo») | — | — | — | — |
+| 2026-11-21 | R | Telcel admite falla en su red (sin leer) | ~40 | NO_GO | — | — | — | — |
+- 2026-11-21 (corte mañana): Anthropic debut (R, 20 nov) = FUNCIONÓ (152 vistas, 10.85 s, 21 h; mediana últimos 10 ≈ 148, margen mínimo). Peso-fed (R) a 41 h = PARCIAL (133 vistas, 17.62 s, 1 compartido). Prueba R vs P: R con métricas 5; P 0; fase PRUEBA. Sin freno.
