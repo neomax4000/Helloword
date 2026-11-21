@@ -1,0 +1,110 @@
+{
+ "id": "viernes-negro",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 2,
+ "sin_whoosh": [],
+ "bloques": [
+  {
+   "t": "Ayer el Nasdaq se desplomó cinco por ciento.",
+   "c": "Ayer el Nasdaq | se desplomó | cinco por ciento.",
+   "p": 0.22
+  },
+  {
+   "t": "Y borró todas sus ganancias de este año.",
+   "c": "Y borró | todas sus ganancias | de este año.",
+   "p": 0.25
+  },
+  {
+   "t": "Y tres cifras explican el golpe.",
+   "c": "Y tres cifras | explican | el golpe.",
+   "p": 0.25
+  },
+  {
+   "t": "Uno: el Nasdaq perdió cinco punto veintiocho por ciento.",
+   "c": "Uno: | el Nasdaq perdió | cinco punto veintiocho | por ciento.",
+   "p": 0.25
+  },
+  {
+   "t": "Dos: el S y P quinientos cayó tres punto siete, y ya está en corrección.",
+   "c": "Dos: | el S y P quinientos | cayó tres punto siete, | y ya está | en corrección.",
+   "p": 0.25
+  },
+  {
+   "t": "Corrección significa caer diez por ciento o más desde su máximo.",
+   "c": "Corrección significa | caer diez por ciento | o más | desde su máximo.",
+   "p": 0.28
+  },
+  {
+   "t": "Y tres, el que más importa para tu dinero.",
+   "c": "Y tres, | el que más importa | para tu dinero.",
+   "p": 0.22
+  },
+  {
+   "t": "El dólar cerró arriba de diecinueve pesos.",
+   "c": "El dólar cerró | arriba de | diecinueve pesos.",
+   "p": 0.25
+  },
+  {
+   "t": "Tu Afore y tus fondos pueden tener bolsa de Estados Unidos. Revisa en tu estado de cuenta cuánto.",
+   "c": "Tu Afore | y tus fondos | pueden tener | bolsa de Estados Unidos. | Revisa | en tu estado de cuenta | cuánto.",
+   "p": 0.28
+  },
+  {
+   "t": "Una caída no es un pronóstico: el valor puede subir o bajar.",
+   "c": "Una caída | no es un pronóstico: | el valor puede | subir o bajar.",
+   "p": 0.28
+  },
+  {
+   "t": "Antes de asustarte, revisa tu cuenta, porque,",
+   "c": "Antes de asustarte, | revisa tu cuenta, | porque,",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "pop",
+   "palabra": 4,
+   "dt": -0.05,
+   "f": 700,
+   "db": -14
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 9,
+   "dt": -0.06
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 3,
+   "dt": 0.02
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 4,
+   "dt": 0.02
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 44,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "riser",
+   "bloque": 6,
+   "dt": -0.22
+  },
+  {
+   "tipo": "impact",
+   "bloque": 6,
+   "dt": 0.02
+  },
+  {
+   "tipo": "pop",
+   "palabra": 96,
+   "dt": -0.02,
+   "f": 600
+  }
+ ]
+}
