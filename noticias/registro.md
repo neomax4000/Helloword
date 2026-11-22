@@ -68,3 +68,4 @@ Video v1 (12 nov): `guiones/videos-producidos/outlook.md`. Programar por Buffer 
 - 2026-11-21 (corte mañana): Anthropic debut (R, 20 nov) = FUNCIONÓ (152 vistas, 10.85 s, 21 h; mediana últimos 10 ≈ 148, margen mínimo). Peso-fed (R) a 41 h = PARCIAL (133 vistas, 17.62 s, 1 compartido). Prueba R vs P: R con métricas 5; P 0; fase PRUEBA. Sin freno.
 - 2026-11-21 (pasada tarde): sin segunda noticia (nada ≥ 40 nuevo; sábado). viernes-negro sigue ESPERA_OK; nueva hora propuesta 18:00.
 | 2026-11-22 | R/P (pasada mañana) | Viernes negro (ya >24 h) · previa de datos 23–24 nov (sin calendario oficial leído) · Telcel/Bitcoin | n/a | NO_GO (sin fuentes legibles: WebFetch PROVENANCE_REQUIRED; domingo sin mercado) | — | — | — | — |
+| 2026-11-22 | R/P (pasada tarde) | Previa datos 23–24 nov (sin calendario) · Viernes negro (>48 h) · Telcel/Bitcoin | n/a | NO_GO (sin hecho fresco ni texto leído; domingo) | — | — | — | — |
