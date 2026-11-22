@@ -20,3 +20,5 @@ Se actualiza cada vez que se prueba una fuente. «LEE» = WebFetch funciona. «F
 Pendiente de probar: Banxico (sala de prensa y calendario), INEGI (calendario), Emisnet/BMV, Reuters, El Financiero, El Economista, Expansión, Milenio, Infobae, páginas de estado de Microsoft, Google, AWS y Cloudflare.
 | 2026-11-19 (tarde) | WebFetch/subagente web-fetch (Trends, Fed, Banxico) | FALLA | PROVENANCE_REQUIRED: permiso sin responder en corrida desatendida; Bloomberg Línea sí se leyó (artículo de 2025) |
 | 2026-11-19 (tarde) | WebSearch con `allowed_domains` (infobae.com, milenio.com) | LEE (solo títulos y URL) | Sirve para detectar qué salió hoy, no para leer cifras; varios dominios juntos a veces dan PROXY_REJECTED |
+| 2026-11-22 | WebFetch y subagente web-fetch (Trends MX/US, Fed, BLS, México Cómo Vamos, Bloomberg Línea, Expansión, Infobae, El Financiero, Milenio) | FALLA | PROVENANCE_REQUIRED en las 10 URLs (permiso sin responder en corrida desatendida) |
+| 2026-11-22 | WebSearch standard (mercados, México economía, caídas de bancos, calendario semanal) | LEE (solo títulos/URL) | resultados mayormente de 2025 o de otros países; nada fechado el 21–22 nov 2026 |
