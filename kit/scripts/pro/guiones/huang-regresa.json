@@ -1,0 +1,99 @@
+{
+ "id": "huang-regresa",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 2,
+ "sin_whoosh": [],
+ "bloques": [
+  {
+   "t": "Renunció hace once días. Hoy Nvidia lo regresó.",
+   "c": "Renunció | hace once días. | Hoy Nvidia | lo regresó.",
+   "p": 0.25
+  },
+  {
+   "t": "Y la trama de Yénsen Juang tiene tres giros.",
+   "c": "Y la trama | de Jensen Huang | tiene | tres giros.",
+   "p": 0.25
+  },
+  {
+   "t": "Uno: antes de decidir, el consejo consultó al gobierno de Estados Unidos.",
+   "c": "Uno: | antes de decidir, | el consejo consultó | al gobierno | de Estados Unidos.",
+   "p": 0.25
+  },
+  {
+   "t": "Votaron por unanimidad. Y quien lo reemplazaba, Colette Kress, se queda solo en finanzas.",
+   "c": "Votaron | por unanimidad. | Y quien lo reemplazaba, | Colette Kress, | se queda solo | en finanzas.",
+   "p": 0.28
+  },
+  {
+   "t": "Dos: hace seis días, él mismo pidió volver, si el consejo lo decidía.",
+   "c": "Dos: | hace seis días, | él mismo | pidió volver, | si el consejo | lo decidía.",
+   "p": 0.25
+  },
+  {
+   "t": "Y la investigación independiente sobre él sigue abierta.",
+   "c": "Y la investigación | independiente | sobre él | sigue abierta.",
+   "p": 0.28
+  },
+  {
+   "t": "Y tres, el que más te toca.",
+   "c": "Y tres, | el que más | te toca.",
+   "p": 0.2
+  },
+  {
+   "t": "Nvidia es de las empresas más grandes de Estados Unidos, y está en muchos fondos.",
+   "c": "Nvidia es de | las empresas más grandes | de Estados Unidos, | y está | en muchos fondos.",
+   "p": 0.25
+  },
+  {
+   "t": "Tu Afore y tus fondos pueden tener bolsa de Estados Unidos. Revisa en tu estado de cuenta cuánto.",
+   "c": "Tu Afore | y tus fondos | pueden tener | bolsa de Estados Unidos. | Revisa | en tu estado de cuenta | cuánto.",
+   "p": 0.28
+  },
+  {
+   "t": "Un cambio de director no es un pronóstico: el valor puede subir o bajar.",
+   "c": "Un cambio | de director | no es un pronóstico: | el valor puede | subir o bajar.",
+   "p": 0.28
+  },
+  {
+   "t": "Antes de asustarte, revisa tu cuenta, porque,",
+   "c": "Antes de asustarte, | revisa tu cuenta, | porque,",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "stamp",
+   "palabra": 6,
+   "dt": -0.06
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 2,
+   "dt": 0.02
+  },
+  {
+   "tipo": "pop",
+   "palabra": 50,
+   "dt": -0.05,
+   "f": 700,
+   "db": -14
+  },
+  {
+   "tipo": "riser",
+   "bloque": 6,
+   "dt": -0.22
+  },
+  {
+   "tipo": "impact",
+   "bloque": 6,
+   "dt": 0.02
+  },
+  {
+   "tipo": "pop",
+   "palabra": 111,
+   "dt": -0.02,
+   "f": 600
+  }
+ ]
+}

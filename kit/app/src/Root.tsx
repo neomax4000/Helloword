@@ -15,6 +15,7 @@ import {PesoFedMain, PesoFedCover, PF_TOTAL} from './peso-fed';
 import {AnthropicDebutMain, AnthropicDebutCover, ANT_TOTAL} from './anthropic-debut';
 import {ViernesNegroMain, ViernesNegroCover, VN_TOTAL} from './viernes-negro';
 import {NvidiaSecMain, NvidiaSecCover, NS_TOTAL} from './nvidia-sec';
+import {HuangRegresaMain, HuangRegresaCover, HR_TOTAL} from './huang-regresa';
 import {TutoFondosMain, TutoFondosCover, TF_TOTAL} from './tuto-fondos';
 import {TarjetaMain, TarjetaCover, TARJ_TOTAL} from './tarjeta-credito';
 import {SeguroVidaMain, SeguroVidaCover, SEG_TOTAL} from './seguro-vida';
@@ -831,6 +832,8 @@ export const Root: React.FC = () => (
     <Composition id="ViernesNegro" component={ViernesNegroMain} durationInFrames={Math.round(VN_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="NvidiaSec" component={NvidiaSecMain} durationInFrames={Math.round(NS_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="NvidiaSecCover" component={NvidiaSecCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="HuangRegresa" component={HuangRegresaMain} durationInFrames={Math.round(HR_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="HuangRegresaCover" component={HuangRegresaCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="ViernesNegroCover" component={ViernesNegroCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="PesoFedCover" component={PesoFedCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="TutoFondos" component={TutoFondosMain} durationInFrames={Math.round(TF_TOTAL * 30)} fps={30} width={1080} height={1920} />
