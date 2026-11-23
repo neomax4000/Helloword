@@ -82,7 +82,7 @@ Formato (Estándar Pro desde 2026-11-14, `kit/PRO.md`): gancho con dato concreto
 - [x] Plazo (2026-11-16, Estándar Pro, turno 2; guion `guiones/videos-producidos/plazo.md`, portada `capturas/55_PLAZO_portada.png`) — PROGRAMADO en Buffer (post 6afead4db7fe0c41dda9cc97, 19-nov-2026 12:00 CDMX; MP4 queda en publicar-temp hasta que salga)
 - [x] Comisión (2026-11-17, Estándar Pro, turno 2; guion `guiones/videos-producidos/comision.md`, portada `capturas/57_COMISION_portada.png`) — EN RESERVA
 - [x] Riesgo y volatilidad (2026-11-18, Estándar Pro, turno 2; guion `guiones/videos-producidos/riesgo-volatilidad.md`, portada `capturas/59_RIESGO_portada.png`) — EN RESERVA
-- [~] Horizonte de inversión
+- [x] Horizonte de inversión (2026-11-23, Estándar Pro; guion `guiones/videos-producidos/horizonte.md`, portada `capturas/62_HORIZONTE_portada.png`) — EN RESERVA
 - [ ] Fondo de inversión
 - [ ] Afore
 - [ ] Buró de Crédito

@@ -1,0 +1,54 @@
+{
+ "id": "horizonte",
+ "voz": "D",
+ "velocidad": 1.03,
+ "musica_desde": 1,
+ "bloques": [
+  {
+   "t": "Cada inversión tiene una fecha de salida.",
+   "c": "Cada inversión | tiene una | fecha de salida.",
+   "p": 0.22
+  },
+  {
+   "t": "El horizonte de inversión es el tiempo que puedes dejar tu dinero invertido.",
+   "c": "El horizonte de inversión | es el tiempo | que puedes dejar | tu dinero invertido.",
+   "p": 0.25
+  },
+  {
+   "t": "Lo usas en seis meses: horizonte corto. Lo usas en diez años: horizonte largo.",
+   "c": "Lo usas en seis meses: | horizonte corto. | Lo usas en diez años: | horizonte largo.",
+   "p": 0.25
+  },
+  {
+   "t": "Con menos tiempo, tu inversión tiene menos margen para recuperarse de una baja.",
+   "c": "Con menos tiempo, | tu inversión tiene | menos margen | para recuperarse | de una baja.",
+   "p": 0.25
+  },
+  {
+   "t": "Define cuándo usarás tu dinero, porque",
+   "c": "Define cuándo | usarás tu dinero, | porque",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "pop",
+   "palabra": 8,
+   "dt": -0.05,
+   "f": 800,
+   "db": -14
+  },
+  {
+   "tipo": "ding",
+   "palabra": 30,
+   "dt": 0.05,
+   "db": -16
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 40,
+   "dt": -0.06,
+   "db": -14
+  }
+ ]
+}

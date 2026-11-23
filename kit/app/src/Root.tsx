@@ -2,6 +2,7 @@ import {Carrusel1, Carrusel2, Carrusel3, CarruselCover} from './carrusel';
 import {PlazoMain, PlazoCover, PLAZO_TOTAL} from './plazo';
 import {SpeiMain, SpeiCover, SPEI_TOTAL} from './spei';
 import {RiesgoMain, RiesgoCover, RIESGO_TOTAL} from './riesgo';
+import {HorizonteMain, HorizonteCover, HORIZONTE_TOTAL} from './horizonte';
 import {ComisionMain, ComisionCover, COMISION_TOTAL} from './comision';
 import {InteresCompuestoMain, InteresCompuestoCover, IC_TOTAL} from './interes-compuesto';
 import {AguinaldoMain, AguinaldoCover, AGUI_TOTAL} from './aguinaldo';
@@ -847,6 +848,8 @@ export const Root: React.FC = () => (
     <Composition id="SpeiCover" component={SpeiCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Riesgo" component={RiesgoMain} durationInFrames={Math.round(RIESGO_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="RiesgoCover" component={RiesgoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="Horizonte" component={HorizonteMain} durationInFrames={Math.round(HORIZONTE_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="HorizonteCover" component={HorizonteCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Comision" component={ComisionMain} durationInFrames={Math.round(COMISION_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="ComisionCover" component={ComisionCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="InteresCompuesto" component={InteresCompuestoMain} durationInFrames={Math.round(IC_TOTAL * 30)} fps={30} width={1080} height={1920} />
