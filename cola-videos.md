@@ -80,7 +80,7 @@ Formato (Estándar Pro desde 2026-11-14, `kit/PRO.md`): gancho con dato concreto
 - [x] SPEI (2026-11-14, Estándar Pro; guion `guiones/videos-producidos/spei.md`, portada `capturas/51_SPEI_portada.png`) — PROGRAMADO en Buffer (post 6af81aa74b28296eb1445686, 17-nov-2026 12:00 CDMX). MP4 borrado de publicar-temp el 2026-11-18 (post sent).
 - [x] Interés compuesto (mini) (2026-11-15, Estándar Pro, turno 2; guion `guiones/videos-producidos/interes-compuesto.md`, portada `capturas/53_INTERES_COMPUESTO_portada.png`) — PROGRAMADO en Buffer (post 6afd6030805b2f3bff3f6f59, publicado 18-nov-2026 12:00 CDMX; MP4 borrado de publicar-temp el 2026-11-19)
 - [x] Plazo (2026-11-16, Estándar Pro, turno 2; guion `guiones/videos-producidos/plazo.md`, portada `capturas/55_PLAZO_portada.png`) — PROGRAMADO en Buffer (post 6afead4db7fe0c41dda9cc97, 19-nov-2026 12:00 CDMX; MP4 queda en publicar-temp hasta que salga)
-- [x] Comisión (2026-11-17, Estándar Pro, turno 2; guion `guiones/videos-producidos/comision.md`, portada `capturas/57_COMISION_portada.png`) — EN RESERVA
+- [x] Comisión (2026-11-17, Estándar Pro, turno 2; guion `guiones/videos-producidos/comision.md`, portada `capturas/57_COMISION_portada.png`) — PROGRAMADO en Buffer (post 6b03f7ac51038c931ba4b871, 23-nov-2026 12:00 CDMX; MP4 queda en publicar-temp hasta que salga)
 - [x] Riesgo y volatilidad (2026-11-18, Estándar Pro, turno 2; guion `guiones/videos-producidos/riesgo-volatilidad.md`, portada `capturas/59_RIESGO_portada.png`) — EN RESERVA
 - [x] Horizonte de inversión (2026-11-23, Estándar Pro; guion `guiones/videos-producidos/horizonte.md`, portada `capturas/62_HORIZONTE_portada.png`) — EN RESERVA
 - [ ] Fondo de inversión
