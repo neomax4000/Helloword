@@ -69,3 +69,4 @@ Video v1 (12 nov): `guiones/videos-producidos/outlook.md`. Programar por Buffer 
 - 2026-11-21 (pasada tarde): sin segunda noticia (nada ≥ 40 nuevo; sábado). viernes-negro sigue ESPERA_OK; nueva hora propuesta 18:00.
 | 2026-11-22 | R/P (pasada mañana) | Viernes negro (ya >24 h) · previa de datos 23–24 nov (sin calendario oficial leído) · Telcel/Bitcoin | n/a | NO_GO (sin fuentes legibles: WebFetch PROVENANCE_REQUIRED; domingo sin mercado) | — | — | — | — |
 | 2026-11-22 | R/P (pasada tarde) | Previa datos 23–24 nov (sin calendario) · Viernes negro (>48 h) · Telcel/Bitcoin | n/a | NO_GO (sin hecho fresco ni texto leído; domingo) | — | — | — | — |
+| 2026-11-23 | R/P (pasada mañana) | Nvidia −14 % + SEC (cierre vie 20 nov, >60 h) · previa datos INEGI de la semana (sin calendario) · filtro seg. nacional/aranceles | ~55–60 (sin frescura) / n/c / ~35 | NO_GO (compuerta fresca; calendario no leído) | — | — | — | — |
