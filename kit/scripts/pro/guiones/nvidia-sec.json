@@ -1,0 +1,105 @@
+{
+ "id": "nvidia-sec",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 2,
+ "sin_whoosh": [],
+ "bloques": [
+  {
+   "t": "Nvidia perdió catorce por ciento en un solo día.",
+   "c": "Nvidia perdió | catorce por ciento | en un solo día.",
+   "p": 0.22
+  },
+  {
+   "t": "Y tres datos explican el golpe.",
+   "c": "Y tres datos | explican | el golpe.",
+   "p": 0.25
+  },
+  {
+   "t": "Uno: fue su peor día desde enero de dos mil veinticinco.",
+   "c": "Uno: | fue su peor día | desde enero | de dos mil veinticinco.",
+   "p": 0.2
+  },
+  {
+   "t": "Y perdió su tercer lugar entre las empresas más valiosas.",
+   "c": "Y perdió | su tercer lugar | entre las empresas | más valiosas.",
+   "p": 0.28
+  },
+  {
+   "t": "Dos: según Reuters, el regulador de la bolsa de Estados Unidos examina su contabilidad.",
+   "c": "Dos: | según Reuters, | el regulador de la bolsa | de Estados Unidos | examina | su contabilidad.",
+   "p": 0.25
+  },
+  {
+   "t": "El regulador no ha comentado. Es una revisión, no una conclusión.",
+   "c": "El regulador | no ha comentado. | Es una revisión, | no una conclusión.",
+   "p": 0.28
+  },
+  {
+   "t": "Y tres, el que más te toca.",
+   "c": "Y tres, | el que más | te toca.",
+   "p": 0.2
+  },
+  {
+   "t": "Nvidia es de las empresas más grandes de Estados Unidos, y está en muchos fondos.",
+   "c": "Nvidia es de | las empresas más grandes | de Estados Unidos, | y está | en muchos fondos.",
+   "p": 0.25
+  },
+  {
+   "t": "Tu Afore y tus fondos pueden tener bolsa de Estados Unidos. Revisa en tu estado de cuenta cuánto.",
+   "c": "Tu Afore | y tus fondos | pueden tener | bolsa de Estados Unidos. | Revisa | en tu estado de cuenta | cuánto.",
+   "p": 0.28
+  },
+  {
+   "t": "Una caída no es un pronóstico: el valor puede subir o bajar.",
+   "c": "Una caída | no es un pronóstico: | el valor puede | subir o bajar.",
+   "p": 0.28
+  },
+  {
+   "t": "Antes de asustarte, revisa tu cuenta, porque,",
+   "c": "Antes de asustarte, | revisa tu cuenta, | porque,",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "pop",
+   "palabra": 5,
+   "dt": -0.05,
+   "f": 700,
+   "db": -14
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 2,
+   "dt": -0.06
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 3,
+   "dt": 0.02
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 38,
+   "dt": -0.05,
+   "db": -12
+  },
+  {
+   "tipo": "riser",
+   "bloque": 6,
+   "dt": -0.22
+  },
+  {
+   "tipo": "impact",
+   "bloque": 6,
+   "dt": 0.02
+  },
+  {
+   "tipo": "pop",
+   "palabra": 106,
+   "dt": -0.02,
+   "f": 600
+  }
+ ]
+}
