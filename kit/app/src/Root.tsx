@@ -6,6 +6,7 @@ import {HorizonteMain, HorizonteCover, HORIZONTE_TOTAL} from './horizonte';
 import {ComisionMain, ComisionCover, COMISION_TOTAL} from './comision';
 import {InteresCompuestoMain, InteresCompuestoCover, IC_TOTAL} from './interes-compuesto';
 import {AguinaldoMain, AguinaldoCover, AGUI_TOTAL} from './aguinaldo';
+import {UdisMain, UdisCover, UDIS_TOTAL} from './udis';
 import {TasaRealMain as TasaRealEduMain, TasaRealCover as TasaRealEduCover, TASAR_TOTAL} from './tasa-real';
 import {DeconstruyendoPruebaMain, DECO_TOTAL} from './deconstruyendo-prueba';
 import {DeconstruyendoContinuoMain, DECOC_TOTAL} from './deconstruyendo-continuo';
@@ -822,6 +823,8 @@ export const Root: React.FC = () => (
     <Composition id="Carrusel2" component={Carrusel2} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Carrusel3" component={Carrusel3} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="AguinaldoCover" component={AguinaldoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="Udis" component={UdisMain} durationInFrames={Math.round(UDIS_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="UdisCover" component={UdisCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="TasaRealEdu" component={TasaRealEduMain} durationInFrames={Math.round(TASAR_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="TasaRealEduCover" component={TasaRealEduCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="NvidiaRecord" component={NvidiaRecordMain} durationInFrames={Math.round(NVR_TOTAL * 30)} fps={30} width={1080} height={1920} />

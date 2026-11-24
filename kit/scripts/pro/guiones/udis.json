@@ -1,0 +1,123 @@
+{
+ "id": "udis",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 2,
+ "sin_whoosh": [
+  10
+ ],
+ "bloques": [
+  {
+   "t": "Una UDI hoy vale casi nueve pesos.",
+   "c": "Una UDI hoy | vale casi | nueve pesos.",
+   "p": 0.22
+  },
+  {
+   "t": "En mil novecientos noventa y cinco valía un peso.",
+   "c": "En mil novecientos | noventa y cinco | valía un peso.",
+   "p": 0.2
+  },
+  {
+   "t": "Y trae tres cosas que tocan tu bolsillo.",
+   "c": "Y trae | tres cosas | que tocan | tu bolsillo.",
+   "p": 0.25
+  },
+  {
+   "t": "Uno: sube todos los días, con la inflación.",
+   "c": "Uno: | sube todos | los días, | con la inflación.",
+   "p": 0.16
+  },
+  {
+   "t": "Si la inflación del año es cuatro por ciento, de ocho noventa y tres pasa a nueve veintinueve.",
+   "c": "Si la inflación | del año es | cuatro por ciento, | de ocho noventa y tres | pasa a | nueve veintinueve.",
+   "p": 0.28
+  },
+  {
+   "t": "Dos: hay créditos en UDIS, como algunas hipotecas.",
+   "c": "Dos: | hay créditos | en UDIS, | como algunas | hipotecas.",
+   "p": 0.16
+  },
+  {
+   "t": "Una deuda de cien mil UDIS son hoy ochocientos noventa y tres mil pesos. Si la UDI sube, tu deuda sube.",
+   "c": "Una deuda | de cien mil UDIS | son hoy | ochocientos noventa y tres mil | pesos. | Si la UDI sube, | tu deuda sube.",
+   "p": 0.3
+  },
+  {
+   "t": "Y tres, el que más se ignora.",
+   "c": "Y tres, | el que | más se ignora.",
+   "p": 0.2
+  },
+  {
+   "t": "El seguro de tus ahorros en el banco se mide en UDIS: cuatrocientas mil por persona y por institución.",
+   "c": "El seguro | de tus ahorros | en el banco | se mide en UDIS: | cuatrocientas mil | por persona | y por institución.",
+   "p": 0.2
+  },
+  {
+   "t": "Hoy, más de tres millones y medio de pesos.",
+   "c": "Hoy, más de | tres millones | y medio | de pesos.",
+   "p": 0.28
+  },
+  {
+   "t": "Eso explica por qué,",
+   "c": "Eso explica | por qué,",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "ding",
+   "palabra": 5,
+   "dt": -0.05,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "palabra": 18,
+   "dt": -0.05,
+   "f": 700,
+   "db": -14
+  },
+  {
+   "tipo": "ticks",
+   "palabra": 26,
+   "dt": -0.05,
+   "n": 3,
+   "paso": 0.45
+  },
+  {
+   "tipo": "ding",
+   "palabra": 49,
+   "dt": -0.05,
+   "db": -16
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 70,
+   "dt": -0.1,
+   "db": -14
+  },
+  {
+   "tipo": "riser",
+   "bloque": 7,
+   "dt": -0.22
+  },
+  {
+   "tipo": "impact",
+   "bloque": 7,
+   "dt": 0.02
+  },
+  {
+   "tipo": "pop",
+   "palabra": 98,
+   "dt": -0.05,
+   "f": 800,
+   "db": -15
+  },
+  {
+   "tipo": "chaching",
+   "palabra": 111,
+   "dt": 0.0,
+   "db": -16
+  }
+ ]
+}
