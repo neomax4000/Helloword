@@ -75,3 +75,4 @@ Video v1 (12 nov): `guiones/videos-producidos/outlook.md`. Programar por Buffer 
 | 2026-11-23 | R (pasada tarde, pedido de Brandon) | Huang regresa como CEO de Nvidia (8-K y comunicado, 23 nov) | ~65–70 | PROGRAMADO Buffer 21:00 CDMX (post 6b04c56907fee37ee60b7d5c); cupo 2 de 2 | pendiente | pendiente | pendiente | pendiente |
 
 | 2026-11-24 | R (pasada mañana) | Nvidia +31 % tras regreso de Huang (3.er video Nvidia) · PIB México 3T 3.3 % · Magna sin estímulo | ~60–65 (sin verificar) / ~40–45 / ~45 | NO_GO (una sola fuente, newsletter; WebFetch bloqueado) | — | — | — | — |
+| 2026-11-24 | R (pasada tarde) | Nvidia +31 % (1 fuente) · Magna/IEPS · PIB 3T | ~55–60 / ~45 / ~40–45 | NO_GO (sin texto leído; web-fetch PROVENANCE_REQUIRED) · Plan B no aplica | — | — | — | — |
