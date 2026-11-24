@@ -13,6 +13,17 @@ Aplica a TODOS los videos nuevos: glosario, educativo, noticia y producto. Aprob
 8. Sin preguntas en la voz (pueden ir escritas). Números en letra en el texto hablado; inglés como suena («laik»). Sin promesas ni cifras de rendimiento. Cada cifra con dos fuentes; fuentes anotadas en `guiones/videos-producidos/<id>.md`.
 9. Un bloque = una idea (1–2 frases). Los cortes del subtítulo se escriben a mano con `|` para que nunca se lea una frase partida sin sentido («NO ES UN REGALO» junto, no «ES UN REGALO» solo).
 
+### 1b. Rotación de estructuras (vigente desde 2026-11-24, OK de Brandon)
+Todos los videos repetían «tres datos». Cada guion elige UNA estructura y la anota en su JSON (`"estructura": "..."`). La promesa numerada de arriba (punto 2) y el contador «1 DE 3» aplican solo a la estructura 1; el gancho, los ejemplos con cifras, el cierre en bucle y «cero líneas sin valor» valen en todas.
+1. **Lista numerada** («tres cosas que…»). Máximo 1 de cada 4 videos.
+2. **Mito vs realidad**: «Te dijeron X. Es falso: Y», con la cifra que lo prueba.
+3. **Caso con personaje**: una persona con nombre y cifras (Ana gana 12 mil…) a la que le pasa algo; la moraleja va al final.
+4. **Cuenta en vivo**: una sola operación que se arma en pantalla paso a paso hasta el resultado.
+5. **Duelo A vs B**: dos opciones con los mismos números y un veredicto condicionado («depende de X»).
+6. **Error común**: «lo que casi todos hacen mal» → por qué cuesta → cómo se hace bien.
+7. **Cronología / «lo que sí sabemos y lo que no»**: para noticias y hechos sin confirmación total.
+Reglas: nunca la misma estructura dos videos seguidos del mismo tipo (revisa el JSON del último); noticias usan 7 o 3 según el caso; educativos ≤ 30 s (el de 40 s solo con estructura 3 o 4); en el `.md` del video anota la estructura usada. Corte de comparación: 2026-12-08 (vistas y segundos vistos por estructura, en `claude/historico-metricas-tiktok.md`).
+
 ## 2. Voz
 - Kokoro, voz 3 por defecto (5 para narradora, D para el glosario). Velocidad **1.03** (1.00–1.05). El ritmo sale del guion corto, no de acelerar.
 - Se genera **por bloques** (no línea por línea) y pausas de 0.15–0.3 s; 0 en el último bloque si hay bucle.
@@ -49,7 +60,8 @@ Aplica a TODOS los videos nuevos: glosario, educativo, noticia y producto. Aprob
 
 ## 7. Lista de control antes de publicar
 - [ ] Gancho con dato concreto en ≤ 8 palabras y en el primer fotograma
-- [ ] Promesa abierta (numerada) en la segunda frase
+- [ ] Estructura elegida (§1b), distinta a la del video anterior del mismo tipo, y anotada en el JSON
+- [ ] Promesa abierta en la segunda frase (numerada solo en la estructura 1)
 - [ ] Al menos un ejemplo con cifras y su base de cálculo en pantalla
 - [ ] Ninguna línea hablada sin valor; CTA y aviso legal escritos
 - [ ] Transcripción igual al guion (palabras dudosas anotadas)
