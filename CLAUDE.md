@@ -4,6 +4,9 @@ Brandon Ramírez Salas, Banquero Patrimonial en Actinver (Zapopan). Hace videos 
 
 Este archivo tiene SOLO las reglas vigentes. El porqué de cada decisión está en `HISTORIAL-DECISIONES.md` (no son reglas).
 
+## REGLA TEMPORAL — SEMANA DE PRUEBAS TIKTOK (25 nov – 1 dic 2026; decisión de Brandon 24 nov)
+Mientras dure, esta regla tiene prioridad sobre «una sola identidad visual» (PRO.md §3), la rotación de estructuras (PRO.md §1b) y la cadencia de abajo: **2 videos por día (12:00 y 19:00 CDMX), sáb y dom incluidos**, cada uno TOTALMENTE distinto a los demás en apertura, texto en pantalla, estructura, fondo y animación, duración y voz; solo se conserva el tema (finanzas + enseñanza). Solo TikTok (Facebook e Instagram los lleva Lu/Muse). Plan, los 14 videos, definición de «estallar» y medición: `pruebas/semana-2026-11-25.md`. Antes de cada video se consulta la base «Historial de cambios» de Notion (Centro de Mando de IA): lo que está en «Se va» no se repite; lo que «Se queda» sigue exponiéndose sin fijar una fórmula (regla híbrida: ~60 % se queda, ~30 % en prueba, ~10 % idea nueva). Lo legal, las cifras con dos fuentes y las demás reglas de contenido no cambian. Las noticias aprobadas por el radar entran como extra y también toman un estilo distinto al del día anterior. Vence el 1 dic 2026; el 2 dic se revisa con Brandon qué se queda.
+
 ## Cómo se hace un video: ESTÁNDAR PRO (vigente desde 2026-11-13)
 **Todo video nuevo (glosario, educativo, noticia y producto) se hace con `kit/PRO.md`.** Ahí están las reglas de guion, voz, diseño, animación, sonido, el paso a paso y la lista de control. Resumen:
 - Guion: gancho = dato concreto en afirmación (≤ 8 palabras, desde el primer fotograma) → promesa numerada → ejemplo con cifras → lo más valioso al final y anunciado → cierre en bucle hacia la primera frase. Nada hablado sin valor: «sígueme», «si te sirvió» y avisos legales van escritos.

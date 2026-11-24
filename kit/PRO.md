@@ -2,6 +2,8 @@
 
 Aplica a TODOS los videos nuevos: glosario, educativo, noticia y producto. Aprobado por Brandon el 2026-11-13 («una gran mejora, aplica los cambios»). El piloto y referencia es **Aguinaldo** (`app/src/aguinaldo.tsx`, guion `scripts/pro/guiones/aguinaldo.json`). Los videos anteriores no se tocan.
 
+> **Semana de pruebas 25 nov – 1 dic 2026:** la regla temporal de `CLAUDE.md` (cada video totalmente distinto; ver `pruebas/semana-2026-11-25.md`) tiene prioridad sobre §1b y §3 hasta el 1 dic. Lo demás de este estándar sigue.
+
 ## 1. Guion (lo más importante)
 1. **Gancho = dato + tensión, en afirmación**, en las primeras 8 palabras y en el primer fotograma. Algo concreto que el espectador tiene, pierde o no sabe: «Tu aguinaldo no es un regalo: es ley». Nada abstracto («Todo tu dinero en un solo lugar es riesgo» no sirve).
 2. **Promesa abierta en la segunda frase**, de preferencia numerada: «trae tres números que casi nadie revisa». En pantalla, un contador «1 DE 3».
