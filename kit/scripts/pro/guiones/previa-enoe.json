@@ -1,0 +1,134 @@
+{
+ "id": "previa-enoe",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 1,
+ "estructura": "7 · previa (efecto dominó)",
+ "prueba": {
+  "id": "N1",
+  "formato": "Efecto dominó",
+  "tipo": "P",
+  "apertura": "hora y dato en afirmación; fichas de dominó que caen",
+  "fondo": "steel con acento ámbar, fichas isométricas y cadena de flechas",
+  "duracion_objetivo": "40-45 s",
+  "voz": "3"
+ },
+ "bloques": [
+  {
+   "t": "Mañana sale un número que mueve tu bolsillo.",
+   "c": "Mañana sale | un número | que mueve | tu bolsillo.",
+   "p": 0.22
+  },
+  {
+   "t": "Es el desempleo de octubre. Y arrastra cuatro fichas.",
+   "c": "Es el desempleo | de octubre. | Y arrastra | cuatro fichas.",
+   "p": 0.25
+  },
+  {
+   "t": "Septiembre cerró en dos punto ocho por ciento. Hace un año, tres.",
+   "c": "Septiembre cerró | en dos punto ocho | por ciento. | Hace un año, | tres.",
+   "p": 0.28
+  },
+  {
+   "t": "Ficha uno, el empleo. Sesenta millones de personas trabajan, doscientas sesenta y siete mil menos que hace un año.",
+   "c": "Ficha uno, | el empleo. | Sesenta millones | de personas trabajan, | doscientas sesenta | y siete mil menos | que hace un año.",
+   "p": 0.25
+  },
+  {
+   "t": "Ficha dos, tu ingreso. Más gente con sueldo, más dinero circulando.",
+   "c": "Ficha dos, | tu ingreso. | Más gente con sueldo, | más dinero | circulando.",
+   "p": 0.25
+  },
+  {
+   "t": "Ficha tres, precios y tasas. El Banxico mira el empleo cuando decide la tasa.",
+   "c": "Ficha tres, | precios y tasas. | El Banxico mira | el empleo | cuando decide | la tasa.",
+   "p": 0.25
+  },
+  {
+   "t": "Ficha cuatro, la que sientes: lo que pagas por tus deudas y lo que te dan por tu ahorro.",
+   "c": "Ficha cuatro, | la que sientes: | lo que pagas | por tus deudas | y lo que te dan | por tu ahorro.",
+   "p": 0.3
+  },
+  {
+   "t": "Si sale más alto que dos punto ocho, hay menos ingreso nuevo en la cadena. Si sale más bajo, hay más.",
+   "c": "Si sale más alto | que dos punto ocho, | hay menos ingreso | nuevo en la cadena. | Si sale más bajo, | hay más.",
+   "p": 0.28
+  },
+  {
+   "t": "Mañana lo publica el INEGI. Ya sabes qué fichas caen, porque,",
+   "c": "Mañana lo publica | el INEGI. | Ya sabes | qué fichas caen, | porque,",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "pop",
+   "palabra": 15,
+   "dt": -0.05,
+   "f": 700,
+   "db": -14
+  },
+  {
+   "tipo": "ticks",
+   "palabra": 20,
+   "dt": -0.05,
+   "n": 6
+  },
+  {
+   "tipo": "ding",
+   "palabra": 28,
+   "dt": 0.0,
+   "f": 1500,
+   "db": -16
+  },
+  {
+   "tipo": "pop",
+   "palabra": 29,
+   "dt": -0.04,
+   "f": 600,
+   "db": -15
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 38,
+   "dt": -0.06
+  },
+  {
+   "tipo": "pop",
+   "palabra": 48,
+   "dt": -0.04,
+   "f": 700,
+   "db": -15
+  },
+  {
+   "tipo": "pop",
+   "palabra": 59,
+   "dt": -0.04,
+   "f": 800,
+   "db": -15
+  },
+  {
+   "tipo": "pop",
+   "palabra": 73,
+   "dt": -0.04,
+   "f": 900,
+   "db": -15
+  },
+  {
+   "tipo": "riser",
+   "bloque": 7,
+   "dt": -0.22
+  },
+  {
+   "tipo": "impact",
+   "bloque": 7,
+   "dt": 0.02
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 7,
+   "dt": 0.02,
+   "f": 1760
+  }
+ ]
+}
