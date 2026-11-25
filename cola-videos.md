@@ -89,11 +89,15 @@ Formato (Estándar Pro desde 2026-11-14, `kit/PRO.md`): gancho con dato concreto
 - [x] Horizonte de inversión (2026-11-23, Estándar Pro; guion `guiones/videos-producidos/horizonte.md`, portada `capturas/62_HORIZONTE_portada.png`) — EN RESERVA
 - [ ] Fondo de inversión
 - [ ] Afore
-- [ ] Buró de Crédito
+- [x] Buró de Crédito (2026-11-25, T02 semana de pruebas, `guiones/videos-producidos/buromito.md`, portada `capturas/65_BUROMITO_portada.png`; programado 19:00)
 - [ ] Pagaré
 - [ ] Dividendo
 - [ ] ETF
 - [ ] Deuda buena vs mala
+
+## SEMANA DE PRUEBAS (25 nov – 1 dic): ver `pruebas/semana-2026-11-25.md`
+- [x] T01 Reto 52 semanas (2026-11-25, `guiones/videos-producidos/reto52.md`, portada `capturas/64_RETO52_portada.png`) — programado 12:00
+- [x] T02 Buró mito (2026-11-25) — programado 19:00
 
 ## DECONSTRUYENDO LAS FINANZAS (tipo aparte, proyecto futuro; NO entra al ciclo diario)
 Reglas, temas planeados y guion 1 (fondos de inversión, terminado) en `guiones/deconstruyendo-las-finanzas.md`. Todavía no se produce ningún video de este tipo; esperar la instrucción de Brandon.

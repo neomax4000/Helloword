@@ -1,0 +1,31 @@
+{
+ "id": "buromito",
+ "voz": "D",
+ "velocidad": 1.03,
+ "estructura": "Mito vs realidad",
+ "prueba": {
+  "id": "T02",
+  "apertura": "Mito en voz, sin pregunta (afirmación: «Mito: el Buró es una lista negra»)",
+  "texto": "mucho, cinético (palabra por palabra, a pantalla completa)",
+  "fondo": "Claro pastel, estilo glosario (blanco con lavados pastel, texto azul marino)",
+  "duracion_objetivo": "20 s",
+  "voz": "D (glosario)"
+ },
+ "musica_desde": 1,
+ "bloques": [
+  {"t": "Mito: el Buró es una lista negra.", "c": "Mito: | el Buró es | una lista negra.", "p": 0.25},
+  {"t": "Falso. Es tu historial de pagos: lo bueno también cuenta.", "c": "Falso. | Es tu historial | de pagos: | lo bueno | también cuenta.", "p": 0.22},
+  {"t": "Pagar una deuda no la borra al instante.", "c": "Pagar una deuda | no la borra | al instante.", "p": 0.2},
+  {"t": "El registro negativo puede conservarse hasta seis años.", "c": "El registro negativo | puede conservarse | hasta seis años.", "p": 0.25},
+  {"t": "Y lo mejor: tu reporte es gratis una vez al año.", "c": "Y lo mejor: | tu reporte | es gratis | una vez al año.", "p": 0.2},
+  {"t": "Revísalo antes de pedir un crédito.", "c": "Revísalo antes | de pedir | un crédito.", "p": 0.0}
+ ],
+ "sfx": [
+  {"tipo": "stamp", "palabra": 0, "dt": -0.05, "db": -11},
+  {"tipo": "stamp", "palabra": 7, "dt": -0.05, "db": -11},
+  {"tipo": "pop", "palabra": 13, "dt": -0.02, "f": 800, "db": -15},
+  {"tipo": "riser", "bloque": 3, "dt": -0.2, "db": -14},
+  {"tipo": "ding", "fin_bloque": 3, "dt": 0.02},
+  {"tipo": "chaching", "palabra": 39, "dt": -0.02, "db": -16}
+ ]
+}

@@ -6,6 +6,8 @@ import {HorizonteMain, HorizonteCover, HORIZONTE_TOTAL} from './horizonte';
 import {ComisionMain, ComisionCover, COMISION_TOTAL} from './comision';
 import {InteresCompuestoMain, InteresCompuestoCover, IC_TOTAL} from './interes-compuesto';
 import {AguinaldoMain, AguinaldoCover, AGUI_TOTAL} from './aguinaldo';
+import {RetoMain, RetoCover, RETO_TOTAL} from './reto52';
+import {BuroMitoMain, BuroMitoCover, BURO_TOTAL} from './buromito';
 import {UdisMain, UdisCover, UDIS_TOTAL} from './udis';
 import {TasaRealMain as TasaRealEduMain, TasaRealCover as TasaRealEduCover, TASAR_TOTAL} from './tasa-real';
 import {DeconstruyendoPruebaMain, DECO_TOTAL} from './deconstruyendo-prueba';
@@ -822,6 +824,10 @@ export const Root: React.FC = () => (
     <Composition id="Carrusel1" component={Carrusel1} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Carrusel2" component={Carrusel2} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Carrusel3" component={Carrusel3} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="Reto52" component={RetoMain} durationInFrames={Math.round(RETO_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="Reto52Cover" component={RetoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="BuroMito" component={BuroMitoMain} durationInFrames={Math.round(BURO_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="BuroMitoCover" component={BuroMitoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="AguinaldoCover" component={AguinaldoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Udis" component={UdisMain} durationInFrames={Math.round(UDIS_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="UdisCover" component={UdisCover} durationInFrames={30} fps={30} width={1080} height={1920} />
