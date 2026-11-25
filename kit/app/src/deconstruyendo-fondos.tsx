@@ -989,3 +989,52 @@ const Crowd: React.FC<{t: number}> = ({t}) => (
     })}
   </>
 );
+
+/* ---------------- portada ---------------- */
+const STILL = (x: number, k = 0) => ({x, a: 0.18 * Math.sin(k * 1.7), armF: -18 + 10 * k, armB: 12, hop: 0, bob: 0, hold: false});
+export const DeconstruyendoFondosCover: React.FC = () => {
+  const sc = 0.62;
+  const X0 = 0;
+  const Y0 = 1290 - GY * sc;
+  const at = (k: number, x: number) => ({position: 'absolute' as const, left: 0, top: 0, transform: `translateX(${x - instX(k)}px)`});
+  const tl = (k: number) => Q(k).solve + 3;
+  const looks = [OTHERS[2], OTHERS[1], OTHERS[0], MAIN];
+  return (
+    <Brand value={BRAND}>
+      <AbsoluteFill style={{background: C.abyssDD}}>
+        <Backdrop moods={[{at: 0, mood: 'abyss'}]} />
+        <div style={{position: 'absolute', left: 0, top: 0, width: 3000, height: 1920, transform: `translate(${X0}px, ${Y0}px) scale(${sc})`, transformOrigin: '0 0'}}>
+          <Ground l={-400} r={2400} z={sc} />
+          <div style={at(17, 300)}><Inst s={INST.find((s) => s.k === 17)!} t={tl(17)} f={0} z={sc} /></div>
+          <div style={at(10, 900)}><Inst s={INST.find((s) => s.k === 10)!} t={tl(10)} f={0} z={sc} /></div>
+          <div style={at(28, 1440)}><Inst s={INST.find((s) => s.k === 28)!} t={tl(28)} f={0} z={sc} /></div>
+          {[0, 1, 2, 3].map((i) => (
+            <Figure key={i} x={150 + i * 112} spec={looks[i]} p={STILL(150 + i * 112, i)} />
+          ))}
+          <Tube n={12} t={999} f={0} dx={620 - TUBE_X} />
+        </div>
+        <svg style={{position: 'absolute', left: 0, top: 0}} width={1080} height={1920}>
+          {MED.map((g, i) => {
+            const sl = slot(i);
+            return (
+              <g key={i} transform={`translate(${sl.x} ${sl.y + 180})`}>
+                <circle r={26} fill={C.abyssDD} stroke={C.pulse} strokeWidth={3} style={{filter: `drop-shadow(0 0 8px ${C.pulse})`}} />
+                <Glyph id={g} scale={0.3} stroke={C.white} sw={9} />
+              </g>
+            );
+          })}
+        </svg>
+        <div style={center(178)}>
+          <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 30, letterSpacing: '0.2em', color: C.abyssDD, background: C.nebula, borderRadius: 14, padding: '10px 22px 6px'}}>DECONSTRUYENDO LAS FINANZAS</div>
+        </div>
+        <div style={{...center(262), fontFamily: FONT, fontWeight: 700, fontSize: 64, letterSpacing: '0.06em', color: C.mute}}>ASÍ SE ARMA UN</div>
+        <div style={{...center(334), fontFamily: FONT, fontWeight: 800, fontSize: 150, letterSpacing: '-0.02em', color: C.white, lineHeight: 1}}>FONDO DE</div>
+        <div style={{...center(486), transform: 'rotate(-5deg)'}}>
+          <div style={{fontFamily: FONT, fontWeight: 800, fontSize: 132, letterSpacing: '-0.01em', lineHeight: 1.02, color: C.white, background: C.pulse, padding: '12px 48px 4px', borderRadius: 28, boxShadow: '0 30px 60px rgba(0,0,0,0.5)', border: `10px solid ${C.abyssDD}`, outline: `10px solid ${C.pulse}`}}>INVERSIÓN</div>
+        </div>
+        <div style={{...center(720), fontFamily: FONT, fontWeight: 700, fontSize: 56, color: C.nebulaL}}>25 piezas, una por una</div>
+        <Grain />
+      </AbsoluteFill>
+    </Brand>
+  );
+};

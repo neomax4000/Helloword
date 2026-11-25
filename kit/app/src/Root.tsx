@@ -13,7 +13,7 @@ import {PreviaEnoeMain, PreviaEnoeCover, ENOE_TOTAL} from './previa-enoe';
 import {TasaRealMain as TasaRealEduMain, TasaRealCover as TasaRealEduCover, TASAR_TOTAL} from './tasa-real';
 import {DeconstruyendoPruebaMain, DECO_TOTAL} from './deconstruyendo-prueba';
 import {DeconstruyendoContinuoMain, DECOC_TOTAL} from './deconstruyendo-continuo';
-import {DeconstruyendoFondosMain, DECOF_TOTAL} from './deconstruyendo-fondos';
+import {DeconstruyendoFondosMain, DeconstruyendoFondosCover, DECOF_TOTAL} from './deconstruyendo-fondos';
 import {NvidiaRecordMain, NvidiaRecordCover, NVR_TOTAL} from './nvidia-record';
 import {PesoFedMain, PesoFedCover, PF_TOTAL} from './peso-fed';
 import {AnthropicDebutMain, AnthropicDebutCover, ANT_TOTAL} from './anthropic-debut';
@@ -820,6 +820,7 @@ export const Root: React.FC = () => (
     <Composition id="DeconstruyendoPrueba" component={DeconstruyendoPruebaMain} durationInFrames={Math.round(DECO_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="DeconstruyendoContinuo" component={DeconstruyendoContinuoMain} durationInFrames={Math.round(DECOC_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="DeconstruyendoFondos" component={DeconstruyendoFondosMain} durationInFrames={Math.round(DECOF_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="DeconstruyendoFondosCover" component={DeconstruyendoFondosCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Aguinaldo" component={AguinaldoMain} durationInFrames={Math.round(AGUI_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="CarruselCover" component={CarruselCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Carrusel1" component={Carrusel1} durationInFrames={30} fps={30} width={1080} height={1920} />
