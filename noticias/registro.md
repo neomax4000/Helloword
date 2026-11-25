@@ -77,4 +77,4 @@ Video v1 (12 nov): `guiones/videos-producidos/outlook.md`. Programar por Buffer 
 | 2026-11-24 | R (pasada mañana) | Nvidia +31 % tras regreso de Huang (3.er video Nvidia) · PIB México 3T 3.3 % · Magna sin estímulo | ~60–65 (sin verificar) / ~40–45 / ~45 | NO_GO (una sola fuente, newsletter; WebFetch bloqueado) | — | — | — | — |
 | 2026-11-24 | R (pasada tarde) | Nvidia +31 % (1 fuente) · Magna/IEPS · PIB 3T | ~55–60 / ~45 / ~40–45 | NO_GO (sin texto leído; web-fetch PROVENANCE_REQUIRED) · Plan B no aplica | — | — | — | — |
 
-| 2026-11-25 | P (pasada mañana, SEMANA DE PRUEBAS N1) | Previa desempleo oct (ENOE, INEGI jue 26 nov) · Efecto dominó | n/a (puntajes suspendidos) | APROBADA_AUTOMATICA_PRUEBA · formato Efecto dominó · Buffer 15:00 CDMX | pendiente | pendiente | pendiente | pendiente |
+| 2026-11-25 | P (pasada mañana, SEMANA DE PRUEBAS N1) | Previa desempleo oct (ENOE, INEGI jue 26 nov) · Efecto dominó | n/a (puntajes suspendidos) | APROBADA_AUTOMATICA_PRUEBA · formato Efecto dominó · Buffer 15:00 CDMX (post 6b06dd895f4bdd9b86bb6285) | pendiente | pendiente | pendiente | pendiente |
