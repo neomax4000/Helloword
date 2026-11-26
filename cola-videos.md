@@ -98,6 +98,7 @@ Formato (Estándar Pro desde 2026-11-14, `kit/PRO.md`): gancho con dato concreto
 ## SEMANA DE PRUEBAS (25 nov – 1 dic): ver `pruebas/semana-2026-11-25.md`
 - [x] T01 Reto 52 semanas (2026-11-25, `guiones/videos-producidos/reto52.md`, portada `capturas/64_RETO52_portada.png`) — programado 12:00
 - [x] T02 Buró mito (2026-11-25) — programado 19:00
+- [x] T03 Afore: semanas (2026-11-26, `guiones/videos-producidos/afore-semanas.md`, portada `capturas/66_AFORE_SEMANAS_portada.png`) — programado 12:00
 
 ## DECONSTRUYENDO LAS FINANZAS (tipo aparte, proyecto futuro; NO entra al ciclo diario)
 Reglas, temas planeados y guion 1 (fondos de inversión, terminado) en `guiones/deconstruyendo-las-finanzas.md`. Todavía no se produce ningún video de este tipo; esperar la instrucción de Brandon.

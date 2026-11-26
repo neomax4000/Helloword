@@ -1,0 +1,66 @@
+{
+ "id": "afore-semanas",
+ "voz": "3",
+ "velocidad": 1.03,
+ "estructura": "Caso con personaje (Ana, hipotético)",
+ "prueba": {
+  "id": "T03",
+  "apertura": "A mitad de la historia (el chat ya va empezado; primera voz es Ana)",
+  "texto": "medio, en burbujas de chat",
+  "fondo": "Pantalla de chat tipo mensajería (hecha en Remotion, sin marcas)",
+  "duracion_objetivo": "45 s",
+  "voz": "3 (narrador) + 5 (Ana)"
+ },
+ "musica_desde": 1,
+ "bloques": [
+  {
+   "t": "Ya fui al IMSS: me faltan setenta y cinco semanas.",
+   "voz": "5",
+   "c": "Ya fui al IMSS: | me faltan | setenta y cinco | semanas.",
+   "p": 0.25
+  },
+  {
+   "t": "Ana cotizó ochocientas semanas. Unos quince años.",
+   "c": "Ana cotizó | ochocientas semanas. | Unos quince años.",
+   "p": 0.22
+  },
+  {
+   "t": "Pero hoy la ley pide ochocientas setenta y cinco.",
+   "c": "Pero hoy | la ley pide | ochocientas | setenta y cinco.",
+   "p": 0.25
+  },
+  {
+   "t": "O sea que todavía no me toca la pensión.",
+   "voz": "5",
+   "c": "O sea que todavía | no me toca | la pensión.",
+   "p": 0.25
+  },
+  {
+   "t": "Y la meta sigue subiendo: mil semanas en dos mil treinta y uno. Antes eran mil doscientas cincuenta.",
+   "c": "Y la meta | sigue subiendo: | mil semanas | en dos mil | treinta y uno. | Antes eran | mil doscientas | cincuenta.",
+   "p": 0.28
+  },
+  {
+   "t": "Entonces tengo que seguir cotizando.",
+   "voz": "5",
+   "c": "Entonces tengo | que seguir | cotizando.",
+   "p": 0.25
+  },
+  {
+   "t": "Cada año completo cotizando suma unas cincuenta y dos. A Ana le falta casi año y medio.",
+   "c": "Cada año completo | cotizando | suma unas | cincuenta y dos. | A Ana le falta | casi año y medio.",
+   "p": 0.28
+  },
+  {
+   "t": "Los meses sin cotizar no suman nada. Y solo cuentan las semanas cotizadas al IMSS, no los años que trabajaste.",
+   "c": "Los meses | sin cotizar | no suman nada. | Y solo cuentan | las semanas cotizadas | al IMSS, | no los años | que trabajaste.",
+   "p": 0.28
+  },
+  {
+   "t": "Revisa cuántas llevas hoy, porque,",
+   "c": "Revisa | cuántas llevas hoy, | porque,",
+   "p": 0.0
+  }
+ ],
+ "sfx": []
+}

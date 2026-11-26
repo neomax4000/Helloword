@@ -30,6 +30,15 @@ k = Kokoro(str(KOKORO_DIR / 'kokoro-v1.0.onnx'), str(KOKORO_DIR / 'voices-v1.0.b
 V = np.load(str(KOKORO_DIR / 'voices-v1.0.bin'))
 vo = sum(V[n] * w for n, w in VOCES[str(G.get('voz', '3'))].items())
 vel = float(G.get('velocidad', 1.03))
+_vc = {}
+
+
+def voz_de(b):
+    n = str(b.get('voz', G.get('voz', '3')))
+    if n not in _vc:
+        _vc[n] = sum(V[x] * w for x, w in VOCES[n].items())
+    return _vc[n]
+
 
 
 def trim(s):
@@ -41,7 +50,7 @@ out = [np.zeros(int(.08 * SR_TTS), np.float32)]
 t = .08
 blocks = []
 for b in G['bloques']:
-    s, _ = k.create(b['t'], voice=vo, speed=float(b.get('v', vel)), lang='es')
+    s, _ = k.create(b['t'], voice=voz_de(b), speed=float(b.get('v', vel)), lang='es')
     s = trim(s.astype(np.float32))
     blocks.append({'s': round(t, 3), 'e': round(t + len(s) / SR_TTS, 3)})
     p = float(b.get('p', .2))
