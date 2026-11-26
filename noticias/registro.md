@@ -79,3 +79,5 @@ Video v1 (12 nov): `guiones/videos-producidos/outlook.md`. Programar por Buffer 
 
 | 2026-11-25 | P (pasada mañana, SEMANA DE PRUEBAS N1) | Previa desempleo oct (ENOE, INEGI jue 26 nov) · Efecto dominó | n/a (puntajes suspendidos) | APROBADA_AUTOMATICA_PRUEBA · formato Efecto dominó · Buffer 15:00 CDMX (post 6b06dd895f4bdd9b86bb6285) | pendiente | pendiente | pendiente | pendiente |
 | 2026-11-25 | P (pasada tarde, SEMANA DE PRUEBAS) | Sin producción: ya hay noticia programada (previa ENOE, Efecto dominó, 15:00 CDMX) | n/a | REGISTRO (sin cambios) | — | — | — | — |
+
+| 2026-11-26 | R (pasada mañana, SEMANA DE PRUEBAS N2) | ENOE 3T 2026 (INEGI 703/26): desempleo 2.9 % vs informalidad 55.0 % · El titular vs lo que importa | n/a (puntajes suspendidos) | APROBADA_AUTOMATICA_PRUEBA · formato El titular vs lo que importa · Buffer 15:00 CDMX (post 6b082d1f7ad5a1071f9e3c3a) | pendiente | pendiente | pendiente | pendiente |
