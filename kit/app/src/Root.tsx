@@ -12,6 +12,7 @@ import {DividendoMain, DividendoCover, DIV_TOTAL} from './dividendo';
 import {AforeSemanasMain, AforeSemanasCover, AFORE_TOTAL} from './afore-semanas';
 import {UdisMain, UdisCover, UDIS_TOTAL} from './udis';
 import {PreviaEnoeMain, PreviaEnoeCover, ENOE_TOTAL} from './previa-enoe';
+import {TitularEnoeMain, TitularEnoeCover, TITULAR_TOTAL} from './titular-enoe';
 import {TasaRealMain as TasaRealEduMain, TasaRealCover as TasaRealEduCover, TASAR_TOTAL} from './tasa-real';
 import {DeconstruyendoPruebaMain, DECO_TOTAL} from './deconstruyendo-prueba';
 import {DeconstruyendoContinuoMain, DECOC_TOTAL} from './deconstruyendo-continuo';
@@ -839,6 +840,8 @@ export const Root: React.FC = () => (
     <Composition id="AguinaldoCover" component={AguinaldoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Udis" component={UdisMain} durationInFrames={Math.round(UDIS_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="PreviaEnoe" component={PreviaEnoeMain} durationInFrames={Math.round(ENOE_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="TitularEnoe" component={TitularEnoeMain} durationInFrames={Math.round(TITULAR_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="TitularEnoeCover" component={TitularEnoeCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="PreviaEnoeCover" component={PreviaEnoeCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="UdisCover" component={UdisCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="TasaRealEdu" component={TasaRealEduMain} durationInFrames={Math.round(TASAR_TOTAL * 30)} fps={30} width={1080} height={1920} />

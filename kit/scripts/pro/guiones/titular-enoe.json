@@ -1,0 +1,133 @@
+{
+ "id": "titular-enoe",
+ "voz": "3",
+ "velocidad": 1.03,
+ "musica_desde": 1,
+ "estructura": "7 · el titular vs lo que importa (cronología de lectura: titular → letra chica → lo que importa)",
+ "prueba": {
+  "id": "N2",
+  "formato": "El titular vs lo que importa",
+  "tipo": "R",
+  "apertura": "titular de periódico en afirmación («Desempleo en 2.9 %») desde el primer fotograma",
+  "fondo": "carbón cálido con recorte de periódico crema, serif, tachado y subrayado con marcador",
+  "duracion_objetivo": "38-45 s",
+  "voz": "3"
+ },
+ "bloques": [
+  {
+   "t": "Desempleo en dos punto nueve. No cuenta todo.",
+   "c": "Desempleo | en dos punto nueve. | No cuenta todo.",
+   "p": 0.22
+  },
+  {
+   "t": "Es el titular del INEGI de ayer. Y tiene letra chica.",
+   "c": "Es el titular | del INEGI de ayer. | Y tiene | letra chica.",
+   "p": 0.25
+  },
+  {
+   "t": "Dice que sesenta millones de personas trabajan. Eso sí es cierto.",
+   "c": "Dice que sesenta millones | de personas trabajan. | Eso sí | es cierto.",
+   "p": 0.25
+  },
+  {
+   "t": "Pero fíjate cómo. Cincuenta y cinco de cada cien trabajan en la informalidad.",
+   "c": "Pero fíjate cómo. | Cincuenta y cinco | de cada cien | trabajan en | la informalidad.",
+   "p": 0.28
+  },
+  {
+   "t": "Y treinta y ocho de cada cien están en condiciones críticas: pocas horas sin querer, o muchas con ingreso bajo.",
+   "c": "Y treinta y ocho | de cada cien | están en condiciones críticas: | pocas horas sin querer, | o muchas | con ingreso bajo.",
+   "p": 0.28
+  },
+  {
+   "t": "Lo que importa para tu dinero no es si hay chamba. Es si tu chamba te respalda.",
+   "c": "Lo que importa | para tu dinero | no es si hay chamba. | Es si tu chamba | te respalda.",
+   "p": 0.25
+  },
+  {
+   "t": "Si trabajas por tu cuenta, ningún patrón aporta a tu retiro. Por ejemplo, de cada mil pesos que cobres, separa cien.",
+   "c": "Si trabajas | por tu cuenta, | ningún patrón aporta | a tu retiro. | Por ejemplo, | de cada mil pesos | que cobres, | separa cien.",
+   "p": 0.28
+  },
+  {
+   "t": "Y por eso, cuando veas desempleo en dos punto nueve,",
+   "c": "Y por eso, | cuando veas desempleo | en dos punto nueve,",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "stamp",
+   "palabra": 12,
+   "dt": -0.06
+  },
+  {
+   "tipo": "pop",
+   "palabra": 17,
+   "dt": -0.05,
+   "f": 800,
+   "db": -15
+  },
+  {
+   "tipo": "ding",
+   "palabra": 29,
+   "dt": 0.0,
+   "f": 1500,
+   "db": -16
+  },
+  {
+   "tipo": "ticks",
+   "palabra": 33,
+   "dt": -0.05,
+   "n": 6
+  },
+  {
+   "tipo": "ticks",
+   "palabra": 44,
+   "dt": -0.05,
+   "n": 6
+  },
+  {
+   "tipo": "pop",
+   "palabra": 54,
+   "dt": -0.04,
+   "f": 700,
+   "db": -15
+  },
+  {
+   "tipo": "pop",
+   "palabra": 59,
+   "dt": -0.04,
+   "f": 800,
+   "db": -15
+  },
+  {
+   "tipo": "stamp",
+   "palabra": 72,
+   "dt": -0.06
+  },
+  {
+   "tipo": "ding",
+   "palabra": 99,
+   "dt": 0.0,
+   "f": 1500,
+   "db": -16
+  },
+  {
+   "tipo": "riser",
+   "bloque": 7,
+   "dt": -0.22
+  },
+  {
+   "tipo": "impact",
+   "bloque": 7,
+   "dt": 0.02
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 7,
+   "dt": 0.02,
+   "f": 1760
+  }
+ ]
+}
