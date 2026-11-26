@@ -1,0 +1,26 @@
+{
+ "id": "dividendo",
+ "voz": "3",
+ "velocidad": 1.05,
+ "silencio_inicial": 0.75,
+ "estructura": "Lista corta de 3",
+ "prueba": {
+  "id": "T04",
+  "apertura": "Silencio + texto grande + golpe de sonido (0.75 s sin voz)",
+  "texto": "cero extra (solo subtítulos grandes; pregunta y nota legal escritas)",
+  "fondo": "Un solo color plano, minimalista (azul eléctrico)",
+  "duracion_objetivo": "15 s",
+  "voz": "3 (narrador)"
+ },
+ "musica_desde": 99,
+ "sin_whoosh": [1, 2, 3],
+ "bloques": [
+  {"t": "Dividendo: la parte de las ganancias que una empresa reparte a sus accionistas.", "c": "Dividendo: | la parte | de las ganancias | que una empresa | reparte | a sus accionistas.", "p": 0.2},
+  {"t": "Uno: no está garantizado. La empresa decide cada vez si lo paga.", "c": "Uno: | no está | garantizado. | La empresa | decide cada vez | si lo paga.", "p": 0.18},
+  {"t": "Dos: si lo paga, el precio de la acción suele bajar casi por ese monto.", "c": "Dos: | si lo paga, | el precio | de la acción | suele bajar | casi por ese monto.", "p": 0.18},
+  {"t": "Tres: para cobrarlo, debes tener la acción antes de la fecha de corte.", "c": "Tres: | para cobrarlo, | debes tener | la acción | antes de la | fecha de corte.", "p": 0.0}
+ ],
+ "sfx": [
+  {"tipo": "impact", "palabra": 0, "dt": -0.72, "db": -4}
+ ]
+}

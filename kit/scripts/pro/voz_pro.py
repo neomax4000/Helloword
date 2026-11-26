@@ -46,8 +46,9 @@ def trim(s):
     return s[max(0, idx[0] - int(.015 * SR_TTS)): idx[-1] + int(.05 * SR_TTS)]
 
 
-out = [np.zeros(int(.08 * SR_TTS), np.float32)]
-t = .08
+lead = float(G.get('silencio_inicial', .08))
+out = [np.zeros(int(lead * SR_TTS), np.float32)]
+t = lead
 blocks = []
 for b in G['bloques']:
     s, _ = k.create(b['t'], voice=voz_de(b), speed=float(b.get('v', vel)), lang='es')
