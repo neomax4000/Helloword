@@ -53,3 +53,9 @@ Nota Actinver: los videos educativos, de glosario y de noticias NO llevan marca 
 - Un solo video explica casi todo el alcance de la cuenta de referencia; no se sabe cuánto vino de búsqueda ni el % visto completo.
 - El elenco es un boceto de dirección; antes de producir se pule y se fija una «hoja de personaje».
 - Esta idea choca con «una sola identidad visual» solo en el sentido contrario (la refuerza) y con la semana de pruebas (que pide variedad total); se aplica desde el 2 dic si Brandon aprueba.
+
+## 6. Hoja de personajes y reparto de trabajo (propuesta, 27 nov)
+
+- `hoja-personajes.png` / `.svg`: puerquito y anfitrión en frente, 3/4, perfil y atrás, con paleta. Es la referencia obligatoria de cualquier escena. Se generó con `gen_hoja.py`.
+- **Reparto propuesto:** Claude diseña personajes, guiones, storyboard y revisa el resultado; Haiku (subagente) arma las escenas y la animación en Remotion siguiendo la hoja, el guion JSON y una especificación cerrada por escena.
+- **Condiciones para que funcione:** (1) la hoja y los componentes de personaje (`kit/app/src/`) se hacen UNA vez con el modelo principal; (2) Haiku solo ensambla, no inventa el diseño; (3) Claude revisa fotogramas clave antes de programar; (4) si el resultado falla la lista de control, se corrige con el modelo principal. Pendiente: aprobación de Brandon para convertirlo en regla en `CLAUDE.md` / `PRO.md`.
