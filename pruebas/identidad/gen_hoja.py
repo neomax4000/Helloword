@@ -7,26 +7,17 @@ def pig(view):
     def leg(x,dark=False):
         a(f'<rect x="{x}" y="85" width="46" height="70" rx="17" fill="{"#C98A12" if dark else "#E0A21E"}"/>')
     def slot(cx,w=84):
-        a(f'<path d="M{cx-w/2} -124 Q{cx} -140 {cx+w/2} -124" fill="none" stroke="#6B3E06" stroke-width="14"/>')
-    def coin(cx):
-        a(f'<circle cx="{cx}" cy="-148" r="31" fill="#FFD54A"/><circle cx="{cx}" cy="-148" r="21" fill="none" stroke="#C98A12" stroke-width="4"/>')
-        a(f'<text x="{cx}" y="-137" text-anchor="middle" font-family="Poppins,Arial" font-weight="900" font-size="30" fill="#B97D0E" stroke="none">$</text>')
-    def medal(x,y,r=40):
-        a(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#FFD54A"/><circle cx="{x}" cy="{y}" r="{r-11}" fill="none" stroke="#C98A12" stroke-width="4"/>')
-        a(f'<text x="{x}" y="{y+r*.32}" text-anchor="middle" font-family="Poppins,Arial" font-weight="900" font-size="{r*1.0}" fill="#B97D0E" stroke="none">$</text>')
+        a(f'<path d="M{cx-w/2} -124 Q{cx} -138 {cx+w/2} -124" fill="none" stroke="#7A4A08" stroke-width="13"/>')
     def eye(x,y,r=20):
         a(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#fff"/><circle cx="{x+r*.2}" cy="{y+r*.15}" r="{r*.48}" fill="{OL}" stroke="none"/><circle cx="{x+r*.05}" cy="{y-r*.1}" r="{r*.17}" fill="#fff" stroke="none"/>')
     def shine(x,y):
         a(f'<path d="M{x} {y} q22 -22 55 -20" fill="none" stroke="#fff" stroke-width="13" opacity=".65"/><circle cx="{x+82}" cy="{y-18}" r="7" fill="#fff" stroke="none" opacity=".65"/>')
     def tail(x,y,flip=1):
         a(f'<path d="M{x} {y} q{45*flip} -10 {38*flip} -52 q{-12*flip} -26 {-36*flip} -6" fill="none" stroke-width="12"/><path d="M{x} {y} q{45*flip} -10 {38*flip} -52 q{-12*flip} -26 {-36*flip} -6" fill="none" stroke="#F2B72E" stroke-width="5"/>')
-    def ear(d,inner):
-        a(f'<path d="{d}" fill="url(#gold)"/><path d="{inner}" fill="#D9961F" stroke="none"/>')
     if view=='front':
         leg(-82);leg(36)
-        ear("M-114 -70 Q-160 -138 -122 -174 Q-72 -176 -36 -114 Z","M-104 -94 Q-134 -138 -116 -158 Q-88 -156 -64 -120 Z")
-        ear("M114 -70 Q160 -138 122 -174 Q72 -176 36 -114 Z","M104 -94 Q134 -138 116 -158 Q88 -156 64 -120 Z")
-        coin(0)
+        a('<path d="M-114 -70 Q-160 -138 -122 -174 Q-72 -176 -36 -114 Z" fill="url(#gold)"/><path d="M-104 -94 Q-134 -138 -116 -158 Q-88 -156 -64 -120 Z" fill="#D9961F" stroke="none"/>')
+        a('<path d="M114 -70 Q160 -138 122 -174 Q72 -176 36 -114 Z" fill="url(#gold)"/><path d="M104 -94 Q134 -138 116 -158 Q88 -156 64 -120 Z" fill="#D9961F" stroke="none"/>')
         a('<ellipse cx="0" cy="0" rx="152" ry="132" fill="url(#gold)"/>')
         slot(0); shine(-105,-70)
         a('<circle cx="-102" cy="30" r="19" fill="#FF9E7A" opacity=".55" stroke="none"/><circle cx="102" cy="30" r="19" fill="#FF9E7A" opacity=".55" stroke="none"/>')
@@ -35,39 +26,32 @@ def pig(view):
         a('<path d="M-28 92 Q0 108 28 92" fill="none"/>')
     elif view=='tq':
         leg(-30,True);leg(78,True);leg(-78);leg(28)
-        ear("M58 -98 Q104 -170 140 -150 Q152 -108 126 -84 Z","M72 -104 Q104 -150 130 -138 Q136 -114 118 -100 Z")
+        a('<path d="M58 -98 Q104 -170 140 -150 Q152 -108 126 -84 Z" fill="url(#gold)"/><path d="M72 -104 Q104 -150 130 -138 Q136 -114 118 -100 Z" fill="#D9961F" stroke="none"/>')
         tail(158,-10)
-        coin(20)
         a('<ellipse cx="14" cy="0" rx="152" ry="132" fill="url(#gold)"/>')
-        ear("M-76 -92 Q-134 -150 -96 -186 Q-44 -178 -16 -124 Z","M-68 -112 Q-108 -150 -92 -168 Q-62 -164 -42 -128 Z")
+        a('<path d="M-76 -92 Q-134 -150 -96 -186 Q-44 -178 -16 -124 Z" fill="url(#gold)"/><path d="M-68 -112 Q-108 -150 -92 -168 Q-62 -164 -42 -128 Z" fill="#D9961F" stroke="none"/>')
         slot(20); shine(-70,-72)
-        medal(86,24,38)
-        a('<circle cx="-80" cy="30" r="17" fill="#FF9E7A" opacity=".55" stroke="none"/>')
-        eye(-96,-36,15); eye(-30,-34,20)
+        a('<circle cx="-80" cy="38" r="18" fill="#FF9E7A" opacity=".55" stroke="none"/>')
+        eye(-92,-36,15); eye(-28,-34,20)
         a('<ellipse cx="-105" cy="38" rx="44" ry="38" fill="#F2B72E"/><ellipse cx="-120" cy="38" rx="8" ry="14" fill="'+OL+'" stroke="none"/><ellipse cx="-92" cy="38" rx="8" ry="14" fill="'+OL+'" stroke="none"/>')
-        a('<path d="M-128 88 Q-105 102 -82 88" fill="none"/>')
+        a('<path d="M-125 88 Q-95 104 -62 86" fill="none"/>')
     elif view=='side':
         leg(60,True);leg(-70,True);leg(95);leg(-38)
         tail(170,-15)
-        ear("M-40 -106 Q-36 -182 14 -190 Q52 -160 52 -104 Z","M-24 -112 Q-20 -164 14 -172 Q34 -150 36 -112 Z")
-        coin(30)
-        a('<rect x="-198" y="2" width="96" height="58" rx="26" fill="#F2B72E"/>')
-        a('<ellipse cx="-190" cy="31" rx="12" ry="24" fill="#E0A21E"/><ellipse cx="-191" cy="23" rx="4" ry="7" fill="'+OL+'" stroke="none"/><ellipse cx="-191" cy="40" rx="4" ry="7" fill="'+OL+'" stroke="none"/>')
+        a('<path d="M-40 -106 Q-36 -182 14 -190 Q52 -160 52 -104 Z" fill="url(#gold)"/><path d="M-24 -112 Q-20 -164 14 -172 Q34 -150 36 -112 Z" fill="#D9961F" stroke="none"/>')
         a('<ellipse cx="18" cy="0" rx="158" ry="128" fill="url(#gold)"/>')
-        slot(30); shine(-50,-72)
-        medal(60,18,44)
-        a('<circle cx="-74" cy="42" r="17" fill="#FF9E7A" opacity=".55" stroke="none"/>')
-        eye(-92,-30)
-        a('<path d="M-128 64 Q-108 78 -88 62" fill="none"/>')
+        a('<ellipse cx="-140" cy="28" rx="42" ry="35" fill="#F2B72E"/><ellipse cx="-152" cy="26" rx="7" ry="14" fill="'+OL+'" stroke="none"/>')
+        slot(24); shine(-60,-72)
+        a('<circle cx="-70" cy="40" r="17" fill="#FF9E7A" opacity=".55" stroke="none"/>')
+        eye(-84,-30)
+        a('<path d="M-140 76 Q-112 90 -80 74" fill="none"/>')
     elif view=='back':
         leg(-82);leg(36)
-        ear("M-114 -70 Q-160 -138 -122 -174 Q-72 -176 -36 -114 Z","M-104 -94 Q-134 -138 -116 -158 Q-88 -156 -64 -120 Z")
-        ear("M114 -70 Q160 -138 122 -174 Q72 -176 36 -114 Z","M104 -94 Q134 -138 116 -158 Q88 -156 64 -120 Z")
-        coin(0)
+        a('<path d="M-114 -70 Q-160 -138 -122 -174 Q-72 -176 -36 -114 Z" fill="url(#gold)"/><path d="M114 -70 Q160 -138 122 -174 Q72 -176 36 -114 Z" fill="url(#gold)"/>')
         a('<ellipse cx="0" cy="0" rx="152" ry="132" fill="url(#gold2)"/>')
         slot(0); shine(-110,-30)
-        tail(0,24,1)
-        a('<circle cx="-78" cy="70" r="22" fill="#E0A21E"/><circle cx="-78" cy="70" r="11" fill="none" stroke="#B97D0E" stroke-width="4"/>')
+        tail(0,40,1)
+        a('<path d="M-60 88 Q0 110 60 88" fill="none" stroke="#C98A12" stroke-width="6"/>')
     return ''.join(s)
 
 def man(view):
