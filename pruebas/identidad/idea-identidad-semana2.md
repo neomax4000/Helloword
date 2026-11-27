@@ -63,3 +63,7 @@ Nota Actinver: los videos educativos, de glosario y de noticias NO llevan marca 
 ## 7. Hoja de expresiones y poses (27 nov)
 
 `hoja-expresiones.png` / `.svg` (generada con `gen_expresiones.py`): anfitrión con 5 expresiones (guiño, alegre, sorpresa, duda, preocupado) y 3 poses (señala, muestra moneda, explica); puerquito con 5 expresiones (alegre, guiño, sorpresa, duda, dormido para el cierre «Mándaselo…»). Siguiente paso: convertir estas piezas en componentes de Remotion (una sola vez, modelo principal) para que Haiku solo las ensamble en escenas.
+
+## 8. Biblioteca de piezas (27 nov)
+
+`kit/app/src/piezas/` (ver `LEEME.md`): elenco como componentes (`Personaje`), `Duelo`, `Contador`, `Cuenta`, `Chat`, `LineaTiempo`, `StickerLegal`, `PortadaTitular` y `RecetaVideo` (escena armada desde JSON). Un video nuevo pasa a ser guion + receta; es la base para que Haiku ensamble escenas. Pendiente: probarla en el piloto de la semana 2 y extraer más piezas (pizarra, calendario, alerta) si se repiten.

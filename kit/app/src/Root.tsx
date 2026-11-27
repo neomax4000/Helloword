@@ -9,6 +9,8 @@ import {AguinaldoMain, AguinaldoCover, AGUI_TOTAL} from './aguinaldo';
 import {RetoMain, RetoCover, RETO_TOTAL} from './reto52';
 import {BuroMitoMain, BuroMitoCover, BURO_TOTAL} from './buromito';
 import {DividendoMain, DividendoCover, DIV_TOTAL} from './dividendo';
+import {DemoPiezas} from './piezas/Demo';
+import {PortadaTitular} from './piezas/PortadaTitular';
 import {CetesAntesMain, CetesAntesCover, CET_TOTAL} from './cetes-antes';
 import {MinimoMain, MinimoCover, MIN_TOTAL} from './minimo-tarjeta';
 import {AforeSemanasMain, AforeSemanasCover, AFORE_TOTAL} from './afore-semanas';
@@ -842,6 +844,8 @@ export const Root: React.FC = () => (
     <Composition id="MinimoCover" component={MinimoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="CetesAntes" component={CetesAntesMain} durationInFrames={Math.round(CET_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="CetesAntesCover" component={CetesAntesCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="DemoPiezas" component={DemoPiezas} durationInFrames={330} fps={30} width={1080} height={1920} />
+    <Composition id="DemoPortada" component={() => <PortadaTitular antes="TUS CETES" resaltada="PAGAN MENOS" despues="QUE HACE UN AÑO" />} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="DividendoCover" component={DividendoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="BuroMitoCover" component={BuroMitoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="AguinaldoCover" component={AguinaldoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
