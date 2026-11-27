@@ -9,6 +9,8 @@ import {AguinaldoMain, AguinaldoCover, AGUI_TOTAL} from './aguinaldo';
 import {RetoMain, RetoCover, RETO_TOTAL} from './reto52';
 import {BuroMitoMain, BuroMitoCover, BURO_TOTAL} from './buromito';
 import {DividendoMain, DividendoCover, DIV_TOTAL} from './dividendo';
+import {CetesAntesMain, CetesAntesCover, CET_TOTAL} from './cetes-antes';
+import {MinimoMain, MinimoCover, MIN_TOTAL} from './minimo-tarjeta';
 import {AforeSemanasMain, AforeSemanasCover, AFORE_TOTAL} from './afore-semanas';
 import {UdisMain, UdisCover, UDIS_TOTAL} from './udis';
 import {PreviaEnoeMain, PreviaEnoeCover, ENOE_TOTAL} from './previa-enoe';
@@ -835,6 +837,10 @@ export const Root: React.FC = () => (
     <Composition id="AforeSemanas" component={AforeSemanasMain} durationInFrames={Math.round(AFORE_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="AforeSemanasCover" component={AforeSemanasCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="Dividendo" component={DividendoMain} durationInFrames={Math.round(DIV_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="Minimo" component={MinimoMain} durationInFrames={Math.round(MIN_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="MinimoCover" component={MinimoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="CetesAntes" component={CetesAntesMain} durationInFrames={Math.round(CET_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="CetesAntesCover" component={CetesAntesCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="DividendoCover" component={DividendoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="BuroMitoCover" component={BuroMitoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="AguinaldoCover" component={AguinaldoCover} durationInFrames={30} fps={30} width={1080} height={1920} />

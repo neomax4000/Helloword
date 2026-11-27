@@ -1,0 +1,90 @@
+{
+ "id": "minimo-tarjeta",
+ "voz": "3",
+ "velocidad": 1.03,
+ "estructura": "Error común (lo que casi todos hacen mal → por qué cuesta → cómo se hace bien)",
+ "prueba": {
+  "id": "T05",
+  "apertura": "Predicción: «adivina, la respuesta al final» (voz afirma, número tapado en pantalla)",
+  "texto": "medio (cifras clave y notas de expediente; subtítulos por frase)",
+  "fondo": "Thriller: grano fuerte, viñeta, línea de escaneo, tipografía de expediente",
+  "duracion_objetivo": "40 s",
+  "voz": "3 (narrador)"
+ },
+ "musica_desde": 1,
+ "sin_whoosh": [],
+ "bloques": [
+  {
+   "t": "Adivina cuánto tardas en liquidar diez mil pesos pagando solo el mínimo. La respuesta, al final.",
+   "c": "Adivina cuánto tardas | en liquidar | diez mil pesos | pagando | solo el mínimo. | La respuesta, | al final.",
+   "p": 0.28
+  },
+  {
+   "t": "Casi todos pagan el mínimo y creen que van bien.",
+   "c": "Casi todos | pagan el mínimo | y creen | que van bien.",
+   "p": 0.25
+  },
+  {
+   "t": "Ese pago cubre intereses, comisiones y muy poco capital.",
+   "c": "Ese pago cubre | intereses, | comisiones | y muy poco capital.",
+   "p": 0.25
+  },
+  {
+   "t": "Ejemplo: debes diez mil pesos y tu mínimo es de cuatrocientos quince.",
+   "c": "Ejemplo: | debes diez mil pesos | y tu mínimo | es de cuatrocientos quince.",
+   "p": 0.22
+  },
+  {
+   "t": "Cada mes el banco cobra primero sus intereses. Tu deuda baja muy despacio.",
+   "c": "Cada mes | el banco cobra primero | sus intereses. | Tu deuda | baja muy despacio.",
+   "p": 0.25
+  },
+  {
+   "t": "Según la Condusef, el pago mínimo es la opción más cara para tu bolsillo.",
+   "c": "Según la Condusef, | el pago mínimo | es la opción | más cara | para tu bolsillo.",
+   "p": 0.35
+  },
+  {
+   "t": "Ahora sí, la respuesta: casi tres años. Y casi cinco mil pesos solo de intereses.",
+   "c": "Ahora sí, | la respuesta: | casi tres años. | Y casi | cinco mil pesos | solo de intereses.",
+   "p": 0.3
+  },
+  {
+   "t": "Lo correcto: paga el total para no generar intereses. Si no puedes, paga siempre más que el mínimo.",
+   "c": "Lo correcto: | paga el total | para no generar | intereses. | Si no puedes, | paga siempre | más que el mínimo.",
+   "p": 0.25
+  },
+  {
+   "t": "Antes de pagar el mínimo, haz la cuenta. Y adivina,",
+   "c": "Antes de pagar | el mínimo, | haz la cuenta. | Y adivina,",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "impact",
+   "bloque": 0,
+   "dt": -0.05,
+   "db": -14
+  },
+  {
+   "tipo": "riser",
+   "bloque": 6,
+   "dt": -0.3,
+   "db": -12,
+   "dur": 0.3
+  },
+  {
+   "tipo": "impact",
+   "bloque": 6,
+   "dt": 0.02,
+   "db": -8
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 7,
+   "dt": 0.02,
+   "db": -18
+  }
+ ]
+}

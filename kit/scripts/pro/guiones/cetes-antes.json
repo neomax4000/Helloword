@@ -1,0 +1,29 @@
+{
+ "id": "cetes-antes",
+ "voz": "5",
+ "velocidad": 1.03,
+ "estructura": "Duelo A vs B (hace un año vs hoy; veredicto condicionado: «depende de tu plazo»)",
+ "prueba": {
+  "id": "T06",
+  "apertura": "Pantalla dividida A vs B desde el cuadro 1 (nov 2025 arriba, hoy abajo)",
+  "texto": "mucho, comparativo (cifras y etiquetas escritas a mano)",
+  "fondo": "Pizarra blanca dibujada a mano (trazos de marcador con temblor, Remotion/SVG)",
+  "duracion_objetivo": "30 s",
+  "voz": "5 (narradora)"
+ },
+ "musica_desde": 1,
+ "bloques": [
+  {"t": "Hace un año, los Cetes a veintiocho días pagaban siete punto cero cinco por ciento. Hoy, seis punto dos.", "c": "Hace un año, | los Cetes | a veintiocho días | pagaban | siete punto cero cinco | por ciento. | Hoy, | seis punto dos.", "p": 0.28},
+  {"t": "Con diez mil pesos, son unos cincuenta y cinco pesos contra unos cuarenta y ocho, en veintiocho días.", "c": "Con diez mil pesos, | son unos | cincuenta y cinco pesos | contra unos | cuarenta y ocho, | en veintiocho días.", "p": 0.25},
+  {"t": "La diferencia: unos siete pesos.", "c": "La diferencia: | unos | siete pesos.", "p": 0.25},
+  {"t": "Pero ojo: la tasa cambia en cada subasta, cada semana.", "c": "Pero ojo: | la tasa cambia | en cada subasta, | cada semana.", "p": 0.25},
+  {"t": "Y lo que ya compraste conserva su tasa hasta que vence.", "c": "Y lo que | ya compraste | conserva su tasa | hasta que vence.", "p": 0.25},
+  {"t": "Así que no depende de lo de antes. Depende de tu plazo, y de cuánto tiempo puedes dejar el dinero quieto.", "c": "Así que | no depende | de lo de antes. | Depende | de tu plazo, | y de cuánto tiempo | puedes dejar | el dinero quieto.", "p": 0.25},
+  {"t": "Revisa la tasa de esta semana antes de decidir, porque,", "c": "Revisa la tasa | de esta semana | antes de decidir, | porque,", "p": 0.0}
+ ],
+ "sfx": [
+  {"tipo": "pop", "palabra": 0, "dt": 0.0, "db": -16},
+  {"tipo": "click", "bloque": 3, "dt": 0.05, "db": -16},
+  {"tipo": "ding", "fin_bloque": 4, "dt": 0.02, "db": -18}
+ ]
+}
