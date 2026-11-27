@@ -1,6 +1,37 @@
 # Genera la hoja de personajes (SVG) — propuesta de identidad
 OL='#2B1B10'
-def pig(view):
+
+def _eye(x,y,r,px=0,py=0,OL='#2B1B10'):
+    return f'<circle cx="{x}" cy="{y}" r="{r}" fill="#fff"/><circle cx="{x+px}" cy="{y+py}" r="{r*.47}" fill="{OL}" stroke="none"/><circle cx="{x+px-2}" cy="{y+py-3}" r="{r*.16}" fill="#fff" stroke="none"/>'
+def feats_man(e,HR,OL):
+    if e=='sorpresa':
+        return (f'<path d="M-54 -484 q18 -14 36 -4" fill="none" stroke="{HR}" stroke-width="8"/><path d="M16 -486 q18 -10 36 4" fill="none" stroke="{HR}" stroke-width="8"/>'
+                +_eye(-30,-440,18,2,0)+_eye(35,-440,18,2,0)+'<ellipse cx="3" cy="-396" rx="14" ry="19" fill="#5A1E12"/>')
+    if e=='duda':
+        return (f'<path d="M-54 -482 q18 -16 38 -4" fill="none" stroke="{HR}" stroke-width="8"/><path d="M16 -462 q18 4 36 6" fill="none" stroke="{HR}" stroke-width="8"/>'
+                +_eye(-30,-440,15,6,-4)+_eye(35,-440,15,6,-4)+'<path d="M-22 -396 Q8 -404 38 -390" fill="none" stroke-width="6"/>')
+    if e=='preocupado':
+        return (f'<path d="M-52 -460 q18 6 36 -12" fill="none" stroke="{HR}" stroke-width="8"/><path d="M16 -474 q18 12 36 -2" fill="none" stroke="{HR}" stroke-width="8"/>'
+                +_eye(-30,-440,15,0,3)+_eye(35,-440,15,0,3)+'<path d="M-20 -392 Q4 -408 28 -392" fill="none" stroke-width="6"/>')
+    if e=='alegre':
+        return (f'<path d="M-52 -468 q18 -12 36 -2" fill="none" stroke="{HR}" stroke-width="8"/><path d="M16 -470 q18 -10 36 2" fill="none" stroke="{HR}" stroke-width="8"/>'
+                +_eye(-30,-440,15,3,1)+_eye(35,-440,15,3,1)+'<path d="M-38 -408 Q4 -372 46 -408 Q4 -394 -38 -408Z" fill="#fff"/>')
+    return (f'<path d="M-52 -466 q18 -12 36 -2" fill="none" stroke="{HR}" stroke-width="8"/><path d="M16 -468 q18 -10 36 2" fill="none" stroke="{HR}" stroke-width="8"/>'
+            +_eye(-30,-440,15,4,2)+'<path d="M18 -440 q16 -14 34 0" fill="none"/><path d="M-35 -405 Q0 -380 40 -405 Q0 -392 -35 -405Z" fill="#fff"/>')
+def feats_pig(e,OL,eye):
+    arc=lambda x:f'<path d="M{x} -26 q22 16 44 0" fill="none" stroke-width="8"/>'
+    if e=='sorpresa': return _eye(-58,-28,25,2,2)+_eye(58,-28,25,2,2)
+    if e=='duda': return _eye(-58,-28,22,8,-6)+_eye(58,-28,14,6,-4)+'<path d="M-90 -66 q22 -14 44 0" fill="none" stroke-width="8"/>'
+    if e=='guino': return _eye(-58,-28,20,4,3)+'<path d="M36 -28 q22 -20 44 0" fill="none" stroke-width="8"/>'
+    if e=='dormido': return arc(-80)+arc(36)
+    return _eye(-58,-28,20,4,3)+_eye(58,-28,20,4,3)
+def mouth_pig(e):
+    if e=='sorpresa': return '<ellipse cx="0" cy="98" rx="15" ry="13" fill="#5A1E12"/>'
+    if e=='duda': return '<path d="M-30 96 q15 -12 30 0 q15 12 30 0" fill="none"/>'
+    if e in('guino','dormido'): return '<path d="M-36 90 Q0 118 36 90" fill="none"/>'
+    return '<path d="M-28 92 Q0 108 28 92" fill="none"/>'
+
+def pig(view,expr='alegre'):
     s=[]
     a=s.append
     a('<ellipse cx="0" cy="162" rx="125" ry="13" fill="#000" opacity=".18"/>')
@@ -21,9 +52,9 @@ def pig(view):
         a('<ellipse cx="0" cy="0" rx="152" ry="132" fill="url(#gold)"/>')
         slot(0); shine(-105,-70)
         a('<circle cx="-102" cy="30" r="19" fill="#FF9E7A" opacity=".55" stroke="none"/><circle cx="102" cy="30" r="19" fill="#FF9E7A" opacity=".55" stroke="none"/>')
-        eye(-58,-28);eye(58,-28)
+        a(feats_pig(expr,OL,eye))
         a('<ellipse cx="0" cy="38" rx="56" ry="40" fill="#F2B72E"/><ellipse cx="-19" cy="38" rx="8" ry="15" fill="'+OL+'" stroke="none"/><ellipse cx="19" cy="38" rx="8" ry="15" fill="'+OL+'" stroke="none"/>')
-        a('<path d="M-28 92 Q0 108 28 92" fill="none"/>')
+        a(mouth_pig(expr))
     elif view=='tq':
         leg(-30,True);leg(78,True);leg(-78);leg(28)
         a('<path d="M58 -98 Q104 -170 140 -150 Q152 -108 126 -84 Z" fill="url(#gold)"/><path d="M72 -104 Q104 -150 130 -138 Q136 -114 118 -100 Z" fill="#D9961F" stroke="none"/>')
@@ -54,7 +85,7 @@ def pig(view):
         a('<path d="M-60 88 Q0 110 60 88" fill="none" stroke="#C98A12" stroke-width="6"/>')
     return ''.join(s)
 
-def man(view):
+def man(view,arms=True,expr='guino'):
     s=[];a=s.append
     SK='#E3A56F';SKD='#C9854F';HR='#3A2214';HRL='#6B4228'
     SU='#1F2A44';SUD='#131B30';SUL='#2E3C5F';TI='#8DB531';TR='#19223A';SH='#14141C'
@@ -74,8 +105,8 @@ def man(view):
         a(f'<rect x="-92" y="-128" width="70" height="100" rx="14" fill="{TR}"/><rect x="22" y="-128" width="70" height="100" rx="14" fill="{TR}"/>')
         a(f'<path d="M-57 -120 L-57 -34 M57 -120 L57 -34" stroke="{SUL}" stroke-width="4" fill="none"/>')
         shoes(-112,16)
-        a(f'<path d="M-100 -330 L-150 -170 L-100 -150 L-70 -250" fill="{SU}"/>'); cuff(-124,-158); a(f'<circle cx="-130" cy="-136" r="26" fill="{SK}"/>')
-        a(f'<path d="M100 -330 L150 -170 L100 -150 L70 -250" fill="{SU}"/>'); cuff(124,-158); a(f'<circle cx="130" cy="-136" r="26" fill="{SK}"/>')
+        if arms: a(f'<path d="M-100 -330 L-150 -170 L-100 -150 L-70 -250" fill="{SU}"/>'); cuff(-124,-158); a(f'<circle cx="-130" cy="-136" r="26" fill="{SK}"/>')
+        if arms: a(f'<path d="M100 -330 L150 -170 L100 -150 L70 -250" fill="{SU}"/>'); cuff(124,-158); a(f'<circle cx="130" cy="-136" r="26" fill="{SK}"/>')
         a(f'<rect x="-100" y="-350" width="200" height="240" rx="34" fill="{SU}"/>')
         a(f'<path d="M-36 -350 L0 -246 L36 -350 Z" fill="#fff"/>')
         a(f'<rect x="-11" y="-348" width="22" height="22" rx="6" fill="{TI}"/><path d="M-9 -330 L9 -330 L6 -266 L0 -254 L-6 -266 Z" fill="{TI}"/>')
@@ -89,9 +120,9 @@ def man(view):
         a(f'<rect x="-80" y="-520" width="160" height="150" rx="34" fill="{SK}"/>')
         a(f'<rect x="-90" y="-482" width="14" height="42" rx="6" fill="{HR}"/><rect x="76" y="-482" width="14" height="42" rx="6" fill="{HR}"/>')
         hair_front()
-        a(f'<path d="M-52 -466 q18 -12 36 -2" fill="none" stroke="{HR}" stroke-width="8"/><path d="M16 -468 q18 -10 36 2" fill="none" stroke="{HR}" stroke-width="8"/>')
-        a(f'<circle cx="-30" cy="-440" r="15" fill="#fff"/><circle cx="-26" cy="-438" r="7" fill="{OL}" stroke="none"/><path d="M18 -440 q16 -14 34 0" fill="none"/>')
-        a(f'<path d="M-35 -405 Q0 -380 40 -405 Q0 -392 -35 -405Z" fill="#fff"/>')
+        a(feats_man(expr,HR,OL))
+
+
     elif view=='tq':
         a(f'<rect x="-70" y="-128" width="62" height="100" rx="14" fill="{TR}"/><rect x="14" y="-128" width="62" height="100" rx="14" fill="{TR}"/>')
         shoes(-104,8)

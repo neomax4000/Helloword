@@ -59,3 +59,7 @@ Nota Actinver: los videos educativos, de glosario y de noticias NO llevan marca 
 - `hoja-personajes.png` / `.svg`: puerquito y anfitrión en frente, 3/4, perfil y atrás, con paleta. Es la referencia obligatoria de cualquier escena. Se generó con `gen_hoja.py`.
 - **Reparto propuesto:** Claude diseña personajes, guiones, storyboard y revisa el resultado; Haiku (subagente) arma las escenas y la animación en Remotion siguiendo la hoja, el guion JSON y una especificación cerrada por escena.
 - **Condiciones para que funcione:** (1) la hoja y los componentes de personaje (`kit/app/src/`) se hacen UNA vez con el modelo principal; (2) Haiku solo ensambla, no inventa el diseño; (3) Claude revisa fotogramas clave antes de programar; (4) si el resultado falla la lista de control, se corrige con el modelo principal. Pendiente: aprobación de Brandon para convertirlo en regla en `CLAUDE.md` / `PRO.md`.
+
+## 7. Hoja de expresiones y poses (27 nov)
+
+`hoja-expresiones.png` / `.svg` (generada con `gen_expresiones.py`): anfitrión con 5 expresiones (guiño, alegre, sorpresa, duda, preocupado) y 3 poses (señala, muestra moneda, explica); puerquito con 5 expresiones (alegre, guiño, sorpresa, duda, dormido para el cierre «Mándaselo…»). Siguiente paso: convertir estas piezas en componentes de Remotion (una sola vez, modelo principal) para que Haiku solo las ensamble en escenas.
