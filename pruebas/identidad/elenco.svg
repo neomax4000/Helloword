@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF1C9"/><stop offset="1" stop-color="#FBD98A"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE27A"/><stop offset=".55" stop-color="#F2B72E"/><stop offset="1" stop-color="#C98A12"/></linearGradient>
+</defs>
+<rect width="1080" height="1350" fill="url(#bg)"/>
+<rect y="1010" width="1080" height="340" fill="#4E9A53"/><rect y="1010" width="1080" height="10" fill="#2F6B36"/>
+<g stroke="#2B1B10" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+<!-- piggy -->
+<g transform="translate(120,520)">
+ <ellipse cx="170" cy="470" rx="180" ry="22" fill="#2F6B36" stroke="none" opacity=".5"/>
+ <rect x="70" y="395" width="52" height="75" rx="18" fill="#E0A21E"/><rect x="215" y="395" width="52" height="75" rx="18" fill="#E0A21E"/>
+ <path d="M70 120 L50 40 L130 85 Z" fill="url(#gold)"/>
+ <path d="M230 90 L290 30 L305 120 Z" fill="url(#gold)"/>
+ <ellipse cx="170" cy="260" rx="190" ry="170" fill="url(#gold)"/>
+ <path d="M130 100 Q170 80 215 100" fill="none" stroke="#7A4A08" stroke-width="12"/>
+ <ellipse cx="-5" cy="285" rx="55" ry="48" fill="#F2B72E"/>
+ <ellipse cx="-12" cy="285" rx="9" ry="18" fill="#2B1B10" stroke="none"/><ellipse cx="14" cy="285" rx="9" ry="18" fill="#2B1B10" stroke="none"/>
+ <circle cx="55" cy="205" r="26" fill="#fff"/><circle cx="62" cy="208" r="12" fill="#2B1B10" stroke="none"/>
+ <path d="M30 350 Q70 385 115 360" fill="none"/>
+ <path d="M340 260 q40 -30 25 -75 q-25 15 -40 30" fill="none" stroke-width="10"/>
+ <circle cx="278" cy="250" r="34" fill="none" stroke="#fff" stroke-width="7" opacity=".5"/>
+ <path d="M235 190 q20 -10 40 5" fill="none" stroke="#fff" stroke-width="12" opacity=".6"/>
+</g>
+<!-- man -->
+<g transform="translate(560,400)">
+ <ellipse cx="190" cy="690" rx="150" ry="20" fill="#2F6B36" stroke="none" opacity=".5"/>
+ <rect x="95" y="560" width="70" height="125" rx="14" fill="#25356B"/><rect x="215" y="560" width="70" height="125" rx="14" fill="#25356B"/>
+ <rect x="80" y="670" width="100" height="35" rx="16" fill="#fff"/><rect x="200" y="670" width="100" height="35" rx="16" fill="#fff"/>
+ <rect x="50" y="310" width="280" height="290" rx="36" fill="#2F6FE0"/>
+ <path d="M150 310 L190 450 L230 310 Z" fill="#fff"/>
+ <path d="M175 330 L205 330 L215 470 L190 505 L165 470 Z" fill="#8DB531"/>
+ <path d="M150 310 L110 380 L170 360 Z" fill="#2B5CC0"/><path d="M230 310 L270 380 L210 360 Z" fill="#2B5CC0"/>
+ <path d="M60 340 L-20 460 L35 490 L100 390" fill="#2F6FE0"/>
+ <circle cx="-30" cy="480" r="30" fill="#E3A56F"/>
+ <path d="M320 340 L405 250 L440 285 L355 395" fill="#2F6FE0"/>
+ <circle cx="425" cy="250" r="30" fill="#E3A56F"/>
+ <rect x="105" y="90" width="170" height="165" rx="34" fill="#E3A56F"/>
+ <path d="M95 150 Q95 40 190 40 Q285 40 285 150 Q250 95 190 100 Q130 95 95 150Z" fill="#3C2415"/>
+ <circle cx="150" cy="170" r="17" fill="#fff"/><circle cx="154" cy="172" r="8" fill="#2B1B10" stroke="none"/>
+ <path d="M205 170 q20 -14 40 0" fill="none"/>
+ <path d="M150 215 Q190 245 235 215 Q190 230 150 215Z" fill="#fff"/>
+</g>
+</g>
+<text x="540" y="150" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="800" font-size="76" fill="#2B1B10">Elenco propio</text>
+<text x="540" y="215" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="600" font-size="38" fill="#7A4A08">Puerquito alcancía dorado + hombre 2D</text>
+<g transform="translate(60,1100)"><rect width="330" height="90" rx="18" fill="#FFC928" stroke="#2B1B10" stroke-width="8"/><text x="165" y="63" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="900" font-size="52" fill="#2B1B10" transform="rotate(-3 165 45)">PARTE 1</text></g>
+<text x="540" y="1290" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="600" font-size="30" fill="#fff">Boceto de dirección: se pulirá antes de producir</text>
+</svg>
