@@ -1,0 +1,42 @@
+{
+ "id": "marcador-dolar",
+ "voz": "5",
+ "velocidad": 1.03,
+ "musica_desde": 1,
+ "estructura": "5 · duelo A vs B (dato fuerte vs dato débil) con marcador de ganadores y perdedores",
+ "prueba": {
+  "id": "N3",
+  "formato": "Ganadores y perdedores",
+  "tipo": "P (previa de la semana)",
+  "apertura": "marcador de estadio con fecha en afirmación («El viernes 4 puede moverse tu dólar»)",
+  "fondo": "azul noche con luces de estadio y tablero deportivo de leds",
+  "duracion_objetivo": "38-46 s",
+  "voz": "5"
+ },
+ "bloques": [
+  {"t": "El viernes cuatro puede moverse tu dólar.",
+   "c": "El viernes cuatro | puede moverse | tu dólar.", "p": 0.22},
+  {"t": "A las ocho treinta, hora de Nueva York, Estados Unidos publica cuántos empleos creó en noviembre.",
+   "c": "A las ocho treinta, | hora de Nueva York, | Estados Unidos publica | cuántos empleos creó | en noviembre.", "p": 0.25},
+  {"t": "En octubre fueron ciento sesenta y cinco mil, con desempleo de cuatro punto uno por ciento.",
+   "c": "En octubre fueron | ciento sesenta y cinco mil, | con desempleo | de cuatro punto uno | por ciento.", "p": 0.25},
+  {"t": "Según salga el dato, cambia el marcador.",
+   "c": "Según salga el dato, | cambia el marcador.", "p": 0.25},
+  {"t": "Si sale fuerte, el dólar suele subir. Gana quien cobra en dólares. Pierde quien paga en dólares: viajes, compras en línea, tarjeta.",
+   "c": "Si sale fuerte, | el dólar suele subir. | Gana quien cobra | en dólares. | Pierde quien paga | en dólares: | viajes, compras en línea, | tarjeta.", "p": 0.28},
+  {"t": "Si sale débil, pasa lo contrario. Gana quien paga en dólares. Pierde quien recibe remesas, porque cada dólar rinde menos pesos.",
+   "c": "Si sale débil, | pasa lo contrario. | Gana quien paga | en dólares. | Pierde quien recibe remesas, | porque cada dólar | rinde menos pesos.", "p": 0.28},
+  {"t": "Y el ocho y el nueve de diciembre se reúne la Fed. Ahí vuelve a moverse el marcador.",
+   "c": "Y el ocho y el nueve | de diciembre | se reúne la Fed. | Ahí vuelve a moverse | el marcador.", "p": 0.25},
+  {"t": "Mira de qué lado juegas tú, porque",
+   "c": "Mira de qué lado | juegas tú, | porque", "p": 0.0}
+ ],
+ "sfx": [
+  {"tipo": "stamp", "palabra": 3, "dt": -0.06},
+  {"tipo": "ding", "fin_bloque": 2, "dt": 0.02, "f": 1500, "db": -16},
+  {"tipo": "riser", "bloque": 4, "dt": -0.22},
+  {"tipo": "impact", "bloque": 4, "dt": 0.02},
+  {"tipo": "ding", "fin_bloque": 5, "dt": 0.02, "f": 1500, "db": -16},
+  {"tipo": "ding", "fin_bloque": 7, "dt": 0.02, "f": 1760}
+ ]
+}
