@@ -1,0 +1,145 @@
+{
+ "id": "fondo-maqueta",
+ "voz": "3",
+ "velocidad": 1.03,
+ "estructura": "«Pero…» (cada solución crea el siguiente problema), con la conclusión primero",
+ "prueba": {
+  "id": "T07",
+  "apertura": "Conclusión primero (la definición completa en la primera frase)",
+  "texto": "poco (una etiqueta por pieza + subtítulos)",
+  "fondo": "Isométrico: maqueta que se arma pieza por pieza (SVG/Remotion), mood abyss",
+  "duracion_objetivo": "70–90 s",
+  "voz": "3 (narrador)"
+ },
+ "musica_desde": 1,
+ "bloques": [
+  {
+   "t": "Dinero de muchas personas, repartido en partes iguales y vigilado: eso es un fondo de inversión.",
+   "c": "Dinero de | muchas personas, | repartido en | partes iguales | y vigilado: | eso es | un fondo de inversión.",
+   "p": 0.35
+  },
+  {
+   "t": "Pero juntar dinero no basta. Para operar necesita la autorización de la autoridad. Ya autorizado, ahora sí es un fondo.",
+   "c": "Pero juntar dinero | no basta. | Para operar | necesita la autorización | de la autoridad. | Ya autorizado, | ahora sí | es un fondo.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero el fondo no compra solo. Una sociedad operadora lo administra y compra y vende por él.",
+   "c": "Pero el fondo | no compra solo. | Una sociedad operadora | lo administra | y compra y vende | por él.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero hay que decidir qué comprar. Una política de inversión fija qué activos entran y sus límites.",
+   "c": "Pero hay que | decidir qué comprar. | Una política de inversión | fija qué activos entran | y sus límites.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero el dinero no se queda con la operadora. Un custodio lo guarda a nombre de los inversionistas, separado.",
+   "c": "Pero el dinero | no se queda | con la operadora. | Un custodio | lo guarda | a nombre | de los inversionistas, | separado.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero alguien debe vigilar los límites. Un comité revisa cada decisión, y el área de cumplimiento revisa los límites a diario.",
+   "c": "Pero alguien debe | vigilar los límites. | Un comité | revisa cada decisión, | y el área | de cumplimiento | revisa los límites | a diario.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero cada parte necesita un precio. Cada día se suma lo que vale el fondo, se resta lo que debe, y se divide entre las partes.",
+   "c": "Pero cada parte | necesita un precio. | Cada día | se suma | lo que vale el fondo, | se resta | lo que debe, | y se divide | entre las partes.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero algunos activos no tienen un precio claro. Un proveedor de precios independiente los calcula con una metodología pública.",
+   "c": "Pero algunos activos | no tienen | un precio claro. | Un proveedor de precios | independiente | los calcula | con una metodología pública.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero tú no compras directo al fondo. Una distribuidora, como un banco o una casa de bolsa, te lo ofrece.",
+   "c": "Pero tú | no compras | directo al fondo. | Una distribuidora, | como un banco | o una casa de bolsa, | te lo ofrece.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero comprar y salir tiene horario. Una orden después de la hora de corte entra al día siguiente, y el dinero llega al terminar el plazo de liquidación.",
+   "c": "Pero comprar y salir | tiene horario. | Una orden después | de la hora de corte | entra al día siguiente, | y el dinero llega | al terminar | el plazo de liquidación.",
+   "p": 0.3
+  },
+  {
+   "t": "Pero ninguna capa garantiza ganancias. El valor del fondo puede subir o bajar.",
+   "c": "Pero ninguna capa | garantiza ganancias. | El valor del fondo | puede subir o bajar.",
+   "p": 0.3
+  },
+  {
+   "t": "Así que cada capa existe para que ese dinero junto siga siendo,",
+   "c": "Así que | cada capa existe | para que ese dinero junto | siga siendo,",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "pop",
+   "bloque": 1,
+   "dt": 0.15,
+   "db": -17
+  },
+  {
+   "tipo": "pop",
+   "bloque": 2,
+   "dt": 0.15,
+   "db": -17
+  },
+  {
+   "tipo": "pop",
+   "bloque": 3,
+   "dt": 0.15,
+   "db": -17
+  },
+  {
+   "tipo": "pop",
+   "bloque": 4,
+   "dt": 0.15,
+   "db": -17
+  },
+  {
+   "tipo": "pop",
+   "bloque": 5,
+   "dt": 0.15,
+   "db": -17
+  },
+  {
+   "tipo": "pop",
+   "bloque": 6,
+   "dt": 0.15,
+   "db": -17
+  },
+  {
+   "tipo": "pop",
+   "bloque": 7,
+   "dt": 0.15,
+   "db": -17
+  },
+  {
+   "tipo": "pop",
+   "bloque": 8,
+   "dt": 0.15,
+   "db": -17
+  },
+  {
+   "tipo": "pop",
+   "bloque": 9,
+   "dt": 0.15,
+   "db": -17
+  },
+  {
+   "tipo": "pop",
+   "bloque": 10,
+   "dt": 0.15,
+   "db": -17
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 0,
+   "dt": 0.02,
+   "db": -18
+  }
+ ]
+}

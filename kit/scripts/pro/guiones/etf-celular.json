@@ -1,0 +1,67 @@
+{
+ "id": "etf-celular",
+ "voz": "D",
+ "velocidad": 1.03,
+ "estructura": "Mito vs realidad («un ETF es una acción»)",
+ "prueba": {
+  "id": "T08",
+  "apertura": "Pregunta ESCRITA en la barra de búsqueda; la voz afirma",
+  "texto": "medio (tarjetas de la app)",
+  "fondo": "Pantalla de celular (app de mercado) con scroll de tarjetas, hecha en Remotion",
+  "duracion_objetivo": "20 s",
+  "voz": "D (glosario)"
+ },
+ "musica_desde": 1,
+ "bloques": [
+  {
+   "t": "Un e te efe cotiza como una acción, pero no es una acción.",
+   "c": "Un e te efe | cotiza | como una acción, | pero no | es una acción.",
+   "p": 0.25
+  },
+  {
+   "t": "Es una canasta: dentro lleva muchos activos a la vez.",
+   "c": "Es una canasta: | dentro lleva | muchos activos | a la vez.",
+   "p": 0.25
+  },
+  {
+   "t": "Compras una sola pieza y tienes un pedacito de todos.",
+   "c": "Compras una | sola pieza | y tienes | un pedacito | de todos.",
+   "p": 0.25
+  },
+  {
+   "t": "Se compra y se vende en bolsa durante el día, como una acción.",
+   "c": "Se compra | y se vende | en bolsa | durante el día, | como una acción.",
+   "p": 0.25
+  },
+  {
+   "t": "Y como todo en bolsa, su valor puede subir o bajar.",
+   "c": "Y como todo | en bolsa, | su valor | puede subir | o bajar.",
+   "p": 0.25
+  },
+  {
+   "t": "Así que, cuando lo veas en tu app, recuerda:",
+   "c": "Así que, | cuando lo veas | en tu app, | recuerda:",
+   "p": 0.0
+  }
+ ],
+ "sfx": [
+  {
+   "tipo": "pop",
+   "palabra": 0,
+   "dt": 0.0,
+   "db": -16
+  },
+  {
+   "tipo": "click",
+   "bloque": 3,
+   "dt": 0.05,
+   "db": -16
+  },
+  {
+   "tipo": "ding",
+   "fin_bloque": 4,
+   "dt": 0.02,
+   "db": -18
+  }
+ ]
+}

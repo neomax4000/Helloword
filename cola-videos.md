@@ -101,6 +101,8 @@ Formato (Estándar Pro desde 2026-11-14, `kit/PRO.md`): gancho con dato concreto
 - [x] T02 Buró mito (2026-11-25) — programado 19:00
 - [x] T05 Pagar solo el mínimo (2026-11-27, `guiones/videos-producidos/minimo-tarjeta.md`, portada `capturas/68_MINIMO_TARJETA_portada.png`) — programado 12:00
 - [x] T06 CETES: ¿siguen pagando lo de antes? (2026-11-27, `guiones/videos-producidos/cetes-antes.md`, portada `capturas/69_CETES_ANTES_portada.png`) — programado 19:00
+- [x] T07 Cómo funciona un fondo (2026-11-28, `guiones/videos-producidos/fondo-maqueta.md`, portada `capturas/70_FONDO_MAQUETA_portada.png`) — programado 12:00
+- [x] T08 ETF (2026-11-28, `guiones/videos-producidos/etf-celular.md`, portada `capturas/71_ETF_CELULAR_portada.png`) — programado 19:00
 - [x] T03 Afore: semanas (2026-11-26, `guiones/videos-producidos/afore-semanas.md`, portada `capturas/66_AFORE_SEMANAS_portada.png`) — programado 12:00
 
 ## DECONSTRUYENDO LAS FINANZAS (tipo aparte, proyecto futuro; NO entra al ciclo diario)

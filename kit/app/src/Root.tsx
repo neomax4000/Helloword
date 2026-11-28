@@ -12,6 +12,8 @@ import {DividendoMain, DividendoCover, DIV_TOTAL} from './dividendo';
 import {DemoPiezas} from './piezas/Demo';
 import {PortadaTitular} from './piezas/PortadaTitular';
 import {CetesAntesMain, CetesAntesCover, CET_TOTAL} from './cetes-antes';
+import {EtfCelularMain, EtfCelularCover, ETF_TOTAL} from './etf-celular';
+import {FondoMaquetaMain, FondoMaquetaCover, FM_TOTAL} from './fondo-maqueta';
 import {MinimoMain, MinimoCover, MIN_TOTAL} from './minimo-tarjeta';
 import {AforeSemanasMain, AforeSemanasCover, AFORE_TOTAL} from './afore-semanas';
 import {UdisMain, UdisCover, UDIS_TOTAL} from './udis';
@@ -843,6 +845,10 @@ export const Root: React.FC = () => (
     <Composition id="Minimo" component={MinimoMain} durationInFrames={Math.round(MIN_TOTAL * 30)} fps={30} width={1080} height={1920} />
     <Composition id="MinimoCover" component={MinimoCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="CetesAntes" component={CetesAntesMain} durationInFrames={Math.round(CET_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="FondoMaqueta" component={FondoMaquetaMain} durationInFrames={Math.round(FM_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="FondoMaquetaCover" component={FondoMaquetaCover} durationInFrames={30} fps={30} width={1080} height={1920} />
+    <Composition id="EtfCelular" component={EtfCelularMain} durationInFrames={Math.round(ETF_TOTAL * 30)} fps={30} width={1080} height={1920} />
+    <Composition id="EtfCelularCover" component={EtfCelularCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="CetesAntesCover" component={CetesAntesCover} durationInFrames={30} fps={30} width={1080} height={1920} />
     <Composition id="DemoPiezas" component={DemoPiezas} durationInFrames={330} fps={30} width={1080} height={1920} />
     <Composition id="DemoPortada" component={() => <PortadaTitular antes="TUS CETES" resaltada="PAGAN MENOS" despues="QUE HACE UN AÑO" />} durationInFrames={30} fps={30} width={1080} height={1920} />
